@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Project Name (online-audio-converter.com).wav-99bd066aa94ffef93623f3b334be1f96.sample"
+
+[deps]
+
+source_file="res://Project Name (online-audio-converter.com).wav"
+dest_files=[ "res://.import/Project Name (online-audio-converter.com).wav-99bd066aa94ffef93623f3b334be1f96.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

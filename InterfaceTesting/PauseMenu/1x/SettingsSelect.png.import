@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/SettingsSelect.png-bdc8e2bb433df675026bfed748f1d4cd.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://PauseMenu/1x/SettingsSelect.png"
+dest_files=[ "res://.import/SettingsSelect.png-bdc8e2bb433df675026bfed748f1d4cd.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

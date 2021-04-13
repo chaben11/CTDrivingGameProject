@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://PauseMenuNewIcons/1x/SettingsHover.png" type="Texture" id=1]
+[ext_resource path="res://PauseMenuNewIcons/1x/SettingsPressed.png" type="Texture" id=2]
+[ext_resource path="res://PauseMenuNewIcons/1x/SettingsNormal.png" type="Texture" id=3]
+
+[node name="SettingsButton" type="TextureButton"]
+margin_left = -92.5
+margin_top = -50.0
+margin_right = 112.5
+margin_bottom = 145.0
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 2 )
+texture_hover = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

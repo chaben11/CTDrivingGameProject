@@ -1,0 +1,277 @@
+[gd_scene load_steps=31 format=2]
+
+[ext_resource path="res://Taxiphysics/Taxi.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Taxiphysics/skyday.tres" type="Environment" id=2]
+[ext_resource path="res://2x/sudewalkgrass_type3@2x.png" type="Texture" id=3]
+[ext_resource path="res://roadmesh.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Taxiphysics/Wedge.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Taxiphysics/Camera_offset.gd" type="Script" id=6]
+[ext_resource path="res://Enemy.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Taxiphysics/Pause.gd" type="Script" id=8]
+[ext_resource path="res://PauseMenuNewIcons/1x/ResumePressed.png" type="Texture" id=9]
+[ext_resource path="res://PauseMenuNewIcons/1x/Asset 24.png" type="Texture" id=10]
+[ext_resource path="res://intersection X (2).tres" type="ArrayMesh" id=11]
+[ext_resource path="res://sidewalkgrasstogether.tres" type="ArrayMesh" id=12]
+[ext_resource path="res://straight road _ (2).tres" type="ArrayMesh" id=13]
+[ext_resource path="res://LeftSideCorner_2.tres" type="ArrayMesh" id=14]
+[ext_resource path="res://PauseMenuNewIcons/1x/Asset 25.png" type="Texture" id=15]
+[ext_resource path="res://PauseMenu/1x/Asset 12.png" type="Texture" id=16]
+[ext_resource path="res://SettingsButton.tscn" type="PackedScene" id=17]
+[ext_resource path="res://PauseMenuNewIcons/1x/Asset 26.png" type="Texture" id=18]
+[ext_resource path="res://rightsidewalk.tres" type="Material" id=19]
+[ext_resource path="res://PauseMenuNewIcons/1x/ResumeHover.png" type="Texture" id=20]
+[ext_resource path="res://PauseMenuNewIcons/1x/ResumeNormal.png" type="Texture" id=23]
+[ext_resource path="res://Speedometer(3).tscn" type="PackedScene" id=24]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 129.945, 1, 10.5585 )
+
+[sub_resource type="SpatialMaterial" id=2]
+params_cull_mode = 2
+albedo_texture = ExtResource( 3 )
+roughness = 0.4
+
+[sub_resource type="ArrayMesh" id=3]
+surfaces/0 = {
+"aabb": AABB( -20, -0.1, -10, 40, 0.20001, 20 ),
+"array_data": PoolByteArray( 0, 0, 160, 65, 146, 204, 204, 61, 0, 0, 32, 65, 0, 0, 127, 0, 129, 0, 0, 127, 221, 173, 59, 69, 0, 0, 160, 65, 146, 204, 204, 61, 0, 0, 32, 65, 0, 127, 0, 0, 0, 0, 127, 127, 237, 59, 227, 32, 0, 0, 160, 65, 146, 204, 204, 61, 0, 0, 32, 65, 127, 0, 0, 0, 0, 0, 127, 127, 0, 57, 0, 56, 0, 0, 160, 65, 8, 205, 204, 61, 0, 0, 32, 193, 0, 0, 129, 0, 127, 0, 0, 127, 0, 54, 0, 56, 0, 0, 160, 65, 8, 205, 204, 61, 0, 0, 32, 193, 0, 127, 0, 0, 0, 0, 127, 127, 60, 33, 227, 32, 0, 0, 160, 65, 8, 205, 204, 61, 0, 0, 32, 193, 127, 0, 0, 0, 0, 0, 126, 127, 0, 54, 0, 56, 0, 0, 160, 65, 8, 205, 204, 189, 0, 0, 32, 65, 0, 129, 0, 0, 0, 0, 127, 127, 0, 57, 0, 52, 0, 0, 160, 65, 8, 205, 204, 189, 0, 0, 32, 65, 0, 0, 127, 0, 129, 0, 0, 127, 221, 173, 59, 196, 0, 0, 160, 65, 8, 205, 204, 189, 0, 0, 32, 65, 127, 0, 0, 0, 0, 0, 126, 127, 0, 57, 0, 52, 0, 0, 160, 65, 146, 204, 204, 189, 0, 0, 32, 193, 0, 129, 0, 0, 0, 0, 127, 127, 0, 54, 0, 52, 0, 0, 160, 65, 146, 204, 204, 189, 0, 0, 32, 193, 0, 0, 129, 0, 127, 0, 0, 127, 0, 54, 0, 52, 0, 0, 160, 65, 146, 204, 204, 189, 0, 0, 32, 193, 127, 0, 0, 0, 0, 0, 127, 127, 0, 54, 0, 52, 0, 0, 160, 193, 146, 204, 204, 61, 0, 0, 32, 65, 129, 0, 0, 0, 0, 0, 127, 127, 0, 57, 0, 58, 0, 0, 160, 193, 146, 204, 204, 61, 0, 0, 32, 65, 0, 0, 127, 0, 129, 0, 0, 127, 93, 60, 59, 69, 0, 0, 160, 193, 146, 204, 204, 61, 0, 0, 32, 65, 0, 127, 0, 0, 0, 0, 127, 127, 237, 59, 236, 59, 0, 0, 160, 193, 8, 205, 204, 61, 0, 0, 32, 193, 129, 0, 0, 0, 0, 0, 127, 127, 0, 54, 0, 58, 0, 0, 160, 193, 8, 205, 204, 61, 0, 0, 32, 193, 0, 0, 129, 0, 127, 0, 0, 127, 0, 48, 0, 56, 0, 0, 160, 193, 8, 205, 204, 61, 0, 0, 32, 193, 0, 127, 0, 0, 0, 0, 127, 127, 60, 33, 236, 59, 0, 0, 160, 193, 8, 205, 204, 189, 0, 0, 32, 65, 129, 0, 0, 0, 0, 0, 127, 127, 0, 57, 0, 60, 0, 0, 160, 193, 8, 205, 204, 189, 0, 0, 32, 65, 0, 129, 0, 0, 0, 0, 127, 127, 0, 57, 0, 0, 0, 0, 160, 193, 8, 205, 204, 189, 0, 0, 32, 65, 0, 0, 127, 0, 129, 0, 0, 127, 93, 60, 59, 196, 0, 0, 160, 193, 146, 204, 204, 189, 0, 0, 32, 193, 129, 0, 0, 0, 0, 0, 127, 127, 0, 54, 0, 60, 0, 0, 160, 193, 146, 204, 204, 189, 0, 0, 32, 193, 0, 129, 0, 0, 0, 0, 127, 127, 0, 54, 0, 0, 0, 0, 160, 193, 146, 204, 204, 189, 0, 0, 32, 193, 0, 0, 129, 0, 127, 0, 0, 127, 0, 48, 0, 52 ),
+"array_index_data": PoolByteArray( 0, 0, 20, 0, 13, 0, 0, 0, 7, 0, 20, 0, 9, 0, 19, 0, 6, 0, 9, 0, 22, 0, 19, 0, 21, 0, 12, 0, 18, 0, 21, 0, 15, 0, 12, 0, 16, 0, 10, 0, 3, 0, 16, 0, 23, 0, 10, 0, 5, 0, 8, 0, 2, 0, 5, 0, 11, 0, 8, 0, 17, 0, 1, 0, 14, 0, 17, 0, 4, 0, 1, 0 ),
+"blend_shape_data": [  ],
+"format": 97559,
+"index_count": 36,
+"material": SubResource( 2 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 24
+}
+
+[sub_resource type="ArrayMesh" id=4]
+surfaces/0 = {
+"aabb": AABB( -20, -0.1, -10, 40, 0.20001, 20 ),
+"array_data": PoolByteArray( 0, 0, 160, 65, 146, 204, 204, 61, 0, 0, 32, 65, 0, 0, 127, 0, 129, 0, 0, 127, 221, 173, 59, 69, 0, 0, 160, 65, 146, 204, 204, 61, 0, 0, 32, 65, 0, 127, 0, 0, 0, 0, 127, 127, 237, 59, 227, 32, 0, 0, 160, 65, 146, 204, 204, 61, 0, 0, 32, 65, 127, 0, 0, 0, 0, 0, 127, 127, 0, 57, 0, 56, 0, 0, 160, 65, 8, 205, 204, 61, 0, 0, 32, 193, 0, 0, 129, 0, 127, 0, 0, 127, 0, 54, 0, 56, 0, 0, 160, 65, 8, 205, 204, 61, 0, 0, 32, 193, 0, 127, 0, 0, 0, 0, 127, 127, 60, 33, 227, 32, 0, 0, 160, 65, 8, 205, 204, 61, 0, 0, 32, 193, 127, 0, 0, 0, 0, 0, 126, 127, 0, 54, 0, 56, 0, 0, 160, 65, 8, 205, 204, 189, 0, 0, 32, 65, 0, 129, 0, 0, 0, 0, 127, 127, 0, 57, 0, 52, 0, 0, 160, 65, 8, 205, 204, 189, 0, 0, 32, 65, 0, 0, 127, 0, 129, 0, 0, 127, 221, 173, 59, 196, 0, 0, 160, 65, 8, 205, 204, 189, 0, 0, 32, 65, 127, 0, 0, 0, 0, 0, 126, 127, 0, 57, 0, 52, 0, 0, 160, 65, 146, 204, 204, 189, 0, 0, 32, 193, 0, 129, 0, 0, 0, 0, 127, 127, 0, 54, 0, 52, 0, 0, 160, 65, 146, 204, 204, 189, 0, 0, 32, 193, 0, 0, 129, 0, 127, 0, 0, 127, 0, 54, 0, 52, 0, 0, 160, 65, 146, 204, 204, 189, 0, 0, 32, 193, 127, 0, 0, 0, 0, 0, 127, 127, 0, 54, 0, 52, 0, 0, 160, 193, 146, 204, 204, 61, 0, 0, 32, 65, 129, 0, 0, 0, 0, 0, 127, 127, 0, 57, 0, 58, 0, 0, 160, 193, 146, 204, 204, 61, 0, 0, 32, 65, 0, 0, 127, 0, 129, 0, 0, 127, 93, 60, 59, 69, 0, 0, 160, 193, 146, 204, 204, 61, 0, 0, 32, 65, 0, 127, 0, 0, 0, 0, 127, 127, 237, 59, 236, 59, 0, 0, 160, 193, 8, 205, 204, 61, 0, 0, 32, 193, 129, 0, 0, 0, 0, 0, 127, 127, 0, 54, 0, 58, 0, 0, 160, 193, 8, 205, 204, 61, 0, 0, 32, 193, 0, 0, 129, 0, 127, 0, 0, 127, 0, 48, 0, 56, 0, 0, 160, 193, 8, 205, 204, 61, 0, 0, 32, 193, 0, 127, 0, 0, 0, 0, 127, 127, 60, 33, 236, 59, 0, 0, 160, 193, 8, 205, 204, 189, 0, 0, 32, 65, 129, 0, 0, 0, 0, 0, 127, 127, 0, 57, 0, 60, 0, 0, 160, 193, 8, 205, 204, 189, 0, 0, 32, 65, 0, 129, 0, 0, 0, 0, 127, 127, 0, 57, 0, 0, 0, 0, 160, 193, 8, 205, 204, 189, 0, 0, 32, 65, 0, 0, 127, 0, 129, 0, 0, 127, 93, 60, 59, 196, 0, 0, 160, 193, 146, 204, 204, 189, 0, 0, 32, 193, 129, 0, 0, 0, 0, 0, 127, 127, 0, 54, 0, 60, 0, 0, 160, 193, 146, 204, 204, 189, 0, 0, 32, 193, 0, 129, 0, 0, 0, 0, 127, 127, 0, 54, 0, 0, 0, 0, 160, 193, 146, 204, 204, 189, 0, 0, 32, 193, 0, 0, 129, 0, 127, 0, 0, 127, 0, 48, 0, 52 ),
+"array_index_data": PoolByteArray( 0, 0, 20, 0, 13, 0, 0, 0, 7, 0, 20, 0, 9, 0, 19, 0, 6, 0, 9, 0, 22, 0, 19, 0, 21, 0, 12, 0, 18, 0, 21, 0, 15, 0, 12, 0, 16, 0, 10, 0, 3, 0, 16, 0, 23, 0, 10, 0, 5, 0, 8, 0, 2, 0, 5, 0, 11, 0, 8, 0, 17, 0, 1, 0, 14, 0, 17, 0, 4, 0, 1, 0 ),
+"blend_shape_data": [  ],
+"format": 97559,
+"index_count": 36,
+"material": ExtResource( 19 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 24
+}
+
+[sub_resource type="ArrayMesh" id=5]
+surfaces/0 = {
+"aabb": AABB( -20, -0.1, -10, 40, 0.20001, 20 ),
+"array_data": PoolByteArray( 0, 0, 160, 65, 146, 204, 204, 61, 0, 0, 32, 65, 0, 0, 127, 0, 129, 0, 0, 127, 221, 173, 59, 69, 0, 0, 160, 65, 146, 204, 204, 61, 0, 0, 32, 65, 0, 127, 0, 0, 0, 0, 127, 127, 237, 59, 227, 32, 0, 0, 160, 65, 146, 204, 204, 61, 0, 0, 32, 65, 127, 0, 0, 0, 0, 0, 127, 127, 0, 57, 0, 56, 0, 0, 160, 65, 8, 205, 204, 61, 0, 0, 32, 193, 0, 0, 129, 0, 127, 0, 0, 127, 0, 54, 0, 56, 0, 0, 160, 65, 8, 205, 204, 61, 0, 0, 32, 193, 0, 127, 0, 0, 0, 0, 127, 127, 60, 33, 227, 32, 0, 0, 160, 65, 8, 205, 204, 61, 0, 0, 32, 193, 127, 0, 0, 0, 0, 0, 126, 127, 0, 54, 0, 56, 0, 0, 160, 65, 8, 205, 204, 189, 0, 0, 32, 65, 0, 129, 0, 0, 0, 0, 127, 127, 0, 57, 0, 52, 0, 0, 160, 65, 8, 205, 204, 189, 0, 0, 32, 65, 0, 0, 127, 0, 129, 0, 0, 127, 221, 173, 59, 196, 0, 0, 160, 65, 8, 205, 204, 189, 0, 0, 32, 65, 127, 0, 0, 0, 0, 0, 126, 127, 0, 57, 0, 52, 0, 0, 160, 65, 146, 204, 204, 189, 0, 0, 32, 193, 0, 129, 0, 0, 0, 0, 127, 127, 0, 54, 0, 52, 0, 0, 160, 65, 146, 204, 204, 189, 0, 0, 32, 193, 0, 0, 129, 0, 127, 0, 0, 127, 0, 54, 0, 52, 0, 0, 160, 65, 146, 204, 204, 189, 0, 0, 32, 193, 127, 0, 0, 0, 0, 0, 127, 127, 0, 54, 0, 52, 0, 0, 160, 193, 146, 204, 204, 61, 0, 0, 32, 65, 129, 0, 0, 0, 0, 0, 127, 127, 0, 57, 0, 58, 0, 0, 160, 193, 146, 204, 204, 61, 0, 0, 32, 65, 0, 0, 127, 0, 129, 0, 0, 127, 93, 60, 59, 69, 0, 0, 160, 193, 146, 204, 204, 61, 0, 0, 32, 65, 0, 127, 0, 0, 0, 0, 127, 127, 237, 59, 236, 59, 0, 0, 160, 193, 8, 205, 204, 61, 0, 0, 32, 193, 129, 0, 0, 0, 0, 0, 127, 127, 0, 54, 0, 58, 0, 0, 160, 193, 8, 205, 204, 61, 0, 0, 32, 193, 0, 0, 129, 0, 127, 0, 0, 127, 0, 48, 0, 56, 0, 0, 160, 193, 8, 205, 204, 61, 0, 0, 32, 193, 0, 127, 0, 0, 0, 0, 127, 127, 60, 33, 236, 59, 0, 0, 160, 193, 8, 205, 204, 189, 0, 0, 32, 65, 129, 0, 0, 0, 0, 0, 127, 127, 0, 57, 0, 60, 0, 0, 160, 193, 8, 205, 204, 189, 0, 0, 32, 65, 0, 129, 0, 0, 0, 0, 127, 127, 0, 57, 0, 0, 0, 0, 160, 193, 8, 205, 204, 189, 0, 0, 32, 65, 0, 0, 127, 0, 129, 0, 0, 127, 93, 60, 59, 196, 0, 0, 160, 193, 146, 204, 204, 189, 0, 0, 32, 193, 129, 0, 0, 0, 0, 0, 127, 127, 0, 54, 0, 60, 0, 0, 160, 193, 146, 204, 204, 189, 0, 0, 32, 193, 0, 129, 0, 0, 0, 0, 127, 127, 0, 54, 0, 0, 0, 0, 160, 193, 146, 204, 204, 189, 0, 0, 32, 193, 0, 0, 129, 0, 127, 0, 0, 127, 0, 48, 0, 52 ),
+"array_index_data": PoolByteArray( 0, 0, 20, 0, 13, 0, 0, 0, 7, 0, 20, 0, 9, 0, 19, 0, 6, 0, 9, 0, 22, 0, 19, 0, 21, 0, 12, 0, 18, 0, 21, 0, 15, 0, 12, 0, 16, 0, 10, 0, 3, 0, 16, 0, 23, 0, 10, 0, 5, 0, 8, 0, 2, 0, 5, 0, 11, 0, 8, 0, 17, 0, 1, 0, 14, 0, 17, 0, 4, 0, 1, 0 ),
+"blend_shape_data": [  ],
+"format": 97559,
+"index_count": 36,
+"material": ExtResource( 19 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 24
+}
+
+[sub_resource type="CubeMesh" id=6]
+
+[sub_resource type="ConcavePolygonShape" id=7]
+data = PoolVector3Array( 1, -1, -1, -1, 1, 1, -1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1, -1, -1, 1, 1, -1, 1, 1, -1, -1, 1, -1, 1, 1, -1, -1, 1, -1, -1, 1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, -1, -1 )
+
+[sub_resource type="ViewportTexture" id=8]
+viewport_path = NodePath("Node2D/Viewport")
+
+[node name="Main" type="Spatial"]
+
+[node name="Roads" type="Spatial" parent="."]
+
+[node name="Cube4" parent="Roads" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 54.359, 0, 0 )
+mesh = ExtResource( 11 )
+material/1 = null
+
+[node name="StaticBody" type="StaticBody" parent="Roads/Cube4"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Roads/Cube4/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 40.079, -0.71508, 0 )
+shape = SubResource( 1 )
+
+[node name="Cube5" parent="Roads" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 184, 0, 0 )
+mesh = ExtResource( 13 )
+
+[node name="Cube6" parent="Roads" instance=ExtResource( 4 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 54.32, 0, -129 )
+mesh = ExtResource( 13 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Roads"]
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 4, 0, 29.9123 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="MeshInstance3" type="MeshInstance" parent="Roads"]
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 104, 0, 29.9123 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="MeshInstance4" type="MeshInstance" parent="Roads"]
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 104, 0, -30.08 )
+mesh = ExtResource( 14 )
+material/0 = null
+
+[node name="MeshInstance5" type="MeshInstance" parent="Roads"]
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 184, 0, 29.9123 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="MeshInstance6" type="MeshInstance" parent="Roads"]
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 184, 0, -30.0877 )
+mesh = ExtResource( 14 )
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="Roads"]
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 4, 0, -30.0877 )
+mesh = ExtResource( 12 )
+material/0 = null
+
+[node name="Spatial" type="Spatial" parent="."]
+transform = Transform( 10, 0, 0, 0, 25, 0, 0, 0, 10, 84, -6.898, -29.777 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Spatial"]
+mesh = SubResource( 6 )
+material/0 = null
+
+[node name="MeshInstance3" type="MeshInstance" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1.2, 0, 0, 0, 1, 2, 1.41257, 0 )
+mesh = SubResource( 6 )
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.819821, 0 )
+mesh = SubResource( 6 )
+material/0 = null
+
+[node name="MeshInstance8" type="MeshInstance" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 6, 1.43768, 0 )
+mesh = SubResource( 6 )
+material/0 = null
+
+[node name="MeshInstance9" type="MeshInstance" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 8, 0.300065, 0 )
+mesh = SubResource( 6 )
+material/0 = null
+
+[node name="MeshInstance10" type="MeshInstance" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 10, 1.03396, 0 )
+mesh = SubResource( 6 )
+material/0 = null
+
+[node name="MeshInstance12" type="MeshInstance" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 12, 1.40228, 0 )
+mesh = SubResource( 6 )
+material/0 = null
+
+[node name="MeshInstance11" type="MeshInstance" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 10, 1.03396, 0 )
+mesh = SubResource( 6 )
+material/0 = null
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource( 2 )
+
+[node name="Player" type="Spatial" parent="."]
+script = ExtResource( 6 )
+
+[node name="Camera" type="Camera" parent="Player"]
+transform = Transform( 0.642787, 0.326468, -0.692996, 0, 0.904641, 0.426174, 0.766045, -0.273939, 0.581492, -3, 8.5, 6 )
+current = true
+fov = 80.0
+
+[node name="Taxi" parent="Player" instance=ExtResource( 1 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 0 )
+
+[node name="Label" type="Label" parent="Player/Taxi"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 12.0
+margin_top = 22.0
+margin_right = 165.0
+margin_bottom = 82.0
+rect_scale = Vector2( 3, 3 )
+text = "80Km/h"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Wedge" parent="." instance=ExtResource( 5 )]
+transform = Transform( -4, 0, -1.55766e-06, 0, 2, 0, 1.55766e-06, 0, -4, 178.61, 2.16753, 0 )
+
+[node name="StaticBody" type="StaticBody" parent="Wedge"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Wedge/StaticBody"]
+shape = SubResource( 7 )
+
+[node name="Enemy" parent="." instance=ExtResource( 7 )]
+
+[node name="Pause" type="Control" parent="."]
+pause_mode = 2
+margin_right = 1024.0
+margin_bottom = 600.0
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MainMenu" type="Sprite" parent="Pause"]
+modulate = Color( 1, 1, 1, 0.721569 )
+position = Vector2( 512, 300 )
+texture = ExtResource( 16 )
+
+[node name="MenuButton" type="TextureButton" parent="Pause/MainMenu"]
+margin_left = 155.0
+margin_top = -50.0
+margin_right = 350.0
+margin_bottom = 145.0
+shortcut_in_tooltip = false
+texture_normal = ExtResource( 15 )
+texture_pressed = ExtResource( 18 )
+texture_hover = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SettingsButton" parent="Pause/MainMenu" instance=ExtResource( 17 )]
+
+[node name="ResumeButton" type="TextureButton" parent="Pause/MainMenu"]
+margin_left = -340.0
+margin_top = -50.0
+margin_right = -145.0
+margin_bottom = 145.0
+texture_normal = ExtResource( 23 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Node2D"]
+position = Vector2( 934.14, 570.667 )
+rotation = 3.14159
+scale = Vector2( -0.5, 0.5 )
+texture = SubResource( 8 )
+
+[node name="Viewport" type="Viewport" parent="Node2D"]
+size = Vector2( 400, 400 )
+own_world = true
+transparent_bg = true
+
+[node name="Speedometer(3)" parent="Node2D/Viewport" instance=ExtResource( 24 )]
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( -0.917359, -1.36697e-08, -0.39806, -0.258652, 0.760122, 0.596082, 0.302575, 0.64978, -0.697305, 0, 52.8354, -57.4725 )
+[connection signal="pressed" from="Pause/MainMenu/MenuButton" to="Pause" method="_on_MenuButton_pressed"]
+[connection signal="pressed" from="Pause/MainMenu/SettingsButton" to="Pause" method="_on_SettingsButton_pressed"]
+[connection signal="pressed" from="Pause/MainMenu/ResumeButton" to="Pause" method="_on_ResumeButton_pressed"]
+
+[editable path="Node2D/Viewport/Speedometer(3)"]
