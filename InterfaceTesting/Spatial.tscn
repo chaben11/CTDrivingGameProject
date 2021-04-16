@@ -7,7 +7,7 @@
 [ext_resource path="res://Garage.gd" type="Script" id=5]
 [ext_resource path="res://White.material" type="Material" id=6]
 [ext_resource path="res://selection swapping.tscn" type="PackedScene" id=7]
-[ext_resource path="res://SportsCar.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Cars/SportsCar.tscn" type="PackedScene" id=8]
 [ext_resource path="res://SUV.tscn" type="PackedScene" id=9]
 [ext_resource path="res://selection swapping.gd" type="Script" id=10]
 [ext_resource path="res://Loadscene.gd" type="Script" id=11]

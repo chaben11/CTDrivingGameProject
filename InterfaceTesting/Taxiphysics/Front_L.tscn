@@ -3,7 +3,7 @@
 [ext_resource path="res://Taxiphysics/Material_016.material" type="Material" id=1]
 [ext_resource path="res://Taxiphysics/Material_017.material" type="Material" id=2]
 
-[sub_resource type="ArrayMesh" id=2]
+[sub_resource type="ArrayMesh" id=1]
 resource_name = "Front_L"
 surfaces/0 = {
 "aabb": AABB( -0.234539, -0.474006, -0.462137, 0.492704, 0.948013, 0.924275 ),
@@ -32,6 +32,6 @@ surfaces/1 = {
 
 [node name="Front_L" type="MeshInstance"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.954496, 0.506783, 1.97475 )
-mesh = SubResource( 2 )
+mesh = SubResource( 1 )
 material/0 = null
 material/1 = null
