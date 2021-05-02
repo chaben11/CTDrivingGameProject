@@ -33,7 +33,7 @@ shape = SubResource( 1 )
 [node name="VehicleWheel" type="VehicleWheel" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.954496, 0.506783, 1.97475 )
 use_as_traction = true
-use_as_steering = true
+suspension_travel = 0.3
 
 [node name="Front_L" parent="VehicleWheel" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
@@ -56,7 +56,6 @@ shape = SubResource( 3 )
 [node name="VehicleWheel4" type="VehicleWheel" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.954, 0.507, 1.975 )
 use_as_traction = true
-use_as_steering = true
 
 [node name="Front_R" parent="VehicleWheel4" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )

@@ -11,4 +11,5 @@ background_sky = SubResource( 1 )
 background_sky_orientation = Basis( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1 )
 fog_height_min = 0.0
 fog_height_max = 100.0
+auto_exposure_enabled = true
 ssao_quality = 0

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Taxiphysics/Material_016.material" type="Material" id=1]
-[ext_resource path="res://Taxiphysics/Material_017.material" type="Material" id=2]
+[ext_resource path="res://TaxiWheelWhite.tres" type="Material" id=1]
+[ext_resource path="res://TaxiWheelBlack.tres" type="Material" id=2]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "Front_L"

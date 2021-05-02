@@ -1,9 +1,9 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Taxiphysics/Material_015.material" type="Material" id=1]
-[ext_resource path="res://Taxiphysics/Material_014.material" type="Material" id=2]
+[ext_resource path="res://TaxiWheelBlack.tres" type="Material" id=1]
+[ext_resource path="res://TaxiWheelWhite.tres" type="Material" id=2]
 
-[sub_resource type="ArrayMesh" id=5]
+[sub_resource type="ArrayMesh" id=1]
 resource_name = "Back_R"
 surfaces/0 = {
 "aabb": AABB( -0.317219, -0.481058, -0.477629, 0.610572, 0.962117, 0.955258 ),
@@ -32,6 +32,6 @@ surfaces/1 = {
 
 [node name="Back_R" type="MeshInstance"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.014, 0.485523, -1.02281 )
-mesh = SubResource( 5 )
+mesh = SubResource( 1 )
 material/0 = null
 material/1 = null
