@@ -49,8 +49,8 @@ func _process(delta):
 			engine_force +=15
 	if turn == false:
 		steering = 0
-			
-func _integrate_forces(state): #25/04 : Locks the Y and Z rotation and the z Position so the ramps dont force the car into an angle
+	print(rotation_degrees.z)
+func _integrate_forces(state): 
 	rotation_degrees.y = 90
 	rotation_degrees.z = 0
 func _on_EnemyChecker_body_entered(body):
