@@ -1,9 +1,9 @@
 [gd_resource type="ArrayMesh" load_steps=5 format=2]
 
-[ext_resource path="res://Black.material" type="Material" id=1]
-[ext_resource path="res://Lights.material" type="Material" id=2]
+[ext_resource path="res://Materials/Black.material" type="Material" id=1]
+[ext_resource path="res://Materials/Lights.material" type="Material" id=2]
 [ext_resource path="res://White.material" type="Material" id=3]
-[ext_resource path="res://Main_BodyRed.material" type="Material" id=4]
+[ext_resource path="res://Materials/Main_BodyRed.material" type="Material" id=4]
 
 [resource]
 resource_name = "Car_Red"

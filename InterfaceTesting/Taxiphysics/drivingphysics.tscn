@@ -1,28 +1,27 @@
-[gd_scene load_steps=52 format=2]
+[gd_scene load_steps=51 format=2]
 
 [ext_resource path="res://Taxiphysics/Taxi.tscn" type="PackedScene" id=1]
-[ext_resource path="res://default_env.tres" type="Environment" id=2]
+[ext_resource path="res://Textures/default_env.tres" type="Environment" id=2]
 [ext_resource path="res://2x/sudewalkgrass_type3@2x.png" type="Texture" id=3]
-[ext_resource path="res://roadmesh.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Textures/roadmesh.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Taxiphysics/Wedge.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Taxiphysics/Camera_offset.gd" type="Script" id=6]
-[ext_resource path="res://Enemy.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Taxiphysics/Pause.gd" type="Script" id=8]
 [ext_resource path="res://PauseMenuNewIcons/1x/ResumePressed.png" type="Texture" id=9]
 [ext_resource path="res://PauseMenuNewIcons/1x/Asset 24.png" type="Texture" id=10]
-[ext_resource path="res://intersection X (2).tres" type="ArrayMesh" id=11]
-[ext_resource path="res://sidewalkgrasstogether.tres" type="ArrayMesh" id=12]
-[ext_resource path="res://straight road _ (2).tres" type="ArrayMesh" id=13]
+[ext_resource path="res://Models/intersection X (2).tres" type="ArrayMesh" id=11]
+[ext_resource path="res://Textures/sidewalkgrasstogether.tres" type="ArrayMesh" id=12]
+[ext_resource path="res://Textures/straight road _ (2).tres" type="ArrayMesh" id=13]
 [ext_resource path="res://2x/Sidewalkgrass_type4@2x.png" type="Texture" id=14]
 [ext_resource path="res://PauseMenuNewIcons/1x/Asset 25.png" type="Texture" id=15]
 [ext_resource path="res://PauseMenu/1x/Asset 12.png" type="Texture" id=16]
-[ext_resource path="res://SettingsButton.tscn" type="PackedScene" id=17]
+[ext_resource path="res://DigitalTechMenu/SettingsButton.tscn" type="PackedScene" id=17]
 [ext_resource path="res://PauseMenuNewIcons/1x/Asset 26.png" type="Texture" id=18]
-[ext_resource path="res://rightsidewalk.tres" type="Material" id=19]
+[ext_resource path="res://Textures/rightsidewalk.tres" type="Material" id=19]
 [ext_resource path="res://PauseMenuNewIcons/1x/ResumeHover.png" type="Texture" id=20]
 [ext_resource path="res://FailMenu/Retry_Hover.png" type="Texture" id=22]
 [ext_resource path="res://PauseMenuNewIcons/1x/ResumeNormal.png" type="Texture" id=23]
-[ext_resource path="res://Speedometer(3).tscn" type="PackedScene" id=24]
+[ext_resource path="res://Models/Speedometer(3).tscn" type="PackedScene" id=24]
 [ext_resource path="res://FailMenu/Retry_Normal.png" type="Texture" id=25]
 [ext_resource path="res://FailMenu/Retry_Select.png" type="Texture" id=26]
 [ext_resource path="res://FailMenu/GameOverScreen.png" type="Texture" id=27]
@@ -408,8 +407,6 @@ light_color = Color( 0.909804, 0.862745, 0.678431, 1 )
 light_energy = 8.57
 spot_range = 17.4
 
-[node name="Enemy" parent="." instance=ExtResource( 7 )]
-
 [node name="Pause" type="Control" parent="."]
 pause_mode = 2
 margin_right = 1024.0
@@ -524,7 +521,6 @@ transform = Transform( 6, 0, 0, 0, 2, 0, 0, 0, 4, 250.889, 0.726501, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Wedge2/StaticBody"]
 shape = SubResource( 24 )
-
 [connection signal="area_entered" from="Player/Player/EnemyChecker" to="Player/Player" method="_on_EnemyChecker_area_entered"]
 [connection signal="body_entered" from="Player/Player/EnemyChecker" to="Player/Player" method="_on_EnemyChecker_body_entered"]
 [connection signal="pressed" from="Pause/MainMenu/MenuButton" to="Pause" method="_on_MenuButton_pressed"]
