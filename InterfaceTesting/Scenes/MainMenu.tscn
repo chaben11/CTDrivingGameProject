@@ -3,21 +3,21 @@
 [ext_resource path="res://DigitalTechMenu/SettingsButton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://PauseMenuNewIcons/1x/ExitHover.png" type="Texture" id=2]
 [ext_resource path="res://PauseMenuNewIcons/1x/ExitNormal.png" type="Texture" id=3]
-[ext_resource path="res://DigitalTechMenu/Buttons/The City-Normal.png" type="Texture" id=4]
+[ext_resource path="res://DigitalTechMenu/Buttons/Garage-Select.png" type="Texture" id=4]
 [ext_resource path="res://PauseMenuNewIcons/1x/ExitPressed.png" type="Texture" id=5]
-[ext_resource path="res://DigitalTechMenu/Buttons/The City-Hover.png" type="Texture" id=6]
+[ext_resource path="res://DigitalTechMenu/Buttons/Garage-Normal.png" type="Texture" id=6]
 [ext_resource path="res://DigitalTechMenu/1x/1x/Asset 35.png" type="Texture" id=7]
-[ext_resource path="res://DigitalTechMenu/Buttons/Highway Normal.png" type="Texture" id=8]
-[ext_resource path="res://DigitalTechMenu/Buttons/Highway Hover.png" type="Texture" id=9]
-[ext_resource path="res://DigitalTechMenu/Buttons/Highway Select.png" type="Texture" id=10]
-[ext_resource path="res://DigitalTechMenu/Buttons/Mine Hover.png" type="Texture" id=11]
-[ext_resource path="res://DigitalTechMenu/Buttons/Mine Normal.png" type="Texture" id=12]
-[ext_resource path="res://DigitalTechMenu/Buttons/Garage Select.png" type="Texture" id=13]
-[ext_resource path="res://DigitalTechMenu/Buttons/Mine Select.png" type="Texture" id=14]
+[ext_resource path="res://DigitalTechMenu/Buttons/Highway-Hover.png" type="Texture" id=8]
+[ext_resource path="res://DigitalTechMenu/Buttons/Highway-Normal.png" type="Texture" id=9]
+[ext_resource path="res://DigitalTechMenu/Buttons/Highway-Select.png" type="Texture" id=10]
+[ext_resource path="res://DigitalTechMenu/Buttons/Mine-Hover.png" type="Texture" id=11]
+[ext_resource path="res://DigitalTechMenu/Buttons/Mine-Normal.png" type="Texture" id=12]
+[ext_resource path="res://DigitalTechMenu/Buttons/City-Hover.png" type="Texture" id=13]
+[ext_resource path="res://DigitalTechMenu/Buttons/Mine-Select.png" type="Texture" id=14]
 [ext_resource path="res://Scripts/MainMenu.gd" type="Script" id=15]
-[ext_resource path="res://DigitalTechMenu/Buttons/Garage Normal.png" type="Texture" id=16]
-[ext_resource path="res://DigitalTechMenu/Buttons/Garage Hover.png" type="Texture" id=17]
-[ext_resource path="res://DigitalTechMenu/Buttons/The City - Click.png" type="Texture" id=18]
+[ext_resource path="res://DigitalTechMenu/Buttons/City-Select.png" type="Texture" id=16]
+[ext_resource path="res://DigitalTechMenu/Buttons/City-Normal.png" type="Texture" id=17]
+[ext_resource path="res://DigitalTechMenu/Buttons/Garage-Hover.png" type="Texture" id=18]
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
@@ -66,9 +66,9 @@ margin_left = 419.0
 margin_top = 125.22
 margin_right = 635.0
 margin_bottom = 331.22
-texture_normal = ExtResource( 8 )
+texture_normal = ExtResource( 9 )
 texture_pressed = ExtResource( 10 )
-texture_hover = ExtResource( 9 )
+texture_hover = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -78,9 +78,9 @@ margin_left = 419.0
 margin_top = 372.855
 margin_right = 635.0
 margin_bottom = 578.855
-texture_normal = ExtResource( 16 )
-texture_pressed = ExtResource( 13 )
-texture_hover = ExtResource( 17 )
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 4 )
+texture_hover = ExtResource( 18 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -90,15 +90,16 @@ margin_left = 134.03
 margin_top = 125.22
 margin_right = 350.03
 margin_bottom = 331.22
-texture_normal = ExtResource( 6 )
-texture_pressed = ExtResource( 18 )
-texture_hover = ExtResource( 4 )
+texture_normal = ExtResource( 17 )
+texture_pressed = ExtResource( 16 )
+texture_hover = ExtResource( 13 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
 [connection signal="pressed" from="SettingsButton" to="." method="_on_SettingsButton_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_QuitButton_pressed"]
 [connection signal="pressed" from="The Mine" to="." method="_on_The_Mine_pressed"]
 [connection signal="pressed" from="The Highway" to="." method="_on_The_Highway_pressed"]
-[connection signal="pressed" from="Garage" to="." method="_on_The_Highway_pressed"]
+[connection signal="pressed" from="Garage" to="." method="_on_Garage_pressed"]
 [connection signal="pressed" from="The City" to="." method="_on_The_City_pressed"]

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Highway Hover.png-863e171e92beaa2d81ba5622276ec056.stex"
+path="res://.import/City-Hover.png-20ae9c6841a0d81ecbd4f106c52525ac.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://DigitalTechMenu/Buttons/Highway Hover.png"
-dest_files=[ "res://.import/Highway Hover.png-863e171e92beaa2d81ba5622276ec056.stex" ]
+source_file="res://DigitalTechMenu/Buttons/City-Hover.png"
+dest_files=[ "res://.import/City-Hover.png-20ae9c6841a0d81ecbd4f106c52525ac.stex" ]
 
 [params]
 

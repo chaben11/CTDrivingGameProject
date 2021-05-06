@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Highway Select.png-37f687153edeb66f1e0ff65e02677d0f.stex"
+path="res://.import/SoundOn-Select.png-529bc12f22af6d0d2a1f7608d5feac95.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://DigitalTechMenu/Buttons/Highway Select.png"
-dest_files=[ "res://.import/Highway Select.png-37f687153edeb66f1e0ff65e02677d0f.stex" ]
+source_file="res://DigitalTechMenu/Buttons/SoundOn-Select.png"
+dest_files=[ "res://.import/SoundOn-Select.png-529bc12f22af6d0d2a1f7608d5feac95.stex" ]
 
 [params]
 

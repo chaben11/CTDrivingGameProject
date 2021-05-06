@@ -4,10 +4,11 @@
 [ext_resource path="res://Materials/chrome.material" type="Material" id=2]
 [ext_resource path="res://Materials/head lights.material" type="Material" id=3]
 [ext_resource path="res://Materials/reverce.material" type="Material" id=4]
-[ext_resource path="res://black.material" type="Material" id=5]
+[ext_resource path="res://Materials/black.material" type="Material" id=5]
 [ext_resource path="res://Materials/brake light.material" type="Material" id=8]
 [ext_resource path="res://Materials/indicater.material" type="Material" id=9]
 [ext_resource path="res://Scripts/Spatial.gd" type="Script" id=10]
+
 
 
 [sub_resource type="SpatialMaterial" id=1]

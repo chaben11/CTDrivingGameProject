@@ -5,8 +5,8 @@ extends KinematicBody
 # var a = 2
 # var b = "text"
 var speed = Vector3()
-onready var sportscar = preload("res://SportsCar_Model.tres")
-onready var  Suv = preload("res://SUV_Model.tres")
+onready var sportscar = preload("res://Cars/SportsCar_Model.tres")
+onready var  Suv = preload("res://Models/SUV_Model.tres")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if garage.car_index == 1:

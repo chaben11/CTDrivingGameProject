@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=2]
+[gd_scene load_steps=52 format=2]
 
 [ext_resource path="res://Taxiphysics/Taxi.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Textures/default_env.tres" type="Environment" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Textures/roadmesh.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Taxiphysics/Wedge.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Taxiphysics/Camera_offset.gd" type="Script" id=6]
+[ext_resource path="res://Models/Enemy.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Taxiphysics/Pause.gd" type="Script" id=8]
 [ext_resource path="res://PauseMenuNewIcons/1x/ResumePressed.png" type="Texture" id=9]
 [ext_resource path="res://PauseMenuNewIcons/1x/Asset 24.png" type="Texture" id=10]
@@ -521,6 +522,9 @@ transform = Transform( 6, 0, 0, 0, 2, 0, 0, 0, 4, 250.889, 0.726501, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Wedge2/StaticBody"]
 shape = SubResource( 24 )
+
+[node name="Enemy" parent="." instance=ExtResource( 7 )]
+
 [connection signal="area_entered" from="Player/Player/EnemyChecker" to="Player/Player" method="_on_EnemyChecker_area_entered"]
 [connection signal="body_entered" from="Player/Player/EnemyChecker" to="Player/Player" method="_on_EnemyChecker_body_entered"]
 [connection signal="pressed" from="Pause/MainMenu/MenuButton" to="Pause" method="_on_MenuButton_pressed"]

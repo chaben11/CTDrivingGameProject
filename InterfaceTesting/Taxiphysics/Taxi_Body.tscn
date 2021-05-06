@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Materials/Taxi_exhast_001.material" type="Material" id=1]
 [ext_resource path="res://Materials/reverse light_001.material" type="Material" id=2]
@@ -18,10 +18,7 @@
 [ext_resource path="res://Materials/Taxi_White.material" type="Material" id=16]
 [ext_resource path="res://Materials/licence.material" type="Material" id=17]
 [ext_resource path="res://Materials/indicater_001.material" type="Material" id=18]
-[ext_resource path="res://Materials/black.material" type="Material" id=19]
 [ext_resource path="res://Materials/black.material" type="Material" id=20]
-
-
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "Taxi"
@@ -236,7 +233,7 @@ surfaces/17 = {
 "blend_shape_data": [  ],
 "format": 97559,
 "index_count": 108,
-"material": ExtResource( 19 ),
+"material": ExtResource( 20 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 72

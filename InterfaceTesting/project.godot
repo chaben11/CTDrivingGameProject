@@ -10,13 +10,12 @@ config_version=4
 
 _global_script_classes=[  ]
 _global_script_class_icons={
-
 }
 
 [application]
 
-config/name="InterfaceTesting"
-run/main_scene="res://Scenes/Spatial.tscn"
+config/name="CT Driving"
+run/main_scene="res://Scenes/MainMenu.tscn"
 
 [autoload]
 
