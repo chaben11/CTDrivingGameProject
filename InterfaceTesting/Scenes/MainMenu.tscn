@@ -38,9 +38,9 @@ margin_right = 352.03
 margin_bottom = 578.855
 
 [node name="QuitButton" type="TextureButton" parent="."]
-margin_left = 704.795
+margin_left = 700.3
 margin_top = 372.855
-margin_right = 920.795
+margin_right = 916.3
 margin_bottom = 578.855
 texture_normal = ExtResource( 3 )
 texture_pressed = ExtResource( 5 )
@@ -50,9 +50,9 @@ __meta__ = {
 }
 
 [node name="The Mine" type="TextureButton" parent="."]
-margin_left = 704.795
+margin_left = 706.293
 margin_top = 125.22
-margin_right = 920.795
+margin_right = 923.293
 margin_bottom = 331.22
 texture_normal = ExtResource( 12 )
 texture_pressed = ExtResource( 14 )
@@ -74,10 +74,10 @@ __meta__ = {
 }
 
 [node name="Garage" type="TextureButton" parent="."]
-margin_left = 419.0
-margin_top = 372.855
-margin_right = 635.0
-margin_bottom = 578.855
+margin_left = 413.007
+margin_top = 378.848
+margin_right = 629.007
+margin_bottom = 584.848
 texture_normal = ExtResource( 6 )
 texture_pressed = ExtResource( 4 )
 texture_hover = ExtResource( 18 )
@@ -86,9 +86,9 @@ __meta__ = {
 }
 
 [node name="The City" type="TextureButton" parent="."]
-margin_left = 134.03
+margin_left = 132.532
 margin_top = 125.22
-margin_right = 350.03
+margin_right = 348.532
 margin_bottom = 331.22
 texture_normal = ExtResource( 17 )
 texture_pressed = ExtResource( 16 )
