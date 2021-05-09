@@ -48,10 +48,11 @@ func _process(_delta):
 			engine_force +=15
 	if turn == false:
 		steering = 0
-	print(rotation_degrees.z)
+	print(translation.z)
 func _integrate_forces(_state): 
 	rotation_degrees.y = 90
 	rotation_degrees.z = 0
+	translation.z = -3
 func _on_EnemyChecker_body_entered(body):
 	if "Enemy" in body.name:
 		print("check")
