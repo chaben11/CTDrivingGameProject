@@ -1,0 +1,124 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Cars/AMBULANCE WHITE.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Cars/Coffin Cart.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/Spatial.gd" type="Script" id=4]
+[ext_resource path="res://Models/new_boxshape.tres" type="Shape" id=8]
+
+[sub_resource type="BoxShape" id=5]
+extents = Vector3( 2.53963, 2.93305, 5.49878 )
+
+[sub_resource type="BoxShape" id=6]
+extents = Vector3( 2.5, 1, 6 )
+
+[sub_resource type="BoxShape" id=9]
+extents = Vector3( 2.5, 1, 6 )
+
+[sub_resource type="Animation" id=10]
+length = 11.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Enemy:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5, 5.5, 6, 7, 7.8, 9.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, -11 ), Vector3( 0, 0, 51 ), Vector3( 0, 0, 51 ), Vector3( 0, 0, 51 ), Vector3( 0, 0, 51 ), Vector3( 0, 0, -11 ), Vector3( 0, 0, -11 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Enemy:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.5, 2.7, 5.5, 6, 7, 7.8, 9.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 11, 0, -11 ), Vector3( 11, 0, -11 ), Vector3( 11, 0, 54 ), Vector3( 11, 0, 54 ), Vector3( 11, 0, 54 ), Vector3( 11, 0, 54 ), Vector3( 11, 0, 54 ), Vector3( 11, 0, -11 ) ]
+}
+
+[sub_resource type="Animation" id=11]
+length = 5.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Enemy:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.7, 4.6, 5.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, -91 ), Vector3( 0, 0, 100 ), Vector3( 0, 0, 100 ), Vector3( 0, 0, 100 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Enemy2:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2.7, 4.6, 5.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 11, 0, -91 ), Vector3( 11, 0, -91 ), Vector3( 11, 0, 100 ), Vector3( 11, 0, 100 ) ]
+}
+
+[node name="Enemy" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 47.6665, 1.1674, -21.702 )
+script = ExtResource( 4 )
+
+[node name="Enemy" type="KinematicBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -91 )
+
+[node name="AMBULANCE WHITE" parent="Enemy" instance=ExtResource( 1 )]
+
+[node name="CollisionShape" type="CollisionShape" parent="Enemy"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.30958, 1.46455, 0 )
+shape = SubResource( 5 )
+
+[node name="Honk_1" type="Area" parent="Enemy"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Enemy/Honk_1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 80 )
+shape = SubResource( 6 )
+
+[node name="SpotLight" type="SpotLight" parent="Enemy"]
+transform = Transform( -1, 0, -5.96046e-08, 0, 1, 0, 5.96046e-08, 0, -1, 0, -0.274, 1.549 )
+visible = false
+light_color = Color( 0.929412, 0.807843, 0.447059, 1 )
+light_energy = 2.03
+spot_range = 6.5
+
+[node name="Enemy2" type="KinematicBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -91 )
+
+[node name="Coffin Cart" parent="Enemy2" instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Enemy2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.857087, 1.82339 )
+shape = ExtResource( 8 )
+
+[node name="Honk_2" type="Area" parent="Enemy2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Enemy2/Honk_2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 80 )
+shape = SubResource( 9 )
+
+[node name="SpotLight2" type="SpotLight" parent="Enemy2"]
+transform = Transform( -1, 0, -5.96046e-08, 0, 1, 0, 5.96046e-08, 0, -1, 0, -0.274, 1.54856 )
+visible = false
+light_color = Color( 0.929412, 0.807843, 0.447059, 1 )
+light_energy = 2.03
+spot_range = 6.5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+"anims/New Anim" = SubResource( 10 )
+"anims/New Anim (copy)" = SubResource( 11 )
