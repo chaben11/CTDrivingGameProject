@@ -5,16 +5,16 @@
 [ext_resource path="res://Scripts/Spatial.gd" type="Script" id=4]
 [ext_resource path="res://Models/new_boxshape.tres" type="Shape" id=8]
 
-[sub_resource type="BoxShape" id=5]
+[sub_resource type="BoxShape" id=1]
 extents = Vector3( 2.53963, 2.93305, 5.49878 )
 
-[sub_resource type="BoxShape" id=6]
+[sub_resource type="BoxShape" id=2]
 extents = Vector3( 2.5, 1, 6 )
 
-[sub_resource type="BoxShape" id=9]
+[sub_resource type="BoxShape" id=3]
 extents = Vector3( 2.5, 1, 6 )
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=4]
 length = 11.0
 loop = true
 tracks/0/type = "value"
@@ -42,7 +42,7 @@ tracks/1/keys = {
 "values": [ Vector3( 11, 0, -11 ), Vector3( 11, 0, -11 ), Vector3( 11, 0, 54 ), Vector3( 11, 0, 54 ), Vector3( 11, 0, 54 ), Vector3( 11, 0, 54 ), Vector3( 11, 0, 54 ), Vector3( 11, 0, -11 ) ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=5]
 length = 5.6
 loop = true
 tracks/0/type = "value"
@@ -81,13 +81,13 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -91 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Enemy"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.30958, 1.46455, 0 )
-shape = SubResource( 5 )
+shape = SubResource( 1 )
 
 [node name="Honk_1" type="Area" parent="Enemy"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Enemy/Honk_1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 80 )
-shape = SubResource( 6 )
+shape = SubResource( 2 )
 
 [node name="SpotLight" type="SpotLight" parent="Enemy"]
 transform = Transform( -1, 0, -5.96046e-08, 0, 1, 0, 5.96046e-08, 0, -1, 0, -0.274, 1.549 )
@@ -110,7 +110,7 @@ shape = ExtResource( 8 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Enemy2/Honk_2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 80 )
-shape = SubResource( 9 )
+shape = SubResource( 3 )
 
 [node name="SpotLight2" type="SpotLight" parent="Enemy2"]
 transform = Transform( -1, 0, -5.96046e-08, 0, 1, 0, 5.96046e-08, 0, -1, 0, -0.274, 1.54856 )
@@ -120,5 +120,6 @@ light_energy = 2.03
 spot_range = 6.5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-"anims/New Anim" = SubResource( 10 )
-"anims/New Anim (copy)" = SubResource( 11 )
+playback_speed = 0.5
+"anims/New Anim" = SubResource( 4 )
+"anims/New Anim (copy)" = SubResource( 5 )

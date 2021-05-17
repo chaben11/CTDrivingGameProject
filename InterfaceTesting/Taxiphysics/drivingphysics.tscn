@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://Taxiphysics/Taxi.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Textures/default_env.tres" type="Environment" id=2]
@@ -27,6 +27,9 @@
 [ext_resource path="res://FailMenu/Retry_Select.png" type="Texture" id=26]
 [ext_resource path="res://FailMenu/GameOverScreen.png" type="Texture" id=27]
 [ext_resource path="res://Taxiphysics/Failed.gd" type="Script" id=28]
+
+[sub_resource type="ConcavePolygonShape" id=17]
+data = PoolVector3Array( -10, -0.1, 10, -10, 0.1, 90, -10, -0.1, 90, -10, -0.1, 10, -10, 0.1, 10, -10, 0.1, 90, -10, 0.1, 10, 10, 0.1, 90, -10, 0.1, 90, -10, 0.1, 10, 10, 0.1, 10, 10, 0.1, 90, 10, 0.1, 10, 10, -0.1, 90, 10, 0.1, 90, 10, 0.1, 10, 10, -0.1, 10, 10, -0.1, 90, 10, -0.1, 10, -10, -0.1, 90, 10, -0.1, 90, 10, -0.1, 10, -10, -0.1, 10, -10, -0.1, 90, -10, 0.1, 10, 10, -0.1, 10, 10, 0.1, 10, -10, 0.1, 10, -10, -0.1, 10, 10, -0.1, 10, 10, 0.1, 90, -10, -0.1, 90, -10, 0.1, 90, 10, 0.1, 90, 10, -0.1, 90, -10, -0.1, 90, -10, -0.1, -10, -90, 0.1, -10, -90, -0.1, -10, -10, -0.1, -10, -10, 0.1, -10, -90, 0.1, -10, -10, 0.1, -10, -90, 0.1, 10, -90, 0.1, -10, -10, 0.1, -10, -10, 0.1, 10, -90, 0.1, 10, -10, 0.1, 10, -90, -0.1, 10, -90, 0.1, 10, -10, 0.1, 10, -10, -0.1, 10, -90, -0.1, 10, -10, -0.1, 10, -90, -0.1, -10, -90, -0.1, 10, -10, -0.1, 10, -10, -0.1, -10, -90, -0.1, -10, -10, 0.1, -10, -10, -0.1, 10, -10, 0.1, 10, -10, 0.1, -10, -10, -0.1, -10, -10, -0.1, 10, -90, 0.1, 10, -90, -0.1, -10, -90, 0.1, -10, -90, 0.1, 10, -90, -0.1, 10, -90, -0.1, -10, -10, -0.1, -90, -10, 0.1, -10, -10, -0.1, -10, -10, -0.1, -90, -10, 0.1, -90, -10, 0.1, -10, -10, 0.1, -90, 10, 0.1, -10, -10, 0.1, -10, -10, 0.1, -90, 10, 0.1, -90, 10, 0.1, -10, 10, 0.1, -90, 10, -0.1, -10, 10, 0.1, -10, 10, 0.1, -90, 10, -0.1, -90, 10, -0.1, -10, 10, -0.1, -90, -10, -0.1, -10, 10, -0.1, -10, 10, -0.1, -90, -10, -0.1, -90, -10, -0.1, -10, -10, 0.1, -90, 10, -0.1, -90, 10, 0.1, -90, -10, 0.1, -90, -10, -0.1, -90, 10, -0.1, -90, 10, 0.1, -10, -10, -0.1, -10, -10, 0.1, -10, 10, 0.1, -10, 10, -0.1, -10, -10, -0.1, -10, 90, -0.1, -10, 10, 0.1, -10, 10, -0.1, -10, 90, -0.1, -10, 90, 0.1, -10, 10, 0.1, -10, 90, 0.1, -10, 10, 0.1, 10, 10, 0.1, -10, 90, 0.1, -10, 90, 0.1, 10, 10, 0.1, 10, 90, 0.1, 10, 10, -0.1, 10, 10, 0.1, 10, 90, 0.1, 10, 90, -0.1, 10, 10, -0.1, 10, 90, -0.1, 10, 10, -0.1, -10, 10, -0.1, 10, 90, -0.1, 10, 90, -0.1, -10, 10, -0.1, -10, 90, 0.1, -10, 90, -0.1, 10, 90, 0.1, 10, 90, 0.1, -10, 90, -0.1, -10, 90, -0.1, 10, 10, 0.1, 10, 10, -0.1, -10, 10, 0.1, -10, 10, 0.1, 10, 10, -0.1, 10, 10, -0.1, -10, -10, -0.1, -10, 10, 0.1, -10, -10, 0.1, -10, -10, -0.1, -10, 10, -0.1, -10, 10, 0.1, -10, 10, -0.1, -10, 10, 0.1, 10, 10, 0.1, -10, 10, -0.1, -10, 10, -0.1, 10, 10, 0.1, 10, 10, -0.1, 10, -10, 0.1, 10, 10, 0.1, 10, 10, -0.1, 10, -10, -0.1, 10, -10, 0.1, 10, -10, -0.1, 10, -10, 0.1, -10, -10, 0.1, 10, -10, -0.1, 10, -10, -0.1, -10, -10, 0.1, -10, 10, -0.1, -10, -10, -0.1, 10, 10, -0.1, 10, 10, -0.1, -10, -10, -0.1, -10, -10, -0.1, 10, 10, 0.1, 10, -10, 0.1, -10, 10, 0.1, -10, 10, 0.1, 10, -10, 0.1, 10, -10, 0.1, -10 )
 
 [sub_resource type="SpatialMaterial" id=1]
 params_cull_mode = 2
@@ -170,12 +173,26 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 234.277, -0.166885, 0.170784 )
 mesh = ExtResource( 11 )
 material/1 = null
 
+[node name="Cube8" parent="Roads" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 414.27, -0.167, 0.171 )
+mesh = ExtResource( 11 )
+material/1 = null
+
+[node name="StaticBody" type="StaticBody" parent="Roads/Cube8"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Roads/Cube8/StaticBody"]
+shape = SubResource( 17 )
+
 [node name="Cube6" parent="Roads" instance=ExtResource( 4 )]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 54.32, -0.167, -129 )
 mesh = ExtResource( 13 )
 
 [node name="Cube7" parent="Roads" instance=ExtResource( 4 )]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 234.32, -0.167, -129 )
+mesh = ExtResource( 13 )
+
+[node name="Cube9" parent="Roads" instance=ExtResource( 4 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 414.32, -0.167, -129 )
 mesh = ExtResource( 13 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Roads"]
@@ -198,6 +215,11 @@ transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 284.122, -0.167, -29.6014 )
 mesh = SubResource( 7 )
 material/0 = null
 
+[node name="MeshInstance12" type="MeshInstance" parent="Roads"]
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 464.122, -0.167, -29.601 )
+mesh = SubResource( 7 )
+material/0 = null
+
 [node name="MeshInstance5" type="MeshInstance" parent="Roads"]
 transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 184, -0.167, 29.912 )
 mesh = SubResource( 8 )
@@ -208,7 +230,22 @@ transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 284.269, -0.167, 29.912 )
 mesh = SubResource( 8 )
 material/0 = null
 
+[node name="MeshInstance14" type="MeshInstance" parent="Roads"]
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 464.269, -0.167, 29.912 )
+mesh = SubResource( 8 )
+material/0 = null
+
+[node name="MeshInstance9" type="MeshInstance" parent="Roads"]
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 364.269, -0.167, 29.912 )
+mesh = SubResource( 8 )
+material/0 = null
+
 [node name="MeshInstance6" type="MeshInstance" parent="Roads"]
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 364.269, -0.167, -29.852 )
+mesh = SubResource( 11 )
+material/0 = null
+
+[node name="MeshInstance10" type="MeshInstance" parent="Roads"]
 transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 184.488, -0.167, -29.852 )
 mesh = SubResource( 11 )
 material/0 = null
@@ -224,6 +261,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 145.622, 0.084137, 0.170784 )
 [node name="CollisionShape" type="CollisionShape" parent="Roads/StaticBody"]
 shape = SubResource( 12 )
 
+[node name="StaticBody2" type="StaticBody" parent="Roads"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 503.622, 0.084137, 0.170784 )
+
 [node name="Spatial" type="Spatial" parent="."]
 transform = Transform( 10, 0, 0, 0, 25, 0, 0, 0, 10, 84, -6.898, -29.777 )
 
@@ -232,12 +272,12 @@ mesh = SubResource( 13 )
 material/0 = null
 
 [node name="MeshInstance3" type="MeshInstance" parent="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1.2, 0, 0, 0, 1, 2, 1.41257, 0 )
+transform = Transform( 1, 0, 0, 0, 1.2, 0, 0, 0, 1, 2, 0.788877, 0 )
 mesh = SubResource( 13 )
 material/0 = null
 
 [node name="MeshInstance2" type="MeshInstance" parent="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.819821, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.551275, 0 )
 mesh = SubResource( 13 )
 material/0 = null
 
@@ -282,7 +322,7 @@ mesh = SubResource( 13 )
 material/0 = null
 
 [node name="MeshInstance11" type="MeshInstance" parent="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 10, 1.03396, 0 )
+transform = Transform( 0.999802, 0.0796516, 0, -0.00796516, 1.59968, 0, 0, 0, 1, 10, 1.03396, 0 )
 mesh = SubResource( 13 )
 material/0 = null
 
@@ -304,6 +344,41 @@ transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 24, 1.40228, 0 )
 mesh = SubResource( 13 )
 material/0 = null
 
+[node name="MeshInstance17" type="MeshInstance" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 26.036, 0.771, 0 )
+mesh = SubResource( 13 )
+material/0 = null
+
+[node name="MeshInstance18" type="MeshInstance" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 28, 1.92027, 0 )
+mesh = SubResource( 13 )
+material/0 = null
+
+[node name="MeshInstance19" type="MeshInstance" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 30, -0.0126581, 0 )
+mesh = SubResource( 13 )
+material/0 = null
+
+[node name="MeshInstance20" type="MeshInstance" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 36, -0.013, 0 )
+mesh = SubResource( 13 )
+material/0 = null
+
+[node name="MeshInstance21" type="MeshInstance" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 38, 1.748, 0 )
+mesh = SubResource( 13 )
+material/0 = null
+
+[node name="MeshInstance22" type="MeshInstance" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 40, -0.800821, 0 )
+mesh = SubResource( 13 )
+material/0 = null
+
+[node name="MeshInstance23" type="MeshInstance" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 42, 0.873495, 0 )
+mesh = SubResource( 13 )
+material/0 = null
+
 [node name="MeshInstance15" type="MeshInstance" parent="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 22, 1.03396, 0 )
 mesh = SubResource( 13 )
@@ -316,7 +391,7 @@ environment = ExtResource( 2 )
 script = ExtResource( 6 )
 
 [node name="Camera" type="Camera" parent="Player"]
-transform = Transform( -4.37114e-08, 0.266128, -0.963938, 0, 0.963937, 0.266128, 1, 1.16328e-08, -4.21351e-08, -16.025, 7.744, 0 )
+transform = Transform( 0.5, 0.230474, -0.834795, 0, 0.963937, 0.266128, 0.866025, -0.133064, 0.481969, -10, 7.744, 3 )
 current = true
 fov = 48.4
 
@@ -324,18 +399,6 @@ fov = 48.4
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, -3 )
 mass = 51.0204
 physics_material_override = SubResource( 14 )
-
-[node name="Label" type="Label" parent="Player/Player"]
-modulate = Color( 0, 0, 0, 1 )
-margin_left = 12.0
-margin_top = 22.0
-margin_right = 165.0
-margin_bottom = 82.0
-rect_scale = Vector2( 3, 3 )
-text = "80Km/h"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="EnemyChecker" type="Area" parent="Player/Player"]
 
@@ -452,7 +515,7 @@ transform = Transform( -0.917359, -1.36697e-08, -0.39806, -0.258652, 0.760122, 0
 [node name="Enemy" parent="." instance=ExtResource( 7 )]
 
 [node name="Enemy2" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 228.667, 1.1674, -21.702 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 229.983, 2, -21.702 )
 
 [connection signal="area_entered" from="Player/Player/EnemyChecker" to="Player/Player" method="_on_EnemyChecker_area_entered"]
 [connection signal="body_entered" from="Player/Player/EnemyChecker" to="Player/Player" method="_on_EnemyChecker_body_entered"]

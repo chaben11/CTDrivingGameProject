@@ -12,11 +12,11 @@ func _ready():
 func _process(delta):
 	playercarspeed = get_parent().get_parent().get_parent().get_node("Player/Player").engine_force
 	if playercarspeed > 0:
-		$Pointer.rotation_degrees.y = -playercarspeed
+		$Pointer.rotation_degrees.y = -playercarspeed/2
 	elif playercarspeed < 0:
-		$Pointer.rotation_degrees.y = playercarspeed
+		$Pointer.rotation_degrees.y = playercarspeed/2
 	elif playercarspeed == 0:
-		$Pointer.rotation_degrees.y = playercarspeed
+		$Pointer.rotation_degrees.y = playercarspeed/2
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

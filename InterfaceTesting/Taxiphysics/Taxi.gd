@@ -11,15 +11,20 @@ func _ready():
 	pass # Replace with function body.
 	
 func _input(_event):
-
+	print(engine_force)
 	if Input.is_action_pressed("Acclerate"):
-		if engine_force < 180:
-			engine_force += 15
+		if engine_force < 300:
+			engine_force += 180
 			pressed = true
+		elif engine_force > 300:
+			engine_force = 300
+
 	elif Input.is_action_pressed("Decellerate"):
-		if engine_force > -180:
-			engine_force -= 15
+		if engine_force > -300:
+			engine_force -= 150
 			pressed = true
+		elif engine_force < -300:
+			engine_force = -300
 	elif Input.is_action_just_released("Acclerate"):
 		pressed = false
 	elif Input.is_action_just_released("Decellerate"):
