@@ -20,6 +20,7 @@
 [ext_resource path="res://PauseMenuNewIcons/1x/Asset 26.png" type="Texture" id=18]
 [ext_resource path="res://Textures/rightsidewalk.tres" type="Material" id=19]
 [ext_resource path="res://PauseMenuNewIcons/1x/ResumeHover.png" type="Texture" id=20]
+[ext_resource path="res://Models/Enemy3.tscn" type="PackedScene" id=21]
 [ext_resource path="res://FailMenu/Retry_Hover.png" type="Texture" id=22]
 [ext_resource path="res://PauseMenuNewIcons/1x/ResumeNormal.png" type="Texture" id=23]
 [ext_resource path="res://Models/Speedometer(3).tscn" type="PackedScene" id=24]
@@ -28,27 +29,13 @@
 [ext_resource path="res://FailMenu/GameOverScreen.png" type="Texture" id=27]
 [ext_resource path="res://Taxiphysics/Failed.gd" type="Script" id=28]
 
-[sub_resource type="ConcavePolygonShape" id=17]
-data = PoolVector3Array( -10, -0.1, 10, -10, 0.1, 90, -10, -0.1, 90, -10, -0.1, 10, -10, 0.1, 10, -10, 0.1, 90, -10, 0.1, 10, 10, 0.1, 90, -10, 0.1, 90, -10, 0.1, 10, 10, 0.1, 10, 10, 0.1, 90, 10, 0.1, 10, 10, -0.1, 90, 10, 0.1, 90, 10, 0.1, 10, 10, -0.1, 10, 10, -0.1, 90, 10, -0.1, 10, -10, -0.1, 90, 10, -0.1, 90, 10, -0.1, 10, -10, -0.1, 10, -10, -0.1, 90, -10, 0.1, 10, 10, -0.1, 10, 10, 0.1, 10, -10, 0.1, 10, -10, -0.1, 10, 10, -0.1, 10, 10, 0.1, 90, -10, -0.1, 90, -10, 0.1, 90, 10, 0.1, 90, 10, -0.1, 90, -10, -0.1, 90, -10, -0.1, -10, -90, 0.1, -10, -90, -0.1, -10, -10, -0.1, -10, -10, 0.1, -10, -90, 0.1, -10, -10, 0.1, -10, -90, 0.1, 10, -90, 0.1, -10, -10, 0.1, -10, -10, 0.1, 10, -90, 0.1, 10, -10, 0.1, 10, -90, -0.1, 10, -90, 0.1, 10, -10, 0.1, 10, -10, -0.1, 10, -90, -0.1, 10, -10, -0.1, 10, -90, -0.1, -10, -90, -0.1, 10, -10, -0.1, 10, -10, -0.1, -10, -90, -0.1, -10, -10, 0.1, -10, -10, -0.1, 10, -10, 0.1, 10, -10, 0.1, -10, -10, -0.1, -10, -10, -0.1, 10, -90, 0.1, 10, -90, -0.1, -10, -90, 0.1, -10, -90, 0.1, 10, -90, -0.1, 10, -90, -0.1, -10, -10, -0.1, -90, -10, 0.1, -10, -10, -0.1, -10, -10, -0.1, -90, -10, 0.1, -90, -10, 0.1, -10, -10, 0.1, -90, 10, 0.1, -10, -10, 0.1, -10, -10, 0.1, -90, 10, 0.1, -90, 10, 0.1, -10, 10, 0.1, -90, 10, -0.1, -10, 10, 0.1, -10, 10, 0.1, -90, 10, -0.1, -90, 10, -0.1, -10, 10, -0.1, -90, -10, -0.1, -10, 10, -0.1, -10, 10, -0.1, -90, -10, -0.1, -90, -10, -0.1, -10, -10, 0.1, -90, 10, -0.1, -90, 10, 0.1, -90, -10, 0.1, -90, -10, -0.1, -90, 10, -0.1, -90, 10, 0.1, -10, -10, -0.1, -10, -10, 0.1, -10, 10, 0.1, -10, 10, -0.1, -10, -10, -0.1, -10, 90, -0.1, -10, 10, 0.1, -10, 10, -0.1, -10, 90, -0.1, -10, 90, 0.1, -10, 10, 0.1, -10, 90, 0.1, -10, 10, 0.1, 10, 10, 0.1, -10, 90, 0.1, -10, 90, 0.1, 10, 10, 0.1, 10, 90, 0.1, 10, 10, -0.1, 10, 10, 0.1, 10, 90, 0.1, 10, 90, -0.1, 10, 10, -0.1, 10, 90, -0.1, 10, 10, -0.1, -10, 10, -0.1, 10, 90, -0.1, 10, 90, -0.1, -10, 10, -0.1, -10, 90, 0.1, -10, 90, -0.1, 10, 90, 0.1, 10, 90, 0.1, -10, 90, -0.1, -10, 90, -0.1, 10, 10, 0.1, 10, 10, -0.1, -10, 10, 0.1, -10, 10, 0.1, 10, 10, -0.1, 10, 10, -0.1, -10, -10, -0.1, -10, 10, 0.1, -10, -10, 0.1, -10, -10, -0.1, -10, 10, -0.1, -10, 10, 0.1, -10, 10, -0.1, -10, 10, 0.1, 10, 10, 0.1, -10, 10, -0.1, -10, 10, -0.1, 10, 10, 0.1, 10, 10, -0.1, 10, -10, 0.1, 10, 10, 0.1, 10, 10, -0.1, 10, -10, -0.1, 10, -10, 0.1, 10, -10, -0.1, 10, -10, 0.1, -10, -10, 0.1, 10, -10, -0.1, 10, -10, -0.1, -10, -10, 0.1, -10, 10, -0.1, -10, -10, -0.1, 10, 10, -0.1, 10, 10, -0.1, -10, -10, -0.1, -10, -10, -0.1, 10, 10, 0.1, 10, -10, 0.1, -10, 10, 0.1, -10, 10, 0.1, 10, -10, 0.1, 10, -10, 0.1, -10 )
+[sub_resource type="BoxShape" id=18]
+extents = Vector3( 10.4774, 1, 270 )
 
-[sub_resource type="SpatialMaterial" id=1]
+[sub_resource type="SpatialMaterial" id=2]
 params_cull_mode = 2
 albedo_texture = ExtResource( 3 )
 roughness = 0.4
-
-[sub_resource type="ArrayMesh" id=2]
-surfaces/0 = {
-"aabb": AABB( -20, -0.1, -10, 40, 0.20001, 20 ),
-"array_data": PoolByteArray( 0, 0, 160, 65, 146, 204, 204, 61, 0, 0, 32, 65, 0, 0, 127, 0, 129, 0, 0, 127, 221, 173, 59, 69, 0, 0, 160, 65, 146, 204, 204, 61, 0, 0, 32, 65, 0, 127, 0, 0, 0, 0, 127, 127, 237, 59, 227, 32, 0, 0, 160, 65, 146, 204, 204, 61, 0, 0, 32, 65, 127, 0, 0, 0, 0, 0, 127, 127, 0, 57, 0, 56, 0, 0, 160, 65, 8, 205, 204, 61, 0, 0, 32, 193, 0, 0, 129, 0, 127, 0, 0, 127, 0, 54, 0, 56, 0, 0, 160, 65, 8, 205, 204, 61, 0, 0, 32, 193, 0, 127, 0, 0, 0, 0, 127, 127, 60, 33, 227, 32, 0, 0, 160, 65, 8, 205, 204, 61, 0, 0, 32, 193, 127, 0, 0, 0, 0, 0, 126, 127, 0, 54, 0, 56, 0, 0, 160, 65, 8, 205, 204, 189, 0, 0, 32, 65, 0, 129, 0, 0, 0, 0, 127, 127, 0, 57, 0, 52, 0, 0, 160, 65, 8, 205, 204, 189, 0, 0, 32, 65, 0, 0, 127, 0, 129, 0, 0, 127, 221, 173, 59, 196, 0, 0, 160, 65, 8, 205, 204, 189, 0, 0, 32, 65, 127, 0, 0, 0, 0, 0, 126, 127, 0, 57, 0, 52, 0, 0, 160, 65, 146, 204, 204, 189, 0, 0, 32, 193, 0, 129, 0, 0, 0, 0, 127, 127, 0, 54, 0, 52, 0, 0, 160, 65, 146, 204, 204, 189, 0, 0, 32, 193, 0, 0, 129, 0, 127, 0, 0, 127, 0, 54, 0, 52, 0, 0, 160, 65, 146, 204, 204, 189, 0, 0, 32, 193, 127, 0, 0, 0, 0, 0, 127, 127, 0, 54, 0, 52, 0, 0, 160, 193, 146, 204, 204, 61, 0, 0, 32, 65, 129, 0, 0, 0, 0, 0, 127, 127, 0, 57, 0, 58, 0, 0, 160, 193, 146, 204, 204, 61, 0, 0, 32, 65, 0, 0, 127, 0, 129, 0, 0, 127, 93, 60, 59, 69, 0, 0, 160, 193, 146, 204, 204, 61, 0, 0, 32, 65, 0, 127, 0, 0, 0, 0, 127, 127, 237, 59, 236, 59, 0, 0, 160, 193, 8, 205, 204, 61, 0, 0, 32, 193, 129, 0, 0, 0, 0, 0, 127, 127, 0, 54, 0, 58, 0, 0, 160, 193, 8, 205, 204, 61, 0, 0, 32, 193, 0, 0, 129, 0, 127, 0, 0, 127, 0, 48, 0, 56, 0, 0, 160, 193, 8, 205, 204, 61, 0, 0, 32, 193, 0, 127, 0, 0, 0, 0, 127, 127, 60, 33, 236, 59, 0, 0, 160, 193, 8, 205, 204, 189, 0, 0, 32, 65, 129, 0, 0, 0, 0, 0, 127, 127, 0, 57, 0, 60, 0, 0, 160, 193, 8, 205, 204, 189, 0, 0, 32, 65, 0, 129, 0, 0, 0, 0, 127, 127, 0, 57, 0, 0, 0, 0, 160, 193, 8, 205, 204, 189, 0, 0, 32, 65, 0, 0, 127, 0, 129, 0, 0, 127, 93, 60, 59, 196, 0, 0, 160, 193, 146, 204, 204, 189, 0, 0, 32, 193, 129, 0, 0, 0, 0, 0, 127, 127, 0, 54, 0, 60, 0, 0, 160, 193, 146, 204, 204, 189, 0, 0, 32, 193, 0, 129, 0, 0, 0, 0, 127, 127, 0, 54, 0, 0, 0, 0, 160, 193, 146, 204, 204, 189, 0, 0, 32, 193, 0, 0, 129, 0, 127, 0, 0, 127, 0, 48, 0, 52 ),
-"array_index_data": PoolByteArray( 0, 0, 20, 0, 13, 0, 0, 0, 7, 0, 20, 0, 9, 0, 19, 0, 6, 0, 9, 0, 22, 0, 19, 0, 21, 0, 12, 0, 18, 0, 21, 0, 15, 0, 12, 0, 16, 0, 10, 0, 3, 0, 16, 0, 23, 0, 10, 0, 5, 0, 8, 0, 2, 0, 5, 0, 11, 0, 8, 0, 17, 0, 1, 0, 14, 0, 17, 0, 4, 0, 1, 0 ),
-"blend_shape_data": [  ],
-"format": 97559,
-"index_count": 36,
-"material": SubResource( 1 ),
-"primitive": 4,
-"skeleton_aabb": [  ],
-"vertex_count": 24
-}
 
 [sub_resource type="ArrayMesh" id=3]
 surfaces/0 = {
@@ -58,20 +45,32 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 97559,
 "index_count": 36,
+"material": SubResource( 2 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 24
+}
+
+[sub_resource type="ArrayMesh" id=4]
+surfaces/0 = {
+"aabb": AABB( -20, -0.1, -10, 40, 0.20001, 20 ),
+"array_data": PoolByteArray( 0, 0, 160, 65, 146, 204, 204, 61, 0, 0, 32, 65, 0, 0, 127, 0, 129, 0, 0, 127, 221, 173, 59, 69, 0, 0, 160, 65, 146, 204, 204, 61, 0, 0, 32, 65, 0, 127, 0, 0, 0, 0, 127, 127, 237, 59, 227, 32, 0, 0, 160, 65, 146, 204, 204, 61, 0, 0, 32, 65, 127, 0, 0, 0, 0, 0, 127, 127, 0, 57, 0, 56, 0, 0, 160, 65, 8, 205, 204, 61, 0, 0, 32, 193, 0, 0, 129, 0, 127, 0, 0, 127, 0, 54, 0, 56, 0, 0, 160, 65, 8, 205, 204, 61, 0, 0, 32, 193, 0, 127, 0, 0, 0, 0, 127, 127, 60, 33, 227, 32, 0, 0, 160, 65, 8, 205, 204, 61, 0, 0, 32, 193, 127, 0, 0, 0, 0, 0, 126, 127, 0, 54, 0, 56, 0, 0, 160, 65, 8, 205, 204, 189, 0, 0, 32, 65, 0, 129, 0, 0, 0, 0, 127, 127, 0, 57, 0, 52, 0, 0, 160, 65, 8, 205, 204, 189, 0, 0, 32, 65, 0, 0, 127, 0, 129, 0, 0, 127, 221, 173, 59, 196, 0, 0, 160, 65, 8, 205, 204, 189, 0, 0, 32, 65, 127, 0, 0, 0, 0, 0, 126, 127, 0, 57, 0, 52, 0, 0, 160, 65, 146, 204, 204, 189, 0, 0, 32, 193, 0, 129, 0, 0, 0, 0, 127, 127, 0, 54, 0, 52, 0, 0, 160, 65, 146, 204, 204, 189, 0, 0, 32, 193, 0, 0, 129, 0, 127, 0, 0, 127, 0, 54, 0, 52, 0, 0, 160, 65, 146, 204, 204, 189, 0, 0, 32, 193, 127, 0, 0, 0, 0, 0, 127, 127, 0, 54, 0, 52, 0, 0, 160, 193, 146, 204, 204, 61, 0, 0, 32, 65, 129, 0, 0, 0, 0, 0, 127, 127, 0, 57, 0, 58, 0, 0, 160, 193, 146, 204, 204, 61, 0, 0, 32, 65, 0, 0, 127, 0, 129, 0, 0, 127, 93, 60, 59, 69, 0, 0, 160, 193, 146, 204, 204, 61, 0, 0, 32, 65, 0, 127, 0, 0, 0, 0, 127, 127, 237, 59, 236, 59, 0, 0, 160, 193, 8, 205, 204, 61, 0, 0, 32, 193, 129, 0, 0, 0, 0, 0, 127, 127, 0, 54, 0, 58, 0, 0, 160, 193, 8, 205, 204, 61, 0, 0, 32, 193, 0, 0, 129, 0, 127, 0, 0, 127, 0, 48, 0, 56, 0, 0, 160, 193, 8, 205, 204, 61, 0, 0, 32, 193, 0, 127, 0, 0, 0, 0, 127, 127, 60, 33, 236, 59, 0, 0, 160, 193, 8, 205, 204, 189, 0, 0, 32, 65, 129, 0, 0, 0, 0, 0, 127, 127, 0, 57, 0, 60, 0, 0, 160, 193, 8, 205, 204, 189, 0, 0, 32, 65, 0, 129, 0, 0, 0, 0, 127, 127, 0, 57, 0, 0, 0, 0, 160, 193, 8, 205, 204, 189, 0, 0, 32, 65, 0, 0, 127, 0, 129, 0, 0, 127, 93, 60, 59, 196, 0, 0, 160, 193, 146, 204, 204, 189, 0, 0, 32, 193, 129, 0, 0, 0, 0, 0, 127, 127, 0, 54, 0, 60, 0, 0, 160, 193, 146, 204, 204, 189, 0, 0, 32, 193, 0, 129, 0, 0, 0, 0, 127, 127, 0, 54, 0, 0, 0, 0, 160, 193, 146, 204, 204, 189, 0, 0, 32, 193, 0, 0, 129, 0, 127, 0, 0, 127, 0, 48, 0, 52 ),
+"array_index_data": PoolByteArray( 0, 0, 20, 0, 13, 0, 0, 0, 7, 0, 20, 0, 9, 0, 19, 0, 6, 0, 9, 0, 22, 0, 19, 0, 21, 0, 12, 0, 18, 0, 21, 0, 15, 0, 12, 0, 16, 0, 10, 0, 3, 0, 16, 0, 23, 0, 10, 0, 5, 0, 8, 0, 2, 0, 5, 0, 11, 0, 8, 0, 17, 0, 1, 0, 14, 0, 17, 0, 4, 0, 1, 0 ),
+"blend_shape_data": [  ],
+"format": 97559,
+"index_count": 36,
 "material": ExtResource( 19 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 24
 }
 
-[sub_resource type="SpatialMaterial" id=4]
-resource_name = "sidewalk and grass together"
+[sub_resource type="SpatialMaterial" id=5]
 params_cull_mode = 2
 albedo_texture = ExtResource( 14 )
 roughness = 0.4
 
-[sub_resource type="ArrayMesh" id=5]
-resource_name = "Cube"
+[sub_resource type="ArrayMesh" id=6]
 surfaces/0 = {
 "aabb": AABB( -20, -0.1, -10, 40, 0.20001, 20 ),
 "array_data": PoolByteArray( 0, 0, 160, 65, 146, 204, 204, 61, 0, 0, 32, 65, 0, 0, 127, 0, 129, 0, 0, 127, 221, 173, 59, 69, 0, 0, 160, 65, 146, 204, 204, 61, 0, 0, 32, 65, 0, 127, 0, 0, 0, 0, 127, 127, 237, 59, 227, 32, 0, 0, 160, 65, 146, 204, 204, 61, 0, 0, 32, 65, 127, 0, 0, 0, 0, 0, 127, 127, 0, 57, 0, 56, 0, 0, 160, 65, 8, 205, 204, 61, 0, 0, 32, 193, 0, 0, 129, 0, 127, 0, 0, 127, 0, 54, 0, 56, 0, 0, 160, 65, 8, 205, 204, 61, 0, 0, 32, 193, 0, 127, 0, 0, 0, 0, 127, 127, 60, 33, 227, 32, 0, 0, 160, 65, 8, 205, 204, 61, 0, 0, 32, 193, 127, 0, 0, 0, 0, 0, 126, 127, 0, 54, 0, 56, 0, 0, 160, 65, 8, 205, 204, 189, 0, 0, 32, 65, 0, 129, 0, 0, 0, 0, 127, 127, 0, 57, 0, 52, 0, 0, 160, 65, 8, 205, 204, 189, 0, 0, 32, 65, 0, 0, 127, 0, 129, 0, 0, 127, 221, 173, 59, 196, 0, 0, 160, 65, 8, 205, 204, 189, 0, 0, 32, 65, 127, 0, 0, 0, 0, 0, 126, 127, 0, 57, 0, 52, 0, 0, 160, 65, 146, 204, 204, 189, 0, 0, 32, 193, 0, 129, 0, 0, 0, 0, 127, 127, 0, 54, 0, 52, 0, 0, 160, 65, 146, 204, 204, 189, 0, 0, 32, 193, 0, 0, 129, 0, 127, 0, 0, 127, 0, 54, 0, 52, 0, 0, 160, 65, 146, 204, 204, 189, 0, 0, 32, 193, 127, 0, 0, 0, 0, 0, 127, 127, 0, 54, 0, 52, 0, 0, 160, 193, 146, 204, 204, 61, 0, 0, 32, 65, 129, 0, 0, 0, 0, 0, 127, 127, 0, 57, 0, 58, 0, 0, 160, 193, 146, 204, 204, 61, 0, 0, 32, 65, 0, 0, 127, 0, 129, 0, 0, 127, 93, 60, 59, 69, 0, 0, 160, 193, 146, 204, 204, 61, 0, 0, 32, 65, 0, 127, 0, 0, 0, 0, 127, 127, 237, 59, 236, 59, 0, 0, 160, 193, 8, 205, 204, 61, 0, 0, 32, 193, 129, 0, 0, 0, 0, 0, 127, 127, 0, 54, 0, 58, 0, 0, 160, 193, 8, 205, 204, 61, 0, 0, 32, 193, 0, 0, 129, 0, 127, 0, 0, 127, 0, 48, 0, 56, 0, 0, 160, 193, 8, 205, 204, 61, 0, 0, 32, 193, 0, 127, 0, 0, 0, 0, 127, 127, 60, 33, 236, 59, 0, 0, 160, 193, 8, 205, 204, 189, 0, 0, 32, 65, 129, 0, 0, 0, 0, 0, 127, 127, 0, 57, 0, 60, 0, 0, 160, 193, 8, 205, 204, 189, 0, 0, 32, 65, 0, 129, 0, 0, 0, 0, 127, 127, 0, 57, 0, 0, 0, 0, 160, 193, 8, 205, 204, 189, 0, 0, 32, 65, 0, 0, 127, 0, 129, 0, 0, 127, 93, 60, 59, 196, 0, 0, 160, 193, 146, 204, 204, 189, 0, 0, 32, 193, 129, 0, 0, 0, 0, 0, 127, 127, 0, 54, 0, 60, 0, 0, 160, 193, 146, 204, 204, 189, 0, 0, 32, 193, 0, 129, 0, 0, 0, 0, 127, 127, 0, 54, 0, 0, 0, 0, 160, 193, 146, 204, 204, 189, 0, 0, 32, 193, 0, 0, 129, 0, 127, 0, 0, 127, 0, 48, 0, 52 ),
@@ -79,32 +78,16 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 97559,
 "index_count": 36,
-"material": SubResource( 4 ),
+"material": SubResource( 5 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 24
 }
 
-[sub_resource type="SpatialMaterial" id=6]
-resource_name = "sidewalk and grass together"
+[sub_resource type="SpatialMaterial" id=7]
 params_cull_mode = 2
 albedo_texture = ExtResource( 14 )
 roughness = 0.4
-
-[sub_resource type="ArrayMesh" id=7]
-resource_name = "Cube"
-surfaces/0 = {
-"aabb": AABB( -20, -0.1, -10, 40, 0.20001, 20 ),
-"array_data": PoolByteArray( 0, 0, 160, 65, 146, 204, 204, 61, 0, 0, 32, 65, 0, 0, 127, 0, 129, 0, 0, 127, 221, 173, 59, 69, 0, 0, 160, 65, 146, 204, 204, 61, 0, 0, 32, 65, 0, 127, 0, 0, 0, 0, 127, 127, 237, 59, 227, 32, 0, 0, 160, 65, 146, 204, 204, 61, 0, 0, 32, 65, 127, 0, 0, 0, 0, 0, 127, 127, 0, 57, 0, 56, 0, 0, 160, 65, 8, 205, 204, 61, 0, 0, 32, 193, 0, 0, 129, 0, 127, 0, 0, 127, 0, 54, 0, 56, 0, 0, 160, 65, 8, 205, 204, 61, 0, 0, 32, 193, 0, 127, 0, 0, 0, 0, 127, 127, 60, 33, 227, 32, 0, 0, 160, 65, 8, 205, 204, 61, 0, 0, 32, 193, 127, 0, 0, 0, 0, 0, 126, 127, 0, 54, 0, 56, 0, 0, 160, 65, 8, 205, 204, 189, 0, 0, 32, 65, 0, 129, 0, 0, 0, 0, 127, 127, 0, 57, 0, 52, 0, 0, 160, 65, 8, 205, 204, 189, 0, 0, 32, 65, 0, 0, 127, 0, 129, 0, 0, 127, 221, 173, 59, 196, 0, 0, 160, 65, 8, 205, 204, 189, 0, 0, 32, 65, 127, 0, 0, 0, 0, 0, 126, 127, 0, 57, 0, 52, 0, 0, 160, 65, 146, 204, 204, 189, 0, 0, 32, 193, 0, 129, 0, 0, 0, 0, 127, 127, 0, 54, 0, 52, 0, 0, 160, 65, 146, 204, 204, 189, 0, 0, 32, 193, 0, 0, 129, 0, 127, 0, 0, 127, 0, 54, 0, 52, 0, 0, 160, 65, 146, 204, 204, 189, 0, 0, 32, 193, 127, 0, 0, 0, 0, 0, 127, 127, 0, 54, 0, 52, 0, 0, 160, 193, 146, 204, 204, 61, 0, 0, 32, 65, 129, 0, 0, 0, 0, 0, 127, 127, 0, 57, 0, 58, 0, 0, 160, 193, 146, 204, 204, 61, 0, 0, 32, 65, 0, 0, 127, 0, 129, 0, 0, 127, 93, 60, 59, 69, 0, 0, 160, 193, 146, 204, 204, 61, 0, 0, 32, 65, 0, 127, 0, 0, 0, 0, 127, 127, 237, 59, 236, 59, 0, 0, 160, 193, 8, 205, 204, 61, 0, 0, 32, 193, 129, 0, 0, 0, 0, 0, 127, 127, 0, 54, 0, 58, 0, 0, 160, 193, 8, 205, 204, 61, 0, 0, 32, 193, 0, 0, 129, 0, 127, 0, 0, 127, 0, 48, 0, 56, 0, 0, 160, 193, 8, 205, 204, 61, 0, 0, 32, 193, 0, 127, 0, 0, 0, 0, 127, 127, 60, 33, 236, 59, 0, 0, 160, 193, 8, 205, 204, 189, 0, 0, 32, 65, 129, 0, 0, 0, 0, 0, 127, 127, 0, 57, 0, 60, 0, 0, 160, 193, 8, 205, 204, 189, 0, 0, 32, 65, 0, 129, 0, 0, 0, 0, 127, 127, 0, 57, 0, 0, 0, 0, 160, 193, 8, 205, 204, 189, 0, 0, 32, 65, 0, 0, 127, 0, 129, 0, 0, 127, 93, 60, 59, 196, 0, 0, 160, 193, 146, 204, 204, 189, 0, 0, 32, 193, 129, 0, 0, 0, 0, 0, 127, 127, 0, 54, 0, 60, 0, 0, 160, 193, 146, 204, 204, 189, 0, 0, 32, 193, 0, 129, 0, 0, 0, 0, 127, 127, 0, 54, 0, 0, 0, 0, 160, 193, 146, 204, 204, 189, 0, 0, 32, 193, 0, 0, 129, 0, 127, 0, 0, 127, 0, 48, 0, 52 ),
-"array_index_data": PoolByteArray( 0, 0, 20, 0, 13, 0, 0, 0, 7, 0, 20, 0, 9, 0, 19, 0, 6, 0, 9, 0, 22, 0, 19, 0, 21, 0, 12, 0, 18, 0, 21, 0, 15, 0, 12, 0, 16, 0, 10, 0, 3, 0, 16, 0, 23, 0, 10, 0, 5, 0, 8, 0, 2, 0, 5, 0, 11, 0, 8, 0, 17, 0, 1, 0, 14, 0, 17, 0, 4, 0, 1, 0 ),
-"blend_shape_data": [  ],
-"format": 97559,
-"index_count": 36,
-"material": SubResource( 6 ),
-"primitive": 4,
-"skeleton_aabb": [  ],
-"vertex_count": 24
-}
 
 [sub_resource type="ArrayMesh" id=8]
 surfaces/0 = {
@@ -114,24 +97,13 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 97559,
 "index_count": 36,
-"material": ExtResource( 19 ),
+"material": SubResource( 7 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 24
 }
 
-[sub_resource type="StreamTexture" id=9]
-flags = 23
-load_path = "res://.import/Asset 12@2x.png-8ecf7b8983b29a45887723fd1b5845c6.s3tc.stex"
-
-[sub_resource type="SpatialMaterial" id=10]
-resource_name = "sidewalk and grass together"
-params_cull_mode = 2
-albedo_texture = SubResource( 9 )
-roughness = 0.4
-
-[sub_resource type="ArrayMesh" id=11]
-resource_name = "Cube"
+[sub_resource type="ArrayMesh" id=9]
 surfaces/0 = {
 "aabb": AABB( -20, -0.1, -10, 40, 0.20001, 20 ),
 "array_data": PoolByteArray( 0, 0, 160, 65, 146, 204, 204, 61, 0, 0, 32, 65, 0, 0, 127, 0, 129, 0, 0, 127, 221, 173, 59, 69, 0, 0, 160, 65, 146, 204, 204, 61, 0, 0, 32, 65, 0, 127, 0, 0, 0, 0, 127, 127, 237, 59, 227, 32, 0, 0, 160, 65, 146, 204, 204, 61, 0, 0, 32, 65, 127, 0, 0, 0, 0, 0, 127, 127, 0, 57, 0, 56, 0, 0, 160, 65, 8, 205, 204, 61, 0, 0, 32, 193, 0, 0, 129, 0, 127, 0, 0, 127, 0, 54, 0, 56, 0, 0, 160, 65, 8, 205, 204, 61, 0, 0, 32, 193, 0, 127, 0, 0, 0, 0, 127, 127, 60, 33, 227, 32, 0, 0, 160, 65, 8, 205, 204, 61, 0, 0, 32, 193, 127, 0, 0, 0, 0, 0, 126, 127, 0, 54, 0, 56, 0, 0, 160, 65, 8, 205, 204, 189, 0, 0, 32, 65, 0, 129, 0, 0, 0, 0, 127, 127, 0, 57, 0, 52, 0, 0, 160, 65, 8, 205, 204, 189, 0, 0, 32, 65, 0, 0, 127, 0, 129, 0, 0, 127, 221, 173, 59, 196, 0, 0, 160, 65, 8, 205, 204, 189, 0, 0, 32, 65, 127, 0, 0, 0, 0, 0, 126, 127, 0, 57, 0, 52, 0, 0, 160, 65, 146, 204, 204, 189, 0, 0, 32, 193, 0, 129, 0, 0, 0, 0, 127, 127, 0, 54, 0, 52, 0, 0, 160, 65, 146, 204, 204, 189, 0, 0, 32, 193, 0, 0, 129, 0, 127, 0, 0, 127, 0, 54, 0, 52, 0, 0, 160, 65, 146, 204, 204, 189, 0, 0, 32, 193, 127, 0, 0, 0, 0, 0, 127, 127, 0, 54, 0, 52, 0, 0, 160, 193, 146, 204, 204, 61, 0, 0, 32, 65, 129, 0, 0, 0, 0, 0, 127, 127, 0, 57, 0, 58, 0, 0, 160, 193, 146, 204, 204, 61, 0, 0, 32, 65, 0, 0, 127, 0, 129, 0, 0, 127, 93, 60, 59, 69, 0, 0, 160, 193, 146, 204, 204, 61, 0, 0, 32, 65, 0, 127, 0, 0, 0, 0, 127, 127, 237, 59, 236, 59, 0, 0, 160, 193, 8, 205, 204, 61, 0, 0, 32, 193, 129, 0, 0, 0, 0, 0, 127, 127, 0, 54, 0, 58, 0, 0, 160, 193, 8, 205, 204, 61, 0, 0, 32, 193, 0, 0, 129, 0, 127, 0, 0, 127, 0, 48, 0, 56, 0, 0, 160, 193, 8, 205, 204, 61, 0, 0, 32, 193, 0, 127, 0, 0, 0, 0, 127, 127, 60, 33, 236, 59, 0, 0, 160, 193, 8, 205, 204, 189, 0, 0, 32, 65, 129, 0, 0, 0, 0, 0, 127, 127, 0, 57, 0, 60, 0, 0, 160, 193, 8, 205, 204, 189, 0, 0, 32, 65, 0, 129, 0, 0, 0, 0, 127, 127, 0, 57, 0, 0, 0, 0, 160, 193, 8, 205, 204, 189, 0, 0, 32, 65, 0, 0, 127, 0, 129, 0, 0, 127, 93, 60, 59, 196, 0, 0, 160, 193, 146, 204, 204, 189, 0, 0, 32, 193, 129, 0, 0, 0, 0, 0, 127, 127, 0, 54, 0, 60, 0, 0, 160, 193, 146, 204, 204, 189, 0, 0, 32, 193, 0, 129, 0, 0, 0, 0, 127, 127, 0, 54, 0, 0, 0, 0, 160, 193, 146, 204, 204, 189, 0, 0, 32, 193, 0, 0, 129, 0, 127, 0, 0, 127, 0, 48, 0, 52 ),
@@ -139,24 +111,44 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 97559,
 "index_count": 36,
-"material": SubResource( 10 ),
+"material": ExtResource( 19 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 24
 }
 
-[sub_resource type="BoxShape" id=12]
-extents = Vector3( 179.32, 1, 9.294 )
+[sub_resource type="StreamTexture" id=10]
+flags = 23
+load_path = "res://.import/Asset 12@2x.png-8ecf7b8983b29a45887723fd1b5845c6.s3tc.stex"
 
-[sub_resource type="CubeMesh" id=13]
+[sub_resource type="SpatialMaterial" id=11]
+params_cull_mode = 2
+albedo_texture = SubResource( 10 )
+roughness = 0.4
 
-[sub_resource type="PhysicsMaterial" id=14]
+[sub_resource type="ArrayMesh" id=12]
+surfaces/0 = {
+"aabb": AABB( -20, -0.1, -10, 40, 0.20001, 20 ),
+"array_data": PoolByteArray( 0, 0, 160, 65, 146, 204, 204, 61, 0, 0, 32, 65, 0, 0, 127, 0, 129, 0, 0, 127, 221, 173, 59, 69, 0, 0, 160, 65, 146, 204, 204, 61, 0, 0, 32, 65, 0, 127, 0, 0, 0, 0, 127, 127, 237, 59, 227, 32, 0, 0, 160, 65, 146, 204, 204, 61, 0, 0, 32, 65, 127, 0, 0, 0, 0, 0, 127, 127, 0, 57, 0, 56, 0, 0, 160, 65, 8, 205, 204, 61, 0, 0, 32, 193, 0, 0, 129, 0, 127, 0, 0, 127, 0, 54, 0, 56, 0, 0, 160, 65, 8, 205, 204, 61, 0, 0, 32, 193, 0, 127, 0, 0, 0, 0, 127, 127, 60, 33, 227, 32, 0, 0, 160, 65, 8, 205, 204, 61, 0, 0, 32, 193, 127, 0, 0, 0, 0, 0, 126, 127, 0, 54, 0, 56, 0, 0, 160, 65, 8, 205, 204, 189, 0, 0, 32, 65, 0, 129, 0, 0, 0, 0, 127, 127, 0, 57, 0, 52, 0, 0, 160, 65, 8, 205, 204, 189, 0, 0, 32, 65, 0, 0, 127, 0, 129, 0, 0, 127, 221, 173, 59, 196, 0, 0, 160, 65, 8, 205, 204, 189, 0, 0, 32, 65, 127, 0, 0, 0, 0, 0, 126, 127, 0, 57, 0, 52, 0, 0, 160, 65, 146, 204, 204, 189, 0, 0, 32, 193, 0, 129, 0, 0, 0, 0, 127, 127, 0, 54, 0, 52, 0, 0, 160, 65, 146, 204, 204, 189, 0, 0, 32, 193, 0, 0, 129, 0, 127, 0, 0, 127, 0, 54, 0, 52, 0, 0, 160, 65, 146, 204, 204, 189, 0, 0, 32, 193, 127, 0, 0, 0, 0, 0, 127, 127, 0, 54, 0, 52, 0, 0, 160, 193, 146, 204, 204, 61, 0, 0, 32, 65, 129, 0, 0, 0, 0, 0, 127, 127, 0, 57, 0, 58, 0, 0, 160, 193, 146, 204, 204, 61, 0, 0, 32, 65, 0, 0, 127, 0, 129, 0, 0, 127, 93, 60, 59, 69, 0, 0, 160, 193, 146, 204, 204, 61, 0, 0, 32, 65, 0, 127, 0, 0, 0, 0, 127, 127, 237, 59, 236, 59, 0, 0, 160, 193, 8, 205, 204, 61, 0, 0, 32, 193, 129, 0, 0, 0, 0, 0, 127, 127, 0, 54, 0, 58, 0, 0, 160, 193, 8, 205, 204, 61, 0, 0, 32, 193, 0, 0, 129, 0, 127, 0, 0, 127, 0, 48, 0, 56, 0, 0, 160, 193, 8, 205, 204, 61, 0, 0, 32, 193, 0, 127, 0, 0, 0, 0, 127, 127, 60, 33, 236, 59, 0, 0, 160, 193, 8, 205, 204, 189, 0, 0, 32, 65, 129, 0, 0, 0, 0, 0, 127, 127, 0, 57, 0, 60, 0, 0, 160, 193, 8, 205, 204, 189, 0, 0, 32, 65, 0, 129, 0, 0, 0, 0, 127, 127, 0, 57, 0, 0, 0, 0, 160, 193, 8, 205, 204, 189, 0, 0, 32, 65, 0, 0, 127, 0, 129, 0, 0, 127, 93, 60, 59, 196, 0, 0, 160, 193, 146, 204, 204, 189, 0, 0, 32, 193, 129, 0, 0, 0, 0, 0, 127, 127, 0, 54, 0, 60, 0, 0, 160, 193, 146, 204, 204, 189, 0, 0, 32, 193, 0, 129, 0, 0, 0, 0, 127, 127, 0, 54, 0, 0, 0, 0, 160, 193, 146, 204, 204, 189, 0, 0, 32, 193, 0, 0, 129, 0, 127, 0, 0, 127, 0, 48, 0, 52 ),
+"array_index_data": PoolByteArray( 0, 0, 20, 0, 13, 0, 0, 0, 7, 0, 20, 0, 9, 0, 19, 0, 6, 0, 9, 0, 22, 0, 19, 0, 21, 0, 12, 0, 18, 0, 21, 0, 15, 0, 12, 0, 16, 0, 10, 0, 3, 0, 16, 0, 23, 0, 10, 0, 5, 0, 8, 0, 2, 0, 5, 0, 11, 0, 8, 0, 17, 0, 1, 0, 14, 0, 17, 0, 4, 0, 1, 0 ),
+"blend_shape_data": [  ],
+"format": 97559,
+"index_count": 36,
+"material": SubResource( 11 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 24
+}
+
+[sub_resource type="CubeMesh" id=14]
+
+[sub_resource type="PhysicsMaterial" id=15]
 absorbent = true
 
-[sub_resource type="BoxShape" id=15]
+[sub_resource type="BoxShape" id=16]
 extents = Vector3( 1, 1, 3.46497 )
 
-[sub_resource type="ViewportTexture" id=16]
+[sub_resource type="ViewportTexture" id=17]
 viewport_path = NodePath("Node2D/Viewport")
 
 [node name="Main" type="Spatial"]
@@ -164,24 +156,19 @@ viewport_path = NodePath("Node2D/Viewport")
 [node name="Roads" type="Spatial" parent="."]
 
 [node name="Cube4" parent="Roads" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 54.2766, -0.166885, 0.170784 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 54.277, 0, 0.171 )
 mesh = ExtResource( 11 )
 material/1 = null
 
 [node name="Cube5" parent="Roads" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 234.277, -0.166885, 0.170784 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 234.277, 0, 0.171 )
 mesh = ExtResource( 11 )
 material/1 = null
 
 [node name="Cube8" parent="Roads" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 414.27, -0.167, 0.171 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 414.27, 0, 0.171 )
 mesh = ExtResource( 11 )
 material/1 = null
-
-[node name="StaticBody" type="StaticBody" parent="Roads/Cube8"]
-
-[node name="CollisionShape" type="CollisionShape" parent="Roads/Cube8/StaticBody"]
-shape = SubResource( 17 )
 
 [node name="Cube6" parent="Roads" instance=ExtResource( 4 )]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 54.32, -0.167, -129 )
@@ -191,63 +178,70 @@ mesh = ExtResource( 13 )
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 234.32, -0.167, -129 )
 mesh = ExtResource( 13 )
 
+[node name="StaticBody3" type="StaticBody" parent="Roads"]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 414.32, -0.167, -129 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Roads/StaticBody3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -129.356, -0.712786, -184 )
+shape = SubResource( 18 )
+
 [node name="Cube9" parent="Roads" instance=ExtResource( 4 )]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 414.32, -0.167, -129 )
 mesh = ExtResource( 13 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Roads"]
 transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 4.25249, -0.167, 29.912 )
-mesh = SubResource( 2 )
+mesh = SubResource( 3 )
 material/0 = null
 
 [node name="MeshInstance3" type="MeshInstance" parent="Roads"]
 transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 104, -0.167, 29.912 )
-mesh = SubResource( 3 )
+mesh = SubResource( 4 )
 material/0 = null
 
 [node name="MeshInstance4" type="MeshInstance" parent="Roads"]
 transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 104.299, -0.167, -29.8516 )
-mesh = SubResource( 5 )
+mesh = SubResource( 6 )
 material/0 = null
 
 [node name="MeshInstance8" type="MeshInstance" parent="Roads"]
 transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 284.122, -0.167, -29.6014 )
-mesh = SubResource( 7 )
+mesh = SubResource( 8 )
 material/0 = null
 
 [node name="MeshInstance12" type="MeshInstance" parent="Roads"]
 transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 464.122, -0.167, -29.601 )
-mesh = SubResource( 7 )
+mesh = SubResource( 8 )
 material/0 = null
 
 [node name="MeshInstance5" type="MeshInstance" parent="Roads"]
 transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 184, -0.167, 29.912 )
-mesh = SubResource( 8 )
+mesh = SubResource( 9 )
 material/0 = null
 
 [node name="MeshInstance7" type="MeshInstance" parent="Roads"]
 transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 284.269, -0.167, 29.912 )
-mesh = SubResource( 8 )
+mesh = SubResource( 9 )
 material/0 = null
 
 [node name="MeshInstance14" type="MeshInstance" parent="Roads"]
 transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 464.269, -0.167, 29.912 )
-mesh = SubResource( 8 )
+mesh = SubResource( 9 )
 material/0 = null
 
 [node name="MeshInstance9" type="MeshInstance" parent="Roads"]
 transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 364.269, -0.167, 29.912 )
-mesh = SubResource( 8 )
+mesh = SubResource( 9 )
 material/0 = null
 
 [node name="MeshInstance6" type="MeshInstance" parent="Roads"]
 transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 364.269, -0.167, -29.852 )
-mesh = SubResource( 11 )
+mesh = SubResource( 12 )
 material/0 = null
 
 [node name="MeshInstance10" type="MeshInstance" parent="Roads"]
 transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 184.488, -0.167, -29.852 )
-mesh = SubResource( 11 )
+mesh = SubResource( 12 )
 material/0 = null
 
 [node name="MeshInstance2" type="MeshInstance" parent="Roads"]
@@ -258,9 +252,6 @@ material/0 = null
 [node name="StaticBody" type="StaticBody" parent="Roads"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 145.622, 0.084137, 0.170784 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Roads/StaticBody"]
-shape = SubResource( 12 )
-
 [node name="StaticBody2" type="StaticBody" parent="Roads"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 503.622, 0.084137, 0.170784 )
 
@@ -268,72 +259,72 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 503.622, 0.084137, 0.170784 )
 transform = Transform( 10, 0, 0, 0, 25, 0, 0, 0, 10, 84, -6.898, -29.777 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Spatial"]
-mesh = SubResource( 13 )
+mesh = SubResource( 14 )
 material/0 = null
 
 [node name="MeshInstance3" type="MeshInstance" parent="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1.2, 0, 0, 0, 1, 2, 0.788877, 0 )
-mesh = SubResource( 13 )
+mesh = SubResource( 14 )
 material/0 = null
 
 [node name="MeshInstance2" type="MeshInstance" parent="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.551275, 0 )
-mesh = SubResource( 13 )
+mesh = SubResource( 14 )
 material/0 = null
 
 [node name="MeshInstance4" type="MeshInstance" parent="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9, 0, 0 )
-mesh = SubResource( 13 )
+mesh = SubResource( 14 )
 material/0 = null
 
 [node name="MeshInstance5" type="MeshInstance" parent="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1.2, 0, 0, 0, 1, -9.9, 1.41257, 0 )
-mesh = SubResource( 13 )
+mesh = SubResource( 14 )
 material/0 = null
 
 [node name="MeshInstance6" type="MeshInstance" parent="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.9, 0.819821, 0 )
-mesh = SubResource( 13 )
+mesh = SubResource( 14 )
 material/0 = null
 
 [node name="MeshInstance7" type="MeshInstance" parent="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.623, 1.159, 0 )
-mesh = SubResource( 13 )
+mesh = SubResource( 14 )
 material/0 = null
 
 [node name="MeshInstance8" type="MeshInstance" parent="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 6, 1.43768, 0 )
-mesh = SubResource( 13 )
+mesh = SubResource( 14 )
 material/0 = null
 
 [node name="MeshInstance9" type="MeshInstance" parent="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 8, 0.300065, 0 )
-mesh = SubResource( 13 )
+mesh = SubResource( 14 )
 material/0 = null
 
 [node name="MeshInstance10" type="MeshInstance" parent="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 10, 1.03396, 0 )
-mesh = SubResource( 13 )
+mesh = SubResource( 14 )
 material/0 = null
 
 [node name="MeshInstance12" type="MeshInstance" parent="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 12, 1.40228, 0 )
-mesh = SubResource( 13 )
+mesh = SubResource( 14 )
 material/0 = null
 
 [node name="MeshInstance11" type="MeshInstance" parent="Spatial"]
 transform = Transform( 0.999802, 0.0796516, 0, -0.00796516, 1.59968, 0, 0, 0, 1, 10, 1.03396, 0 )
-mesh = SubResource( 13 )
+mesh = SubResource( 14 )
 material/0 = null
 
 [node name="MeshInstance13" type="MeshInstance" parent="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 20, 1.8079, 0 )
-mesh = SubResource( 13 )
+mesh = SubResource( 14 )
 material/0 = null
 
 [node name="MeshInstance16" type="MeshInstance" parent="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 18, -0.351765, 0 )
-mesh = SubResource( 13 )
+mesh = SubResource( 14 )
 material/0 = null
 
 [node name="River" type="Area" parent="Spatial"]
@@ -341,47 +332,47 @@ transform = Transform( 2, 0, 0, 0, -2.18557e-07, -0.4, 0, 5, -1.74846e-08, 15.17
 
 [node name="MeshInstance14" type="MeshInstance" parent="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 24, 1.40228, 0 )
-mesh = SubResource( 13 )
+mesh = SubResource( 14 )
 material/0 = null
 
 [node name="MeshInstance17" type="MeshInstance" parent="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 26.036, 0.771, 0 )
-mesh = SubResource( 13 )
+transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 26.0035, 0.771, 0 )
+mesh = SubResource( 14 )
 material/0 = null
 
 [node name="MeshInstance18" type="MeshInstance" parent="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 28, 1.92027, 0 )
-mesh = SubResource( 13 )
+transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 28, 1.78859, 0 )
+mesh = SubResource( 14 )
 material/0 = null
 
 [node name="MeshInstance19" type="MeshInstance" parent="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 30, -0.0126581, 0 )
-mesh = SubResource( 13 )
+mesh = SubResource( 14 )
 material/0 = null
 
 [node name="MeshInstance20" type="MeshInstance" parent="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 36, -0.013, 0 )
-mesh = SubResource( 13 )
+mesh = SubResource( 14 )
 material/0 = null
 
 [node name="MeshInstance21" type="MeshInstance" parent="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 38, 1.748, 0 )
-mesh = SubResource( 13 )
+mesh = SubResource( 14 )
 material/0 = null
 
 [node name="MeshInstance22" type="MeshInstance" parent="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 40, -0.800821, 0 )
-mesh = SubResource( 13 )
+mesh = SubResource( 14 )
 material/0 = null
 
 [node name="MeshInstance23" type="MeshInstance" parent="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 42, 0.873495, 0 )
-mesh = SubResource( 13 )
+mesh = SubResource( 14 )
 material/0 = null
 
 [node name="MeshInstance15" type="MeshInstance" parent="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 22, 1.03396, 0 )
-mesh = SubResource( 13 )
+mesh = SubResource( 14 )
 material/0 = null
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -396,15 +387,15 @@ current = true
 fov = 48.4
 
 [node name="Player" parent="Player" instance=ExtResource( 1 )]
-transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, -3 )
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, -0.280718, -3 )
 mass = 51.0204
-physics_material_override = SubResource( 14 )
+physics_material_override = SubResource( 15 )
 
 [node name="EnemyChecker" type="Area" parent="Player/Player"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Player/Player/EnemyChecker"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.644099, 0 )
-shape = SubResource( 15 )
+shape = SubResource( 16 )
 
 [node name="SpotLight" type="SpotLight" parent="Player/Player"]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.57936e-07, 1.25759, 0.969402 )
@@ -500,7 +491,7 @@ __meta__ = {
 position = Vector2( 934.14, 570.667 )
 rotation = 3.14159
 scale = Vector2( -0.5, 0.5 )
-texture = SubResource( 16 )
+texture = SubResource( 17 )
 
 [node name="Viewport" type="Viewport" parent="Node2D"]
 size = Vector2( 400, 400 )
@@ -513,9 +504,16 @@ transparent_bg = true
 transform = Transform( -0.917359, -1.36697e-08, -0.39806, -0.258652, 0.760122, 0.596082, 0.302575, 0.64978, -0.697305, 0, 52.8354, -57.4725 )
 
 [node name="Enemy" parent="." instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 48.9929, 1.1674, -21.702 )
+script = null
 
 [node name="Enemy2" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 229.983, 2, -21.702 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 227.848, 2, -21.702 )
+script = null
+
+[node name="Enemy3" parent="." instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 408.339, 2, -21.702 )
+script = null
 
 [connection signal="area_entered" from="Player/Player/EnemyChecker" to="Player/Player" method="_on_EnemyChecker_area_entered"]
 [connection signal="body_entered" from="Player/Player/EnemyChecker" to="Player/Player" method="_on_EnemyChecker_body_entered"]

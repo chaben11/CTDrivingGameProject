@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/AMBULANCE.glb-426e58904b811726a9a64554a8bd313b.scn"
+path="res://.import/NISSAN NAVARA red-SOLID.glb-6fedade9c8d4609d6a77c5499e9cad28.scn"
 
 [deps]
 
-source_file="res://Models/Traffic Vehicles/AMBULANCE.glb"
-dest_files=[ "res://.import/AMBULANCE.glb-426e58904b811726a9a64554a8bd313b.scn" ]
+source_file="res://Models/Traffic Vehicles/NISSAN NAVARA red-SOLID.glb"
+dest_files=[ "res://.import/NISSAN NAVARA red-SOLID.glb-6fedade9c8d4609d6a77c5499e9cad28.scn" ]
 
 [params]
 

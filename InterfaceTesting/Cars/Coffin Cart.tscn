@@ -1,13 +1,13 @@
 [gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://Models/Traffic Vehicles/BRAKE LIGHT.material" type="Material" id=1]
-[ext_resource path="res://Models/Traffic Vehicles/body.material" type="Material" id=2]
-[ext_resource path="res://Models/Traffic Vehicles/REVERCE.material" type="Material" id=3]
-[ext_resource path="res://Models/Traffic Vehicles/INDICATORS.material" type="Material" id=4]
-[ext_resource path="res://Models/Traffic Vehicles/LEDS.material" type="Material" id=5]
-[ext_resource path="res://Models/Traffic Vehicles/black_001.material" type="Material" id=6]
-[ext_resource path="res://Models/Traffic Vehicles/Material_001.material" type="Material" id=7]
-[ext_resource path="res://Models/Traffic Vehicles/WHITEISH.material" type="Material" id=8]
+[ext_resource path="res://Materials/BRAKE LIGHT.material" type="Material" id=1]
+[ext_resource path="res://Materials/body.material" type="Material" id=2]
+[ext_resource path="res://Materials/REVERCE.material" type="Material" id=3]
+[ext_resource path="res://Materials/INDICATORS.material" type="Material" id=4]
+[ext_resource path="res://Materials/LEDS.material" type="Material" id=5]
+[ext_resource path="res://Materials/black_001.material" type="Material" id=6]
+[ext_resource path="res://Materials/Material_001.material" type="Material" id=7]
+[ext_resource path="res://Materials/WHITEISH.material" type="Material" id=8]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "Cube"
