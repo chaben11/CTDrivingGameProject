@@ -1,40 +1,47 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=47 format=2]
 
-[ext_resource path="res://Taxiphysics/Taxi.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Textures/default_env.tres" type="Environment" id=2]
-[ext_resource path="res://2x/sudewalkgrass_type3@2x.png" type="Texture" id=3]
-[ext_resource path="res://Textures/roadmesh.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Models/Enemy2.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Taxiphysics/Camera_offset.gd" type="Script" id=6]
-[ext_resource path="res://Models/Enemy.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Taxiphysics/Pause.gd" type="Script" id=8]
-[ext_resource path="res://PauseMenuNewIcons/1x/ResumePressed.png" type="Texture" id=9]
-[ext_resource path="res://PauseMenuNewIcons/1x/Asset 24.png" type="Texture" id=10]
-[ext_resource path="res://Models/intersection X (2).tres" type="ArrayMesh" id=11]
-[ext_resource path="res://Textures/sidewalkgrasstogether.tres" type="ArrayMesh" id=12]
-[ext_resource path="res://Textures/straight road _ (2).tres" type="ArrayMesh" id=13]
-[ext_resource path="res://2x/Sidewalkgrass_type4@2x.png" type="Texture" id=14]
-[ext_resource path="res://PauseMenuNewIcons/1x/Asset 25.png" type="Texture" id=15]
-[ext_resource path="res://PauseMenu/1x/Asset 12.png" type="Texture" id=16]
-[ext_resource path="res://DigitalTechMenu/SettingsButton.tscn" type="PackedScene" id=17]
-[ext_resource path="res://PauseMenuNewIcons/1x/Asset 26.png" type="Texture" id=18]
-[ext_resource path="res://Textures/rightsidewalk.tres" type="Material" id=19]
-[ext_resource path="res://PauseMenuNewIcons/1x/ResumeHover.png" type="Texture" id=20]
-[ext_resource path="res://Models/Enemy3.tscn" type="PackedScene" id=21]
-[ext_resource path="res://FailMenu/Retry_Hover.png" type="Texture" id=22]
-[ext_resource path="res://PauseMenuNewIcons/1x/ResumeNormal.png" type="Texture" id=23]
-[ext_resource path="res://Models/Speedometer(3).tscn" type="PackedScene" id=24]
-[ext_resource path="res://FailMenu/Retry_Normal.png" type="Texture" id=25]
-[ext_resource path="res://FailMenu/Retry_Select.png" type="Texture" id=26]
-[ext_resource path="res://FailMenu/GameOverScreen.png" type="Texture" id=27]
-[ext_resource path="res://Taxiphysics/Failed.gd" type="Script" id=28]
+[ext_resource path="res://Textures/sidewalkgrasstogether.tres" type="ArrayMesh" id=2]
+[ext_resource path="res://Textures/straight road _ (2).tres" type="ArrayMesh" id=3]
+[ext_resource path="res://Textures/default_env.tres" type="Environment" id=4]
+[ext_resource path="res://DigitalTechMenu/SettingsButton.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Models/Enemy.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Models/Enemy2.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Models/Speedometer(3).tscn" type="PackedScene" id=8]
+[ext_resource path="res://Taxiphysics/Taxi.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Models/Enemy3.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Textures/roadmesh.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Taxiphysics/Failed.gd" type="Script" id=12]
+[ext_resource path="res://Taxiphysics/Camera_offset.gd" type="Script" id=13]
+[ext_resource path="res://2x/sudewalkgrass_type3@2x.png" type="Texture" id=14]
+[ext_resource path="res://Taxiphysics/Pause.gd" type="Script" id=15]
+[ext_resource path="res://Textures/rightsidewalk.tres" type="Material" id=16]
+[ext_resource path="res://FailMenu/Retry_Normal.png" type="Texture" id=17]
+[ext_resource path="res://FailMenu/Retry_Hover.png" type="Texture" id=18]
+[ext_resource path="res://PauseMenu/1x/Asset 12.png" type="Texture" id=19]
+[ext_resource path="res://FailMenu/Retry_Select.png" type="Texture" id=20]
+[ext_resource path="res://FailMenu/GameOverScreen.png" type="Texture" id=21]
+[ext_resource path="res://PauseMenuNewIcons/1x/Asset 24.png" type="Texture" id=22]
+[ext_resource path="res://PauseMenuNewIcons/1x/ResumeHover.png" type="Texture" id=23]
+[ext_resource path="res://PauseMenuNewIcons/1x/Asset 25.png" type="Texture" id=24]
+[ext_resource path="res://PauseMenuNewIcons/1x/ResumeNormal.png" type="Texture" id=25]
+[ext_resource path="res://2x/Sidewalkgrass_type4@2x.png" type="Texture" id=26]
+[ext_resource path="res://PauseMenuNewIcons/1x/Asset 26.png" type="Texture" id=27]
+[ext_resource path="res://PauseMenuNewIcons/1x/ResumePressed.png" type="Texture" id=28]
 
-[sub_resource type="BoxShape" id=1]
-extents = Vector3( 10.4774, 1, 270 )
+[sub_resource type="CubeMesh" id=17]
+
+[sub_resource type="ConvexPolygonShape" id=18]
+points = PoolVector3Array( -1, -1, -1, -1, -1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1 )
+
+[sub_resource type="ConvexPolygonShape" id=19]
+points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1 )
+
+[sub_resource type="ConcavePolygonShape" id=20]
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
 
 [sub_resource type="SpatialMaterial" id=2]
 params_cull_mode = 2
-albedo_texture = ExtResource( 3 )
+albedo_texture = ExtResource( 14 )
 roughness = 0.4
 
 [sub_resource type="ArrayMesh" id=3]
@@ -59,7 +66,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 97559,
 "index_count": 36,
-"material": ExtResource( 19 ),
+"material": ExtResource( 16 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 24
@@ -67,7 +74,7 @@ surfaces/0 = {
 
 [sub_resource type="SpatialMaterial" id=5]
 params_cull_mode = 2
-albedo_texture = ExtResource( 14 )
+albedo_texture = ExtResource( 26 )
 roughness = 0.4
 
 [sub_resource type="ArrayMesh" id=6]
@@ -86,7 +93,7 @@ surfaces/0 = {
 
 [sub_resource type="SpatialMaterial" id=7]
 params_cull_mode = 2
-albedo_texture = ExtResource( 14 )
+albedo_texture = ExtResource( 26 )
 roughness = 0.4
 
 [sub_resource type="ArrayMesh" id=8]
@@ -111,7 +118,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 97559,
 "index_count": 36,
-"material": ExtResource( 19 ),
+"material": ExtResource( 16 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 24
@@ -155,39 +162,37 @@ viewport_path = NodePath("Node2D/Viewport")
 
 [node name="Roads" type="Spatial" parent="."]
 
-[node name="Cube4" parent="Roads" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 54.277, 0, 0.171 )
-mesh = ExtResource( 11 )
-material/1 = null
-
-[node name="Cube5" parent="Roads" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 234.277, 0, 0.171 )
-mesh = ExtResource( 11 )
-material/1 = null
-
-[node name="Cube8" parent="Roads" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 414.27, 0, 0.171 )
-mesh = ExtResource( 11 )
-material/1 = null
-
-[node name="Cube6" parent="Roads" instance=ExtResource( 4 )]
+[node name="Cube6" parent="Roads" instance=ExtResource( 11 )]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 54.32, -0.167, -129 )
-mesh = ExtResource( 13 )
+mesh = ExtResource( 3 )
 
-[node name="Cube7" parent="Roads" instance=ExtResource( 4 )]
+[node name="Cube7" parent="Roads" instance=ExtResource( 11 )]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 234.32, -0.167, -129 )
-mesh = ExtResource( 13 )
+mesh = ExtResource( 3 )
 
 [node name="StaticBody3" type="StaticBody" parent="Roads"]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 414.32, -0.167, -129 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Roads/StaticBody3"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -129.356, -0.712786, -184 )
-shape = SubResource( 1 )
+[node name="MeshInstance" type="MeshInstance" parent="Roads/StaticBody3"]
+transform = Transform( 8, 0, 0, 0, 1, 0, 0, 0, 250, -130.867, -0.15, -166 )
+mesh = SubResource( 17 )
+material/0 = null
 
-[node name="Cube9" parent="Roads" instance=ExtResource( 4 )]
+[node name="CollisionShape3" type="CollisionShape" parent="Roads/StaticBody3"]
+transform = Transform( 8, 0, 0, 0, 1, 0, 0, 0, 250, -130.867, -0.15, -166 )
+shape = SubResource( 18 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Roads/StaticBody3"]
+transform = Transform( 8, 0, 0, 0, 1, 0, 0, 0, 250, -130.867, -0.15, -166 )
+shape = SubResource( 19 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Roads/StaticBody3"]
+transform = Transform( 8, 0, 0, 0, 1, 0, 0, 0, 250, -130.867, -0.15, -166 )
+shape = SubResource( 20 )
+
+[node name="Cube9" parent="Roads" instance=ExtResource( 11 )]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 414.32, -0.167, -129 )
-mesh = ExtResource( 13 )
+mesh = ExtResource( 3 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Roads"]
 transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 4.25249, -0.167, 29.912 )
@@ -215,7 +220,7 @@ mesh = SubResource( 8 )
 material/0 = null
 
 [node name="MeshInstance5" type="MeshInstance" parent="Roads"]
-transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 184, -0.167, 29.912 )
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 184, 0, 29.451 )
 mesh = SubResource( 9 )
 material/0 = null
 
@@ -246,7 +251,7 @@ material/0 = null
 
 [node name="MeshInstance2" type="MeshInstance" parent="Roads"]
 transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 4.22419, -0.167, -29.8438 )
-mesh = ExtResource( 12 )
+mesh = ExtResource( 2 )
 material/0 = null
 
 [node name="StaticBody" type="StaticBody" parent="Roads"]
@@ -376,18 +381,18 @@ mesh = SubResource( 13 )
 material/0 = null
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = ExtResource( 2 )
+environment = ExtResource( 4 )
 
 [node name="Player" type="Spatial" parent="."]
-script = ExtResource( 6 )
+script = ExtResource( 13 )
 
 [node name="Camera" type="Camera" parent="Player"]
 transform = Transform( 0.5, 0.230474, -0.834795, 0, 0.963937, 0.266128, 0.866025, -0.133064, 0.481969, -10, 7.744, 3 )
 current = true
 fov = 48.4
 
-[node name="Player" parent="Player" instance=ExtResource( 1 )]
-transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, -0.280718, -3 )
+[node name="Player" parent="Player" instance=ExtResource( 9 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0.25, -3 )
 mass = 51.0204
 physics_material_override = SubResource( 14 )
 
@@ -408,7 +413,7 @@ spot_range = 17.4
 pause_mode = 2
 margin_right = 1024.0
 margin_bottom = 600.0
-script = ExtResource( 8 )
+script = ExtResource( 15 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -416,7 +421,7 @@ __meta__ = {
 [node name="MainMenu" type="Sprite" parent="Pause"]
 modulate = Color( 1, 1, 1, 0.721569 )
 position = Vector2( 512, 300 )
-texture = ExtResource( 16 )
+texture = ExtResource( 19 )
 
 [node name="MenuButton" type="TextureButton" parent="Pause/MainMenu"]
 margin_left = 155.0
@@ -424,23 +429,23 @@ margin_top = -50.0
 margin_right = 350.0
 margin_bottom = 145.0
 shortcut_in_tooltip = false
-texture_normal = ExtResource( 15 )
-texture_pressed = ExtResource( 18 )
-texture_hover = ExtResource( 10 )
+texture_normal = ExtResource( 24 )
+texture_pressed = ExtResource( 27 )
+texture_hover = ExtResource( 22 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="SettingsButton" parent="Pause/MainMenu" instance=ExtResource( 17 )]
+[node name="SettingsButton" parent="Pause/MainMenu" instance=ExtResource( 5 )]
 
 [node name="ResumeButton" type="TextureButton" parent="Pause/MainMenu"]
 margin_left = -340.0
 margin_top = -50.0
 margin_right = -145.0
 margin_bottom = 145.0
-texture_normal = ExtResource( 23 )
-texture_pressed = ExtResource( 9 )
-texture_hover = ExtResource( 20 )
+texture_normal = ExtResource( 25 )
+texture_pressed = ExtResource( 28 )
+texture_hover = ExtResource( 23 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -449,7 +454,7 @@ __meta__ = {
 pause_mode = 2
 margin_right = 1024.0
 margin_bottom = 600.0
-script = ExtResource( 28 )
+script = ExtResource( 12 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -458,7 +463,7 @@ __meta__ = {
 visible = false
 modulate = Color( 1, 1, 1, 0.721569 )
 position = Vector2( 512, 300 )
-texture = ExtResource( 27 )
+texture = ExtResource( 21 )
 
 [node name="MenuButton" type="TextureButton" parent="Failed/MainMenu"]
 margin_left = 155.0
@@ -466,9 +471,9 @@ margin_top = -50.0
 margin_right = 350.0
 margin_bottom = 145.0
 shortcut_in_tooltip = false
-texture_normal = ExtResource( 15 )
-texture_pressed = ExtResource( 18 )
-texture_hover = ExtResource( 10 )
+texture_normal = ExtResource( 24 )
+texture_pressed = ExtResource( 27 )
+texture_hover = ExtResource( 22 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -478,9 +483,9 @@ margin_left = -340.0
 margin_top = -50.0
 margin_right = -145.0
 margin_bottom = 145.0
-texture_normal = ExtResource( 25 )
-texture_pressed = ExtResource( 26 )
-texture_hover = ExtResource( 22 )
+texture_normal = ExtResource( 17 )
+texture_pressed = ExtResource( 20 )
+texture_hover = ExtResource( 18 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -498,20 +503,20 @@ size = Vector2( 400, 400 )
 own_world = true
 transparent_bg = true
 
-[node name="Speedometer(3)" parent="Node2D/Viewport" instance=ExtResource( 24 )]
+[node name="Speedometer(3)" parent="Node2D/Viewport" instance=ExtResource( 8 )]
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( -0.917359, -1.36697e-08, -0.39806, -0.258652, 0.760122, 0.596082, 0.302575, 0.64978, -0.697305, 0, 52.8354, -57.4725 )
 
-[node name="Enemy" parent="." instance=ExtResource( 7 )]
+[node name="Enemy" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 48.9929, 1.1674, -21.702 )
 script = null
 
-[node name="Enemy2" parent="." instance=ExtResource( 5 )]
+[node name="Enemy2" parent="." instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 227.848, 2, -21.702 )
 script = null
 
-[node name="Enemy3" parent="." instance=ExtResource( 21 )]
+[node name="Enemy3" parent="." instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 408.339, 2, -21.702 )
 script = null
 
