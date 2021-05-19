@@ -17,7 +17,7 @@ func _ready():
 
 
 func _on_SettingsButton_pressed():
-	get_tree().change_scene("res://Scenes/Settings.tscn")
+	get_tree().change_scene("res://Scenes/Settings.tscn") #Opens the settings Scene
 
 
 func _on_QuitButton_pressed():
@@ -33,7 +33,7 @@ func _on_The_Highway_pressed():
 
 
 func _on_The_City_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene("res://Scenes/Levels/City/City-Level 1.tscn") #Opens Level one of city - Will eventually open the city level select menu
 
 
 func _on_Garage_pressed():

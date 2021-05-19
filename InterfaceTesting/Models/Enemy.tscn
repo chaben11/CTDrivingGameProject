@@ -7,7 +7,7 @@
 [ext_resource path="res://Materials/black.material" type="Material" id=5]
 [ext_resource path="res://Materials/brake light.material" type="Material" id=8]
 [ext_resource path="res://Materials/indicater.material" type="Material" id=9]
-[ext_resource path="res://Scripts/Spatial.gd" type="Script" id=10]
+[ext_resource path="res://Scripts/CityEnemies.gd" type="Script" id=10]
 
 [sub_resource type="SpatialMaterial" id=1]
 params_cull_mode = 2
