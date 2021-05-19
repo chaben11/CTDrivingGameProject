@@ -28,9 +28,7 @@
 [ext_resource path="res://FailMenu/Retry_Select.png" type="Texture" id=26]
 [ext_resource path="res://FailMenu/GameOverScreen.png" type="Texture" id=27]
 [ext_resource path="res://Taxiphysics/Failed.gd" type="Script" id=28]
-
-[sub_resource type="BoxShape" id=1]
-extents = Vector3( 10.4774, 1, 270 )
+[ext_resource path="res://Scenes/Floortest.tscn" type="PackedScene" id=29]
 
 [sub_resource type="SpatialMaterial" id=2]
 params_cull_mode = 2
@@ -178,13 +176,6 @@ mesh = ExtResource( 13 )
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 234.32, -0.167, -129 )
 mesh = ExtResource( 13 )
 
-[node name="StaticBody3" type="StaticBody" parent="Roads"]
-transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 414.32, -0.167, -129 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Roads/StaticBody3"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -129.356, -0.712786, -184 )
-shape = SubResource( 1 )
-
 [node name="Cube9" parent="Roads" instance=ExtResource( 4 )]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 414.32, -0.167, -129 )
 mesh = ExtResource( 13 )
@@ -248,12 +239,6 @@ material/0 = null
 transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 4.22419, -0.167, -29.8438 )
 mesh = ExtResource( 12 )
 material/0 = null
-
-[node name="StaticBody" type="StaticBody" parent="Roads"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 145.622, 0.084137, 0.170784 )
-
-[node name="StaticBody2" type="StaticBody" parent="Roads"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 503.622, 0.084137, 0.170784 )
 
 [node name="Spatial" type="Spatial" parent="."]
 transform = Transform( 10, 0, 0, 0, 25, 0, 0, 0, 10, 84, -6.898, -29.777 )
@@ -327,9 +312,6 @@ transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 18, -0.351765, 0 )
 mesh = SubResource( 13 )
 material/0 = null
 
-[node name="River" type="Area" parent="Spatial"]
-transform = Transform( 2, 0, 0, 0, -2.18557e-07, -0.4, 0, 5, -1.74846e-08, 15.1734, -0.151765, 2.9686 )
-
 [node name="MeshInstance14" type="MeshInstance" parent="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 24, 1.40228, 0 )
 mesh = SubResource( 13 )
@@ -387,11 +369,12 @@ current = true
 fov = 48.4
 
 [node name="Player" parent="Player" instance=ExtResource( 1 )]
-transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, -0.280718, -3 )
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0.113688, -3 )
 mass = 51.0204
 physics_material_override = SubResource( 14 )
 
 [node name="EnemyChecker" type="Area" parent="Player/Player"]
+visible = false
 
 [node name="CollisionShape" type="CollisionShape" parent="Player/Player/EnemyChecker"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.644099, 0 )
@@ -510,6 +493,9 @@ script = null
 [node name="Enemy2" parent="." instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 227.848, 2, -21.702 )
 script = null
+
+[node name="Floortest" parent="." instance=ExtResource( 29 )]
+transform = Transform( 1000, 0, 0, 0, 1, 0, 0, 0, 10, 0, -0.555346, 0 )
 
 [node name="Enemy3" parent="." instance=ExtResource( 21 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 408.339, 2, -21.702 )
