@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Taxiphysics/Back_L.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Taxiphysics/Front_R.tscn" type="PackedScene" id=2]
@@ -6,9 +6,25 @@
 [ext_resource path="res://Taxiphysics/Back_R.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Taxiphysics/Front_L.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Taxiphysics/Taxi.gd" type="Script" id=6]
+[ext_resource path="res://Materials/brake light_001.material" type="Material" id=7]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 0.57981, 0.614907, 2.9953 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "BrakeLights"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Taxi:mesh:surface_6/material")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 7 ) ]
+}
 
 [node name="Taxi" type="VehicleBody"]
 axis_lock_angular_y = true
@@ -53,3 +69,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.46179, 0.09426 )
 shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/BrakeLights = SubResource( 2 )

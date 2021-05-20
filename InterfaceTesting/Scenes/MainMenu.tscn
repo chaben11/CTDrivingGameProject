@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://DigitalTechMenu/SettingsButton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://PauseMenuNewIcons/1x/ExitHover.png" type="Texture" id=2]
@@ -18,6 +18,7 @@
 [ext_resource path="res://DigitalTechMenu/Buttons/City-Select.png" type="Texture" id=16]
 [ext_resource path="res://DigitalTechMenu/Buttons/City-Normal.png" type="Texture" id=17]
 [ext_resource path="res://DigitalTechMenu/Buttons/Garage-Hover.png" type="Texture" id=18]
+[ext_resource path="res://Animations/IntroAnimation.png" type="Texture" id=19]
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
@@ -96,6 +97,21 @@ texture_hover = ExtResource( 13 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="IntroAnimation" type="Sprite" parent="."]
+position = Vector2( 236.299, 191.942 )
+scale = Vector2( 0.157962, 0.157962 )
+texture = ExtResource( 19 )
+
+[node name="IntroAnimation2" type="Sprite" parent="."]
+position = Vector2( 521.974, 191.942 )
+scale = Vector2( 0.157962, 0.157962 )
+texture = ExtResource( 19 )
+
+[node name="IntroAnimation3" type="Sprite" parent="."]
+position = Vector2( 809.856, 191.942 )
+scale = Vector2( 0.157962, 0.157962 )
+texture = ExtResource( 19 )
 
 [connection signal="pressed" from="SettingsButton" to="." method="_on_SettingsButton_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_QuitButton_pressed"]
