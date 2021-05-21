@@ -10,8 +10,8 @@ export var engine_force_value = 300
 func _physics_process(delta):
 	var fwd_mps = transform.basis.xform_inv(linear_velocity).x
 
-	steer_target = Input.get_action_strength("turn_left") - Input.get_action_strength("turn_right")
-	steer_target *= STEER_LIMIT
+#	steer_target = Input.get_action_strength("turn_left") - Input.get_action_strength("turn_right")
+#	steer_target *= STEER_LIMIT
 
 	if Input.is_action_pressed("Acclerate"):
 		# Increase engine force at low speeds to make the initial acceleration faster.

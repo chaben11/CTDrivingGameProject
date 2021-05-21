@@ -27,7 +27,10 @@ tracks/0/keys = {
 }
 
 [node name="Taxi" type="VehicleBody"]
+axis_lock_linear_y = true
+axis_lock_linear_z = true
 axis_lock_angular_y = true
+axis_lock_angular_z = true
 script = ExtResource( 6 )
 
 [node name="Taxi" parent="." instance=ExtResource( 3 )]

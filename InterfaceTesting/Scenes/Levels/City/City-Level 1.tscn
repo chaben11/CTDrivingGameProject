@@ -498,7 +498,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 48.9929, 1.1674, -21.702 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 227.848, 2, -21.702 )
 
 [node name="Floortest" parent="." instance=ExtResource( 19 )]
-transform = Transform( 300, 0, 0, 0, 1, 0, 0, 0, 10, 258, -0.555346, 0 )
+transform = Transform( 1000, 0, 0, 0, 1, 0, 0, 0, 10, 258, -0.5, 0 )
 
 [node name="Enemy3" parent="." instance=ExtResource( 20 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 408.339, 2, -21.702 )
