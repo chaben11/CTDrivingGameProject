@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Cars/redCar.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/SelectionStates.gd" type="Script" id=1]
 [ext_resource path="res://Cars/SportsCar_Model.tscn" type="PackedScene" id=2]
 
 [sub_resource type="Animation" id=1]
@@ -128,8 +128,6 @@ tracks/1/keys = {
 
 [node name="SportsCar" parent="." instance=ExtResource( 2 )]
 script = ExtResource( 1 )
-entering = true
-exiting = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SportsCar"]
 anims/Enter = SubResource( 1 )

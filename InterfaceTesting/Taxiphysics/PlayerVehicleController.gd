@@ -13,10 +13,10 @@ func _physics_process(delta):
 #	steer_target = Input.get_action_strength("turn_left") - Input.get_action_strength("turn_right")
 #	steer_target *= STEER_LIMIT
 
-	if Input.is_action_pressed("Acclerate"):
+	if Input.is_action_pressed("Acclerate"): 
 		# Increase engine force at low speeds to make the initial acceleration faster.
 		var speed = linear_velocity.length()
-		if speed < 5 and speed != 0:
+		if speed < 5 and speed != 0:  #max and min value for speed
 			engine_force = clamp(engine_force_value * 5 / speed, 0, 100)
 		else:
 			engine_force = engine_force_value
@@ -33,10 +33,10 @@ func _physics_process(delta):
 				engine_force = -engine_force_value
 		else:
 			brake = 1
-			#Animation Dark Red
+			#Animation Dark Red for brake lights
 	else:
 		brake = 0.0
-		#Animation Normal red
+		#Animation Normal red for brake lights
 
 	steering = move_toward(steering, steer_target, STEER_SPEED * delta)
 
@@ -100,7 +100,7 @@ func _physics_process(delta):
 ##	rotation_degrees.y = 90
 ##	rotation_degrees.z = 0
 ##	translation.z = -3
-func _on_EnemyChecker_body_entered(body):
+func _on_EnemyChecker_body_entered(body): #if the enemy collides with the player
 	if "Enemy" in body.name:
 		print("check")
 		get_tree().paused = true

@@ -5,7 +5,7 @@
 [ext_resource path="res://Taxiphysics/Taxi_Body.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Taxiphysics/Back_R.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Taxiphysics/Front_L.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Taxiphysics/Taxi.gd" type="Script" id=6]
+[ext_resource path="res://Taxiphysics/PlayerVehicleController.gd" type="Script" id=6]
 [ext_resource path="res://Materials/brake light_001.material" type="Material" id=7]
 
 [sub_resource type="BoxShape" id=1]

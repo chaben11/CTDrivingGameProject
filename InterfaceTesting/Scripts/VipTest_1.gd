@@ -17,6 +17,6 @@ func _ready():
 
 
 func _on_Area_body_entered(body):
-	if body.name == "Player":
-		if garage.car_index == 2:
-			$AnimationPlayer.play("ArmMove")
+	if body.name == "Player": 
+		if garage.car_index == 2: 
+			$AnimationPlayer.play("ArmMove") #Will only open if the index is the value.

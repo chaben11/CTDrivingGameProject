@@ -12,7 +12,7 @@ func _ready():
 
 func _input(event):
 	if Input.is_action_just_pressed("pause"):
-		if get_tree().paused == false:
+		if get_tree().paused == false: #the button will freeze the scene except this menu which is part of an exception group
 			get_tree().paused = true
 			$MainMenu.show()
 		elif get_tree().paused == true:

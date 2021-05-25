@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Models/Selection/6x6indicater.material" type="Material" id=1]
 [ext_resource path="res://Models/Selection/6x6red.material" type="Material" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Animations/Garage/Rotate.tres" type="Animation" id=11]
 [ext_resource path="res://Animations/Garage/Enter.tres" type="Animation" id=12]
 [ext_resource path="res://Animations/Garage/Exit.tres" type="Animation" id=13]
+[ext_resource path="res://Scripts/SelectionStates.gd" type="Script" id=14]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "Plane003"
@@ -152,6 +153,7 @@ material/6 = null
 material/7 = null
 material/8 = null
 material/9 = null
+script = ExtResource( 14 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SixbySix"]
 anims/Enter = ExtResource( 12 )

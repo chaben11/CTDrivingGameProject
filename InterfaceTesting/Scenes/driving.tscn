@@ -1,10 +1,10 @@
 [gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Cars/SportsCar_Model.tres" type="ArrayMesh" id=1]
-[ext_resource path="res://Scripts/KinematicBody.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/_KinematicBody.gd" type="Script" id=2]
 [ext_resource path="res://Taxiphysics/skyday.tres" type="Environment" id=3]
 [ext_resource path="res://Models/Enemy.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Taxiphysics/Taxi.gd" type="Script" id=5]
+[ext_resource path="res://Taxiphysics/PlayerVehicleController.gd" type="Script" id=5]
 [ext_resource path="res://Cars/PlayerCars/Porsche.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Textures/roadmesh.tscn" type="PackedScene" id=10]
 [ext_resource path="res://2x/sudewalkgrass_type3@2x.png" type="Texture" id=15]

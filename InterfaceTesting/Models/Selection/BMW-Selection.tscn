@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Models/Selection/LED.material" type="Material" id=1]
 [ext_resource path="res://Models/Selection/silver.material" type="Material" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://Animations/Garage/Rotate.tres" type="Animation" id=15]
 [ext_resource path="res://Animations/Garage/Enter.tres" type="Animation" id=16]
 [ext_resource path="res://Animations/Garage/Exit.tres" type="Animation" id=17]
+[ext_resource path="res://Scripts/SelectionStates.gd" type="Script" id=18]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "Cube001"
@@ -208,6 +209,7 @@ material/10 = null
 material/11 = null
 material/12 = null
 material/13 = null
+script = ExtResource( 18 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="BMW"]
 anims/Enter = ExtResource( 16 )

@@ -17,12 +17,12 @@ func _ready():
 
 
 func _on_MenuButton_pressed():
-	get_tree().change_scene("res://Scenes/MainMenu.tscn")
+	get_tree().change_scene("res://Scenes/MainMenu.tscn") 
 	get_tree().paused = false
 
 
 
-func _on_RetryButton_pressed():
+func _on_RetryButton_pressed(): #will reset the scene if the player clicks retry
 	get_tree().reload_current_scene()
-	get_tree().paused = false
+	get_tree().paused = false #The scene will unfreeze
 	pass # Replace with function body.

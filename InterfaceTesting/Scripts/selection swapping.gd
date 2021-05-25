@@ -9,7 +9,7 @@ onready var green = $green.position
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$AnimationPlayer.play("index 1")
+	$AnimationPlayer.play("index 1") #Starts the animation on the first index
 
 func _process(delta):
 	pass

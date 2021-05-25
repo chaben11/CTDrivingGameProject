@@ -22,10 +22,10 @@ func _ready():
 #	pass
 
 
-
+#Checks when the next arrow button is clicked. It will test which car is currently active and change it to play it's exit animation
 func _on_next_pressed():
 	$ChangingVehicles.start()
-	if Sports == true:
+	if Sports == true: 
 		Sports = false
 
 	elif Suv == true:
@@ -39,7 +39,7 @@ func _on_next_pressed():
 	print(garage.car_index)
 
 
-func _on_Previous_pressed():
+func _on_Previous_pressed(): #Will repeat what the next_button function did but will go to the previous car instead
 #	Sports = true
 #	$SportsCar/SportsCar.entering = true
 #	Suv = false
@@ -130,17 +130,17 @@ func _process(delta):
 					$SixbySix/SixbySix.exiting = false
 					$SixbySix/SixbySix.rotating = false
 					$SixbySix/SixbySix.entering = false
-func next_car():
+func next_car(): #Checks if the index - (number of vehicles) is less than the max ammount before adding 1 or resets to 1 if index is at max
 	if garage.car_index < 5:
 		garage.car_index += 1
 	elif garage.car_index == 5:
 		garage.car_index = 1
-	
+	#the garage prefix is an autoload variable so the same values can easily be accessed in other scripts
 
 
 
 func _on_ChangingVehicles_timeout(): #CHANGING NEXT
-	next_car()
+	next_car() #Starts the function to find the new index
 	print(garage.car_index)
 	if garage.car_index == 1: #Porshe/Taxi
 		Sports = true
@@ -149,7 +149,7 @@ func _on_ChangingVehicles_timeout(): #CHANGING NEXT
 		nissian = false
 		Hatchback = false
 		SixbySix = false
-		$Selection/AnimationPlayer.play("index 1")
+		$Selection/AnimationPlayer.play("index 1") #User interface animation. Will Play the animation depending on the current selection
 	if garage.car_index == 2: #SUV
 		Suv = true
 		$SUV/SUV.entering = true
@@ -159,7 +159,7 @@ func _on_ChangingVehicles_timeout(): #CHANGING NEXT
 		SixbySix = false
 		$Selection/AnimationPlayer.play("index 2")
 	if garage.car_index == 3: #Nissian
-		nissian = true
+		nissian = true #Sets Correct vehicle to the active vehicle and sets others to false
 		Sports = false
 		Suv = false
 		Hatchback = false
@@ -183,5 +183,5 @@ func _on_ChangingVehicles_timeout(): #CHANGING NEXT
 		SixbySix = true
 		$SixbySix/SixbySix.entering = true
 #		$Selection/AnimationPlayer.play("index 4")
-	$ChangingVehicles.wait_time = 5
+	$ChangingVehicles.wait_time = 5 # a 5 second wait for the car to fully spin around before the next car will drive over
 	$ChangingVehicles.stop()
