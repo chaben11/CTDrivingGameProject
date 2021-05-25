@@ -4,14 +4,16 @@ extends Spatial
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-export var red = true
-export var green = false
-export var blue = false
+export var Sports = true
+export var Suv = false
+export var nissian = false
+export var Hatchback = false
+export var SixbySix = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	red = true
-	green = false
-	blue = false
+	Sports = true
+	Suv = false
+	nissian = false
 	garage.car_index = 1
 
 
@@ -23,44 +25,52 @@ func _ready():
 
 func _on_next_pressed():
 	$ChangingVehicles.start()
-	if red == true:
-		red = false
+	if Sports == true:
+		Sports = false
 
-	elif green == true:
-		green = false
+	elif Suv == true:
+		Suv = false
+	elif nissian == true:
+		nissian = false
+	elif Hatchback == true:
+		Hatchback = false
+	elif SixbySix == true:
+		SixbySix = false
 	print(garage.car_index)
 
 
 func _on_Previous_pressed():
-	red = true
-	$SportsCar/SportsCar.entering = true
-	green = false
+#	Sports = true
+#	$SportsCar/SportsCar.entering = true
+#	Suv = false
+	pass
 
 
 func _process(delta):
-	if red == true:
+	if Sports == true: #Checks what car is active
 		if $SportsCar/SportsCar.entering == true:
-			$SportsCar/SportsCar/AnimationPlayer.play("Enter")
+			$SportsCar/SportsCar/AnimationPlayer.play("Enter") #Drives fowards onto the podium
 		if $SportsCar/SportsCar.rotating == true:
-			$SportsCar/SportsCar/AnimationPlayer.play("Rotate")
-	elif red == false:
+			$SportsCar/SportsCar/AnimationPlayer.play("Rotate") #Rotates until next or previous button is selected
+	elif Sports == false:
 		if $SportsCar/SportsCar.rotating == true:
-			$SportsCar/SportsCar/AnimationPlayer.play("Rotate")
-			if ($SportsCar/SportsCar.rotation_degrees.y >= 359 && $SportsCar/SportsCar.rotation_degrees.y < 360 ):
+			$SportsCar/SportsCar/AnimationPlayer.play("Rotate") 
+			#Wait until the car is facing fowards before driving off
+			if ($SportsCar/SportsCar.rotation_degrees.y >= 359 && $SportsCar/SportsCar.rotation_degrees.y < 360 ): 
 				$SportsCar/SportsCar/AnimationPlayer.stop()
 				$SportsCar/SportsCar.rotating = false
 				$SportsCar/SportsCar.exiting = true
-				$SportsCar/SportsCar/AnimationPlayer.play("Exit")
+				$SportsCar/SportsCar/AnimationPlayer.play("Exit") #Moves the car off the podium
 				$SportsCar/SportsCar.exiting = false
 				$SportsCar/SportsCar.rotating = false
 				$SportsCar/SportsCar.entering = false
-	if green == true:
+	if Suv == true:
 
 		if $SUV/SUV.entering == true:
 			$SUV/SUV/AnimationPlayer.play("Enter")
 		if $SUV/SUV.rotating == true:
 			$SUV/SUV/AnimationPlayer.play("Rotate")
-	elif green == false:
+	elif Suv == false:
 			if $SUV/SUV.rotating == true:
 				$SUV/SUV/AnimationPlayer.play("Rotate")
 				if ($SUV/SUV.rotation_degrees.y >= 359 && $SUV/SUV.rotation_degrees.y < 360 ):
@@ -71,11 +81,59 @@ func _process(delta):
 					$SUV/SUV.exiting = false
 					$SUV/SUV.rotating = false
 					$SUV/SUV.entering = false
-
+	if nissian == true:
+		if $Nissian/Nissian.entering == true:
+			$Nissian/Nissian/AnimationPlayer.play("Enter")
+		if $Nissian/Nissian.rotating == true:
+			$Nissian/Nissian/AnimationPlayer.play("Rotate")
+	elif nissian == false:
+			if $Nissian/Nissian.rotating == true:
+				$Nissian/Nissian/AnimationPlayer.play("Rotate")
+				if ($Nissian/Nissian.rotation_degrees.y >= 359 && $Nissian/Nissian.rotation_degrees.y < 360 ):
+					$Nissian/Nissian/AnimationPlayer.stop()
+					$Nissian/Nissian.rotating = false
+					$Nissian/Nissian.exiting = true
+					$Nissian/Nissian/AnimationPlayer.play("Exit")
+					$Nissian/Nissian.exiting = false
+					$Nissian/Nissian.rotating = false
+					$Nissian/Nissian.entering = false
+	if Hatchback == true:
+		if $BMW/BMW.entering == true:
+			$BMW/BMW/AnimationPlayer.play("Enter")
+		if $BMW/BMW.rotating == true:
+			$BMW/BMW/AnimationPlayer.play("Rotate")
+	elif Hatchback == false:
+			if $BMW/BMW.rotating == true:
+				$BMW/BMW/AnimationPlayer.play("Rotate")
+				if ($BMW/BMW.rotation_degrees.y >= 359 && $BMW/BMW.rotation_degrees.y < 360 ):
+					$BMW/BMW/AnimationPlayer.stop()
+					$BMW/BMW.rotating = false
+					$BMW/BMW.exiting = true
+					$BMW/BMW/AnimationPlayer.play("Exit")
+					$BMW/BMW.exiting = false
+					$BMW/BMW.rotating = false
+					$BMW/BMW.entering = false
+					
+	if SixbySix == true:
+		if $SixbySix/SixbySix.entering == true:
+			$SixbySix/SixbySix/AnimationPlayer.play("Enter")
+		if $SixbySix/SixbySix.rotating == true:
+			$SixbySix/SixbySix/AnimationPlayer.play("Rotate")
+	elif SixbySix == false:
+			if $SixbySix/SixbySix.rotating == true:
+				$SixbySix/SixbySix/AnimationPlayer.play("Rotate")
+				if ($SixbySix/SixbySix.rotation_degrees.y >= 359 && $SixbySix/SixbySix.rotation_degrees.y < 360 ):
+					$SixbySix/SixbySix/AnimationPlayer.stop()
+					$SixbySix/SixbySix.rotating = false
+					$SixbySix/SixbySix.exiting = true
+					$SixbySix/SixbySix/AnimationPlayer.play("Exit")
+					$SixbySix/SixbySix.exiting = false
+					$SixbySix/SixbySix.rotating = false
+					$SixbySix/SixbySix.entering = false
 func next_car():
-	if garage.car_index < 4:
+	if garage.car_index < 5:
 		garage.car_index += 1
-	elif garage.car_index == 4:
+	elif garage.car_index == 5:
 		garage.car_index = 1
 	
 
@@ -84,19 +142,46 @@ func next_car():
 func _on_ChangingVehicles_timeout(): #CHANGING NEXT
 	next_car()
 	print(garage.car_index)
-	if garage.car_index == 1:
-		red = true
+	if garage.car_index == 1: #Porshe/Taxi
+		Sports = true
 		$SportsCar/SportsCar.entering = true
-		green = false
-		$Selection/AnimationPlayer.play("blue to red")
-	if garage.car_index == 2:
-		green = true
+		Suv = false
+		nissian = false
+		Hatchback = false
+		SixbySix = false
+		$Selection/AnimationPlayer.play("index 1")
+	if garage.car_index == 2: #SUV
+		Suv = true
 		$SUV/SUV.entering = true
-		red = false
-		$Selection/AnimationPlayer.play("Red to Green")
-	if garage.car_index == 3:
-		$Selection/AnimationPlayer.play("Green to yellow")
-	if garage.car_index == 4:
-		$Selection/AnimationPlayer.play("yellow to blue")
+		Sports = false
+		nissian = false
+		Hatchback = false
+		SixbySix = false
+		$Selection/AnimationPlayer.play("index 2")
+	if garage.car_index == 3: #Nissian
+		nissian = true
+		Sports = false
+		Suv = false
+		Hatchback = false
+		SixbySix = false
+		$Nissian/Nissian.entering = true
+		
+		$Selection/AnimationPlayer.play("index 3")
+	if garage.car_index == 4: #BMW Hatchback
+		nissian = false
+		Sports = false
+		Suv = false
+		Hatchback = true
+		SixbySix = false
+		$BMW/BMW.entering = true
+		$Selection/AnimationPlayer.play("index 4")
+	if garage.car_index == 5: #6x6
+		nissian = false
+		Sports = false
+		Suv = false
+		Hatchback = false
+		SixbySix = true
+		$SixbySix/SixbySix.entering = true
+#		$Selection/AnimationPlayer.play("index 4")
 	$ChangingVehicles.wait_time = 5
 	$ChangingVehicles.stop()

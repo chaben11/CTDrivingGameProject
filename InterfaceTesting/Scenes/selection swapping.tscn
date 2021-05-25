@@ -5,13 +5,10 @@
 [ext_resource path="res://Textures/SUV_IMAGE.png" type="Texture" id=3]
 [ext_resource path="res://Textures/SPORTS_IMAGE.png" type="Texture" id=4]
 
-
-
-
 [sub_resource type="CubeMesh" id=1]
 
-[sub_resource type="Animation" id=2]
-resource_name = "Green to yellow"
+[sub_resource type="Animation" id=4]
+resource_name = "index 1"
 length = 3.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("green:position")
@@ -23,7 +20,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 300, 0 ) ]
+"values": [ Vector2( -600, 0 ), Vector2( -300, 0 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("red:position")
@@ -35,7 +32,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 300, 0 ), Vector2( 600, 0 ) ]
+"values": [ Vector2( -300, 0 ), Vector2( 0, 0 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("yellow:position")
@@ -47,7 +44,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -300, 0 ), Vector2( 0, 0 ) ]
+"values": [ Vector2( 300, 0 ), Vector2( 600, 0 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Blue:position")
@@ -59,11 +56,11 @@ tracks/3/keys = {
 "times": PoolRealArray( 0, 3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -600, 0 ), Vector2( -300, 0 ) ]
+"values": [ Vector2( 0, 0 ), Vector2( 300, 0 ) ]
 }
 
 [sub_resource type="Animation" id=3]
-resource_name = "Red to Green"
+resource_name = "index 2"
 length = 3.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("green:position")
@@ -114,8 +111,8 @@ tracks/3/keys = {
 "values": [ Vector2( 300, 0 ), Vector2( 600, 0 ) ]
 }
 
-[sub_resource type="Animation" id=4]
-resource_name = "blue to red"
+[sub_resource type="Animation" id=2]
+resource_name = "index 3"
 length = 3.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("green:position")
@@ -127,7 +124,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -600, 0 ), Vector2( -300, 0 ) ]
+"values": [ Vector2( 0, 0 ), Vector2( 300, 0 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("red:position")
@@ -139,7 +136,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -300, 0 ), Vector2( 0, 0 ) ]
+"values": [ Vector2( 300, 0 ), Vector2( 600, 0 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("yellow:position")
@@ -151,7 +148,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 300, 0 ), Vector2( 600, 0 ) ]
+"values": [ Vector2( -300, 0 ), Vector2( 0, 0 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Blue:position")
@@ -163,11 +160,11 @@ tracks/3/keys = {
 "times": PoolRealArray( 0, 3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 300, 0 ) ]
+"values": [ Vector2( -600, 0 ), Vector2( -300, 0 ) ]
 }
 
 [sub_resource type="Animation" id=5]
-resource_name = "yellow to blue"
+resource_name = "index 4"
 length = 3.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("green:position")
@@ -221,32 +218,32 @@ tracks/3/keys = {
 [node name="selection" type="Node2D"]
 
 [node name="red" type="Sprite" parent="."]
+position = Vector2( -600, 0 )
 scale = Vector2( 0.0811111, 0.0811111 )
 texture = ExtResource( 4 )
 
 [node name="green" type="Sprite" parent="."]
-position = Vector2( -300, 0 )
+position = Vector2( 300, 0 )
 scale = Vector2( 0.23, 0.23 )
 texture = ExtResource( 3 )
 
 [node name="yellow" type="MeshInstance2D" parent="."]
 modulate = Color( 1, 0.960784, 0, 1 )
-position = Vector2( -600, 0 )
 scale = Vector2( 50, 50 )
 mesh = SubResource( 1 )
 
 [node name="Blue" type="MeshInstance2D" parent="."]
 modulate = Color( 0.12549, 0, 1, 1 )
-position = Vector2( 300, 0 )
+position = Vector2( -300, 0 )
 scale = Vector2( 50, 50 )
 mesh = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 playback_speed = 1.5
-"anims/Green to yellow" = SubResource( 2 )
-"anims/Red to Green" = SubResource( 3 )
-"anims/blue to red" = SubResource( 4 )
-"anims/yellow to blue" = SubResource( 5 )
+"anims/index 1" = SubResource( 4 )
+"anims/index 2" = SubResource( 3 )
+"anims/index 3" = SubResource( 2 )
+"anims/index 4" = SubResource( 5 )
 
 [node name="box" type="MeshInstance2D" parent="."]
 modulate = Color( 0.929412, 0.72549, 0.0235294, 1 )

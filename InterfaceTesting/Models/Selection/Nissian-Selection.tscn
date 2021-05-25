@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Models/Selection/Nissian-Selection.tres" type="ArrayMesh" id=1]
+[ext_resource path="res://Animations/Garage/Rotate.tres" type="Animation" id=12]
+[ext_resource path="res://Animations/Garage/Enter.tres" type="Animation" id=13]
+[ext_resource path="res://Animations/Garage/Exit.tres" type="Animation" id=14]
+[ext_resource path="res://Scripts/Nissian.gd" type="Script" id=15]
+
+[node name="Nissian-Selection" type="Spatial"]
+
+[node name="Nissian" type="MeshInstance" parent="."]
+mesh = ExtResource( 1 )
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+material/7 = null
+material/8 = null
+material/9 = null
+material/10 = null
+script = ExtResource( 15 )
+entering = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Nissian"]
+anims/Enter = ExtResource( 13 )
+anims/Exit = ExtResource( 14 )
+anims/Rotate = ExtResource( 12 )
