@@ -14,7 +14,10 @@ func _ready():
 	Sports = true
 	Suv = false
 	nissian = false
+	Hatchback = false
+	SixbySix = false
 	garage.car_index = 1
+	$SportsCar/SportsCar.entering = true
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

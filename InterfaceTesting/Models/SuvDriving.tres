@@ -7,7 +7,7 @@
 [ext_resource path="res://Materials/chrome.material" type="Material" id=5]
 [ext_resource path="res://Materials/head lights.material" type="Material" id=6]
 
-[sub_resource type="SpatialMaterial" id=7]
+[sub_resource type="SpatialMaterial" id=1]
 params_cull_mode = 2
 albedo_color = Color( 1, 0, 0, 1 )
 metallic = 1.0
@@ -33,7 +33,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 97559,
 "index_count": 4389,
-"material": SubResource( 7 ),
+"material": SubResource( 1 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 2425

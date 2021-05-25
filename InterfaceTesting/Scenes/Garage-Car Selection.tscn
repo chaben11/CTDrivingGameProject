@@ -116,10 +116,10 @@ __meta__ = {
 }
 
 [node name="SUV" parent="." instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -32 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, -32 )
 
 [node name="SUV" parent="SUV" index="0"]
-transform = Transform( 1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, 0, 0 )
+transform = Transform( 1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, 0, -20 )
 
 [node name="ChangingVehicles" type="Timer" parent="."]
 wait_time = 5.0
@@ -156,25 +156,30 @@ __meta__ = {
 }
 
 [node name="SportsCar" parent="." instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -32 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1, -32 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 5 )
 
 [node name="SixbySix" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -32 )
-
-[node name="Nissian" parent="." instance=ExtResource( 12 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -32 )
 
+[node name="SixbySix" parent="SixbySix" index="0"]
+transform = Transform( 0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, -20 )
+entering = true
+
+[node name="Nissian" parent="." instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, -32 )
+
 [node name="Nissian" parent="Nissian" index="0"]
-transform = Transform( 0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0 )
+transform = Transform( 0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, -20 )
 
 [node name="BMW" parent="." instance=ExtResource( 13 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -32 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -32 )
 
 [node name="BMW" parent="BMW" index="0"]
-transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 32 )
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, -20 )
+entering = true
 
 [connection signal="pressed" from="Previous" to="." method="_on_Previous_pressed"]
 [connection signal="pressed" from="next" to="." method="_on_next_pressed"]
