@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Coffin Cart.glb-5ec97ae1b724d6a2c6bd43e8b034aa7d.scn"
+path="res://.import/Coffin Cart.glb-8aa9f22589e41c2a1cc8195b38927e41.scn"
 
 [deps]
 
-source_file="res://Materials/Coffin Cart.glb"
-dest_files=[ "res://.import/Coffin Cart.glb-5ec97ae1b724d6a2c6bd43e8b034aa7d.scn" ]
+source_file="res://Models/Coffin Cart.glb"
+dest_files=[ "res://.import/Coffin Cart.glb-8aa9f22589e41c2a1cc8195b38927e41.scn" ]
 
 [params]
 
