@@ -1,4 +1,4 @@
-extends Button
+extends Node2D
 
 
 # Declare member variables here. Examples:
@@ -10,13 +10,10 @@ extends Button
 func _ready():
 	pass # Replace with function body.
 
-
+func _input(event):
+	if Input.is_action_just_pressed("space"):
+		get_tree().change_scene("res://TestingLoadVehicle/Testing.tscn")
+		print("tss")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-
-
-
-func _on_Loadscene_pressed():
-	get_tree().change_scene("res://Scenes/MainMenu.tscn") 
-	print(garage.car_index)

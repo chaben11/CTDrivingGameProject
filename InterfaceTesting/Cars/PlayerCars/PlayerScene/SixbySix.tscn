@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Cars/PlayerCars/SixbySix.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/Camera_offset_Backup.gd" type="Script" id=2]
+[ext_resource path="res://Taxiphysics/PlayerVehicleController.gd" type="Script" id=3]
+
+[sub_resource type="PhysicsMaterial" id=16]
+absorbent = true
+
+[node name="Player" type="Spatial"]
+script = ExtResource( 2 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 0.5, 0.230474, -0.834794, 0, 0.963938, 0.266128, 0.866025, -0.133064, 0.481969, -13, 7.744, 6 )
+current = true
+fov = 48.4
+
+[node name="Player" type="VehicleBody" parent="." instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 3, 0 )
+mass = 51.0204
+physics_material_override = SubResource( 16 )
+axis_lock_linear_y = true
+axis_lock_linear_z = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+script = ExtResource( 3 )

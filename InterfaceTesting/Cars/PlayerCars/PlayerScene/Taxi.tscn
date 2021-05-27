@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Taxiphysics/Camera_offset.gd" type="Script" id=2]
+[ext_resource path="res://Taxiphysics/Taxi.tscn" type="PackedScene" id=3]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 1, 1, 3.46497 )
+
+[node name="Player" type="Spatial"]
+script = ExtResource( 2 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 0.5, 0.230474, -0.834795, 0, 0.963937, 0.266128, 0.866025, -0.133064, 0.481969, -10, 7.744, 3 )
+current = true
+fov = 48.4
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0.114, -3 )
+
+[node name="EnemyChecker" type="Area" parent="Player"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3, 0.113688, 1.31134e-07 )
+visible = false
+
+[node name="CollisionShape" type="CollisionShape" parent="Player/EnemyChecker"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.644099, 0 )
+shape = SubResource( 1 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://PauseMenuNewIcons/1x/ResumeNormal.png" type="Texture" id=1]
 [ext_resource path="res://PauseMenuNewIcons/1x/Asset 25.png" type="Texture" id=2]
@@ -9,11 +9,10 @@
 [ext_resource path="res://Models/Enemy3.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/LevelCompleted.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Textures/roadmesh.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Cars/PlayerCars/SixbySix.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Cars/PlayerCars/PlayerScene/SixbySix.tscn" type="PackedScene" id=10]
 [ext_resource path="res://DigitalTechMenu/SettingsButton.tscn" type="PackedScene" id=11]
 [ext_resource path="res://PauseMenuNewIcons/1x/Asset 26.png" type="Texture" id=12]
 [ext_resource path="res://Textures/default_env.tres" type="Environment" id=13]
-[ext_resource path="res://Taxiphysics/Camera_offset.gd" type="Script" id=14]
 [ext_resource path="res://Taxiphysics/Pause.gd" type="Script" id=15]
 [ext_resource path="res://Taxiphysics/Failed.gd" type="Script" id=16]
 [ext_resource path="res://Textures/rightsidewalk.tres" type="Material" id=17]
@@ -30,7 +29,6 @@
 [ext_resource path="res://2x/Sidewalkgrass_type4@2x.png" type="Texture" id=28]
 [ext_resource path="res://FailMenu/GameOverScreen.png" type="Texture" id=29]
 [ext_resource path="res://PauseMenuNewIcons/1x/ResumePressed.png" type="Texture" id=30]
-[ext_resource path="res://Taxiphysics/PlayerVehicleController.gd" type="Script" id=31]
 
 [sub_resource type="SpatialMaterial" id=1]
 params_cull_mode = 2
@@ -141,9 +139,6 @@ surfaces/0 = {
 }
 
 [sub_resource type="CubeMesh" id=12]
-
-[sub_resource type="PhysicsMaterial" id=16]
-absorbent = true
 
 [sub_resource type="ViewportTexture" id=15]
 viewport_path = NodePath("Node2D/Viewport")
@@ -363,23 +358,7 @@ material/0 = null
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 13 )
 
-[node name="Player" type="Spatial" parent="."]
-script = ExtResource( 14 )
-
-[node name="Camera" type="Camera" parent="Player"]
-transform = Transform( 0.5, 0.230474, -0.834794, 0, 0.963938, 0.266128, 0.866025, -0.133064, 0.481969, -10, 7.744, 3 )
-current = true
-fov = 48.4
-
-[node name="Player" parent="Player" instance=ExtResource( 10 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 3, 0 )
-mass = 51.0204
-physics_material_override = SubResource( 16 )
-axis_lock_linear_y = true
-axis_lock_linear_z = true
-axis_lock_angular_y = true
-axis_lock_angular_z = true
-script = ExtResource( 31 )
+[node name="Player" parent="." instance=ExtResource( 10 )]
 
 [node name="Pause" type="Control" parent="."]
 pause_mode = 2
