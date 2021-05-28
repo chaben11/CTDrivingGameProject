@@ -1,0 +1,4 @@
+[gd_scene format=2]
+
+[node name="EnemyChecker" type="Area"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3, 0.580867, 1.31134e-07 )
