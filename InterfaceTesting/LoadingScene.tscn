@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=2]
+[gd_scene load_steps=63 format=2]
 
 [ext_resource path="res://DigitalTechMenu/Buttons/AnimationFrames/0057.png" type="Texture" id=1]
 [ext_resource path="res://DigitalTechMenu/Buttons/AnimationFrames/0054.png" type="Texture" id=2]
@@ -60,20 +60,34 @@
 [ext_resource path="res://DigitalTechMenu/Buttons/AnimationFrames/0039.png" type="Texture" id=58]
 [ext_resource path="res://DigitalTechMenu/Buttons/AnimationFrames/0059.png" type="Texture" id=59]
 [ext_resource path="res://DigitalTechMenu/Buttons/AnimationFrames/0060.png" type="Texture" id=60]
+[ext_resource path="res://Scripts/LoadingScene.gd" type="Script" id=61]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 18 ), ExtResource( 24 ), ExtResource( 20 ), ExtResource( 19 ), ExtResource( 23 ), ExtResource( 22 ), ExtResource( 31 ), ExtResource( 25 ), ExtResource( 21 ), ExtResource( 30 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 32 ), ExtResource( 35 ), ExtResource( 34 ), ExtResource( 33 ), ExtResource( 39 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 40 ), ExtResource( 44 ), ExtResource( 38 ), ExtResource( 45 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 46 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 15 ), ExtResource( 14 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 11 ), ExtResource( 7 ), ExtResource( 29 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 1 ), ExtResource( 47 ), ExtResource( 59 ), ExtResource( 60 ) ],
-"loop": true,
+"frames": [ ExtResource( 18 ), ExtResource( 24 ), ExtResource( 20 ), ExtResource( 19 ), ExtResource( 23 ), ExtResource( 22 ), ExtResource( 31 ), ExtResource( 25 ), ExtResource( 21 ), ExtResource( 30 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 32 ), ExtResource( 35 ), ExtResource( 34 ), ExtResource( 33 ), ExtResource( 39 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 40 ), ExtResource( 44 ), ExtResource( 38 ), ExtResource( 45 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 46 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 15 ), ExtResource( 14 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 11 ), ExtResource( 7 ), ExtResource( 29 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 1 ), ExtResource( 47 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 60 ), ExtResource( 60 ), ExtResource( 60 ), ExtResource( 60 ), ExtResource( 60 ), ExtResource( 60 ), ExtResource( 60 ), ExtResource( 60 ), ExtResource( 60 ), ExtResource( 60 ), ExtResource( 60 ) ],
+"loop": false,
 "name": "default",
 "speed": 5.0
 } ]
 
-[node name="Node2D" type="Control"]
+[node name="Loading" type="Control"]
+margin_right = 1024.0
+margin_bottom = 600.0
+script = ExtResource( 61 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0.670588, 0.0627451, 0.0627451, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 500, 300 )
+scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
 speed_scale = 4.0

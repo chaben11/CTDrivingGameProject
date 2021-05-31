@@ -9,8 +9,15 @@
 [ext_resource path="res://Materials/led.material" type="Material" id=7]
 [ext_resource path="res://Materials/black.material" type="Material" id=8]
 [ext_resource path="res://Materials/reverce.material" type="Material" id=9]
-[ext_resource path="res://Materials/body.material" type="Material" id=10]
 [ext_resource path="res://Materials/break LED.material" type="Material" id=11]
+
+[sub_resource type="SpatialMaterial" id=1]
+resource_name = "body"
+vertex_color_use_as_albedo = true
+params_cull_mode = 2
+albedo_color = Color( 0.8, 0.792157, 0.792157, 1 )
+metallic = 1.0
+roughness = 0.4
 
 [resource]
 resource_name = "Plane022"
@@ -21,7 +28,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 97559,
 "index_count": 10227,
-"material": ExtResource( 10 ),
+"material": SubResource( 1 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 6122

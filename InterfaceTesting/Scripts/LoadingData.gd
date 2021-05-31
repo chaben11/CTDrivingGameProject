@@ -11,6 +11,8 @@ onready var sixbysix = preload("res://Cars/PlayerCars/PlayerScene/SixbySix.tscn"
 func _ready():
 	if garage.car_index == 5:
 		add_child(sixbysix.instance())
+	elif garage.car_index == 2:
+		pass
 	else:
 		add_child(taxi.instance())
 
