@@ -37,4 +37,4 @@ func _on_The_City_pressed():
 
 
 func _on_Garage_pressed(): #Will open car selection menu
-	pass # Replace with function body.
+	get_tree().change_scene("res://Scenes/Garage-Car Selection.tscn")
