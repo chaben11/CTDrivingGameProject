@@ -10,7 +10,11 @@ extends Button
 func _ready():
 	pass # Replace with function body.
 
-
+func _process(delta):
+	if garage.car_index == 3:
+		disabled = true
+	else:
+		disabled = false
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
