@@ -9,6 +9,7 @@ export var Suv = false
 export var nissian = false
 export var Hatchback = false
 export var SixbySix = false
+export var Limo = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Sports = true
@@ -16,6 +17,7 @@ func _ready():
 	nissian = false
 	Hatchback = false
 	SixbySix = false
+	Limo = false
 	garage.car_index = 1
 	$SportsCar/SportsCar.entering = true
 
@@ -39,6 +41,8 @@ func _on_next_pressed():
 		Hatchback = false
 	elif SixbySix == true:
 		SixbySix = false
+	elif Limo == true:
+		Limo = false
 	print(garage.car_index)
 
 
@@ -133,10 +137,27 @@ func _process(delta):
 					$SixbySix/SixbySix.exiting = false
 					$SixbySix/SixbySix.rotating = false
 					$SixbySix/SixbySix.entering = false
+	if Limo == true: #Checks what car is active
+		if $Limo/Limo.entering == true:
+			$Limo/Limo/AnimationPlayer.play("Enter") #Drives fowards onto the podium
+		if $Limo/Limo.rotating == true:
+			$Limo/Limo/AnimationPlayer.play("Rotate") #Rotates until next or previous button is selected
+	elif Limo == false:
+		if $Limo/Limo.rotating == true:
+			$Limo/Limo/AnimationPlayer.play("Rotate") 
+			#Wait until the car is facing fowards before driving off
+			if ($Limo/Limo.rotation_degrees.y >= 359 && $Limo/Limo.rotation_degrees.y < 360 ): 
+				$Limo/Limo/AnimationPlayer.stop()
+				$Limo/Limo.rotating = false
+				$Limo/Limo.exiting = true
+				$Limo/Limo/AnimationPlayer.play("Exit") #Moves the car off the podium
+				$Limo/Limo.exiting = false
+				$Limo/Limo.rotating = false
+				$Limo/Limo.entering = false
 func next_car(): #Checks if the index - (number of vehicles) is less than the max ammount before adding 1 or resets to 1 if index is at max
-	if garage.car_index < 5:
+	if garage.car_index < 6:
 		garage.car_index += 1
-	elif garage.car_index == 5:
+	elif garage.car_index == 6:
 		garage.car_index = 1
 	#the garage prefix is an autoload variable so the same values can easily be accessed in other scripts
 
@@ -152,6 +173,7 @@ func _on_ChangingVehicles_timeout(): #CHANGING NEXT
 		nissian = false
 		Hatchback = false
 		SixbySix = false
+		Limo = false
 		$Selection/AnimationPlayer.play("index 1") #User interface animation. Will Play the animation depending on the current selection
 	if garage.car_index == 2: #SUV
 		Suv = true
@@ -160,6 +182,8 @@ func _on_ChangingVehicles_timeout(): #CHANGING NEXT
 		nissian = false
 		Hatchback = false
 		SixbySix = false
+		Limo = false
+		
 		$Selection/AnimationPlayer.play("index 2")
 	if garage.car_index == 3: #Nissian
 		nissian = true #Sets Correct vehicle to the active vehicle and sets others to false
@@ -167,6 +191,7 @@ func _on_ChangingVehicles_timeout(): #CHANGING NEXT
 		Suv = false
 		Hatchback = false
 		SixbySix = false
+		Limo = false
 		$Nissian/Nissian.entering = true
 		
 		$Selection/AnimationPlayer.play("index 3")
@@ -176,6 +201,7 @@ func _on_ChangingVehicles_timeout(): #CHANGING NEXT
 		Suv = false
 		Hatchback = true
 		SixbySix = false
+		Limo = false
 		$BMW/BMW.entering = true
 		$Selection/AnimationPlayer.play("index 4")
 	if garage.car_index == 5: #6x6
@@ -184,7 +210,16 @@ func _on_ChangingVehicles_timeout(): #CHANGING NEXT
 		Suv = false
 		Hatchback = false
 		SixbySix = true
+		Limo = false
 		$SixbySix/SixbySix.entering = true
+	if garage.car_index == 6: #Limo
+		nissian = false
+		Sports = false
+		Suv = false
+		Hatchback = false
+		SixbySix = false
+		Limo = true
+		$Limo/Limo.entering = true
 #		$Selection/AnimationPlayer.play("index 4")
 	$ChangingVehicles.wait_time = 5 # a 5 second wait for the car to fully spin around before the next car will drive over
 	$ChangingVehicles.stop()

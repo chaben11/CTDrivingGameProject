@@ -1,5 +1,6 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
+[ext_resource path="res://Models/Selection/Limo Selection.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Textures/greater-than-sign-icon-36393.png" type="Texture" id=3]
 [ext_resource path="res://Models/Podium.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scripts/Garage.gd" type="Script" id=5]
@@ -181,6 +182,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -32 )
 transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, -20 )
 entering = true
 
+[node name="Limo" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -32 )
+
 [connection signal="pressed" from="Previous" to="." method="_on_Previous_pressed"]
 [connection signal="pressed" from="next" to="." method="_on_next_pressed"]
 [connection signal="timeout" from="ChangingVehicles" to="." method="_on_ChangingVehicles_timeout"]
@@ -192,3 +196,4 @@ entering = true
 [editable path="SixbySix"]
 [editable path="Nissian"]
 [editable path="BMW"]
+[editable path="Limo"]
