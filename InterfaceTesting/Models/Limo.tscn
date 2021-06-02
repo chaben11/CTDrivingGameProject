@@ -135,7 +135,6 @@ surfaces/9 = {
 }
 
 [node name="Cube" type="MeshInstance"]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0 )
 mesh = SubResource( 1 )
 material/0 = null
 material/1 = null

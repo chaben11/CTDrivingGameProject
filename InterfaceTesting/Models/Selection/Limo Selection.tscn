@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Models/Limo.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Models/Selection/LIMOSelectionModel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/SelectionStates.gd" type="Script" id=13]
 [ext_resource path="res://Animations/Garage/Rotate.tres" type="Animation" id=14]
 
@@ -17,7 +17,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 2.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector3( 0, 0, -20 ), Vector3( 0, 0, 35 ) ]
+"values": [ Vector3( 0, 0, -20 ), Vector3( 0, 0, 32 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath(".:entering")
@@ -57,7 +57,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 2.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector3( 0, 0, 45 ), Vector3( 0, 0, 84 ) ]
+"values": [ Vector3( 0, 0, 32 ), Vector3( 0, 0, 84 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath(".:exiting")
@@ -75,9 +75,7 @@ tracks/1/keys = {
 [node name="Limo" type="Spatial"]
 
 [node name="Limo" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 35 )
 script = ExtResource( 13 )
-rotating = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Limo"]
 anims/Enter = SubResource( 1 )
