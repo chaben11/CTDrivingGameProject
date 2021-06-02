@@ -13,8 +13,10 @@ func _ready():
 func _process(delta):
 	if garage.car_index == 3:
 		disabled = true
+		$VEHICLELOCKED.show()
 	else:
 		disabled = false
+		$VEHICLELOCKED.hide()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass

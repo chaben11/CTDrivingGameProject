@@ -21,6 +21,7 @@
 [ext_resource path="res://Scenes/Floortest.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Models/Enemy3.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Textures/roadmesh.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Models/Buildings.tscn" type="PackedScene" id=22]
 [ext_resource path="res://DigitalTechMenu/SettingsButton.tscn" type="PackedScene" id=23]
 [ext_resource path="res://Models/Speedometer(3).tscn" type="PackedScene" id=24]
 [ext_resource path="res://Models/Enemy.tscn" type="PackedScene" id=25]
@@ -138,9 +139,7 @@ surfaces/0 = {
 "vertex_count": 24
 }
 
-[sub_resource type="CubeMesh" id=12]
-
-[sub_resource type="ViewportTexture" id=13]
+[sub_resource type="ViewportTexture" id=12]
 viewport_path = NodePath("Node2D/Viewport")
 
 [node name="Main" type="Spatial"]
@@ -194,6 +193,11 @@ transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 104.299, -0.167, -29.8516 )
 mesh = SubResource( 5 )
 material/0 = null
 
+[node name="MeshInstance11" type="MeshInstance" parent="Roads"]
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, -75.776, -0.167, -29.852 )
+mesh = SubResource( 5 )
+material/0 = null
+
 [node name="MeshInstance8" type="MeshInstance" parent="Roads"]
 transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 284.122, -0.167, -29.6014 )
 mesh = SubResource( 7 )
@@ -230,7 +234,7 @@ mesh = SubResource( 11 )
 material/0 = null
 
 [node name="MeshInstance10" type="MeshInstance" parent="Roads"]
-transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 184.488, -0.167, -29.852 )
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 184.206, -0.351364, -29.6263 )
 mesh = SubResource( 11 )
 material/0 = null
 
@@ -241,120 +245,6 @@ material/0 = null
 
 [node name="Spatial" type="Spatial" parent="."]
 transform = Transform( 10, 0, 0, 0, 25, 0, 0, 0, 10, 84, -6.898, -29.777 )
-
-[node name="MeshInstance" type="MeshInstance" parent="Spatial"]
-mesh = SubResource( 12 )
-material/0 = null
-
-[node name="MeshInstance3" type="MeshInstance" parent="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1.2, 0, 0, 0, 1, 2, 0.788877, 0 )
-mesh = SubResource( 12 )
-material/0 = null
-
-[node name="MeshInstance5" type="MeshInstance" parent="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1.2, 0, 0, 0, 1, -9.9, 1.41257, 0 )
-mesh = SubResource( 12 )
-material/0 = null
-
-[node name="MeshInstance6" type="MeshInstance" parent="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.9, 0.819821, 0 )
-mesh = SubResource( 12 )
-material/0 = null
-
-[node name="MeshInstance2" type="MeshInstance" parent="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.551275, 0 )
-mesh = SubResource( 12 )
-material/0 = null
-
-[node name="MeshInstance4" type="MeshInstance" parent="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9, 0, 0 )
-mesh = SubResource( 12 )
-material/0 = null
-
-[node name="MeshInstance7" type="MeshInstance" parent="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.623, 1.159, 0 )
-mesh = SubResource( 12 )
-material/0 = null
-
-[node name="MeshInstance8" type="MeshInstance" parent="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 6, 1.43768, 0 )
-mesh = SubResource( 12 )
-material/0 = null
-
-[node name="MeshInstance9" type="MeshInstance" parent="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 8, 0.300065, 0 )
-mesh = SubResource( 12 )
-material/0 = null
-
-[node name="MeshInstance10" type="MeshInstance" parent="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 10, 1.03396, 0 )
-mesh = SubResource( 12 )
-material/0 = null
-
-[node name="MeshInstance12" type="MeshInstance" parent="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 12, 1.40228, 0 )
-mesh = SubResource( 12 )
-material/0 = null
-
-[node name="MeshInstance11" type="MeshInstance" parent="Spatial"]
-transform = Transform( 0.999802, 0.0796516, 0, -0.00796516, 1.59968, 0, 0, 0, 1, 10, 1.03396, 0 )
-mesh = SubResource( 12 )
-material/0 = null
-
-[node name="MeshInstance13" type="MeshInstance" parent="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 20, 1.8079, 0 )
-mesh = SubResource( 12 )
-material/0 = null
-
-[node name="MeshInstance16" type="MeshInstance" parent="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 18, -0.351765, 0 )
-mesh = SubResource( 12 )
-material/0 = null
-
-[node name="MeshInstance14" type="MeshInstance" parent="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 24, 1.40228, 0 )
-mesh = SubResource( 12 )
-material/0 = null
-
-[node name="MeshInstance17" type="MeshInstance" parent="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 26.0035, 0.771, 0 )
-mesh = SubResource( 12 )
-material/0 = null
-
-[node name="MeshInstance18" type="MeshInstance" parent="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 28, 1.78859, 0 )
-mesh = SubResource( 12 )
-material/0 = null
-
-[node name="MeshInstance19" type="MeshInstance" parent="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 30, -0.0126581, 0 )
-mesh = SubResource( 12 )
-material/0 = null
-
-[node name="MeshInstance20" type="MeshInstance" parent="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 36, -0.013, 0 )
-mesh = SubResource( 12 )
-material/0 = null
-
-[node name="MeshInstance21" type="MeshInstance" parent="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 38, 1.748, 0 )
-mesh = SubResource( 12 )
-material/0 = null
-
-[node name="MeshInstance22" type="MeshInstance" parent="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 40, -0.800821, 0 )
-mesh = SubResource( 12 )
-material/0 = null
-
-[node name="MeshInstance23" type="MeshInstance" parent="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 42, 0.873495, 0 )
-mesh = SubResource( 12 )
-material/0 = null
-
-[node name="MeshInstance15" type="MeshInstance" parent="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 22, 1.03396, 0 )
-mesh = SubResource( 12 )
-material/0 = null
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 27 )
@@ -446,7 +336,7 @@ __meta__ = {
 position = Vector2( 934.14, 570.667 )
 rotation = 3.14159
 scale = Vector2( -0.5, 0.5 )
-texture = SubResource( 13 )
+texture = SubResource( 12 )
 
 [node name="Viewport" type="Viewport" parent="Node2D"]
 size = Vector2( 400, 400 )
@@ -470,6 +360,58 @@ transform = Transform( 1000, 0, 0, 0, 1, 0, 0, 0, 10, 920.8, -0.5, 0 )
 [node name="Enemy3" parent="." instance=ExtResource( 20 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 408.339, 2, -21.702 )
 
+[node name="Buildings" parent="." instance=ExtResource( 22 )]
+transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 78.1835 )
+
+[node name="7" parent="Buildings" index="0"]
+transform = Transform( 1.11994, 0, 0, 0, -1.33507e-07, -1.11994, 0, 1.11994, -1.33507e-07, -6.47774, 9.12768, -29.0548 )
+
+[node name="5" parent="Buildings" index="1"]
+transform = Transform( 1.41018, 0, 0, 0, -1.68106e-07, -1.41018, 0, 1.41018, -1.68106e-07, 26.925, 6.92805, -28.1199 )
+
+[node name="6" parent="Buildings" index="2"]
+transform = Transform( 1.11994, 0, 0, 0, -1.33507e-07, -1.11994, 0, 1.11994, -1.33507e-07, 36.9323, 9.92107, -28.2545 )
+
+[node name="4" parent="Buildings" index="3"]
+transform = Transform( 1.11994, 0, 0, 0, -1.33507e-07, -1.11994, 0, 1.11994, -1.33507e-07, 3.8099, 6.40143, -27.8973 )
+
+[node name="Cylinder" parent="Buildings" index="4"]
+visible = false
+
+[node name="11005" parent="Buildings" index="5"]
+visible = false
+
+[node name="7001" parent="Buildings" index="6"]
+transform = Transform( 1.11994, 0, 0, 0, -1.33507e-07, -1.11994, 0, 1.11994, -1.33507e-07, 46.2482, 9.12768, -27.9062 )
+
+[node name="4001" parent="Buildings" index="7"]
+transform = Transform( 1.11994, 0, 0, 0, -1.33507e-07, -1.11994, 0, 1.11994, -1.33507e-07, 68.2713, 6.40143, -28.205 )
+
+[node name="7002" parent="Buildings" index="8"]
+transform = Transform( 1.11994, 0, 0, 0, -1.33507e-07, -1.11994, 0, 1.11994, -1.33507e-07, 78.4775, 9.12768, -27.9231 )
+
+[node name="Cylinder001" parent="Buildings" index="9"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 122.864, 17.48, -27.3264 )
+
+[node name="4002" parent="Buildings" index="10"]
+visible = false
+
+[node name="11001" parent="Buildings" index="11"]
+transform = Transform( -1.11994, 0, 0, 0, -1.33507e-07, -1.11994, 0, 1.11994, -1.33507e-07, 115.176, 6.3553, -26.2353 )
+
+[node name="5001" parent="Buildings" index="12"]
+transform = Transform( 1.41018, 0, 0, 0, -1.68106e-07, -1.41018, 0, 1.41018, -1.68106e-07, 144.17, 6.84775, -0.10541 )
+visible = false
+
+[node name="Cube" parent="Buildings" index="13"]
+visible = false
+
+[node name="Cube001" parent="Buildings" index="14"]
+transform = Transform( 6.86948, 0, 0, 0, 0.874792, 0, 0, 0, 0.874792, 90.817, 0.874792, -26.1806 )
+
+[node name="Cube002" parent="Buildings" index="15"]
+visible = false
+
 [connection signal="pressed" from="Pause/MainMenu/MenuButton" to="Pause" method="_on_MenuButton_pressed"]
 [connection signal="pressed" from="Pause/MainMenu/SettingsButton" to="Pause" method="_on_SettingsButton_pressed"]
 [connection signal="pressed" from="Pause/MainMenu/ResumeButton" to="Pause" method="_on_ResumeButton_pressed"]
@@ -477,3 +419,4 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 408.339, 2, -21.702 )
 [connection signal="pressed" from="Failed/MainMenu/RetryButton" to="Failed" method="_on_RetryButton_pressed"]
 
 [editable path="Node2D/Viewport/Speedometer(3)"]
+[editable path="Buildings"]

@@ -133,6 +133,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="VEHICLELOCKED" type="Sprite" parent="Loadscene"]
+position = Vector2( 328.49, 95.1489 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+
 [node name="next" type="Button" parent="."]
 margin_left = 893.023
 margin_top = 486.652
@@ -190,11 +195,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -32 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20 )
 entering = true
 exiting = true
-
-[node name="VEHICLELOCKED" type="Sprite" parent="."]
-visible = false
-position = Vector2( 449.017, 321.409 )
-texture = ExtResource( 2 )
 
 [connection signal="timeout" from="ChangingVehicles" to="." method="_on_ChangingVehicles_timeout"]
 [connection signal="pressed" from="Loadscene" to="Loadscene" method="_on_Loadscene_pressed"]
