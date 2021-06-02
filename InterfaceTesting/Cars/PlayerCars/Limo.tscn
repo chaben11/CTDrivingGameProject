@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Models/LimoBody.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Taxiphysics/PlayerVehicleController.gd" type="Script" id=3]
+[ext_resource path="res://Models/LimoWheel.tscn" type="PackedScene" id=4]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.491665, 0.63742, 2.66512 )
+
+[node name="Limo" type="VehicleBody"]
+axis_lock_linear_y = true
+axis_lock_linear_z = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+script = ExtResource( 3 )
+
+[node name="LimoBody" parent="." instance=ExtResource( 2 )]
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.238141, -0.525587 )
+shape = SubResource( 1 )
+
+[node name="VehicleWheel" type="VehicleWheel" parent="."]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.20504, -0.7, -3.82798 )
+use_as_traction = true
+wheel_radius = 1.0
+
+[node name="LimoWheel" parent="VehicleWheel" instance=ExtResource( 4 )]
+transform = Transform( 3.27835e-08, -0.75, -6.55671e-08, -0.75, -3.27835e-08, 0, -2.86603e-15, 6.55671e-08, -0.75, 0, -0.291592, 0.0825796 )
+
+[node name="VehicleWheel2" type="VehicleWheel" parent="."]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.20504, -0.991592, 7.76001 )
+use_as_traction = true
+wheel_radius = 1.0
+
+[node name="LimoWheel" parent="VehicleWheel2" instance=ExtResource( 4 )]
+transform = Transform( 3.27835e-08, -0.75, -6.55671e-08, -0.75, -3.27835e-08, 0, -2.86603e-15, 6.55671e-08, -0.75, 0, 0, 0 )
+
+[node name="VehicleWheel4" type="VehicleWheel" parent="."]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.31765, -0.991592, 7.76001 )
+use_as_traction = true
+wheel_radius = 1.0
+
+[node name="LimoWheel" parent="VehicleWheel4" instance=ExtResource( 4 )]
+transform = Transform( -3.27835e-08, 0.75, 0, -0.75, -3.27835e-08, 0, 0, 0, 0.75, 0, 0, 0 )
+
+[node name="VehicleWheel5" type="VehicleWheel" parent="."]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.318, -0.992, -3.828 )
+use_as_traction = true
+wheel_radius = 1.0
+
+[node name="LimoWheel" parent="VehicleWheel5" instance=ExtResource( 4 )]
+transform = Transform( -3.27835e-08, 0.75, 0, -0.75, -3.27835e-08, 0, 0, 0, 0.75, 0, 0, 0 )

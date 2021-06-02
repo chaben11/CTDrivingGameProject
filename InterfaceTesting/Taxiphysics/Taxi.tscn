@@ -35,40 +35,44 @@ axis_lock_angular_z = true
 script = ExtResource( 6 )
 
 [node name="Taxi" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.402637, 0 )
+transform = Transform( 1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0.402637, 0 )
 
 [node name="VehicleWheel" type="VehicleWheel" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.954496, 0.90942, 1.97475 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.954496, 0.90942, 2.35021 )
 use_as_traction = true
 wheel_roll_influence = 0.0
+wheel_radius = 0.6
 suspension_travel = 0.3
 
 [node name="Front_L" parent="VehicleWheel" instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform = Transform( 1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0.055141, 0, 0 )
 
 [node name="VehicleWheel2" type="VehicleWheel" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.00729, 0.88816, -1.03677 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.00729, 0.88816, -1.33286 )
 use_as_traction = true
 wheel_roll_influence = 0.0
+wheel_radius = 0.6
 
 [node name="Back_L" parent="VehicleWheel2" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform = Transform( 1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0.0729139 )
 
 [node name="VehicleWheel4" type="VehicleWheel" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.954, 0.909636, 1.975 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.954, 0.909636, 2.35046 )
 use_as_traction = true
 wheel_roll_influence = 0.0
+wheel_radius = 0.6
 
 [node name="Front_R" parent="VehicleWheel4" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform = Transform( 1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0 )
 
 [node name="VehicleWheel3" type="VehicleWheel" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.007, 0.888637, -1.023 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.007, 0.888637, -1.2316 )
 use_as_traction = true
 wheel_roll_influence = 0.0
+wheel_radius = 0.6
 
 [node name="Back_R" parent="VehicleWheel3" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform = Transform( 1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.46179, 0.09426 )
