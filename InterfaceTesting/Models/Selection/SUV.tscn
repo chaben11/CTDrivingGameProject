@@ -22,6 +22,7 @@ material/7 = null
 material/8 = null
 script = ExtResource( 1 )
 entering = true
+rotating = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SUV"]
 anims/Enter = ExtResource( 2 )

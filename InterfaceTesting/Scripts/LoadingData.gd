@@ -9,6 +9,7 @@ onready var taxi = preload("res://Cars/PlayerCars/PlayerScene/Taxi.tscn")
 onready var sixbysix = preload("res://Cars/PlayerCars/PlayerScene/SixbySix.tscn")
 onready var bmw = preload("res://Cars/PlayerCars/PlayerScene/Bmw.tscn")
 onready var suv = preload("res://Cars/PlayerCars/PlayerScene/suv.tscn")
+onready var limo = preload("res://Cars/PlayerCars/PlayerScene/Limo.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if garage.car_index == 5:
@@ -17,6 +18,8 @@ func _ready():
 		add_child(bmw.instance())
 	elif garage.car_index == 2:
 		add_child(suv.instance())
+	elif garage.car_index == 6:
+		add_child(limo.instance())
 	else:
 		add_child(taxi.instance())
 

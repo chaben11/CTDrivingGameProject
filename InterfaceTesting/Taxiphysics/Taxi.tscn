@@ -45,7 +45,7 @@ wheel_radius = 0.6
 suspension_travel = 0.3
 
 [node name="Front_L" parent="VehicleWheel" instance=ExtResource( 5 )]
-transform = Transform( 1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0.055141, 0, 0 )
+transform = Transform( 1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0.055141, 0.156413, 0.0514233 )
 
 [node name="VehicleWheel2" type="VehicleWheel" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.00729, 0.88816, -1.33286 )
@@ -54,10 +54,10 @@ wheel_roll_influence = 0.0
 wheel_radius = 0.6
 
 [node name="Back_L" parent="VehicleWheel2" instance=ExtResource( 1 )]
-transform = Transform( 1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0.0729139 )
+transform = Transform( 1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0.156413, 0.124337 )
 
 [node name="VehicleWheel4" type="VehicleWheel" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.954, 0.909636, 2.35046 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.06313, 1.02442, 2.35046 )
 use_as_traction = true
 wheel_roll_influence = 0.0
 wheel_radius = 0.6
@@ -66,7 +66,7 @@ wheel_radius = 0.6
 transform = Transform( 1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0 )
 
 [node name="VehicleWheel3" type="VehicleWheel" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.007, 0.888637, -1.2316 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.11613, 1.00342, -1.2316 )
 use_as_traction = true
 wheel_roll_influence = 0.0
 wheel_radius = 0.6

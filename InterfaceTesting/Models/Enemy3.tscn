@@ -120,6 +120,5 @@ light_energy = 2.03
 spot_range = 6.5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-playback_speed = 0.5
 "anims/New Anim" = SubResource( 4 )
 "anims/New Anim (copy)" = SubResource( 5 )

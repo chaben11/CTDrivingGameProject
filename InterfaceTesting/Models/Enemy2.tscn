@@ -75,7 +75,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 47.6665, 1.1674, -21.702 )
 script = ExtResource( 4 )
 
 [node name="Enemy" type="KinematicBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -91 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -11 )
 
 [node name="AMBULANCE RED" parent="Enemy" instance=ExtResource( 1 )]
 
@@ -120,6 +120,5 @@ light_energy = 2.03
 spot_range = 6.5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-playback_speed = 0.5
 "anims/New Anim" = SubResource( 4 )
 "anims/New Anim (copy)" = SubResource( 5 )

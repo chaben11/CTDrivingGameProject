@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Materials/MetalGuardVIP.material" type="Material" id=1]
 [ext_resource path="res://Materials/GuardingAfmVIP.material" type="Material" id=2]
+[ext_resource path="res://Scripts/VipTest_1.gd" type="Script" id=3]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "Cube001"
@@ -33,8 +34,7 @@ surfaces/0 = {
 "vertex_count": 40
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "ArmMove"
+[sub_resource type="Animation" id=4]
 tracks/0/type = "value"
 tracks/0/path = NodePath("arm:rotation_degrees")
 tracks/0/interp = 1
@@ -48,16 +48,38 @@ tracks/0/keys = {
 "values": [ Vector3( 0, 0, -90 ), Vector3( 0, 0, 0 ) ]
 }
 
+[sub_resource type="BoxShape" id=5]
+extents = Vector3( 2.35183, 3.75718, 2.055 )
+
+[sub_resource type="BoxShape" id=6]
+extents = Vector3( 3.5118, 5.76527, 5.82836 )
+
 [node name="VipTest_1" type="Spatial"]
+script = ExtResource( 3 )
 
 [node name="main" type="MeshInstance" parent="."]
 mesh = SubResource( 1 )
 material/0 = null
 
 [node name="arm" type="MeshInstance" parent="."]
-transform = Transform( -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 0, 0, 1, -2.02508, 1.84968, -0.577611 )
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -2.02508, 1.84968, -0.577611 )
 mesh = SubResource( 2 )
 material/0 = null
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/ArmMove = SubResource( 3 )
+anims/ArmMove = SubResource( 4 )
+
+[node name="StaticBody" type="StaticBody" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.16829, 0 )
+shape = SubResource( 5 )
+
+[node name="Area" type="Area" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.99182, 0 )
+shape = SubResource( 6 )
+
+[connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]
+[connection signal="body_exited" from="Area" to="." method="_on_Area_body_exited"]

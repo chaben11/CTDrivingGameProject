@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://Textures/sidewalkgrasstogether.tres" type="ArrayMesh" id=1]
 [ext_resource path="res://Models/intersection X (2).tres" type="ArrayMesh" id=2]
@@ -30,6 +30,7 @@
 [ext_resource path="res://Scripts/LoadingData.gd" type="Script" id=28]
 [ext_resource path="res://Taxiphysics/Failed.gd" type="Script" id=29]
 [ext_resource path="res://Scenes/LevelCompleted.tscn" type="PackedScene" id=30]
+[ext_resource path="res://Models/VipTest_1.tscn" type="PackedScene" id=31]
 
 [sub_resource type="SpatialMaterial" id=1]
 params_cull_mode = 2
@@ -395,7 +396,6 @@ transform = Transform( 1.11994, 0, 0, 0, -1.33507e-07, -1.11994, 0, 1.11994, -1.
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 122.864, 17.48, -27.3264 )
 
 [node name="4002" parent="Buildings" index="10"]
-transform = Transform( 1.11994, 0, 0, 0, -1.33507e-07, -1.11994, 0, 1.11994, -1.33507e-07, 122.221, 6.40143, 0.102697 )
 visible = false
 
 [node name="11001" parent="Buildings" index="11"]
@@ -413,6 +413,12 @@ transform = Transform( 6.86948, 0, 0, 0, 0.874792, 0, 0, 0, 0.874792, 90.817, 0.
 
 [node name="Cube002" parent="Buildings" index="15"]
 visible = false
+
+[node name="Prison" parent="Buildings" index="21"]
+transform = Transform( 4.96567, 0, 0, 0, 0.733712, 0, 0, 0, 4, 37.9917, 6.33542, -30.9864 )
+
+[node name="VipTest_1" parent="." instance=ExtResource( 31 )]
+transform = Transform( -8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 532.8, 0, -0.867619 )
 
 [connection signal="pressed" from="Pause/MainMenu/MenuButton" to="Pause" method="_on_MenuButton_pressed"]
 [connection signal="pressed" from="Pause/MainMenu/SettingsButton" to="Pause" method="_on_SettingsButton_pressed"]
