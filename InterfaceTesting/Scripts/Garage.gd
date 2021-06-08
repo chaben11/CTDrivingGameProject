@@ -212,6 +212,7 @@ func _on_ChangingVehicles_timeout(): #CHANGING NEXT
 		SixbySix = true
 		Limo = false
 		$SixbySix/SixbySix.entering = true
+		$Selection/AnimationPlayer.play("index 5")
 	if garage.car_index == 6: #Limo
 		nissian = false
 		Sports = false
@@ -220,6 +221,7 @@ func _on_ChangingVehicles_timeout(): #CHANGING NEXT
 		SixbySix = false
 		Limo = true
 		$Limo/Limo.entering = true
+		$Selection/AnimationPlayer.play("index 6")
 #		$Selection/AnimationPlayer.play("index 4")
 	$ChangingVehicles.wait_time = 5 # a 5 second wait for the car to fully spin around before the next car will drive over
 	$ChangingVehicles.stop()

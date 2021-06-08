@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Models/Selection/Limo Selection.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Animations/Garage/UI/VEHICLELOCKED.png" type="Texture" id=2]
@@ -21,57 +21,6 @@ resource_name = "White"
 params_cull_mode = 2
 albedo_color = Color( 0.906332, 0.906332, 0.906332, 1 )
 roughness = 0.5
-
-[sub_resource type="Animation" id=3]
-length = 3.0
-tracks/0/type = "value"
-tracks/0/path = NodePath("green:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( -600, 0 ), Vector2( -300, 0 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("red:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( -300, 0 ), Vector2( 0, 0 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("yellow:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 300, 0 ), Vector2( 600, 0 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Blue:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0, 3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 300, 0 ) ]
-}
 
 [sub_resource type="ProceduralSky" id=4]
 
@@ -105,22 +54,6 @@ wait_time = 5.0
 [node name="Selection" parent="." instance=ExtResource( 7 )]
 position = Vector2( 522.067, 534.539 )
 script = ExtResource( 10 )
-
-[node name="red" parent="Selection" index="0"]
-position = Vector2( 0, 0 )
-
-[node name="green" parent="Selection" index="1"]
-position = Vector2( -300, 0 )
-offset = Vector2( 100, 0 )
-
-[node name="yellow" parent="Selection" index="2"]
-position = Vector2( -600, 0 )
-
-[node name="Blue" parent="Selection" index="3"]
-position = Vector2( 300, 0 )
-
-[node name="AnimationPlayer" parent="Selection" index="4"]
-"anims/index 1" = SubResource( 3 )
 
 [node name="Loadscene" type="Button" parent="."]
 margin_left = 379.523
@@ -202,7 +135,6 @@ exiting = true
 [connection signal="pressed" from="Previous" to="." method="_on_Previous_pressed"]
 
 [editable path="SUV"]
-[editable path="Selection"]
 [editable path="SportsCar"]
 [editable path="SixbySix"]
 [editable path="Nissian"]
