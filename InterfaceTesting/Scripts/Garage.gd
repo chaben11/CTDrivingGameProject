@@ -4,7 +4,7 @@ extends Spatial
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-export var Sports = true
+export var Sports = false
 export var Suv = false
 export var nissian = false
 export var Hatchback = false
@@ -25,14 +25,28 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-
+func _input(event):
+	if Input.is_action_just_pressed("ui_right"):
+		$ChangingVehicles.start()
+		if Sports == true: 
+			Sports = false
+		elif Suv == true:
+			Suv = false
+		elif nissian == true:
+			nissian = false
+		elif Hatchback == true:
+			Hatchback = false
+		elif SixbySix == true:
+			SixbySix = false
+		elif Limo == true:
+			Limo = false
+		print(garage.car_index)
 
 #Checks when the next arrow button is clicked. It will test which car is currently active and change it to play it's exit animation
 func _on_next_pressed():
 	$ChangingVehicles.start()
 	if Sports == true: 
 		Sports = false
-
 	elif Suv == true:
 		Suv = false
 	elif nissian == true:
@@ -43,7 +57,7 @@ func _on_next_pressed():
 		SixbySix = false
 	elif Limo == true:
 		Limo = false
-	print(garage.car_index)
+
 
 
 func _on_Previous_pressed(): #Will repeat what the next_button function did but will go to the previous car instead
@@ -164,6 +178,7 @@ func next_car(): #Checks if the index - (number of vehicles) is less than the ma
 
 
 func _on_ChangingVehicles_timeout(): #CHANGING NEXT
+	print('timeout')
 	next_car() #Starts the function to find the new index
 	print(garage.car_index)
 	if garage.car_index == 1: #Porshe/Taxi

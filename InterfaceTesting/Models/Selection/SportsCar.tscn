@@ -1,15 +1,20 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/SelectionStates.gd" type="Script" id=1]
 [ext_resource path="res://Cars/SportsCar_Model.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Animations/Garage/Enter.tres" type="Animation" id=3]
 [ext_resource path="res://Animations/Garage/Rotate.tres" type="Animation" id=4]
 [ext_resource path="res://Animations/Garage/Exit.tres" type="Animation" id=5]
+[ext_resource path="res://Models/Selection/Taxi2 .tres" type="ArrayMesh" id=6]
 
 [node name="SportsCar" type="Spatial"]
 
 [node name="SportsCar" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20 )
+mesh = ExtResource( 6 )
+material/13 = null
+material/14 = null
+material/15 = null
 script = ExtResource( 1 )
 entering = true
 exiting = true
