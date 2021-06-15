@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://Textures/sidewalkgrasstogether.tres" type="ArrayMesh" id=1]
 [ext_resource path="res://Models/intersection X (2).tres" type="ArrayMesh" id=2]
@@ -30,7 +30,7 @@
 [ext_resource path="res://Scripts/LoadingData.gd" type="Script" id=28]
 [ext_resource path="res://Taxiphysics/Failed.gd" type="Script" id=29]
 [ext_resource path="res://Scenes/LevelCompleted.tscn" type="PackedScene" id=30]
-[ext_resource path="res://Models/VipTest_1.tscn" type="PackedScene" id=31]
+[ext_resource path="res://Scripts/LevelFinsihed.gd" type="Script" id=31]
 
 [sub_resource type="SpatialMaterial" id=1]
 params_cull_mode = 2
@@ -142,6 +142,9 @@ surfaces/0 = {
 
 [sub_resource type="ViewportTexture" id=12]
 viewport_path = NodePath("Node2D/Viewport")
+
+[sub_resource type="BoxShape" id=13]
+extents = Vector3( 18.5976, 11.6682, 11.1219 )
 
 [node name="Main" type="Spatial"]
 script = ExtResource( 28 )
@@ -417,14 +420,19 @@ visible = false
 [node name="Prison" parent="Buildings" index="21"]
 transform = Transform( 4.96567, 0, 0, 0, 0.733712, 0, 0, 0, 4, 37.9917, 6.33542, -30.9864 )
 
-[node name="VipTest_1" parent="." instance=ExtResource( 31 )]
-transform = Transform( -8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 532.8, 0, -0.867619 )
+[node name="Finsihed" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 572.1, 0, 0 )
+script = ExtResource( 31 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Finsihed"]
+shape = SubResource( 13 )
 
 [connection signal="pressed" from="Pause/MainMenu/MenuButton" to="Pause" method="_on_MenuButton_pressed"]
 [connection signal="pressed" from="Pause/MainMenu/SettingsButton" to="Pause" method="_on_SettingsButton_pressed"]
 [connection signal="pressed" from="Pause/MainMenu/ResumeButton" to="Pause" method="_on_ResumeButton_pressed"]
 [connection signal="pressed" from="Failed/MainMenu/MenuButton" to="Failed" method="_on_MenuButton_pressed"]
 [connection signal="pressed" from="Failed/MainMenu/RetryButton" to="Failed" method="_on_RetryButton_pressed"]
+[connection signal="body_entered" from="Finsihed" to="Finsihed" method="_on_Finsihed_body_entered"]
 
 [editable path="Node2D/Viewport/Speedometer(3)"]
 [editable path="Buildings"]

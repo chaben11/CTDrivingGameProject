@@ -20,6 +20,7 @@ run/main_scene="res://Scenes/MainMenu.tscn"
 [autoload]
 
 garage="*res://Cars/CarIndex.gd"
+PlayerData="*res://Scripts/PlayerData.gd"
 
 [display]
 
