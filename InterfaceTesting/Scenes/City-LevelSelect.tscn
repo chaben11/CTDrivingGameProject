@@ -9,6 +9,7 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+player = false
 
 [node name="Level 1" type="Button" parent="."]
 margin_left = 212.187

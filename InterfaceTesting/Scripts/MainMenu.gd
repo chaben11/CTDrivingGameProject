@@ -33,7 +33,8 @@ func _on_The_Highway_pressed():
 
 
 func _on_The_City_pressed():
-	get_tree().change_scene("res://Scenes/Levels/City/City-Level 1.tscn") #Opens Level one of city - Will eventually open the city level select menu
+	#opens the city level select menu
+	get_tree().change_scene("res://Scenes/City-LevelSelect.tscn") 
 
 
 func _on_Garage_pressed(): #Will open car selection menu

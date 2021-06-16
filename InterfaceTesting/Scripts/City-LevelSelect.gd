@@ -4,7 +4,7 @@ extends Control
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-
+export var player = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,8 +13,10 @@ func _ready():
 	$"Level 4".disabled = true
 
 func _process(delta):
+	#if the variable is unlocked then the button is enabled
 	if PlayerData.player.Citylevel2 == "unlocked":
 		$"Level 2".disabled = false
+		PlayerData.save()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -23,11 +25,11 @@ func _process(delta):
 
 
 func _on_Level_1_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene("res://Scenes/Levels/City/City-Level 1.tscn")
 
 
 func _on_Level_2_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene("res://Scenes/Levels/City/City-Level 2.tscn")
 
 
 func _on_Level_3_pressed():

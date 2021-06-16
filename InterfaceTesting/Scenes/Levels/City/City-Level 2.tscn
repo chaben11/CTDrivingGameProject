@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://PauseMenuNewIcons/1x/ResumeNormal.png" type="Texture" id=1]
 [ext_resource path="res://PauseMenuNewIcons/1x/Asset 25.png" type="Texture" id=2]
@@ -9,10 +9,11 @@
 [ext_resource path="res://Models/Enemy3.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/LevelCompleted.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Textures/roadmesh.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Cars/PlayerCars/PlayerScene/SixbySix.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scripts/LevelFinsihed.gd" type="Script" id=10]
 [ext_resource path="res://DigitalTechMenu/SettingsButton.tscn" type="PackedScene" id=11]
 [ext_resource path="res://PauseMenuNewIcons/1x/Asset 26.png" type="Texture" id=12]
 [ext_resource path="res://Textures/default_env.tres" type="Environment" id=13]
+[ext_resource path="res://Scripts/LoadingData.gd" type="Script" id=14]
 [ext_resource path="res://Taxiphysics/Pause.gd" type="Script" id=15]
 [ext_resource path="res://Taxiphysics/Failed.gd" type="Script" id=16]
 [ext_resource path="res://Textures/rightsidewalk.tres" type="Material" id=17]
@@ -29,6 +30,7 @@
 [ext_resource path="res://2x/Sidewalkgrass_type4@2x.png" type="Texture" id=28]
 [ext_resource path="res://FailMenu/GameOverScreen.png" type="Texture" id=29]
 [ext_resource path="res://PauseMenuNewIcons/1x/ResumePressed.png" type="Texture" id=30]
+[ext_resource path="res://Models/Buildings.tscn" type="PackedScene" id=31]
 
 [sub_resource type="SpatialMaterial" id=1]
 params_cull_mode = 2
@@ -138,12 +140,14 @@ surfaces/0 = {
 "vertex_count": 24
 }
 
-[sub_resource type="CubeMesh" id=12]
-
-[sub_resource type="ViewportTexture" id=15]
+[sub_resource type="ViewportTexture" id=12]
 viewport_path = NodePath("Node2D/Viewport")
 
+[sub_resource type="BoxShape" id=13]
+extents = Vector3( 18.5976, 11.6682, 11.1219 )
+
 [node name="Main" type="Spatial"]
+script = ExtResource( 14 )
 
 [node name="LevelCompleted" parent="." instance=ExtResource( 8 )]
 visible = false
@@ -193,6 +197,11 @@ transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 104.299, -0.167, -29.8516 )
 mesh = SubResource( 5 )
 material/0 = null
 
+[node name="MeshInstance11" type="MeshInstance" parent="Roads"]
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, -75.776, -0.167, -29.852 )
+mesh = SubResource( 5 )
+material/0 = null
+
 [node name="MeshInstance8" type="MeshInstance" parent="Roads"]
 transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 284.122, -0.167, -29.6014 )
 mesh = SubResource( 7 )
@@ -229,7 +238,7 @@ mesh = SubResource( 11 )
 material/0 = null
 
 [node name="MeshInstance10" type="MeshInstance" parent="Roads"]
-transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 184.488, -0.167, -29.852 )
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 184.206, -0.351364, -29.6263 )
 mesh = SubResource( 11 )
 material/0 = null
 
@@ -241,124 +250,8 @@ material/0 = null
 [node name="Spatial" type="Spatial" parent="."]
 transform = Transform( 10, 0, 0, 0, 25, 0, 0, 0, 10, 84, -6.898, -29.777 )
 
-[node name="MeshInstance" type="MeshInstance" parent="Spatial"]
-mesh = SubResource( 12 )
-material/0 = null
-
-[node name="MeshInstance3" type="MeshInstance" parent="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1.2, 0, 0, 0, 1, 2, 0.788877, 0 )
-mesh = SubResource( 12 )
-material/0 = null
-
-[node name="MeshInstance5" type="MeshInstance" parent="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1.2, 0, 0, 0, 1, -9.9, 1.41257, 0 )
-mesh = SubResource( 12 )
-material/0 = null
-
-[node name="MeshInstance6" type="MeshInstance" parent="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.9, 0.819821, 0 )
-mesh = SubResource( 12 )
-material/0 = null
-
-[node name="MeshInstance2" type="MeshInstance" parent="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.551275, 0 )
-mesh = SubResource( 12 )
-material/0 = null
-
-[node name="MeshInstance4" type="MeshInstance" parent="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9, 0, 0 )
-mesh = SubResource( 12 )
-material/0 = null
-
-[node name="MeshInstance7" type="MeshInstance" parent="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.623, 1.159, 0 )
-mesh = SubResource( 12 )
-material/0 = null
-
-[node name="MeshInstance8" type="MeshInstance" parent="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 6, 1.43768, 0 )
-mesh = SubResource( 12 )
-material/0 = null
-
-[node name="MeshInstance9" type="MeshInstance" parent="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 8, 0.300065, 0 )
-mesh = SubResource( 12 )
-material/0 = null
-
-[node name="MeshInstance10" type="MeshInstance" parent="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 10, 1.03396, 0 )
-mesh = SubResource( 12 )
-material/0 = null
-
-[node name="MeshInstance12" type="MeshInstance" parent="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 12, 1.40228, 0 )
-mesh = SubResource( 12 )
-material/0 = null
-
-[node name="MeshInstance11" type="MeshInstance" parent="Spatial"]
-transform = Transform( 0.999802, 0.0796516, 0, -0.00796516, 1.59968, 0, 0, 0, 1, 10, 1.03396, 0 )
-mesh = SubResource( 12 )
-material/0 = null
-
-[node name="MeshInstance13" type="MeshInstance" parent="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 20, 1.8079, 0 )
-mesh = SubResource( 12 )
-material/0 = null
-
-[node name="MeshInstance16" type="MeshInstance" parent="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 18, -0.351765, 0 )
-mesh = SubResource( 12 )
-material/0 = null
-
-[node name="MeshInstance14" type="MeshInstance" parent="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 24, 1.40228, 0 )
-mesh = SubResource( 12 )
-material/0 = null
-
-[node name="MeshInstance17" type="MeshInstance" parent="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 26.0035, 0.771, 0 )
-mesh = SubResource( 12 )
-material/0 = null
-
-[node name="MeshInstance18" type="MeshInstance" parent="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 28, 1.78859, 0 )
-mesh = SubResource( 12 )
-material/0 = null
-
-[node name="MeshInstance19" type="MeshInstance" parent="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 30, -0.0126581, 0 )
-mesh = SubResource( 12 )
-material/0 = null
-
-[node name="MeshInstance20" type="MeshInstance" parent="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 36, -0.013, 0 )
-mesh = SubResource( 12 )
-material/0 = null
-
-[node name="MeshInstance21" type="MeshInstance" parent="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 38, 1.748, 0 )
-mesh = SubResource( 12 )
-material/0 = null
-
-[node name="MeshInstance22" type="MeshInstance" parent="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 40, -0.800821, 0 )
-mesh = SubResource( 12 )
-material/0 = null
-
-[node name="MeshInstance23" type="MeshInstance" parent="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 42, 0.873495, 0 )
-mesh = SubResource( 12 )
-material/0 = null
-
-[node name="MeshInstance15" type="MeshInstance" parent="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1.6, 0, 0, 0, 1, 22, 1.03396, 0 )
-mesh = SubResource( 12 )
-material/0 = null
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 13 )
-
-[node name="Player" parent="." instance=ExtResource( 10 )]
 
 [node name="Pause" type="Control" parent="."]
 pause_mode = 2
@@ -447,7 +340,7 @@ __meta__ = {
 position = Vector2( 934.14, 570.667 )
 rotation = 3.14159
 scale = Vector2( -0.5, 0.5 )
-texture = SubResource( 15 )
+texture = SubResource( 12 )
 
 [node name="Viewport" type="Viewport" parent="Node2D"]
 size = Vector2( 400, 400 )
@@ -466,15 +359,87 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 48.9929, 1.76404, -21.702 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 227.848, 2, -21.702 )
 
 [node name="Floortest" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1000, 0, 0, 0, 1, 0, 0, 0, 10, 258, -0.5, 0 )
+transform = Transform( 1000, 0, 0, 0, 1, 0, 0, 0, 10, 920.8, -0.5, 0 )
 
 [node name="Enemy3" parent="." instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 408.339, 2, -21.702 )
+
+[node name="Buildings" parent="." instance=ExtResource( 31 )]
+transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 78.1835 )
+
+[node name="7" parent="Buildings" index="0"]
+transform = Transform( 1.11994, 0, 0, 0, -1.33507e-07, -1.11994, 0, 1.11994, -1.33507e-07, -6.47774, 9.12768, -29.0548 )
+
+[node name="9" parent="Buildings" index="1"]
+transform = Transform( 1.11994, 0, 0, 0, -1.33507e-07, -1.11994, 0, 1.11994, -1.33507e-07, 112.794, 9.12768, -27.6676 )
+
+[node name="5" parent="Buildings" index="3"]
+transform = Transform( 1.41018, 0, 0, 0, -1.68106e-07, -1.41018, 0, 1.41018, -1.68106e-07, 25.3956, 6.92805, -28.1199 )
+
+[node name="6" parent="Buildings" index="4"]
+transform = Transform( 1.11994, 0, 0, 0, -1.33507e-07, -1.11994, 0, 1.11994, -1.33507e-07, 35.7305, 9.92107, -28.2545 )
+
+[node name="4" parent="Buildings" index="5"]
+transform = Transform( 1.11994, 0, 0, 0, -1.33507e-07, -1.11994, 0, 1.11994, -1.33507e-07, 3.8099, 6.40143, -27.8973 )
+
+[node name="Cylinder" parent="Buildings" index="6"]
+visible = false
+
+[node name="11005" parent="Buildings" index="7"]
+visible = false
+
+[node name="7001" parent="Buildings" index="8"]
+transform = Transform( 1.11994, 0, 0, 0, -1.33507e-07, -1.11994, 0, 1.11994, -1.33507e-07, 48.6167, 9.12768, -110.731 )
+visible = false
+
+[node name="4001" parent="Buildings" index="9"]
+transform = Transform( 1.11994, 0, 0, 0, -1.33507e-07, -1.11994, 0, 1.11994, -1.33507e-07, 46.6106, 6.40143, -28.205 )
+
+[node name="7002" parent="Buildings" index="10"]
+transform = Transform( 1.11994, 0, 0, 0, -1.33507e-07, -1.11994, 0, 1.11994, -1.33507e-07, 93.8899, 9.12768, -27.9231 )
+
+[node name="7003" parent="Buildings" index="11"]
+transform = Transform( 1.11994, 0, 0, 0, -1.33507e-07, -1.11994, 0, 1.11994, -1.33507e-07, 122.973, 9.12768, -27.687 )
+
+[node name="Cylinder001" parent="Buildings" index="12"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 237.062, 17.48, -27.3264 )
+visible = false
+
+[node name="4002" parent="Buildings" index="13"]
+visible = false
+
+[node name="11001" parent="Buildings" index="14"]
+transform = Transform( -1.11994, 0, 0, 0, -1.33507e-07, -1.11994, 0, 1.11994, -1.33507e-07, 84.0652, 6.3553, -26.2353 )
+
+[node name="5001" parent="Buildings" index="15"]
+transform = Transform( 0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, 21.142, 2.69276, -51.2187 )
+visible = false
+
+[node name="Cube" parent="Buildings" index="16"]
+visible = false
+
+[node name="Cube001" parent="Buildings" index="17"]
+transform = Transform( 6.86948, 0, 0, 0, 0.874792, 0, 0, 0, 0.874792, 69.5428, 0.874792, -26.1806 )
+
+[node name="Cube002" parent="Buildings" index="18"]
+visible = false
+
+[node name="Prison" parent="Buildings" index="26"]
+transform = Transform( 4.96567, 0, 0, 0, 0.733712, 0, 0, 0, 4, -236.386, 6.33542, -88.7583 )
+
+[node name="Finsihed" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 572.1, 0, 0 )
+script = ExtResource( 10 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Finsihed"]
+shape = SubResource( 13 )
 
 [connection signal="pressed" from="Pause/MainMenu/MenuButton" to="Pause" method="_on_MenuButton_pressed"]
 [connection signal="pressed" from="Pause/MainMenu/SettingsButton" to="Pause" method="_on_SettingsButton_pressed"]
 [connection signal="pressed" from="Pause/MainMenu/ResumeButton" to="Pause" method="_on_ResumeButton_pressed"]
 [connection signal="pressed" from="Failed/MainMenu/MenuButton" to="Failed" method="_on_MenuButton_pressed"]
 [connection signal="pressed" from="Failed/MainMenu/RetryButton" to="Failed" method="_on_RetryButton_pressed"]
+[connection signal="body_entered" from="Finsihed" to="Finsihed" method="_on_Finsihed_body_entered"]
 
 [editable path="Node2D/Viewport/Speedometer(3)"]
+[editable path="Buildings"]
