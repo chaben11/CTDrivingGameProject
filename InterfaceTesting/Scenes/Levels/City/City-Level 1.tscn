@@ -354,15 +354,18 @@ transform = Transform( -0.917359, -1.36697e-08, -0.39806, -0.258652, 0.760122, 0
 
 [node name="Enemy" parent="." instance=ExtResource( 25 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 48.9929, 1.76404, -21.702 )
+EnemySpeed = 1.5
 
 [node name="Enemy2" parent="." instance=ExtResource( 26 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 227.848, 2, -21.702 )
+EnemySpeed = 1.7
 
 [node name="Floortest" parent="." instance=ExtResource( 19 )]
 transform = Transform( 1000, 0, 0, 0, 1, 0, 0, 0, 10, 920.8, -0.5, 0 )
 
 [node name="Enemy3" parent="." instance=ExtResource( 20 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 408.339, 2, -21.702 )
+EnemySpeed = 1.9
 
 [node name="Buildings" parent="." instance=ExtResource( 22 )]
 transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 78.1835 )
@@ -395,29 +398,29 @@ transform = Transform( 1.11994, 0, 0, 0, -1.33507e-07, -1.11994, 0, 1.11994, -1.
 [node name="7002" parent="Buildings" index="10"]
 transform = Transform( 1.11994, 0, 0, 0, -1.33507e-07, -1.11994, 0, 1.11994, -1.33507e-07, 78.4775, 9.12768, -27.9231 )
 
-[node name="Cylinder001" parent="Buildings" index="11"]
+[node name="Cylinder001" parent="Buildings" index="12"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 122.864, 17.48, -27.3264 )
 
-[node name="4002" parent="Buildings" index="12"]
+[node name="4002" parent="Buildings" index="13"]
 visible = false
 
-[node name="11001" parent="Buildings" index="13"]
+[node name="11001" parent="Buildings" index="14"]
 transform = Transform( -1.11994, 0, 0, 0, -1.33507e-07, -1.11994, 0, 1.11994, -1.33507e-07, 115.176, 6.3553, -26.2353 )
 
-[node name="5001" parent="Buildings" index="14"]
+[node name="5001" parent="Buildings" index="15"]
 transform = Transform( 0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, 21.142, 2.69276, -51.2187 )
 visible = false
 
-[node name="Cube" parent="Buildings" index="15"]
+[node name="Cube" parent="Buildings" index="16"]
 visible = false
 
-[node name="Cube001" parent="Buildings" index="16"]
+[node name="Cube001" parent="Buildings" index="17"]
 transform = Transform( 6.86948, 0, 0, 0, 0.874792, 0, 0, 0, 0.874792, 90.817, 0.874792, -26.1806 )
 
-[node name="Cube002" parent="Buildings" index="17"]
+[node name="Cube002" parent="Buildings" index="18"]
 visible = false
 
-[node name="Prison" parent="Buildings" index="25"]
+[node name="Prison" parent="Buildings" index="26"]
 transform = Transform( 4.96567, 0, 0, 0, 0.733712, 0, 0, 0, 4, 37.9917, 6.33542, -30.9864 )
 
 [node name="Finsihed" type="Area" parent="."]

@@ -122,3 +122,5 @@ spot_range = 6.5
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 "anims/New Anim" = SubResource( 4 )
 "anims/New Anim (copy)" = SubResource( 5 )
+
+[editable path="Enemy2/NISSAN NAVARA red-SOLID"]

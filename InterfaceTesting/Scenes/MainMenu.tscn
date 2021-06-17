@@ -29,7 +29,7 @@ __meta__ = {
 }
 
 [node name="MainMenu" type="Sprite" parent="."]
-position = Vector2( 512, 300 )
+position = Vector2( 513.414, 300 )
 texture = ExtResource( 7 )
 
 [node name="SettingsButton" parent="." instance=ExtResource( 1 )]
