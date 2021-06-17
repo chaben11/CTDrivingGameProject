@@ -521,7 +521,6 @@ visible = false
 visible = false
 
 [node name="Cube006" parent="Buildings" index="25"]
-transform = Transform( 4.04825, 0, 0, 0, 1, 0, 0, 0, 4, 12.9599, 0.668259, 0.0960999 )
 visible = false
 
 [node name="Prison" parent="Buildings" index="26"]
