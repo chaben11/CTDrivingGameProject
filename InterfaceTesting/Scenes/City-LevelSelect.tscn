@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scripts/City-LevelSelect.gd" type="Script" id=1]
-[ext_resource path="res://Textures/vector-roadside-view-with-modern-city-and-golden-sky.jpg" type="Texture" id=2]
-[ext_resource path="res://Textures/Rb949c0b6e8de2ece218352284fd5ef16.png" type="Texture" id=3]
+[ext_resource path="res://DigitalTechMenu/Asset 2.png" type="Texture" id=2]
 
 [node name="City-LevelSelect" type="Control"]
 anchor_right = 1.0
@@ -14,51 +13,50 @@ __meta__ = {
 }
 player = false
 
-[node name="vector-roadside-view-with-modern-city-and-golden-sky" type="Sprite" parent="."]
-position = Vector2( 638.005, 282.837 )
-scale = Vector2( 1.33941, 1.33941 )
+[node name="Asset 2" type="Sprite" parent="."]
+position = Vector2( 512, 300 )
 texture = ExtResource( 2 )
 
-[node name="Level 1" type="TextureButton" parent="."]
-margin_left = 36.1908
-margin_top = 30.0763
-margin_right = 2535.19
-margin_bottom = 2542.08
-rect_scale = Vector2( 0.05, 0.05 )
-texture_normal = ExtResource( 3 )
+[node name="Level 1" type="Button" parent="."]
+margin_left = 46.0
+margin_top = 162.433
+margin_right = 156.0
+margin_bottom = 187.433
+text = "Level 1"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Level 2" type="TextureButton" parent="."]
-margin_left = 364.872
-margin_top = 33.2441
-margin_right = 2764.87
-margin_bottom = 2433.24
-rect_scale = Vector2( 0.05, 0.05 )
-texture_normal = ExtResource( 3 )
+[node name="Level 2" type="Button" parent="."]
+margin_left = 319.103
+margin_top = 160.724
+margin_right = 429.103
+margin_bottom = 185.724
+text = "Level 2"
+
+[node name="Level 3" type="Button" parent="."]
+margin_left = 594.337
+margin_top = 163.254
+margin_right = 704.337
+margin_bottom = 188.254
+text = "Level 3"
+
+[node name="Level 4" type="Button" parent="."]
+margin_left = 866.619
+margin_top = 163.664
+margin_right = 976.619
+margin_bottom = 188.664
+text = "Level 4"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Level 3" type="TextureButton" parent="."]
-margin_left = 605.339
-margin_top = 36.4207
-margin_right = 3005.34
-margin_bottom = 2436.42
-rect_scale = Vector2( 0.05, 0.05 )
-texture_normal = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Level 4" type="TextureButton" parent="."]
-margin_left = 907.853
-margin_top = 38.1121
-margin_right = 3307.85
-margin_bottom = 2438.11
-rect_scale = Vector2( 0.05, 0.05 )
-texture_normal = ExtResource( 3 )
+[node name="back" type="Button" parent="."]
+margin_left = 73.0204
+margin_top = 492.094
+margin_right = 168.02
+margin_bottom = 534.094
+text = "back"
 
 [connection signal="pressed" from="Level 1" to="." method="_on_Level_1_pressed"]
 [connection signal="pressed" from="Level 2" to="." method="_on_Level_2_pressed"]
