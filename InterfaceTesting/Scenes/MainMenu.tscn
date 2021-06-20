@@ -1,21 +1,23 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://DigitalTechMenu/SettingsButton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://PauseMenuNewIcons/1x/ExitHover.png" type="Texture" id=2]
 [ext_resource path="res://PauseMenuNewIcons/1x/ExitNormal.png" type="Texture" id=3]
-[ext_resource path="res://DigitalTechMenu/Buttons/Garage-Select.png" type="Texture" id=4]
+[ext_resource path="res://DigitalTechMenu/Buttons/1x/CityNewHover.png" type="Texture" id=4]
 [ext_resource path="res://PauseMenuNewIcons/1x/ExitPressed.png" type="Texture" id=5]
-[ext_resource path="res://DigitalTechMenu/Buttons/Garage-Normal.png" type="Texture" id=6]
+[ext_resource path="res://DigitalTechMenu/Buttons/1x/SettingsNewHovr.png" type="Texture" id=6]
 [ext_resource path="res://DigitalTechMenu/1x/1x/Asset 35.png" type="Texture" id=7]
-[ext_resource path="res://DigitalTechMenu/Buttons/Mine-Hover.png" type="Texture" id=11]
-[ext_resource path="res://DigitalTechMenu/Buttons/Mine-Normal.png" type="Texture" id=12]
-[ext_resource path="res://DigitalTechMenu/Buttons/City-Hover.png" type="Texture" id=13]
-[ext_resource path="res://DigitalTechMenu/Buttons/Mine-Select.png" type="Texture" id=14]
+[ext_resource path="res://DigitalTechMenu/Buttons/1x/SettingsNewNormal.png" type="Texture" id=8]
+[ext_resource path="res://DigitalTechMenu/Buttons/1x/SettingsNewSelect.png" type="Texture" id=9]
+[ext_resource path="res://DigitalTechMenu/Buttons/1x/GarageNewNormal.png" type="Texture" id=10]
+[ext_resource path="res://DigitalTechMenu/Buttons/1x/MineNEwSelect.png" type="Texture" id=11]
+[ext_resource path="res://DigitalTechMenu/Buttons/1x/CityNewNormal.png" type="Texture" id=12]
+[ext_resource path="res://DigitalTechMenu/Buttons/1x/GarageNewHover.png" type="Texture" id=13]
+[ext_resource path="res://DigitalTechMenu/Buttons/1x/MineNEwHover.png" type="Texture" id=14]
 [ext_resource path="res://Scripts/MainMenu.gd" type="Script" id=15]
-[ext_resource path="res://DigitalTechMenu/Buttons/City-Select.png" type="Texture" id=16]
-[ext_resource path="res://DigitalTechMenu/Buttons/City-Normal.png" type="Texture" id=17]
-[ext_resource path="res://DigitalTechMenu/Buttons/Garage-Hover.png" type="Texture" id=18]
-[ext_resource path="res://Animations/IntroAnimation.png" type="Texture" id=19]
+[ext_resource path="res://DigitalTechMenu/Buttons/1x/MineNEwNormal.png" type="Texture" id=16]
+[ext_resource path="res://DigitalTechMenu/Buttons/1x/CityNewSelect.png" type="Texture" id=17]
+[ext_resource path="res://DigitalTechMenu/Buttons/1x/GarageNewSelect.png" type="Texture" id=18]
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
@@ -26,7 +28,7 @@ __meta__ = {
 }
 
 [node name="MainMenu" type="Sprite" parent="."]
-position = Vector2( 514.358, 300 )
+position = Vector2( 515.48, 301.122 )
 texture = ExtResource( 7 )
 
 [node name="SettingsButton" parent="." instance=ExtResource( 1 )]
@@ -34,6 +36,9 @@ margin_left = 132.0
 margin_top = 372.855
 margin_right = 350.0
 margin_bottom = 578.855
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 6 )
 
 [node name="QuitButton" type="TextureButton" parent="."]
 margin_left = 706.0
@@ -48,50 +53,40 @@ __meta__ = {
 }
 
 [node name="The Mine" type="TextureButton" parent="."]
-margin_left = 706.0
+margin_left = 532.408
 margin_top = 125.22
-margin_right = 923.0
+margin_right = 924.408
 margin_bottom = 331.22
-texture_normal = ExtResource( 12 )
-texture_pressed = ExtResource( 14 )
-texture_hover = ExtResource( 11 )
+texture_normal = ExtResource( 16 )
+texture_pressed = ExtResource( 11 )
+texture_hover = ExtResource( 14 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Garage" type="TextureButton" parent="."]
 margin_left = 419.0
-margin_top = 125.22
+margin_top = 372.855
 margin_right = 635.0
-margin_bottom = 331.22
-texture_normal = ExtResource( 6 )
-texture_pressed = ExtResource( 4 )
-texture_hover = ExtResource( 18 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="The City" type="TextureButton" parent="."]
-margin_left = 132.0
-margin_top = 125.22
-margin_right = 348.0
-margin_bottom = 331.22
-texture_normal = ExtResource( 17 )
-texture_pressed = ExtResource( 16 )
+margin_bottom = 583.855
+texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 18 )
 texture_hover = ExtResource( 13 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="IntroAnimation" type="Sprite" parent="."]
-position = Vector2( 236.299, 191.942 )
-scale = Vector2( 0.157962, 0.157962 )
-texture = ExtResource( 19 )
-
-[node name="IntroAnimation3" type="Sprite" parent="."]
-position = Vector2( 809.856, 191.942 )
-scale = Vector2( 0.157962, 0.157962 )
-texture = ExtResource( 19 )
+[node name="The City" type="TextureButton" parent="."]
+margin_left = 125.387
+margin_top = 125.22
+margin_right = 515.387
+margin_bottom = 331.22
+texture_normal = ExtResource( 12 )
+texture_pressed = ExtResource( 17 )
+texture_hover = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="pressed" from="SettingsButton" to="." method="_on_SettingsButton_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_QuitButton_pressed"]

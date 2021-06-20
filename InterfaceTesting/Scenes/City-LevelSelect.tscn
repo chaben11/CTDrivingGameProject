@@ -1,7 +1,18 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scripts/City-LevelSelect.gd" type="Script" id=1]
-[ext_resource path="res://DigitalTechMenu/Asset 2.png" type="Texture" id=2]
+[ext_resource path="res://DigitalTechMenu/Buttons/1x/City-Level2-Normal.png" type="Texture" id=2]
+[ext_resource path="res://DigitalTechMenu/Buttons/1x/City-Level1-Hover.png" type="Texture" id=3]
+[ext_resource path="res://DigitalTechMenu/Buttons/1x/City-Level1-Normal.png" type="Texture" id=4]
+[ext_resource path="res://DigitalTechMenu/Buttons/1x/City-Level1-Select.png" type="Texture" id=5]
+[ext_resource path="res://DigitalTechMenu/Buttons/1x/City-Level2-Disabled.png" type="Texture" id=6]
+[ext_resource path="res://DigitalTechMenu/Buttons/1x/City-Level2-Select.png" type="Texture" id=7]
+[ext_resource path="res://DigitalTechMenu/Buttons/1x/City-Level2-Hover.png" type="Texture" id=8]
+[ext_resource path="res://DigitalTechMenu/1x/Asset 2.png" type="Texture" id=9]
+[ext_resource path="res://DigitalTechMenu/Buttons/1x/City-Level3-Disabled.png" type="Texture" id=10]
+[ext_resource path="res://DigitalTechMenu/Buttons/1x/City-Level3-Norma;.png" type="Texture" id=11]
+[ext_resource path="res://DigitalTechMenu/Buttons/1x/City-Level3-Select.png" type="Texture" id=12]
+[ext_resource path="res://DigitalTechMenu/Buttons/1x/City-Level3-Hover.png" type="Texture" id=13]
 
 [node name="City-LevelSelect" type="Control"]
 anchor_right = 1.0
@@ -14,39 +25,43 @@ __meta__ = {
 player = false
 
 [node name="Asset 2" type="Sprite" parent="."]
-position = Vector2( 512, 300 )
-texture = ExtResource( 2 )
+position = Vector2( 510.74, 300 )
+texture = ExtResource( 9 )
 
-[node name="Level 1" type="Button" parent="."]
-margin_left = 46.0
-margin_top = 162.433
-margin_right = 156.0
-margin_bottom = 187.433
-text = "Level 1"
+[node name="Level 1" type="TextureButton" parent="."]
+margin_left = 122.274
+margin_top = 104.065
+margin_right = 338.274
+margin_bottom = 310.065
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Level 2" type="Button" parent="."]
-margin_left = 319.103
-margin_top = 160.724
-margin_right = 429.103
-margin_bottom = 185.724
-text = "Level 2"
+[node name="Level 2" type="TextureButton" parent="."]
+margin_left = 402.274
+margin_top = 104.065
+margin_right = 618.274
+margin_bottom = 310.065
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 7 )
+texture_hover = ExtResource( 8 )
+texture_disabled = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Level 3" type="Button" parent="."]
-margin_left = 594.337
-margin_top = 163.254
-margin_right = 704.337
-margin_bottom = 188.254
-text = "Level 3"
-
-[node name="Level 4" type="Button" parent="."]
-margin_left = 866.619
-margin_top = 163.664
-margin_right = 976.619
-margin_bottom = 188.664
-text = "Level 4"
+[node name="Level 3" type="TextureButton" parent="."]
+margin_left = 682.274
+margin_top = 104.065
+margin_right = 898.274
+margin_bottom = 310.065
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 12 )
+texture_hover = ExtResource( 13 )
+texture_disabled = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -61,4 +76,3 @@ text = "back"
 [connection signal="pressed" from="Level 1" to="." method="_on_Level_1_pressed"]
 [connection signal="pressed" from="Level 2" to="." method="_on_Level_2_pressed"]
 [connection signal="pressed" from="Level 3" to="." method="_on_Level_3_pressed"]
-[connection signal="pressed" from="Level 4" to="." method="_on_Level_4_pressed"]
