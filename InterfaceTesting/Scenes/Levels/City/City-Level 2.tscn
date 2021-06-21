@@ -434,10 +434,13 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 587.667, 1.89318, -21.702 )
 transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, -82.8418, 0, 198.013 )
 
 [node name="4001" parent="Buildings_A" index="7"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 143.614, 6.40143, -57.6842 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 145.039, 6.40143, -57.6842 )
 
 [node name="Cube004" parent="Buildings_A" index="17"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 103.796, 8.63475, -61.2261 )
+
+[node name="Cube006" parent="Buildings_A" index="20"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 198.68, 8.63475, -59.4 )
 
 [node name="Buildings" parent="." instance=ExtResource( 31 )]
 transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 78.1835 )
@@ -477,7 +480,7 @@ transform = Transform( 1.11994, 0, 0, 0, -1.33507e-07, -1.11994, 0, 1.11994, -1.
 transform = Transform( 1.11994, 0, 0, 0, -1.33507e-07, -1.11994, 0, 1.11994, -1.33507e-07, 93.8899, 9.12768, -27.9231 )
 
 [node name="7003" parent="Buildings" index="11"]
-transform = Transform( 1.11994, 0, 0, 0, -1.33507e-07, -1.11994, 0, 1.11994, -1.33507e-07, 122.973, 9.12768, -69.4278 )
+transform = Transform( 1.11994, 0, 0, 0, -1.33507e-07, -1.11994, 0, 1.11994, -1.33507e-07, 136.923, 9.12768, -27.3028 )
 
 [node name="Cylinder001" parent="Buildings" index="12"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 237.062, 17.48, -27.3264 )
@@ -494,14 +497,13 @@ visible = false
 transform = Transform( 0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, 49.3435, 2.69276, -51.2187 )
 
 [node name="Cube" parent="Buildings" index="16"]
-visible = false
+transform = Transform( 6.86948, 0, 0, 0, 0.874792, 0, 0, 0, 0.874792, 160.88, 0.874792, -25.6139 )
 
 [node name="Cube001" parent="Buildings" index="17"]
 transform = Transform( 6.86948, 0, 0, 0, 0.874792, 0, 0, 0, 0.874792, 69.5428, 0.874792, -26.1806 )
 
 [node name="Cube002" parent="Buildings" index="18"]
 transform = Transform( 6.93008, 0, 0, 0, 0.874792, 0, 0, 0, 0.874792, -50.8105, 0.874792, 2.12706 )
-visible = false
 
 [node name="Cube003" parent="Buildings" index="19"]
 transform = Transform( 4.04825, 0, 0, 0, 1, 0, 0, 0, 4, -0.249516, 0.0791779, 0.0332642 )

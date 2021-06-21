@@ -23,7 +23,9 @@ func _on_Finsihed_body_entered(body):
 		if PlayerData.player.currentLevel == "Citylevel1": 
 			#Checks the current level to unlock the right one
 			PlayerData.player.Citylevel2 = "unlocked"
+			PlayerData.player.Citylevel1 = "complete"
 			#Unlocks next level in the list
 			print(PlayerData.player.Citylevel2)
 			print(PlayerData.player.currentLevel)
+			print(PlayerData.player.Citylevel1)
 			
