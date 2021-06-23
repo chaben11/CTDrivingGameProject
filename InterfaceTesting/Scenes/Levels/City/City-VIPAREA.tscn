@@ -1,6 +1,6 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=48 format=2]
 
-[ext_resource path="res://Textures/AllSkyFree_Sky_EpicBlueSunset_Equirect.png" type="Texture" id=1]
+[ext_resource path="res://Models/Street light.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Textures/rightsidewalk.tres" type="Material" id=2]
 [ext_resource path="res://Taxiphysics/Failed.gd" type="Script" id=3]
 [ext_resource path="res://Scripts/LevelFinsihed.gd" type="Script" id=4]
@@ -31,6 +31,7 @@
 [ext_resource path="res://FailMenu/Retry_Normal.png" type="Texture" id=29]
 [ext_resource path="res://FailMenu/Retry_Hover.png" type="Texture" id=30]
 [ext_resource path="res://PauseMenuNewIcons/1x/ResumeNormal.png" type="Texture" id=31]
+[ext_resource path="res://Textures/AllSky_Night_MoonBurst Equirect.png" type="Texture" id=32]
 
 [sub_resource type="SpatialMaterial" id=1]
 params_cull_mode = 2
@@ -140,19 +141,19 @@ surfaces/0 = {
 "vertex_count": 24
 }
 
-[sub_resource type="PanoramaSky" id=13]
-panorama = ExtResource( 1 )
+[sub_resource type="PanoramaSky" id=12]
+panorama = ExtResource( 32 )
 
-[sub_resource type="Environment" id=14]
+[sub_resource type="Environment" id=13]
 background_mode = 2
-background_sky = SubResource( 13 )
+background_sky = SubResource( 12 )
 background_sky_custom_fov = 65.7
 background_sky_orientation = Basis( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08 )
 fog_height_min = 0.0
 fog_height_max = 100.0
 ssao_quality = 0
 
-[sub_resource type="ViewportTexture" id=12]
+[sub_resource type="ViewportTexture" id=14]
 viewport_path = NodePath("Node2D/Viewport")
 
 [sub_resource type="BoxShape" id=15]
@@ -263,7 +264,7 @@ material/0 = null
 transform = Transform( 10, 0, 0, 0, 25, 0, 0, 0, 10, 84, -6.898, -29.777 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 14 )
+environment = SubResource( 13 )
 
 [node name="Pause" type="Control" parent="."]
 pause_mode = 2
@@ -352,7 +353,7 @@ __meta__ = {
 position = Vector2( 934.14, 570.667 )
 rotation = 3.14159
 scale = Vector2( -0.5, 0.5 )
-texture = SubResource( 12 )
+texture = SubResource( 14 )
 
 [node name="Viewport" type="Viewport" parent="Node2D"]
 size = Vector2( 400, 400 )
@@ -436,6 +437,66 @@ script = ExtResource( 4 )
 [node name="CollisionShape" type="CollisionShape" parent="Finsihed"]
 shape = SubResource( 15 )
 
+[node name="Street light" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.3371, 5.331, -10.5491 )
+
+[node name="SpotLight" parent="Street light" index="1"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.93113, 8.23941 )
+
+[node name="Street light2" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 39.6629, 5.331, -10.5491 )
+
+[node name="SpotLight" parent="Street light2" index="1"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.93113, 8.23941 )
+
+[node name="Street light3" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 100.663, 5.331, -10.5491 )
+
+[node name="SpotLight" parent="Street light3" index="1"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.93113, 8.23941 )
+
+[node name="Street light4" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 163.663, 5.331, -10.5491 )
+
+[node name="SpotLight" parent="Street light4" index="1"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.93113, 8.23941 )
+
+[node name="Street light5" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 215.297, 5.331, -10.5491 )
+
+[node name="SpotLight" parent="Street light5" index="1"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.93113, 8.23941 )
+
+[node name="Street light6" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 256.297, 5.331, -10.5491 )
+
+[node name="SpotLight" parent="Street light6" index="1"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.93113, 8.23941 )
+
+[node name="Street light7" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 329.297, 5.331, -10.5491 )
+
+[node name="SpotLight" parent="Street light7" index="1"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.93113, 8.23941 )
+
+[node name="Street light8" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 398.297, 5.331, -10.5491 )
+
+[node name="SpotLight" parent="Street light8" index="1"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.93113, 8.23941 )
+
+[node name="Street light9" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 433.297, 5.331, -10.5491 )
+
+[node name="SpotLight" parent="Street light9" index="1"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.93113, 8.23941 )
+
+[node name="Street light10" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 493.297, 5.331, -10.5491 )
+
+[node name="SpotLight" parent="Street light10" index="1"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.93113, 8.23941 )
+
 [connection signal="pressed" from="Pause/MainMenu/MenuButton" to="Pause" method="_on_MenuButton_pressed"]
 [connection signal="pressed" from="Pause/MainMenu/SettingsButton" to="Pause" method="_on_SettingsButton_pressed"]
 [connection signal="pressed" from="Pause/MainMenu/ResumeButton" to="Pause" method="_on_ResumeButton_pressed"]
@@ -445,3 +506,13 @@ shape = SubResource( 15 )
 
 [editable path="Node2D/Viewport/Speedometer(3)"]
 [editable path="Buildings"]
+[editable path="Street light"]
+[editable path="Street light2"]
+[editable path="Street light3"]
+[editable path="Street light4"]
+[editable path="Street light5"]
+[editable path="Street light6"]
+[editable path="Street light7"]
+[editable path="Street light8"]
+[editable path="Street light9"]
+[editable path="Street light10"]

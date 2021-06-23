@@ -220,6 +220,10 @@ func _on_ChangingVehicles_timeout(): #CHANGING NEXT
 		Limo = false
 		$BMW/BMW.entering = true
 		$Selection/AnimationPlayer.play("index 4")
+		if PlayerData.player.CityBonus == "locked":
+			$Loadscene.disabled = true
+		elif PlayerData.player.CityBonus == "completed":
+			$Loadscene.disabled = false
 	if garage.car_index == 5: #6x6
 		nissian = false
 		Sports = false

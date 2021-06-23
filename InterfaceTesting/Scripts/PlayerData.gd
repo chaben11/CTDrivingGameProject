@@ -1,12 +1,13 @@
 extends Node
 
-const FILE_NAME = "user://CTDriver.json"
+const FILE_NAME = "user://CTDriverData.json"
 var player = {
 "score": 0,
 "currentLevel": "Citylevel1",
 "Citylevel1": "unlocked",
 "Citylevel2": "locked",
 "Citylevel3": "locked",
+"CityBonus": "locked",
 "Citylevel4": "locked",
 "Minelevel1": "unlocked",
 "Minelevel2": "locked",
