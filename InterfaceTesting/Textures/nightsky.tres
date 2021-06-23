@@ -2,9 +2,9 @@
 
 [resource]
 background_mode = 1
-background_sky_orientation = Basis( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1 )
-background_sky_rotation = Vector3( 0, -3.14159, 0 )
-background_sky_rotation_degrees = Vector3( 0, -180, 0 )
+background_sky_orientation = Basis( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1 )
+background_sky_rotation = Vector3( 0, 3.14159, 0 )
+background_sky_rotation_degrees = Vector3( 0, 180, 0 )
 fog_height_min = 0.0
 fog_height_max = 100.0
 ssao_quality = 0

@@ -19,7 +19,7 @@ func _ready():
 func _on_Area_body_entered(body):
 	if body.name == "Player": 
 		if garage.car_index == 6: 
-			$AnimationPlayer.play("ArmMove") #Will only open if the index is the value.
+			$AnimationPlayer.play("OpenBoom") #Will only open if the index is the value.
 			$StaticBody/CollisionShape.disabled = true
 			print("Access Granted")
 
@@ -27,5 +27,5 @@ func _on_Area_body_entered(body):
 func _on_Area_body_exited(body):
 	if body.name == "Player": 
 		if garage.car_index == 6: 
-			$AnimationPlayer.play_backwards("ArmMove")
+			$AnimationPlayer.play_backwards("OpenBoom")
 			$StaticBody/CollisionShape.disabled = false #Will only open if the index is the value.
