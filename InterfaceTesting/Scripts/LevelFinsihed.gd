@@ -21,22 +21,27 @@ func _on_Finsihed_body_entered(body):
 		# Returns to level select but will end up as a menu
 #		get_tree().change_scene("res://Scenes/City-LevelSelect.tscn")
 		if PlayerData.player.currentLevel == "Citylevel1": 
+			print("l1")
 			get_tree().change_scene("res://Scenes/City-LevelSelect.tscn")
 			#Checks the current level to unlock the right one
 			PlayerData.player.Citylevel2 = "unlocked"
 			PlayerData.player.Citylevel1 = "complete"
+			PlayerData.save()
 			#Unlocks next level in the list
 		elif PlayerData.player.currentLevel == "Citylevel2":
+			print("l2")
 			if garage.car_index != 6:
 				get_tree().change_scene("res://Scenes/City-LevelSelect.tscn")
 			#Checks the current level to unlock the right one
 				PlayerData.player.Citylevel2 = "complete"
 				PlayerData.player.Citylevel3 = "unlocked"
+				PlayerData.save()
 			elif garage.car_index == 6:
 				PlayerData.player.Citylevel2 = "complete"
 				PlayerData.player.CityBonus = "unlocked"
 		elif PlayerData.player.currentLevel == "CityBonus":
 			PlayerData.player.CityBonus = "complete"
 			PlayerData.player.Citylevel3 = "unlocked"
-		
-			
+			get_tree().change_scene("res://Scenes/City-LevelSelect.tscn")
+			print("you finished the bonus stage a new vehicle is now available")
+			PlayerData.save()

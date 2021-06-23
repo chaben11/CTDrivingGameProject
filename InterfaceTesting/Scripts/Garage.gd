@@ -42,7 +42,22 @@ func _input(event):
 		elif Limo == true:
 			Limo = false
 		print(garage.car_index)
-
+	elif Input.is_action_just_pressed("ui_left"):
+		previous_car()
+		$ChangingVehicles.start()	
+		if Sports == true: 
+			Sports = false
+		elif Suv == true:
+			Suv = false
+		elif nissian == true:
+			nissian = false
+		elif Hatchback == true:
+			Hatchback = false
+		elif SixbySix == true:
+			SixbySix = false
+		elif Limo == true:
+			Limo = false
+		print(garage.car_index)
 #Checks when the next arrow button is clicked. It will test which car is currently active and change it to play it's exit animation
 func _on_next_pressed():
 
@@ -175,7 +190,11 @@ func next_car(): #Checks if the index - (number of vehicles) is less than the ma
 	elif garage.car_index == 6:
 		garage.car_index = 1
 	#the garage prefix is an autoload variable so the same values can easily be accessed in other scripts
-
+func previous_car(): #Checks if the index - (number of vehicles) is less than the max ammount before adding 1 or resets to 1 if index is at max
+	if garage.car_index > 1:
+		garage.car_index -= 1
+	elif garage.car_index == 1:
+		garage.car_index = 6
 
 
 func _on_ChangingVehicles_timeout(): #CHANGING NEXT
