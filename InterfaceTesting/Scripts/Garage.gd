@@ -10,6 +10,7 @@ export var nissian = false
 export var Hatchback = false
 export var SixbySix = false
 export var Limo = false
+onready var exitobject = get_node("Exitarget")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Sports = true
@@ -93,14 +94,15 @@ func _process(delta):
 		if $SportsCar/SportsCar.rotating == true:
 			$SportsCar/SportsCar/AnimationPlayer.play("Rotate") 
 			#Wait until the car is facing fowards before driving off
-			if ($SportsCar/SportsCar.rotation_degrees.y >= 359 && $SportsCar/SportsCar.rotation_degrees.y < 360 ): 
-				$SportsCar/SportsCar/AnimationPlayer.stop()
-				$SportsCar/SportsCar.rotating = false
-				$SportsCar/SportsCar.exiting = true
-				$SportsCar/SportsCar/AnimationPlayer.play("Exit") #Moves the car off the podium
-				$SportsCar/SportsCar.exiting = false
-				$SportsCar/SportsCar.rotating = false
-				$SportsCar/SportsCar.entering = false
+#			if ($SportsCar/SportsCar.rotation_degrees.y >= 359 && $SportsCar/SportsCar.rotation_degrees.y < 360 ): 
+			$SportsCar/SportsCar/AnimationPlayer.stop()
+			$SportsCar/SportsCar.rotating = false
+			$SportsCar/SportsCar.exiting = true
+			$SportsCar/SportsCar/AnimationPlayer.play("Exit") #Moves the car off the podium
+			$SportsCar/SportsCar.look_at(exitobject.translation,Vector3.UP)
+			$SportsCar/SportsCar.exiting = false
+			$SportsCar/SportsCar.rotating = false
+			$SportsCar/SportsCar.entering = false
 	if Suv == true:
 
 		if $SUV/SUV.entering == true:
@@ -110,14 +112,15 @@ func _process(delta):
 	elif Suv == false:
 			if $SUV/SUV.rotating == true:
 				$SUV/SUV/AnimationPlayer.play("Rotate")
-				if ($SUV/SUV.rotation_degrees.y >= 359 && $SUV/SUV.rotation_degrees.y < 360 ):
-					$SUV/SUV/AnimationPlayer.stop()
-					$SUV/SUV.rotating = false
-					$SUV/SUV.exiting = true
-					$SUV/SUV/AnimationPlayer.play("Exit")
-					$SUV/SUV.exiting = false
-					$SUV/SUV.rotating = false
-					$SUV/SUV.entering = false
+#				if ($SUV/SUV.rotation_degrees.y >= 359 && $SUV/SUV.rotation_degrees.y < 360 ):
+				$SUV/SUV/AnimationPlayer.stop()
+				$SUV/SUV.rotating = false
+				$SUV/SUV.exiting = true
+				$SUV/SUV/AnimationPlayer.play("Exit")
+				$SUV/SUV.look_at(exitobject.translation,Vector3.UP)
+				$SUV/SUV.exiting = false
+				$SUV/SUV.rotating = false
+				$SUV/SUV.entering = false
 	if nissian == true:
 		if $Nissian/Nissian.entering == true:
 			$Nissian/Nissian/AnimationPlayer.play("Enter")
@@ -126,14 +129,15 @@ func _process(delta):
 	elif nissian == false:
 			if $Nissian/Nissian.rotating == true:
 				$Nissian/Nissian/AnimationPlayer.play("Rotate")
-				if ($Nissian/Nissian.rotation_degrees.y >= 359 && $Nissian/Nissian.rotation_degrees.y < 360 ):
-					$Nissian/Nissian/AnimationPlayer.stop()
-					$Nissian/Nissian.rotating = false
-					$Nissian/Nissian.exiting = true
-					$Nissian/Nissian/AnimationPlayer.play("Exit")
-					$Nissian/Nissian.exiting = false
-					$Nissian/Nissian.rotating = false
-					$Nissian/Nissian.entering = false
+#				if ($Nissian/Nissian.rotation_degrees.y >= 359 && $Nissian/Nissian.rotation_degrees.y < 360 ):
+				$Nissian/Nissian/AnimationPlayer.stop()
+				$Nissian/Nissian.rotating = false
+				$Nissian/Nissian.exiting = true
+				$Nissian/Nissian/AnimationPlayer.play("Exit")
+				$Nissian/Nissian.look_at(exitobject.translation,Vector3.UP)
+				$Nissian/Nissian.exiting = false
+				$Nissian/Nissian.rotating = false
+				$Nissian/Nissian.entering = false
 	if Hatchback == true:
 		if $BMW/BMW.entering == true:
 			$BMW/BMW/AnimationPlayer.play("Enter")
@@ -142,14 +146,15 @@ func _process(delta):
 	elif Hatchback == false:
 			if $BMW/BMW.rotating == true:
 				$BMW/BMW/AnimationPlayer.play("Rotate")
-				if ($BMW/BMW.rotation_degrees.y >= 359 && $BMW/BMW.rotation_degrees.y < 360 ):
-					$BMW/BMW/AnimationPlayer.stop()
-					$BMW/BMW.rotating = false
-					$BMW/BMW.exiting = true
-					$BMW/BMW/AnimationPlayer.play("Exit")
-					$BMW/BMW.exiting = false
-					$BMW/BMW.rotating = false
-					$BMW/BMW.entering = false
+#				if ($BMW/BMW.rotation_degrees.y >= 359 && $BMW/BMW.rotation_degrees.y < 360 ):
+				$BMW/BMW/AnimationPlayer.stop()
+				$BMW/BMW.rotating = false
+				$BMW/BMW.exiting = true
+				$BMW/BMW/AnimationPlayer.play("Exit")
+				$BMW/BMW.look_at(exitobject.translation,Vector3.UP)
+				$BMW/BMW.exiting = false
+				$BMW/BMW.rotating = false
+				$BMW/BMW.entering = false
 					
 	if SixbySix == true:
 		if $SixbySix/SixbySix.entering == true:
@@ -159,14 +164,15 @@ func _process(delta):
 	elif SixbySix == false:
 			if $SixbySix/SixbySix.rotating == true:
 				$SixbySix/SixbySix/AnimationPlayer.play("Rotate")
-				if ($SixbySix/SixbySix.rotation_degrees.y >= 359 && $SixbySix/SixbySix.rotation_degrees.y < 360 ):
-					$SixbySix/SixbySix/AnimationPlayer.stop()
-					$SixbySix/SixbySix.rotating = false
-					$SixbySix/SixbySix.exiting = true
-					$SixbySix/SixbySix/AnimationPlayer.play("Exit")
-					$SixbySix/SixbySix.exiting = false
-					$SixbySix/SixbySix.rotating = false
-					$SixbySix/SixbySix.entering = false
+#				if ($SixbySix/SixbySix.rotation_degrees.y >= 359 && $SixbySix/SixbySix.rotation_degrees.y < 360 ):
+				$SixbySix/SixbySix/AnimationPlayer.stop()
+				$SixbySix/SixbySix.rotating = false
+				$SixbySix/SixbySix.exiting = true
+				$SixbySix/SixbySix/AnimationPlayer.play("Exit")
+				$SixbySix/SixbySix.look_at(exitobject.translation,Vector3.UP)
+				$SixbySix/SixbySix.exiting = false
+				$SixbySix/SixbySix.rotating = false
+				$SixbySix/SixbySix.entering = false
 	if Limo == true: #Checks what car is active
 		if $Limo/Limo.entering == true:
 			$Limo/Limo/AnimationPlayer.play("Enter") #Drives fowards onto the podium
@@ -176,14 +182,17 @@ func _process(delta):
 		if $Limo/Limo.rotating == true:
 			$Limo/Limo/AnimationPlayer.play("Rotate") 
 			#Wait until the car is facing fowards before driving off
-			if ($Limo/Limo.rotation_degrees.y >= 359 && $Limo/Limo.rotation_degrees.y < 360 ): 
-				$Limo/Limo/AnimationPlayer.stop()
-				$Limo/Limo.rotating = false
-				$Limo/Limo.exiting = true
-				$Limo/Limo/AnimationPlayer.play("Exit") #Moves the car off the podium
-				$Limo/Limo.exiting = false
-				$Limo/Limo.rotating = false
-				$Limo/Limo.entering = false
+#			if ($Limo/Limo.rotation_degrees.y >= 359 && $Limo/Limo.rotation_degrees.y < 360 ): 
+			$Limo/Limo/AnimationPlayer.stop()
+			$Limo/Limo.rotating = false
+			$Limo/Limo.exiting = true
+			$Limo/Limo/AnimationPlayer.play("Exit") #Moves the car off the podium
+			# tells the car to look at an object off camera before driving off the screen
+			$Limo/Limo.look_at(exitobject.translation,Vector3.UP) 
+			$Limo/Limo.exiting = false
+			$Limo/Limo.rotating = false
+			$Limo/Limo.entering = false
+			
 func next_car(): #Checks if the index - (number of vehicles) is less than the max ammount before adding 1 or resets to 1 if index is at max
 	if garage.car_index < 6:
 		garage.car_index += 1

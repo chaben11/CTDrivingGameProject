@@ -379,6 +379,7 @@ transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 78.1835 )
 
 [node name="7" parent="Buildings" index="0"]
 transform = Transform( 1.11994, 0, 0, 0, -1.33507e-07, -1.11994, 0, 1.11994, -1.33507e-07, -6.47774, 9.12768, -29.0548 )
+use_in_baked_light = true
 
 [node name="5" parent="Buildings" index="3"]
 transform = Transform( 1.41018, 0, 0, 0, -1.68106e-07, -1.41018, 0, 1.41018, -1.68106e-07, 24.2255, 6.92805, -28.1199 )
@@ -439,6 +440,9 @@ shape = SubResource( 15 )
 
 [node name="Street light" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.3371, 5.331, -10.5491 )
+
+[node name="Cylinder" parent="Street light" index="0"]
+use_in_baked_light = true
 
 [node name="SpotLight" parent="Street light" index="1"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.93113, 8.23941 )
