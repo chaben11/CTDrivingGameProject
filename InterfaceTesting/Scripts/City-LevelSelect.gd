@@ -4,8 +4,7 @@ extends Control
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-export var player = true
-onready var Level1ImageComplete = load("res://DigitalTechMenu/Buttons/1x/City-Level1-Complete.png")
+onready var Level1ImageComplete = load("res://DigitalTechMenu/Buttons/1x/City-Level1-Complete.png") #images that will replace the default button texture when the level is completed
 onready var Level1ImageCompleteHover = load("res://DigitalTechMenu/Buttons/1x/City-Level1-Complete-Hover.png")
 onready var Level2ImageComplete = load("res://DigitalTechMenu/Buttons/1x/City-Level2-Complete.png")
 onready var Level2ImageCompleteHover = load("res://DigitalTechMenu/Buttons/1x/City-Level2-Complete-Hover.png")
@@ -16,7 +15,7 @@ func _ready():
 
 func _process(delta):
 	if PlayerData.player.Citylevel1 == "complete":
-		$"Level 1".texture_normal = Level1ImageComplete
+		$"Level 1".texture_normal = Level1ImageComplete #when level 1 is completed the texture will change to show this (blue to green coloured button)
 		$"Level 1".texture_hover = Level1ImageCompleteHover
 	#if the variable is unlocked then the button is enabled
 	if PlayerData.player.Citylevel2 == "unlocked":
@@ -38,8 +37,7 @@ func _process(delta):
 
 
 func _on_Level_1_pressed():
-	get_tree().change_scene("res://Scenes/Levels/City/City-Level 1.tscn")
-
+	background_load.load_scene("res://Scenes/Levels/City/City-Level 1.tscn")
 
 func _on_Level_2_pressed():
 	get_tree().change_scene("res://Scenes/Levels/City/City-Level 2.tscn")

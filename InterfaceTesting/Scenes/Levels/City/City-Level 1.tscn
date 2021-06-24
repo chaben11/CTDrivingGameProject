@@ -407,6 +407,9 @@ transform = Transform( 1.11994, 0, 0, 0, -1.33507e-07, -1.11994, 0, 1.11994, -1.
 [node name="7002" parent="Buildings" index="10"]
 transform = Transform( 1.11994, 0, 0, 0, -1.33507e-07, -1.11994, 0, 1.11994, -1.33507e-07, 78.4775, 9.12768, -27.9231 )
 
+[node name="7003" parent="Buildings" index="11"]
+visible = false
+
 [node name="Cylinder001" parent="Buildings" index="12"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 122.864, 17.48, -27.3264 )
 

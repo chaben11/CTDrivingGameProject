@@ -16,8 +16,8 @@ func _ready():
 #	pass
 
 
-func _on_BonusStage_body_entered(body):
-	if body.name == "Player":
-		PlayerData.player.currentLevel = "CityBonus"
-		PlayerData.save()
-		get_tree().change_scene("res://Scenes/Levels/City/City-VIPAREA.tscn")
+func _on_BonusStage_body_entered(body): #Area at the end of CityLevel2 that sends the player to the bonus stage
+	if body.name == "Player": 
+		PlayerData.player.currentLevel = "CityBonus" #Sets the currentlevel to the bonus stage
+		PlayerData.save() #saves the game
+		get_tree().change_scene("res://Scenes/Levels/City/City-VIPAREA.tscn") #loads the bonus level

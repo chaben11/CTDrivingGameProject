@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/background_load.gd" type="Script" id=1]
+[ext_resource path="res://Textures/loading.PNG" type="Texture" id=2]
+
+[node name="BackgroundLoad" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.48993
+margin_right = 4.48999
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Progress" type="ProgressBar" parent="."]
+visible = false
+margin_left = 86.4935
+margin_top = 480.752
+margin_right = 953.494
+margin_bottom = 534.752
+rounded = true
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="background" type="Sprite" parent="Progress"]
+show_behind_parent = true
+position = Vector2( 428.999, -154.437 )
+scale = Vector2( 1.5933, 1.5933 )
+texture = ExtResource( 2 )

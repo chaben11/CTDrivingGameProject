@@ -4,6 +4,7 @@ extends Node
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
+#no longer using
 onready var sportscar = preload("res://SportsCar_Model.tres")
 onready var  Suv = preload("res://SUV_Model.tres")
 # Called when the node enters the scene tree for the first time.

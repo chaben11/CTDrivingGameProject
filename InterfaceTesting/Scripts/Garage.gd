@@ -11,6 +11,7 @@ export var Hatchback = false
 export var SixbySix = false
 export var Limo = false
 onready var exitobject = get_node("Exitarget")
+onready var exitobject2 = get_node("Exitarget2")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Sports = true
@@ -188,7 +189,7 @@ func _process(delta):
 			$Limo/Limo.exiting = true
 			$Limo/Limo/AnimationPlayer.play("Exit") #Moves the car off the podium
 			# tells the car to look at an object off camera before driving off the screen
-			$Limo/Limo.look_at(exitobject.translation,Vector3.UP) 
+			$Limo/Limo.look_at(exitobject2.translation,Vector3.UP) 
 			$Limo/Limo.exiting = false
 			$Limo/Limo.rotating = false
 			$Limo/Limo.entering = false
@@ -271,5 +272,5 @@ func _on_ChangingVehicles_timeout(): #CHANGING NEXT
 		$Limo/Limo.entering = true
 		$Selection/AnimationPlayer.play("index 6")
 #		$Selection/AnimationPlayer.play("index 4")
-	$ChangingVehicles.wait_time = 5 # a 5 second wait for the car to fully spin around before the next car will drive over
+	$ChangingVehicles.wait_time = 2 # a 5 second wait for the car to fully spin around before the next car will drive over
 	$ChangingVehicles.stop()

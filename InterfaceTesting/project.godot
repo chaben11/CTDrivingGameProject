@@ -21,6 +21,7 @@ run/main_scene="res://Scenes/MainMenu.tscn"
 
 garage="*res://Cars/CarIndex.gd"
 PlayerData="*res://Scripts/PlayerData.gd"
+background_load="*res://Scenes/background_load.tscn"
 
 [display]
 
