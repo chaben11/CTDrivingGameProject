@@ -100,7 +100,8 @@ func _process(delta):
 			$SportsCar/SportsCar.rotating = false
 			$SportsCar/SportsCar.exiting = true
 			$SportsCar/SportsCar/AnimationPlayer.play("Exit") #Moves the car off the podium
-			$SportsCar/SportsCar.look_at(exitobject.translation,Vector3.UP)
+			$SportsCar/SportsCar.look_at(exitobject2.translation,Vector3.UP)
+#			$SportsCar/SportsCar.turn_face(exitobject,delta)
 			$SportsCar/SportsCar.exiting = false
 			$SportsCar/SportsCar.rotating = false
 			$SportsCar/SportsCar.entering = false
@@ -118,7 +119,7 @@ func _process(delta):
 				$SUV/SUV.rotating = false
 				$SUV/SUV.exiting = true
 				$SUV/SUV/AnimationPlayer.play("Exit")
-				$SUV/SUV.look_at(exitobject.translation,Vector3.UP)
+				$SUV/SUV.look_at(exitobject2.translation,Vector3.UP)
 				$SUV/SUV.exiting = false
 				$SUV/SUV.rotating = false
 				$SUV/SUV.entering = false
@@ -135,7 +136,7 @@ func _process(delta):
 				$Nissian/Nissian.rotating = false
 				$Nissian/Nissian.exiting = true
 				$Nissian/Nissian/AnimationPlayer.play("Exit")
-				$Nissian/Nissian.look_at(exitobject.translation,Vector3.UP)
+				$Nissian/Nissian.look_at(exitobject2.translation,Vector3.UP)
 				$Nissian/Nissian.exiting = false
 				$Nissian/Nissian.rotating = false
 				$Nissian/Nissian.entering = false
@@ -152,7 +153,7 @@ func _process(delta):
 				$BMW/BMW.rotating = false
 				$BMW/BMW.exiting = true
 				$BMW/BMW/AnimationPlayer.play("Exit")
-				$BMW/BMW.look_at(exitobject.translation,Vector3.UP)
+				$BMW/BMW.look_at(exitobject2.translation,Vector3.UP)
 				$BMW/BMW.exiting = false
 				$BMW/BMW.rotating = false
 				$BMW/BMW.entering = false
@@ -170,7 +171,7 @@ func _process(delta):
 				$SixbySix/SixbySix.rotating = false
 				$SixbySix/SixbySix.exiting = true
 				$SixbySix/SixbySix/AnimationPlayer.play("Exit")
-				$SixbySix/SixbySix.look_at(exitobject.translation,Vector3.UP)
+				$SixbySix/SixbySix.look_at(exitobject2.translation,Vector3.UP)
 				$SixbySix/SixbySix.exiting = false
 				$SixbySix/SixbySix.rotating = false
 				$SixbySix/SixbySix.entering = false

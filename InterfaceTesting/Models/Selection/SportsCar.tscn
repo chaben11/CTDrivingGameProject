@@ -10,7 +10,7 @@
 [node name="SportsCar" type="Spatial"]
 
 [node name="SportsCar" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 32 )
 mesh = ExtResource( 6 )
 material/13 = null
 material/14 = null
