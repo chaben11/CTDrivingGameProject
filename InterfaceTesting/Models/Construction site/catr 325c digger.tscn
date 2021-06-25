@@ -1,8 +1,12 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Models/Construction site/Digger Grey.material" type="Material" id=1]
 [ext_resource path="res://Models/Construction site/Digger Yellow.material" type="Material" id=2]
 [ext_resource path="res://Models/Construction site/Digger Black.material" type="Material" id=3]
+[ext_resource path="res://Scripts/catr 325c digger.gd" type="Script" id=4]
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 1.44645, 1.68026, 1.55229 )
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "Digger"
@@ -45,8 +49,10 @@ surfaces/2 = {
 
 [sub_resource type="Animation" id=2]
 resource_name = "DiggerRotation"
+length = 2.0
+loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Digger:rotation_degrees")
+tracks/0/path = NodePath(".:rotation_degrees")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -55,17 +61,26 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector3( 2.03555e-13, 120, -90 ), Vector3( 0, -120, -90 ) ]
+"values": [ Vector3( 0, -50, 0 ), Vector3( 0, 180, 0 ) ]
 }
 
-[node name="catr 325c digger" type="Spatial"]
+[node name="Digger" type="Spatial"]
 
-[node name="Digger" type="MeshInstance" parent="."]
-transform = Transform( 2.18557e-08, -0.5, 0.866025, -1, -4.37114e-08, -3.55271e-15, 3.78552e-08, -0.866025, -0.5, 0, 0, 0 )
+[node name="Enemy" type="KinematicBody" parent="."]
+transform = Transform( 0.945518, 0, 0.325568, 0, 1, 0, -0.325568, 0, 0.945518, 0, 0, 0 )
+script = ExtResource( 4 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Enemy"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.95866, 4.56744, -18.3463 )
+shape = SubResource( 3 )
+
+[node name="Digger" type="MeshInstance" parent="Enemy"]
+transform = Transform( -4.37114e-08, 1, 2.98023e-08, -1, -4.37114e-08, 0, 0, -2.98023e-08, 1, 0, 0, 0 )
 mesh = SubResource( 1 )
 material/0 = null
 material/1 = null
 material/2 = null
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemy"]
+playback_speed = 0.3
 anims/DiggerRotation = SubResource( 2 )

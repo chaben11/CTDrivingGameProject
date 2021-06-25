@@ -1,9 +1,10 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Scripts/LoadingData.gd" type="Script" id=1]
 [ext_resource path="res://Taxiphysics/Failed.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/FloorMine.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Models/Construction site/catr 325c digger.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Models/Construction site/Sand dunes Joined.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Taxiphysics/Pause.gd" type="Script" id=6]
 [ext_resource path="res://PauseMenu/1x/Asset 12.png" type="Texture" id=7]
 [ext_resource path="res://PauseMenuNewIcons/1x/Asset 24.png" type="Texture" id=8]
@@ -223,7 +224,16 @@ transform = Transform( 1000, 0, 0, 0, 1, 0, 0, 0, 10, 920.8, -0.5, 0 )
 [node name="Finsihed" parent="." instance=ExtResource( 21 )]
 
 [node name="catr 325c digger" parent="." instance=ExtResource( 4 )]
-transform = Transform( -1, 0, -1.50996e-07, 0, 0.8, 0, 1.50996e-07, 0, -1, 205.003, 0.784446, -19.5247 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 0.8, 0, -1, 0, -4.37114e-08, 0, 0.784, -19.525 )
+
+[node name="catr 325c digger2" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 0.8, 0, 0, 0, 1, 87.4, 0.784, 16.0378 )
+
+[node name="Digger" parent="catr 325c digger2/Enemy" index="1"]
+transform = Transform( -4.37114e-08, 1, 2.98023e-08, -1, -4.37114e-08, 0, 8.88178e-16, -2.98023e-08, 1, 0, 0, 0 )
+
+[node name="Sand dunes Joined" parent="." instance=ExtResource( 5 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 102.428, -0.489059, -7.52875 )
 
 [connection signal="pressed" from="Pause/MainMenu/MenuButton" to="Pause" method="_on_MenuButton_pressed"]
 [connection signal="pressed" from="Pause/MainMenu/SettingsButton" to="Pause" method="_on_SettingsButton_pressed"]
@@ -232,3 +242,5 @@ transform = Transform( -1, 0, -1.50996e-07, 0, 0.8, 0, 1.50996e-07, 0, -1, 205.0
 [connection signal="pressed" from="Failed/MainMenu/RetryButton" to="Failed" method="_on_RetryButton_pressed"]
 
 [editable path="Node2D/Viewport/Speedometer(3)"]
+[editable path="catr 325c digger"]
+[editable path="catr 325c digger2"]
