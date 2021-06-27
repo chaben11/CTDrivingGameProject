@@ -538,7 +538,7 @@ transform = Transform( 4.96567, 0, 0, 0, 0.733712, 0, 0, 0, 4, -236.386, 6.33542
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 763.523, -0.19281, -9.07081 )
 
 [node name="Finsihed" parent="." instance=ExtResource( 34 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 699.566, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 724.198, 0, 0 )
 
 [node name="BonusStage" type="Area" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 837.017, 0, 0 )

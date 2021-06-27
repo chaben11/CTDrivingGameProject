@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Scripts/LoadingData.gd" type="Script" id=1]
 [ext_resource path="res://Taxiphysics/Failed.gd" type="Script" id=2]
@@ -14,12 +14,15 @@
 [ext_resource path="res://PauseMenuNewIcons/1x/ResumeNormal.png" type="Texture" id=12]
 [ext_resource path="res://FailMenu/Retry_Hover.png" type="Texture" id=13]
 [ext_resource path="res://FailMenu/Retry_Normal.png" type="Texture" id=14]
+[ext_resource path="res://Models/Construction site/cat 793f haul truck.glb" type="PackedScene" id=15]
 [ext_resource path="res://PauseMenuNewIcons/1x/ResumePressed.png" type="Texture" id=16]
 [ext_resource path="res://PauseMenuNewIcons/1x/Asset 25.png" type="Texture" id=17]
 [ext_resource path="res://PauseMenuNewIcons/1x/Asset 26.png" type="Texture" id=18]
 [ext_resource path="res://FailMenu/Retry_Select.png" type="Texture" id=19]
+[ext_resource path="res://Models/Construction site/cat 966l wheel loader.glb" type="PackedScene" id=20]
 [ext_resource path="res://Scenes/Finished.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Scenes/LevelCompleted.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Models/Enemy-Mine.tscn" type="PackedScene" id=23]
 [ext_resource path="res://DigitalTechMenu/SettingsButton.tscn" type="PackedScene" id=25]
 [ext_resource path="res://Models/Speedometer(3).tscn" type="PackedScene" id=28]
 [ext_resource path="res://Textures/AllSkyFree_Sky_EpicBlueSunset_Equirect.png" type="Texture" id=31]
@@ -94,12 +97,17 @@ mesh = ExtResource( 9 )
 material/0 = null
 
 [node name="MeshInstance9" type="MeshInstance" parent="Roads"]
-transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 364.269, -0.167, 29.912 )
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 364.158, -0.412201, 30.1067 )
 mesh = ExtResource( 9 )
 material/0 = null
 
 [node name="MeshInstance6" type="MeshInstance" parent="Roads"]
 transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 364.269, -0.167, -29.852 )
+mesh = ExtResource( 9 )
+material/0 = null
+
+[node name="MeshInstance13" type="MeshInstance" parent="Roads"]
+transform = Transform( 5.86471, 0, -1.61994, 0, 1, 0, 8.0997, 0, 1.17294, 375.126, -0.167, -44.2167 )
 mesh = ExtResource( 9 )
 material/0 = null
 
@@ -224,7 +232,10 @@ transform = Transform( 1000, 0, 0, 0, 1, 0, 0, 0, 10, 920.8, -0.5, 0 )
 [node name="Finsihed" parent="." instance=ExtResource( 21 )]
 
 [node name="catr 325c digger" parent="." instance=ExtResource( 4 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 0.8, 0, -1, 0, -4.37114e-08, 0, 0.784, -19.525 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 0.8, 0, -1, 0, -4.37114e-08, 31.7601, 0.784, -19.525 )
+
+[node name="Digger" parent="catr 325c digger/Enemy" index="1"]
+transform = Transform( -4.37114e-08, 1, 2.98023e-08, -1, -4.37114e-08, 0, -8.88178e-16, -2.98023e-08, 1, 0, 0, 0 )
 
 [node name="catr 325c digger2" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 0.8, 0, 0, 0, 1, 87.4, 0.784, 16.0378 )
@@ -233,7 +244,23 @@ transform = Transform( 1, 0, 0, 0, 0.8, 0, 0, 0, 1, 87.4, 0.784, 16.0378 )
 transform = Transform( -4.37114e-08, 1, 2.98023e-08, -1, -4.37114e-08, 0, 8.88178e-16, -2.98023e-08, 1, 0, 0, 0 )
 
 [node name="Sand dunes Joined" parent="." instance=ExtResource( 5 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 102.428, -0.489059, -7.52875 )
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 101.025, -0.717361, -7.64559 )
+
+[node name="Sand dunes Joined2" parent="." instance=ExtResource( 5 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 678.025, -0.717361, 6.35441 )
+
+[node name="cat 793f haul truck2" parent="." instance=ExtResource( 15 )]
+transform = Transform( 0.657099, 0, -0.753804, 0, 1, 0, 0.753804, 0, 0.657099, 72.7655, 3.9703, -33.5648 )
+
+[node name="cat 966l wheel loader2" parent="." instance=ExtResource( 20 )]
+transform = Transform( 0.753804, 0, 0.657099, 0, 1, 0, -0.657099, 0, 0.753804, 70.0223, 1.32106, -17.7231 )
+
+[node name="Enemy" parent="." instance=ExtResource( 23 )]
+transform = Transform( 0.797057, 0, 0.603904, 0, 1, 0, -0.603904, 0, 0.797057, 379.462, 2.72409, -24.1007 )
+EnemySpeed = 0.5
+
+[node name="CollisionShape" parent="Enemy/Enemy" index="2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.63525, 1.83264, -0.0831604 )
 
 [connection signal="pressed" from="Pause/MainMenu/MenuButton" to="Pause" method="_on_MenuButton_pressed"]
 [connection signal="pressed" from="Pause/MainMenu/SettingsButton" to="Pause" method="_on_SettingsButton_pressed"]
@@ -244,3 +271,5 @@ transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 102.428
 [editable path="Node2D/Viewport/Speedometer(3)"]
 [editable path="catr 325c digger"]
 [editable path="catr 325c digger2"]
+[editable path="Enemy"]
+[editable path="Enemy/Enemy2/NISSAN NAVARA red-SOLID"]
