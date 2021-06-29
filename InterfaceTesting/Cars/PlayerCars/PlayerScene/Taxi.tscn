@@ -12,7 +12,6 @@ script = ExtResource( 2 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 0.5, 0.230474, -0.834795, 0, 0.963937, 0.266128, 0.866025, -0.133064, 0.481969, -10, 7.744, 3 )
-current = true
 fov = 48.4
 
 [node name="Player" parent="." instance=ExtResource( 3 )]

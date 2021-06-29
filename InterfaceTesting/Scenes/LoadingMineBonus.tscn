@@ -1,0 +1,101 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Models/Construction site/Elevator.tscn" type="PackedScene" id=1]
+
+[sub_resource type="CubeMesh" id=3]
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_color = Color( 1, 0, 0, 1 )
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Spatial
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+onready var taxi = preload(\"res://Cars/PlayerCars/PlayerScene/Taxi.tscn\")
+onready var sixbysix = preload(\"res://Cars/PlayerCars/PlayerScene/SixbySix.tscn\")
+onready var bmw = preload(\"res://Cars/PlayerCars/PlayerScene/Bmw.tscn\")
+onready var suv = preload(\"res://Cars/PlayerCars/PlayerScene/suv.tscn\")
+onready var limo = preload(\"res://Cars/PlayerCars/PlayerScene/Limo.tscn\")
+onready var nissan = preload(\"res://Cars/PlayerCars/PlayerScene/Nissian.tscn\")
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	$AnimationPlayer.play(\"Elevator Down\")
+	if garage.car_index == 5:
+		add_child(sixbysix.instance())
+	elif garage.car_index == 4:
+		add_child(bmw.instance())
+	elif garage.car_index == 2:
+		add_child(suv.instance())
+	elif garage.car_index == 6:
+		add_child(limo.instance())
+	elif garage.car_index == 3:
+		add_child(nissan.instance())
+	else:
+		add_child(taxi.instance())
+
+func _loadscene():
+	background_load.load_scene(\"res://Scenes/Levels/Mine/Mine-Level 1.tscn\")
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+
+
+
+func _on_Area_body_entered(body):
+	if body.name == \"Player\":
+		print(\"yet\")
+"
+
+[sub_resource type="Animation" id=2]
+resource_name = "Elevator Down"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, -24, 0 ) ]
+}
+
+[sub_resource type="BoxShape" id=5]
+extents = Vector3( 9.51282, 1, 6.73795 )
+
+[node name="Spatial" type="Spatial"]
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 5.56618, 0, 0, 0, 6.33366, 0, 0, 0, 1, 0, 1.56575, -8.96829 )
+mesh = SubResource( 3 )
+material/0 = SubResource( 4 )
+
+[node name="LoadingMineBonus" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -24, 0 )
+script = SubResource( 1 )
+
+[node name="Elevator" parent="LoadingMineBonus" instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2, 0.5, -1.02369 )
+script = null
+
+[node name="Camera" type="Camera" parent="LoadingMineBonus"]
+transform = Transform( 0.696852, 0, 0.717215, 0, 1, 0, -0.717215, 0, 0.696852, 9.61, 3.407, 8.5 )
+current = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="LoadingMineBonus"]
+"anims/Elevator Down" = SubResource( 2 )
+
+[node name="Area" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.61903, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -16.3373, 0 )
+shape = SubResource( 5 )
+
+[connection signal="body_entered" from="Area" to="LoadingMineBonus" method="_on_Area_body_entered"]
