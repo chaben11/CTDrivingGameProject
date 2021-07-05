@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Scripts/LoadingData.gd" type="Script" id=1]
 [ext_resource path="res://Taxiphysics/Failed.gd" type="Script" id=2]
@@ -23,7 +23,6 @@
 [ext_resource path="res://Scenes/Finished.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Scenes/LevelCompleted.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Models/Enemy-Mine.tscn" type="PackedScene" id=23]
-[ext_resource path="res://Models/Construction site/Elevator.tscn" type="PackedScene" id=24]
 [ext_resource path="res://DigitalTechMenu/SettingsButton.tscn" type="PackedScene" id=25]
 [ext_resource path="res://Models/Speedometer(3).tscn" type="PackedScene" id=28]
 [ext_resource path="res://Textures/AllSkyFree_Sky_EpicBlueSunset_Equirect.png" type="Texture" id=31]
@@ -232,9 +231,6 @@ transform = Transform( 1000, 0, 0, 0, 1, 0, 0, 0, 10, 920.8, -0.5, 0 )
 
 [node name="Finsihed" parent="." instance=ExtResource( 21 )]
 
-[node name="CollisionShape" parent="Finsihed" index="0"]
-disabled = true
-
 [node name="catr 325c digger" parent="." instance=ExtResource( 4 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 0.8, 0, -1, 0, -4.37114e-08, 31.7601, 0.784, -19.525 )
 
@@ -265,9 +261,6 @@ EnemySpeed = 0.5
 
 [node name="CollisionShape" parent="Enemy/Enemy" index="2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.63525, 1.83264, -0.0831604 )
-
-[node name="Elevator" parent="." instance=ExtResource( 24 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 634, 0.75399, 0 )
 
 [connection signal="pressed" from="Pause/MainMenu/MenuButton" to="Pause" method="_on_MenuButton_pressed"]
 [connection signal="pressed" from="Pause/MainMenu/SettingsButton" to="Pause" method="_on_SettingsButton_pressed"]

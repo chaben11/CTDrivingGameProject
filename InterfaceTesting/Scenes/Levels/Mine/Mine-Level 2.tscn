@@ -1,0 +1,426 @@
+[gd_scene load_steps=34 format=2]
+
+[ext_resource path="res://Textures/AllSkyFree_Sky_EpicBlueSunset_Equirect.png" type="Texture" id=1]
+[ext_resource path="res://Models/Construction site/cat 793f haul truck.glb" type="PackedScene" id=2]
+[ext_resource path="res://Models/Construction site/Sand dunes Joined.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Models/Speedometer(3).tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/FloorMine.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Models/Construction site/catr 325c digger.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/LevelCompleted.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Finished.tscn" type="PackedScene" id=8]
+[ext_resource path="res://DigitalTechMenu/SettingsButton.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Models/Construction site/cat 966l wheel loader.glb" type="PackedScene" id=10]
+[ext_resource path="res://Models/Enemy-Mine.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Taxiphysics/Pause.gd" type="Script" id=13]
+[ext_resource path="res://PauseMenu/1x/Asset 12.png" type="Texture" id=14]
+[ext_resource path="res://PauseMenuNewIcons/1x/Asset 24.png" type="Texture" id=15]
+[ext_resource path="res://PauseMenuNewIcons/1x/ResumeHover.png" type="Texture" id=16]
+[ext_resource path="res://FailMenu/Retry_Hover.png" type="Texture" id=17]
+[ext_resource path="res://FailMenu/Retry_Normal.png" type="Texture" id=18]
+[ext_resource path="res://PauseMenuNewIcons/1x/ResumePressed.png" type="Texture" id=19]
+[ext_resource path="res://PauseMenuNewIcons/1x/ResumeNormal.png" type="Texture" id=20]
+[ext_resource path="res://PauseMenuNewIcons/1x/Asset 25.png" type="Texture" id=21]
+[ext_resource path="res://FailMenu/GameOverScreen.png" type="Texture" id=22]
+[ext_resource path="res://PauseMenuNewIcons/1x/Asset 26.png" type="Texture" id=23]
+[ext_resource path="res://FailMenu/Retry_Select.png" type="Texture" id=24]
+[ext_resource path="res://Models/Construction site/SideSand.tres" type="ArrayMesh" id=25]
+[ext_resource path="res://Taxiphysics/Failed.gd" type="Script" id=26]
+[ext_resource path="res://Scripts/LoadingData.gd" type="Script" id=27]
+
+[sub_resource type="PanoramaSky" id=1]
+panorama = ExtResource( 1 )
+
+[sub_resource type="Environment" id=2]
+background_mode = 2
+background_sky = SubResource( 1 )
+background_sky_custom_fov = 65.7
+background_sky_orientation = Basis( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08 )
+fog_height_min = 0.0
+fog_height_max = 100.0
+ssao_quality = 0
+
+[sub_resource type="ViewportTexture" id=3]
+viewport_path = NodePath("Node2D/Viewport")
+
+[sub_resource type="Animation" id=4]
+resource_name = "DiggerRotation"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, -50, 0 ), Vector3( 0, 180, 0 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "DiggerRotation"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, -50, 0 ), Vector3( 0, 180, 0 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+length = 11.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Enemy:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5, 5.5, 6, 7, 7.8, 9.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, -11 ), Vector3( 0, 0, 51 ), Vector3( 0, 0, 51 ), Vector3( 0, 0, 51 ), Vector3( 0, 0, 51 ), Vector3( 0, 0, -11 ), Vector3( 0, 0, -11 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Enemy:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.5, 2.7, 5.5, 6, 7, 7.8, 9.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 11, 0, -11 ), Vector3( 11, 0, -11 ), Vector3( 11, 0, 54 ), Vector3( 11, 0, 54 ), Vector3( 11, 0, 54 ), Vector3( 11, 0, 54 ), Vector3( 11, 0, 54 ), Vector3( 11, 0, -11 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 5.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Enemy:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.7, 4.6, 5.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, -91 ), Vector3( 0, 0, 100 ), Vector3( 0, 0, 100 ), Vector3( 0, 0, 100 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Enemy2:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2.7, 4.6, 5.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 11, 0, -91 ), Vector3( 11, 0, -91 ), Vector3( 11, 0, 100 ), Vector3( 11, 0, 100 ) ]
+}
+
+[node name="Main" type="Spatial"]
+script = ExtResource( 27 )
+
+[node name="LevelCompleted" parent="." instance=ExtResource( 7 )]
+visible = false
+position = Vector2( 512, 300 )
+
+[node name="Roads" type="Spatial" parent="."]
+
+[node name="MeshInstance" type="MeshInstance" parent="Roads"]
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 4.25249, -0.167, 29.912 )
+mesh = ExtResource( 25 )
+material/0 = null
+
+[node name="MeshInstance3" type="MeshInstance" parent="Roads"]
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 104, -0.167, 29.912 )
+mesh = ExtResource( 25 )
+material/0 = null
+
+[node name="MeshInstance4" type="MeshInstance" parent="Roads"]
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 104.299, -0.167, -29.8516 )
+mesh = ExtResource( 25 )
+material/0 = null
+
+[node name="MeshInstance11" type="MeshInstance" parent="Roads"]
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, -75.776, -0.167, -29.852 )
+mesh = ExtResource( 25 )
+material/0 = null
+
+[node name="MeshInstance8" type="MeshInstance" parent="Roads"]
+transform = Transform( 5.0415, 0, 0, 0, 1, 0, 0, 0, 2, 284.122, -0.167, -29.6014 )
+mesh = ExtResource( 25 )
+material/0 = null
+
+[node name="MeshInstance12" type="MeshInstance" parent="Roads"]
+transform = Transform( 50.7004, 0, 0, 0, 1, 0, 0, 0, 2, 464.122, -0.167, -29.601 )
+mesh = ExtResource( 25 )
+material/0 = null
+
+[node name="MeshInstance5" type="MeshInstance" parent="Roads"]
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 184, -0.167, 29.912 )
+mesh = ExtResource( 25 )
+material/0 = null
+
+[node name="MeshInstance7" type="MeshInstance" parent="Roads"]
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 284.269, -0.167, 29.912 )
+mesh = ExtResource( 25 )
+material/0 = null
+
+[node name="MeshInstance14" type="MeshInstance" parent="Roads"]
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 464.269, -0.167, 29.912 )
+mesh = ExtResource( 25 )
+material/0 = null
+
+[node name="MeshInstance9" type="MeshInstance" parent="Roads"]
+transform = Transform( 10.6085, 0, 0, 0, 1, 0, 0, 0, 2, 364.158, -0.412201, 30.1067 )
+mesh = ExtResource( 25 )
+material/0 = null
+
+[node name="MeshInstance6" type="MeshInstance" parent="Roads"]
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 364.269, -0.167, -29.852 )
+mesh = ExtResource( 25 )
+material/0 = null
+
+[node name="MeshInstance13" type="MeshInstance" parent="Roads"]
+transform = Transform( 5.86471, 0, -1.61994, 0, 1, 0, 8.0997, 0, 1.17294, 375.126, -0.167, -44.2167 )
+mesh = ExtResource( 25 )
+material/0 = null
+
+[node name="MeshInstance15" type="MeshInstance" parent="Roads"]
+transform = Transform( 5.86471, 0, -1.61994, 0, 1, 0, 8.0997, 0, 1.17294, 616.226, -0.167, -44.2167 )
+mesh = ExtResource( 25 )
+material/0 = null
+
+[node name="MeshInstance10" type="MeshInstance" parent="Roads"]
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 184.206, -0.351364, -29.6263 )
+mesh = ExtResource( 25 )
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="Roads"]
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 4.22419, -0.167, -29.8438 )
+mesh = ExtResource( 25 )
+material/0 = null
+
+[node name="Spatial" type="Spatial" parent="."]
+transform = Transform( 10, 0, 0, 0, 25, 0, 0, 0, 10, 84, -6.898, -29.777 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 2 )
+
+[node name="Pause" type="Control" parent="."]
+pause_mode = 2
+margin_right = 1024.0
+margin_bottom = 600.0
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MainMenu" type="Sprite" parent="Pause"]
+modulate = Color( 1, 1, 1, 0.721569 )
+position = Vector2( 512, 300 )
+texture = ExtResource( 14 )
+
+[node name="MenuButton" type="TextureButton" parent="Pause/MainMenu"]
+margin_left = 155.0
+margin_top = -50.0
+margin_right = 350.0
+margin_bottom = 145.0
+shortcut_in_tooltip = false
+texture_normal = ExtResource( 21 )
+texture_pressed = ExtResource( 23 )
+texture_hover = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SettingsButton" parent="Pause/MainMenu" instance=ExtResource( 9 )]
+
+[node name="ResumeButton" type="TextureButton" parent="Pause/MainMenu"]
+margin_left = -340.0
+margin_top = -50.0
+margin_right = -145.0
+margin_bottom = 145.0
+texture_normal = ExtResource( 20 )
+texture_pressed = ExtResource( 19 )
+texture_hover = ExtResource( 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Failed" type="Control" parent="."]
+pause_mode = 2
+margin_right = 1024.0
+margin_bottom = 600.0
+script = ExtResource( 26 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MainMenu" type="Sprite" parent="Failed"]
+visible = false
+modulate = Color( 1, 1, 1, 0.721569 )
+position = Vector2( 512, 300 )
+texture = ExtResource( 22 )
+
+[node name="MenuButton" type="TextureButton" parent="Failed/MainMenu"]
+margin_left = 122.928
+margin_top = -50.0
+margin_right = 338.928
+margin_bottom = 156.0
+shortcut_in_tooltip = false
+texture_normal = ExtResource( 21 )
+texture_pressed = ExtResource( 23 )
+texture_hover = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RetryButton" type="TextureButton" parent="Failed/MainMenu"]
+margin_left = -340.0
+margin_top = -50.0
+margin_right = -145.0
+margin_bottom = 145.0
+texture_normal = ExtResource( 18 )
+texture_pressed = ExtResource( 24 )
+texture_hover = ExtResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Node2D"]
+position = Vector2( 934.14, 570.667 )
+rotation = 3.14159
+scale = Vector2( -0.5, 0.5 )
+texture = SubResource( 3 )
+
+[node name="Viewport" type="Viewport" parent="Node2D"]
+size = Vector2( 400, 400 )
+own_world = true
+transparent_bg = true
+
+[node name="Speedometer(3)" parent="Node2D/Viewport" instance=ExtResource( 4 )]
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( -0.917359, -1.36697e-08, -0.39806, -0.258652, 0.760122, 0.596082, 0.302575, 0.64978, -0.697305, 0, 52.8354, -57.4725 )
+
+[node name="Floortest" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1000, 0, 0, 0, 1, 0, 0, 0, 10, 920.8, -0.5, 0 )
+
+[node name="Finsihed" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 879.5, 0, 0 )
+
+[node name="catr 325c digger" parent="." instance=ExtResource( 6 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 0.8, 0, -1, 0, -4.37114e-08, 31.7601, 0.784, -19.525 )
+
+[node name="Digger" parent="catr 325c digger/Enemy" index="1"]
+transform = Transform( -4.37114e-08, 1, 2.98023e-08, -1, -4.37114e-08, 0, -8.88178e-16, -2.98023e-08, 1, 0, 0, 0 )
+
+[node name="catr 325c digger3" parent="." instance=ExtResource( 6 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 0.8, 0, -1, 0, -4.37114e-08, 109.26, 0.784, -19.525 )
+
+[node name="Digger" parent="catr 325c digger3/Enemy" index="1"]
+transform = Transform( -4.37114e-08, 1, 2.98023e-08, -1, -4.37114e-08, 0, -8.88178e-16, -2.98023e-08, 1, 0, 0, 0 )
+
+[node name="AnimationPlayer" parent="catr 325c digger3/Enemy" index="2"]
+anims/DiggerRotation = SubResource( 4 )
+
+[node name="catr 325c digger4" parent="." instance=ExtResource( 6 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 0.8, 0, -1, 0, -4.37114e-08, 168.26, 0.784, -19.525 )
+
+[node name="Enemy" parent="catr 325c digger4" index="0"]
+transform = Transform( 0.642787, 0, -0.766044, 0, 1, 0, 0.766044, 0, 0.642787, 0, 0, 0 )
+
+[node name="Digger" parent="catr 325c digger4/Enemy" index="1"]
+transform = Transform( -4.37114e-08, 1, 2.98023e-08, -1, -4.37114e-08, 0, -8.88178e-16, -2.98023e-08, 1, 0, 0, 0 )
+
+[node name="AnimationPlayer" parent="catr 325c digger4/Enemy" index="2"]
+anims/DiggerRotation = SubResource( 5 )
+
+[node name="catr 325c digger2" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 0.8, 0, 0, 0, 1, 87.4, 0.784, 16.0378 )
+
+[node name="Digger" parent="catr 325c digger2/Enemy" index="1"]
+transform = Transform( -4.37114e-08, 1, 2.98023e-08, -1, -4.37114e-08, 0, 8.88178e-16, -2.98023e-08, 1, 0, 0, 0 )
+
+[node name="Sand dunes Joined" parent="." instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 101.025, -0.717361, -17.3378 )
+
+[node name="Sand dunes Joined4" parent="." instance=ExtResource( 3 )]
+transform = Transform( -0.809048, 0, -0.587743, 0, 1, 0, 0.587743, 0, -0.809048, 200.779, 0.117393, -206.481 )
+
+[node name="Sand dunes Joined5" parent="." instance=ExtResource( 3 )]
+transform = Transform( -0.809048, 0, -0.587743, 0, 1, 0, 0.587743, 0, -0.809048, 295.722, 0.117393, -193.37 )
+
+[node name="Sand dunes Joined6" parent="." instance=ExtResource( 3 )]
+transform = Transform( -0.809048, 0, -0.587743, 0, 1, 0, 0.587743, 0, -0.809048, 432.179, 0.117393, -206.481 )
+
+[node name="Sand dunes Joined7" parent="." instance=ExtResource( 3 )]
+transform = Transform( -0.809048, 0, -0.587743, 0, 1, 0, 0.587743, 0, -0.809048, 527.122, 0.117393, -193.37 )
+
+[node name="Sand dunes Joined3" parent="." instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 101.025, -0.717361, -17.3378 )
+
+[node name="Sand dunes Joined8" parent="." instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -11.575, -0.717361, -17.3378 )
+
+[node name="Sand dunes Joined2" parent="." instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 673.812, -0.717361, -3.36283 )
+
+[node name="cat 793f haul truck2" parent="." instance=ExtResource( 2 )]
+transform = Transform( 0.657099, 0, -0.753804, 0, 1, 0, 0.753804, 0, 0.657099, 72.7655, 3.9703, -33.5648 )
+
+[node name="cat 966l wheel loader2" parent="." instance=ExtResource( 10 )]
+transform = Transform( 0.753804, 0, 0.657099, 0, 1, 0, -0.657099, 0, 0.753804, 70.0223, 1.32106, -17.7231 )
+
+[node name="Enemy" parent="." instance=ExtResource( 11 )]
+transform = Transform( 0.797057, 0, 0.603904, 0, 1, 0, -0.603904, 0, 0.797057, 379.462, 2.72409, -24.1007 )
+EnemySpeed = 0.5
+
+[node name="CollisionShape" parent="Enemy/Enemy" index="2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.63525, 1.83264, -0.0831604 )
+
+[node name="Enemy2" parent="." instance=ExtResource( 11 )]
+transform = Transform( 0.797057, 0, 0.603904, 0, 1, 0, -0.603904, 0, 0.797057, 624.762, 2.72409, -24.1007 )
+EnemySpeed = 0.5
+
+[node name="CollisionShape" parent="Enemy2/Enemy" index="2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.63525, 1.83264, -0.0831604 )
+
+[node name="AnimationPlayer" parent="Enemy2" index="2"]
+"anims/New Anim" = SubResource( 6 )
+"anims/New Anim (copy)" = SubResource( 7 )
+
+[connection signal="pressed" from="Pause/MainMenu/MenuButton" to="Pause" method="_on_MenuButton_pressed"]
+[connection signal="pressed" from="Pause/MainMenu/SettingsButton" to="Pause" method="_on_SettingsButton_pressed"]
+[connection signal="pressed" from="Pause/MainMenu/ResumeButton" to="Pause" method="_on_ResumeButton_pressed"]
+[connection signal="pressed" from="Failed/MainMenu/MenuButton" to="Failed" method="_on_MenuButton_pressed"]
+[connection signal="pressed" from="Failed/MainMenu/RetryButton" to="Failed" method="_on_RetryButton_pressed"]
+
+[editable path="Node2D/Viewport/Speedometer(3)"]
+[editable path="Finsihed"]
+[editable path="catr 325c digger"]
+[editable path="catr 325c digger3"]
+[editable path="catr 325c digger4"]
+[editable path="catr 325c digger2"]
+[editable path="Enemy"]
+[editable path="Enemy/Enemy2/NISSAN NAVARA red-SOLID"]
+[editable path="Enemy2"]
+[editable path="Enemy2/Enemy2/NISSAN NAVARA red-SOLID"]

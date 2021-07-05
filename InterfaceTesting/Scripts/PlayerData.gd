@@ -12,7 +12,8 @@ var player = {
 "Minelevel1": "unlocked",
 "Minelevel2": "locked",
 "Minelevel3": "locked",
-"Minelevel4": "locked"
+"Minelevel4": "locked",
+"MineBonus": "locked"
 }
 
 func _ready():
