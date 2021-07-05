@@ -15,7 +15,6 @@ var player = {
 "Minelevel4": "locked",
 "MineBonus": "locked"
 }
-
 func _ready():
 	load_data()
 	print(player)

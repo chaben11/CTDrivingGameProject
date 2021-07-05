@@ -45,6 +45,9 @@ func _on_Finsihed_body_entered(body):
 			get_tree().change_scene("res://Scenes/City-LevelSelect.tscn")
 			print("you finished the bonus stage a new vehicle is now available")
 			PlayerData.save()
+		elif PlayerData.player.currentLevel == "Citylevel3":
+					get_tree().change_scene("res://Scenes/City-LevelSelect.tscn")
+					PlayerData.player.Citylevel3 = "complete"
 		elif PlayerData.player.currentLevel == "Minelevel1":
 			get_tree().change_scene("res://Scenes/Mine-LevelSelect.tscn")
 			PlayerData.player.Minelevel2 = "unlocked"

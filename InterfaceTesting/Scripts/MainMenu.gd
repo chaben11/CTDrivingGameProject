@@ -10,6 +10,7 @@ extends Control
 func _ready():
 	PlayerData.load_data()
 	print(garage.car_index)
+	print(PlayerData.player)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -26,12 +27,12 @@ func _on_QuitButton_pressed():
 
 
 func _on_The_Mine_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene("res://Scenes/Mine-LevelSelect.tscn") 
 
 
 func _on_The_Highway_pressed():
 	pass # Replace with function body.
-
+	
 
 func _on_The_City_pressed():
 	#opens the city level select menu

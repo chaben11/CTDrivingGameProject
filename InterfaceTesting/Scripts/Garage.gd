@@ -213,6 +213,7 @@ func _on_ChangingVehicles_timeout(): #CHANGING NEXT
  #Starts the function to find the new index
 	print(garage.car_index)
 	if garage.car_index == 1: #Porshe/Taxi
+		$Loadscene.disabled = false
 		Sports = true
 		$SportsCar/SportsCar.entering = true
 		Suv = false
@@ -231,7 +232,12 @@ func _on_ChangingVehicles_timeout(): #CHANGING NEXT
 		Limo = false
 		
 		$Selection/AnimationPlayer.play("index 2")
+		if PlayerData.player.MineBonus == "locked":
+			$Loadscene.disabled = true
+		elif PlayerData.player.MineBonus == "completed":
+			$Loadscene.disabled = false
 	if garage.car_index == 3: #Nissian
+		$Loadscene.disabled = false
 		nissian = true #Sets Correct vehicle to the active vehicle and sets others to false
 		Sports = false
 		Suv = false
@@ -255,6 +261,7 @@ func _on_ChangingVehicles_timeout(): #CHANGING NEXT
 		elif PlayerData.player.CityBonus == "completed":
 			$Loadscene.disabled = false
 	if garage.car_index == 5: #6x6
+		$Loadscene.disabled = false
 		nissian = false
 		Sports = false
 		Suv = false
@@ -264,6 +271,7 @@ func _on_ChangingVehicles_timeout(): #CHANGING NEXT
 		$SixbySix/SixbySix.entering = true
 		$Selection/AnimationPlayer.play("index 5")
 	if garage.car_index == 6: #Limo
+		$Loadscene.disabled = false
 		nissian = false
 		Sports = false
 		Suv = false

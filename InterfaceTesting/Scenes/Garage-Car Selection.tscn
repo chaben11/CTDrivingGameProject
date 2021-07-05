@@ -136,15 +136,19 @@ transform = Transform( -0.5, 0, -7.54979e-08, 0, 0.5, 0, 7.54979e-08, 0, -0.5, 1
 
 [node name="Podium" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3, 0 )
-
 [connection signal="timeout" from="ChangingVehicles" to="." method="_on_ChangingVehicles_timeout"]
 [connection signal="pressed" from="Loadscene" to="Loadscene" method="_on_Loadscene_pressed"]
 [connection signal="pressed" from="next" to="." method="_on_next_pressed"]
 [connection signal="pressed" from="Previous" to="." method="_on_Previous_pressed"]
 
 [editable path="SUV"]
+
 [editable path="SportsCar"]
+
 [editable path="SixbySix"]
+
 [editable path="Nissian"]
+
 [editable path="BMW"]
+
 [editable path="Limo"]
