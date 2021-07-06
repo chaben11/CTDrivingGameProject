@@ -3,7 +3,7 @@
 [ext_resource path="res://Models/Construction site/Elevator.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Models/dirt wall.glb" type="PackedScene" id=2]
 
-[sub_resource type="GDScript" id=3]
+[sub_resource type="GDScript" id=1]
 script/source = "extends Spatial
 
 
@@ -46,7 +46,7 @@ func _on_Area_body_entered(body):
 		print(\"yet\")
 "
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=2]
 length = 5.0
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:translation")
@@ -61,13 +61,13 @@ tracks/0/keys = {
 "values": [ Vector3( 0, 0, 0 ), Vector3( 0, -24, 0 ) ]
 }
 
-[sub_resource type="BoxShape" id=5]
+[sub_resource type="BoxShape" id=3]
 extents = Vector3( 9.51282, 1, 6.73795 )
 
 [node name="Spatial" type="Spatial"]
 
 [node name="LoadingMineBonus" type="Spatial" parent="."]
-script = SubResource( 3 )
+script = SubResource( 1 )
 
 [node name="Elevator" parent="LoadingMineBonus" instance=ExtResource( 1 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2, 0.5, -1.02369 )
@@ -78,14 +78,14 @@ transform = Transform( 0.696852, 0, 0.717215, 0, 1, 0, -0.717215, 0, 0.696852, 9
 current = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="LoadingMineBonus"]
-"anims/Elevator Down" = SubResource( 4 )
+"anims/Elevator Down" = SubResource( 2 )
 
 [node name="Area" type="Area" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.61903, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Area"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -16.3373, 0 )
-shape = SubResource( 5 )
+shape = SubResource( 3 )
 
 [node name="dirt wall" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -34.2087, 0.0720439, -9.27995 )
