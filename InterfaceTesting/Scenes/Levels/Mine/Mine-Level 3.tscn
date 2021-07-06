@@ -59,6 +59,23 @@ tracks/0/keys = {
 "values": [ Vector3( 0, -50, 0 ), Vector3( 0, 180, 0 ) ]
 }
 
+[sub_resource type="Animation" id=5]
+resource_name = "DiggerRotation"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, -50, 0 ), Vector3( 0, 180, 0 ) ]
+}
+
 [sub_resource type="Animation" id=6]
 resource_name = "DiggerRotation"
 length = 2.0
@@ -77,23 +94,6 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=7]
-resource_name = "DiggerRotation"
-length = 2.0
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:rotation_degrees")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector3( 0, -50, 0 ), Vector3( 0, 180, 0 ) ]
-}
-
-[sub_resource type="Animation" id=15]
 resource_name = "DiggerRotation"
 length = 2.0
 loop = true
@@ -144,7 +144,7 @@ tracks/0/keys = {
 "values": [ Vector3( 0, -50, 0 ), Vector3( 0, 180, 0 ) ]
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=10]
 length = 11.0
 loop = true
 tracks/0/type = "value"
@@ -172,7 +172,7 @@ tracks/1/keys = {
 "values": [ Vector3( 11, 0, -11 ), Vector3( 11, 0, -11 ), Vector3( 11, 0, 54 ), Vector3( 11, 0, 54 ), Vector3( 11, 0, 54 ), Vector3( 11, 0, 54 ), Vector3( 11, 0, 54 ), Vector3( 11, 0, -11 ) ]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=11]
 length = 5.6
 loop = true
 tracks/0/type = "value"
@@ -203,6 +203,12 @@ tracks/1/keys = {
 [node name="Main" type="Spatial"]
 script = ExtResource( 27 )
 
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 0.716789, 0, -0.69729, 0, 1, 0, 0.69729, 0, 0.716789, -1.515, 9.827, 10.258 )
+current = true
+fov = 79.2
+far = 405.4
+
 [node name="LevelCompleted" parent="." instance=ExtResource( 5 )]
 visible = false
 position = Vector2( 512, 300 )
@@ -215,7 +221,7 @@ mesh = ExtResource( 25 )
 material/0 = null
 
 [node name="MeshInstance3" type="MeshInstance" parent="Roads"]
-transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 104, -0.167, 29.912 )
+transform = Transform( 5.53708, 0, 0, 0, 1, 0, 0, 0, 2, 104, -0.167, 29.912 )
 mesh = ExtResource( 25 )
 material/0 = null
 
@@ -426,7 +432,7 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 0.8, 0, -1, 0, -4.37114e-08, 171.4
 transform = Transform( -4.37114e-08, 1, 2.98023e-08, -1, -4.37114e-08, 0, -8.88178e-16, -2.98023e-08, 1, 0, 0, 0 )
 
 [node name="AnimationPlayer" parent="catr 325c digger5/Enemy" index="2"]
-anims/DiggerRotation = SubResource( 6 )
+anims/DiggerRotation = SubResource( 5 )
 
 [node name="catr 325c digger8" parent="." instance=ExtResource( 7 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 0.8, 0, -1, 0, -4.37114e-08, 291.463, 0.784, -20.7434 )
@@ -435,7 +441,7 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 0.8, 0, -1, 0, -4.37114e-08, 291.4
 transform = Transform( -4.37114e-08, 1, 2.98023e-08, -1, -4.37114e-08, 0, -8.88178e-16, -2.98023e-08, 1, 0, 0, 0 )
 
 [node name="AnimationPlayer" parent="catr 325c digger8/Enemy" index="2"]
-anims/DiggerRotation = SubResource( 7 )
+anims/DiggerRotation = SubResource( 6 )
 
 [node name="catr 325c digger10" parent="." instance=ExtResource( 7 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 0.8, 0, -1, 0, -4.37114e-08, 461.98, 0.784, -20.7434 )
@@ -447,7 +453,7 @@ transform = Transform( 0.642787, 0, -0.766044, 0, 1, 0, 0.766044, 0, 0.642787, 0
 transform = Transform( -4.37114e-08, 1, 2.98023e-08, -1, -4.37114e-08, 0, -8.88178e-16, -2.98023e-08, 1, 0, 0, 0 )
 
 [node name="AnimationPlayer" parent="catr 325c digger10/Enemy" index="2"]
-anims/DiggerRotation = SubResource( 15 )
+anims/DiggerRotation = SubResource( 7 )
 
 [node name="catr 325c digger6" parent="." instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 0.8, 0, 0, 0, 1, 259.003, 0.784, 14.8194 )
@@ -518,9 +524,8 @@ EnemySpeed = 0.5
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.63525, 1.83264, -0.0831604 )
 
 [node name="AnimationPlayer" parent="Enemy3" index="2"]
-"anims/New Anim" = SubResource( 12 )
-"anims/New Anim (copy)" = SubResource( 13 )
-
+"anims/New Anim" = SubResource( 10 )
+"anims/New Anim (copy)" = SubResource( 11 )
 [connection signal="pressed" from="Pause/MainMenu/MenuButton" to="Pause" method="_on_MenuButton_pressed"]
 [connection signal="pressed" from="Pause/MainMenu/SettingsButton" to="Pause" method="_on_SettingsButton_pressed"]
 [connection signal="pressed" from="Pause/MainMenu/ResumeButton" to="Pause" method="_on_ResumeButton_pressed"]
@@ -528,16 +533,29 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.63525, 1.83264, -0.0831604 )
 [connection signal="pressed" from="Failed/MainMenu/RetryButton" to="Failed" method="_on_RetryButton_pressed"]
 
 [editable path="Node2D/Viewport/Speedometer(3)"]
+
 [editable path="Finsihed"]
+
 [editable path="catr 325c digger"]
+
 [editable path="catr 325c digger2"]
+
 [editable path="catr 325c digger3"]
+
 [editable path="catr 325c digger5"]
+
 [editable path="catr 325c digger8"]
+
 [editable path="catr 325c digger10"]
+
 [editable path="catr 325c digger6"]
+
 [editable path="catr 325c digger7"]
+
 [editable path="Enemy"]
+
 [editable path="Enemy/Enemy2/NISSAN NAVARA red-SOLID"]
+
 [editable path="Enemy3"]
+
 [editable path="Enemy3/Enemy2/NISSAN NAVARA red-SOLID"]

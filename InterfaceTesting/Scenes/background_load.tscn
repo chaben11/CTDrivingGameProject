@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/background_load.gd" type="Script" id=1]
 [ext_resource path="res://Textures/loading.PNG" type="Texture" id=2]
+[ext_resource path="res://Textures/Capture.PNG" type="Texture" id=3]
 
 [node name="BackgroundLoad" type="Control"]
 anchor_right = 1.0
@@ -14,7 +15,6 @@ __meta__ = {
 }
 
 [node name="Progress" type="ProgressBar" parent="."]
-visible = false
 margin_left = 86.4935
 margin_top = 480.752
 margin_right = 953.494
@@ -26,7 +26,15 @@ __meta__ = {
 }
 
 [node name="background" type="Sprite" parent="Progress"]
+visible = false
 show_behind_parent = true
 position = Vector2( 428.999, -154.437 )
 scale = Vector2( 1.5933, 1.5933 )
 texture = ExtResource( 2 )
+
+[node name="backgroundMine" type="Sprite" parent="Progress"]
+visible = false
+show_behind_parent = true
+position = Vector2( 431.377, -166.329 )
+scale = Vector2( 2.2852, 2.2852 )
+texture = ExtResource( 3 )

@@ -44,16 +44,18 @@ func _process(delta):
 
 
 func _on_Level_1_pressed():
-	background_load.load_scene("res://Scenes/Levels/City/City-Level 1.tscn")
 	PlayerData.player.currentLevel = "Citylevel1"
+	background_load.load_scene("res://Scenes/Levels/City/City-Level 1.tscn")
+
 func _on_Level_2_pressed():
-	get_tree().change_scene("res://Scenes/Levels/City/City-Level 2.tscn")
 	PlayerData.player.currentLevel = "Citylevel2"
+	background_load.load_scene("res://Scenes/Levels/City/City-Level 2.tscn")
+
 
 
 func _on_Level_3_pressed():
-	get_tree().change_scene("res://Scenes/Levels/City/City-Level 2.tscn")
 	PlayerData.player.currentLevel = "Citylevel3"
+	background_load.load_scene("res://Scenes/Levels/City/City-Level 2.tscn")
 
 
 func _on_Level_4_pressed():

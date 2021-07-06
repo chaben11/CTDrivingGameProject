@@ -261,7 +261,6 @@ EnemySpeed = 0.5
 
 [node name="CollisionShape" parent="Enemy/Enemy" index="2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.63525, 1.83264, -0.0831604 )
-
 [connection signal="pressed" from="Pause/MainMenu/MenuButton" to="Pause" method="_on_MenuButton_pressed"]
 [connection signal="pressed" from="Pause/MainMenu/SettingsButton" to="Pause" method="_on_SettingsButton_pressed"]
 [connection signal="pressed" from="Pause/MainMenu/ResumeButton" to="Pause" method="_on_ResumeButton_pressed"]
@@ -269,8 +268,13 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.63525, 1.83264, -0.0831604 )
 [connection signal="pressed" from="Failed/MainMenu/RetryButton" to="Failed" method="_on_RetryButton_pressed"]
 
 [editable path="Node2D/Viewport/Speedometer(3)"]
+
 [editable path="Finsihed"]
+
 [editable path="catr 325c digger"]
+
 [editable path="catr 325c digger2"]
+
 [editable path="Enemy"]
+
 [editable path="Enemy/Enemy2/NISSAN NAVARA red-SOLID"]

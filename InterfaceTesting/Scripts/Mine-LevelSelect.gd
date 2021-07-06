@@ -5,7 +5,7 @@ extends Control
 # var a = 2
 # var b = "text"
 onready var Level1ImageComplete = load("res://DigitalTechMenu/Buttons/1x/City-Level1-Complete.png") #images that will replace the default button texture when the level is completed
-onready var Level1ImageCompleteHover = load("res://DigitalTeMinechMenu/Buttons/1x/City-Level1-Complete-Hover.png")
+onready var Level1ImageCompleteHover = load("res://DigitalTechMenu/Buttons/1x/City-Level1-Complete-Hover.png")
 onready var Level2ImageComplete = load("res://DigitalTechMenu/Buttons/1x/City-Level2-Complete.png")
 onready var Level2ImageCompleteHover = load("res://DigitalTechMenu/Buttons/1x/City-Level2-Complete-Hover.png")
 onready var Level3ImageComplete = load("res://DigitalTechMenu/Buttons/1x/City-Level3-Complete.png")
@@ -44,18 +44,21 @@ func _process(delta):
 
 
 func _on_Level_1_pressed():
-	background_load.load_scene("res://Scenes/Levels/Mine/Mine-Level 1.tscn")
 	PlayerData.player.currentLevel = "Minelevel1"
+	background_load.load_scene("res://Scenes/Levels/Mine/Mine-Level 1.tscn")
+
 
 func _on_Level_2_pressed():
-	get_tree().change_scene("res://Scenes/Levels/Mine/Mine-Level 2.tscn")
 	PlayerData.player.currentLevel = "Minelevel2"
+	background_load.load_scene("res://Scenes/Levels/Mine/Mine-Level 2.tscn")
+
 	
 
 
 func _on_Level_3_pressed():
-	get_tree().change_scene("res://Scenes/Levels/Mine/Mine-Level 2.tscn")
 	PlayerData.player.currentLevel = "Minelevel3"
+	background_load.load_scene("res://Scenes/Levels/Mine/Mine-Level 2.tscn")
+
 
 
 func _on_Level_4_pressed():

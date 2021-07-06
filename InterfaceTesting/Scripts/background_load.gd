@@ -62,3 +62,9 @@ func load_scene(path):
 	thread.start( self, "_thread_load", path)
 	raise() # Show on top.
 	progress.visible = true
+	if "Mine" in PlayerData.player.currentLevel:
+		$Progress/background.hide()
+		$Progress/backgroundMine.show()
+	elif "City" in PlayerData.player.currentLevel:
+		$Progress/background.show()
+		$Progress/backgroundMine.hide()
