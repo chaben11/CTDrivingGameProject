@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Scripts/LoadingData.gd" type="Script" id=1]
 [ext_resource path="res://Taxiphysics/Failed.gd" type="Script" id=2]
@@ -23,6 +23,7 @@
 [ext_resource path="res://Scenes/Finished.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Scenes/LevelCompleted.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Models/Enemy-Mine.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Scenes/MineAmbientSounds.tscn" type="PackedScene" id=24]
 [ext_resource path="res://DigitalTechMenu/SettingsButton.tscn" type="PackedScene" id=25]
 [ext_resource path="res://Models/Speedometer(3).tscn" type="PackedScene" id=28]
 [ext_resource path="res://Textures/AllSkyFree_Sky_EpicBlueSunset_Equirect.png" type="Texture" id=31]
@@ -57,7 +58,7 @@ mesh = ExtResource( 9 )
 material/0 = null
 
 [node name="MeshInstance3" type="MeshInstance" parent="Roads"]
-transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 104, -0.167, 29.912 )
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 105.042, -0.0341226, 29.7724 )
 mesh = ExtResource( 9 )
 material/0 = null
 
@@ -261,6 +262,9 @@ EnemySpeed = 0.5
 
 [node name="CollisionShape" parent="Enemy/Enemy" index="2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.63525, 1.83264, -0.0831604 )
+
+[node name="Constructionambientsounds" parent="." instance=ExtResource( 24 )]
+
 [connection signal="pressed" from="Pause/MainMenu/MenuButton" to="Pause" method="_on_MenuButton_pressed"]
 [connection signal="pressed" from="Pause/MainMenu/SettingsButton" to="Pause" method="_on_SettingsButton_pressed"]
 [connection signal="pressed" from="Pause/MainMenu/ResumeButton" to="Pause" method="_on_ResumeButton_pressed"]
@@ -268,13 +272,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.63525, 1.83264, -0.0831604 )
 [connection signal="pressed" from="Failed/MainMenu/RetryButton" to="Failed" method="_on_RetryButton_pressed"]
 
 [editable path="Node2D/Viewport/Speedometer(3)"]
-
 [editable path="Finsihed"]
-
 [editable path="catr 325c digger"]
-
 [editable path="catr 325c digger2"]
-
 [editable path="Enemy"]
-
 [editable path="Enemy/Enemy2/NISSAN NAVARA red-SOLID"]
