@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Textures/AllSkyFree_Sky_EpicBlueSunset_Equirect.png" type="Texture" id=1]
 [ext_resource path="res://DigitalTechMenu/SettingsButton.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/MineAmbientSounds.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Audio/MineAmbientSounds.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Models/Speedometer(3).tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/LevelCompleted.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/FloorMine.tscn" type="PackedScene" id=6]

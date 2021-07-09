@@ -61,7 +61,7 @@ func load_scene(path):
 	thread = Thread.new()
 	thread.start( self, "_thread_load", path)
 	raise() # Show on top.
-	progress.visible = true
+	show()
 	if "Mine" in PlayerData.player.currentLevel:
 		$Progress/background.hide()
 		$Progress/backgroundMine.show()

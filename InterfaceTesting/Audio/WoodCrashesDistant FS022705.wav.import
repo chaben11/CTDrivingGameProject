@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/WoodCrashesDistant FS022705.wav-28d801aee31dcf27c8e00fa2bdf22306.sample"
+
+[deps]
+
+source_file="res://Audio/WoodCrashesDistant FS022705.wav"
+dest_files=[ "res://.import/WoodCrashesDistant FS022705.wav-28d801aee31dcf27c8e00fa2bdf22306.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

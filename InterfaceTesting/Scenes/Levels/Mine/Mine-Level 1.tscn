@@ -23,7 +23,7 @@
 [ext_resource path="res://Scenes/Finished.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Scenes/LevelCompleted.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Models/Enemy-Mine.tscn" type="PackedScene" id=23]
-[ext_resource path="res://Scenes/MineAmbientSounds.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Audio/MineAmbientSounds.tscn" type="PackedScene" id=24]
 [ext_resource path="res://DigitalTechMenu/SettingsButton.tscn" type="PackedScene" id=25]
 [ext_resource path="res://Models/Speedometer(3).tscn" type="PackedScene" id=28]
 [ext_resource path="res://Textures/AllSkyFree_Sky_EpicBlueSunset_Equirect.png" type="Texture" id=31]
@@ -228,7 +228,7 @@ transparent_bg = true
 transform = Transform( -0.917359, -1.36697e-08, -0.39806, -0.258652, 0.760122, 0.596082, 0.302575, 0.64978, -0.697305, 0, 52.8354, -57.4725 )
 
 [node name="Floortest" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1000, 0, 0, 0, 1, 0, 0, 0, 10, 920.8, -0.5, 0 )
+transform = Transform( 1000, 0, 0, 0, 1, 0, 0, 0, 14.4464, 920.8, -0.5, 0 )
 
 [node name="Finsihed" parent="." instance=ExtResource( 21 )]
 
@@ -248,7 +248,7 @@ transform = Transform( -4.37114e-08, 1, 2.98023e-08, -1, -4.37114e-08, 0, 8.8817
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 101.025, -0.717361, -7.64559 )
 
 [node name="Sand dunes Joined2" parent="." instance=ExtResource( 5 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 678.025, -0.717361, 6.35441 )
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 678.025, -0.717361, -5.70755 )
 
 [node name="cat 793f haul truck2" parent="." instance=ExtResource( 15 )]
 transform = Transform( 0.657099, 0, -0.753804, 0, 1, 0, 0.753804, 0, 0.657099, 72.7655, 3.9703, -33.5648 )

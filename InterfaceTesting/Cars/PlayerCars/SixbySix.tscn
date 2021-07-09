@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Models/6x6_Wheel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Models/6x6_Body.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Audio/PlayerCrashSound.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Audio/PlayerEngineStart.tscn" type="PackedScene" id=4]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 1.68959, 0.783867, 6.55419 )
@@ -65,3 +67,7 @@ transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0, 0
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.695291, 0.954907 )
 shape = SubResource( 1 )
+
+[node name="PlayerCrashSound" parent="." instance=ExtResource( 3 )]
+
+[node name="PlayerEngineStart" parent="." instance=ExtResource( 4 )]

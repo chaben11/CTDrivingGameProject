@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Materials/black.material" type="Material" id=1]
 [ext_resource path="res://Materials/reverce.material" type="Material" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://Materials/head lights.material" type="Material" id=7]
 [ext_resource path="res://Materials/brake light.material" type="Material" id=8]
 [ext_resource path="res://Materials/tyres.material" type="Material" id=9]
+[ext_resource path="res://Audio/PlayerCrashSound.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Audio/PlayerEngineStart.tscn" type="PackedScene" id=11]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "SuvWheel"
@@ -190,3 +192,7 @@ material/6 = null
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.063902, -0.464784, -0.561525 )
 shape = SubResource( 3 )
+
+[node name="PlayerCrashSound" parent="." instance=ExtResource( 10 )]
+
+[node name="PlayerEngineStart" parent="." instance=ExtResource( 11 )]

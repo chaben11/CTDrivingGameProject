@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/WoodCrashesDistant FS022705.mp3-cd1a518f53c2358d436960808b57ed64.mp3str"
+
+[deps]
+
+source_file="res://Audio/WoodCrashesDistant FS022705.mp3"
+dest_files=[ "res://.import/WoodCrashesDistant FS022705.mp3-cd1a518f53c2358d436960808b57ed64.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

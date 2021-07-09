@@ -103,6 +103,7 @@ func _physics_process(delta):
 func _on_EnemyChecker_body_entered(body): #if the enemy collides with the player
 	if "Enemy" in body.name:
 		print("check")
+		$PlayerCrashSound.play()
 		get_tree().paused = true
 		get_parent().get_parent().get_node("Failed/MainMenu").show()
 		get_parent().get_parent().get_node("Failed").gameover = true

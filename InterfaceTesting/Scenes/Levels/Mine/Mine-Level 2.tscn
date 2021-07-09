@@ -11,7 +11,7 @@
 [ext_resource path="res://DigitalTechMenu/SettingsButton.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Models/Construction site/cat 966l wheel loader.glb" type="PackedScene" id=10]
 [ext_resource path="res://Models/Enemy-Mine.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Scenes/MineAmbientSounds.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Audio/MineAmbientSounds.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Taxiphysics/Pause.gd" type="Script" id=13]
 [ext_resource path="res://PauseMenu/1x/Asset 12.png" type="Texture" id=14]
 [ext_resource path="res://PauseMenuNewIcons/1x/Asset 24.png" type="Texture" id=15]

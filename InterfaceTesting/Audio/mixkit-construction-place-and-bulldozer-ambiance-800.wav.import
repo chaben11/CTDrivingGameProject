@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/mixkit-construction-place-and-bulldozer-ambiance-800.wav-6ca1ac4f2f40144e7cfefd2c44c0a3d9.sample"
+
+[deps]
+
+source_file="res://Audio/mixkit-construction-place-and-bulldozer-ambiance-800.wav"
+dest_files=[ "res://.import/mixkit-construction-place-and-bulldozer-ambiance-800.wav-6ca1ac4f2f40144e7cfefd2c44c0a3d9.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
