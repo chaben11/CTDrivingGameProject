@@ -62,7 +62,8 @@ func _input(event):
 		print(garage.car_index)
 #Checks when the next arrow button is clicked. It will test which car is currently active and change it to play it's exit animation
 func _on_next_pressed():
-
+	next_car()
+	$ChangingVehicles.start()	
 	if Sports == true: 
 		Sports = false
 	elif Suv == true:
@@ -79,11 +80,20 @@ func _on_next_pressed():
 
 
 func _on_Previous_pressed(): #Will repeat what the next_button function did but will go to the previous car instead
-#	Sports = true
-#	$SportsCar/SportsCar.entering = true
-#	Suv = false
-	pass
-
+	previous_car()
+	$ChangingVehicles.start()	
+	if Sports == true: 
+		Sports = false
+	elif Suv == true:
+		Suv = false
+	elif nissian == true:
+		nissian = false
+	elif Hatchback == true:
+		Hatchback = false
+	elif SixbySix == true:
+		SixbySix = false
+	elif Limo == true:
+		Limo = false
 
 func _process(delta):
 	if Sports == true: #Checks what car is active
@@ -221,6 +231,12 @@ func _on_ChangingVehicles_timeout(): #CHANGING NEXT
 		Hatchback = false
 		SixbySix = false
 		Limo = false
+		$Labels/suvinfo.hide()
+		$Labels/nissianinfo.hide()
+		$Labels/bmwinfo.hide()
+		$Labels/limoinfo.show()
+		$Labels/"6x6info".hide()
+		$Labels/limoinfo/Limo_label_tick.hide()
 		$Selection/AnimationPlayer.play("index 1") #User interface animation. Will Play the animation depending on the current selection
 	if garage.car_index == 2: #SUV
 		Suv = true
@@ -230,12 +246,20 @@ func _on_ChangingVehicles_timeout(): #CHANGING NEXT
 		Hatchback = false
 		SixbySix = false
 		Limo = false
-		
+		$Labels/suvinfo.show()
+		$Labels/nissianinfo.hide()
+		$Labels/bmwinfo.hide()
+		$Labels/limoinfo.hide()
+		$Labels/"6x6info".hide()
 		$Selection/AnimationPlayer.play("index 2")
 		if PlayerData.player.MineBonus == "locked":
 			$Loadscene.disabled = true
+			$Labels/suvinfo/Suv_label_untick.show()
+			$Labels/suvinfo/Suv_label_tick.hide()
 		elif PlayerData.player.MineBonus == "completed":
 			$Loadscene.disabled = false
+			$Labels/suvinfo/Suv_label_tick.show()
+			$Labels/suvinfo/Suv_label_untick.hide()
 	if garage.car_index == 3: #Nissian
 		$Loadscene.disabled = false
 		nissian = true #Sets Correct vehicle to the active vehicle and sets others to false
@@ -244,8 +268,13 @@ func _on_ChangingVehicles_timeout(): #CHANGING NEXT
 		Hatchback = false
 		SixbySix = false
 		Limo = false
+		$Labels/suvinfo.hide()
+		$Labels/nissianinfo.show()
+		$Labels/bmwinfo.hide()
+		$Labels/limoinfo.hide()
+		$Labels/"6x6info".hide()
 		$Nissian/Nissian.entering = true
-		
+		$Labels/nissianinfo/Nissian_label_tick.show()
 		$Selection/AnimationPlayer.play("index 3")
 	if garage.car_index == 4: #BMW Hatchback
 		nissian = false
@@ -254,12 +283,21 @@ func _on_ChangingVehicles_timeout(): #CHANGING NEXT
 		Hatchback = true
 		SixbySix = false
 		Limo = false
+		$Labels/suvinfo.hide()
+		$Labels/nissianinfo.hide()
+		$Labels/bmwinfo.show()
+		$Labels/limoinfo.hide()
+		$Labels/"6x6info".hide()
 		$BMW/BMW.entering = true
 		$Selection/AnimationPlayer.play("index 4")
 		if PlayerData.player.CityBonus == "locked":
 			$Loadscene.disabled = true
+			$Labels/bmwinfo/bmw_label_tick.hide()
+			$Labels/bmwinfo/bmw_label_untick.show()
 		elif PlayerData.player.CityBonus == "completed":
 			$Loadscene.disabled = false
+			$Labels/bmwinfo/bmw_label_tick.show()
+			$Labels/bmwinfo/bmw_label_untick.hide()
 	if garage.car_index == 5: #6x6
 		$Loadscene.disabled = false
 		nissian = false
@@ -268,6 +306,12 @@ func _on_ChangingVehicles_timeout(): #CHANGING NEXT
 		Hatchback = false
 		SixbySix = true
 		Limo = false
+		$Labels/suvinfo.hide()
+		$Labels/nissianinfo.hide()
+		$Labels/bmwinfo.hide()
+		$Labels/limoinfo.hide()
+		$Labels/"6x6info".show()
+		$Labels/"6x6info/6x6_label_tick".show()
 		$SixbySix/SixbySix.entering = true
 		$Selection/AnimationPlayer.play("index 5")
 	if garage.car_index == 6: #Limo
@@ -278,6 +322,12 @@ func _on_ChangingVehicles_timeout(): #CHANGING NEXT
 		Hatchback = false
 		SixbySix = false
 		Limo = true
+		$Labels/suvinfo.hide()
+		$Labels/nissianinfo.hide()
+		$Labels/bmwinfo.hide()
+		$Labels/limoinfo.show()
+		$Labels/"6x6info".hide()
+		$Labels/limoinfo/Limo_label_tick.show()
 		$Limo/Limo.entering = true
 		$Selection/AnimationPlayer.play("index 6")
 #		$Selection/AnimationPlayer.play("index 4")

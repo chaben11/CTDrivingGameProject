@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Models/Selection/Limo Selection.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Animations/Garage/UI/VEHICLELOCKED.png" type="Texture" id=2]
@@ -13,7 +13,17 @@
 [ext_resource path="res://Scripts/Loadscene.gd" type="Script" id=11]
 [ext_resource path="res://Models/Selection/Nissian-Selection.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Models/Selection/BMW-Selection.tscn" type="PackedScene" id=13]
+[ext_resource path="res://DigitalTechMenu/GarageLabels/6x6_label_untick.png" type="Texture" id=14]
 [ext_resource path="res://Models/GarageBG.tscn" type="PackedScene" id=15]
+[ext_resource path="res://DigitalTechMenu/GarageLabels/bmw_label_tick.png" type="Texture" id=16]
+[ext_resource path="res://DigitalTechMenu/GarageLabels/Suv_label_untick.png" type="Texture" id=17]
+[ext_resource path="res://DigitalTechMenu/GarageLabels/Limo_label_untick.png" type="Texture" id=18]
+[ext_resource path="res://DigitalTechMenu/GarageLabels/Limo_label_tick.png" type="Texture" id=19]
+[ext_resource path="res://DigitalTechMenu/GarageLabels/Nissian_label_tick.png" type="Texture" id=20]
+[ext_resource path="res://DigitalTechMenu/GarageLabels/bmw_label_untick.png" type="Texture" id=21]
+[ext_resource path="res://DigitalTechMenu/GarageLabels/6x6_label_tick.png" type="Texture" id=22]
+[ext_resource path="res://DigitalTechMenu/GarageLabels/Nissian_label_untick.png" type="Texture" id=23]
+[ext_resource path="res://DigitalTechMenu/GarageLabels/Suv_label_tick.png" type="Texture" id=24]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -136,6 +146,63 @@ transform = Transform( -0.5, 0, -7.54979e-08, 0, 0.5, 0, 7.54979e-08, 0, -0.5, 1
 
 [node name="Podium" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3, 0 )
+
+[node name="Labels" type="Node2D" parent="."]
+position = Vector2( 172.859, 250.309 )
+
+[node name="6x6info" type="Node2D" parent="Labels"]
+
+[node name="6x6_label_tick" type="Sprite" parent="Labels/6x6info"]
+visible = false
+texture = ExtResource( 22 )
+
+[node name="6x6_label_untick" type="Sprite" parent="Labels/6x6info"]
+visible = false
+texture = ExtResource( 14 )
+
+[node name="bmwinfo" type="Node2D" parent="Labels"]
+visible = false
+
+[node name="bmw_label_untick" type="Sprite" parent="Labels/bmwinfo"]
+visible = false
+texture = ExtResource( 21 )
+
+[node name="bmw_label_tick" type="Sprite" parent="Labels/bmwinfo"]
+visible = false
+texture = ExtResource( 16 )
+
+[node name="limoinfo" type="Node2D" parent="Labels"]
+visible = false
+
+[node name="Limo_label_untick" type="Sprite" parent="Labels/limoinfo"]
+visible = false
+texture = ExtResource( 18 )
+
+[node name="Limo_label_tick" type="Sprite" parent="Labels/limoinfo"]
+visible = false
+texture = ExtResource( 19 )
+
+[node name="suvinfo" type="Node2D" parent="Labels"]
+visible = false
+
+[node name="Suv_label_tick" type="Sprite" parent="Labels/suvinfo"]
+visible = false
+texture = ExtResource( 24 )
+
+[node name="Suv_label_untick" type="Sprite" parent="Labels/suvinfo"]
+visible = false
+texture = ExtResource( 17 )
+
+[node name="nissianinfo" type="Node2D" parent="Labels"]
+visible = false
+
+[node name="Nissian_label_tick" type="Sprite" parent="Labels/nissianinfo"]
+visible = false
+texture = ExtResource( 20 )
+
+[node name="Nissian_label_untick" type="Sprite" parent="Labels/nissianinfo"]
+visible = false
+texture = ExtResource( 23 )
 [connection signal="timeout" from="ChangingVehicles" to="." method="_on_ChangingVehicles_timeout"]
 [connection signal="pressed" from="Loadscene" to="Loadscene" method="_on_Loadscene_pressed"]
 [connection signal="pressed" from="next" to="." method="_on_next_pressed"]
