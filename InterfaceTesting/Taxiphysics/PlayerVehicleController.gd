@@ -19,7 +19,9 @@ func _physics_process(delta):
 		if speed < 5 and speed != 0:  #max and min value for speed
 			engine_force = clamp(engine_force_value * 5 / speed, 0, 100)
 		else:
-			engine_force = engine_force_value
+			if engine_force < engine_force_value:
+				engine_force = engine_force + 10
+				print(engine_force)
 	else:
 		engine_force = 0
 
@@ -31,6 +33,7 @@ func _physics_process(delta):
 				engine_force = -clamp(engine_force_value * 5 / speed, 0, 100)
 			else:
 				engine_force = -engine_force_value
+
 		else:
 			brake = 1
 			#Animation Dark Red for brake lights

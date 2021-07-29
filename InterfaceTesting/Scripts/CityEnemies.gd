@@ -9,9 +9,10 @@ export var EnemySpeed = 1.0
 func _ready():
 	$AnimationPlayer.playback_speed = EnemySpeed
 		#This Plays the main animation that starts the easy enemies driving across the road and then jumps back to their start location
-	$AnimationPlayer.play("New Anim (copy)") #Need to rename the animation -
+	
+	$AnimationPlayer.play("Right First") #Need to rename the animation -
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+#	var anim_index = rand_range(1,3)
+# 
+	pass
