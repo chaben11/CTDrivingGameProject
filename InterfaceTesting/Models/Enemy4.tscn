@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Scripts/CityEnemies.gd" type="Script" id=1]
 [ext_resource path="res://Models/new_boxshape.tres" type="Shape" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://Models/Traffic Vehicles/black.material" type="Material" id=12]
 [ext_resource path="res://Models/Traffic Vehicles/break LED.material" type="Material" id=13]
 [ext_resource path="res://Models/Traffic Vehicles/ICE-CREAM TRUCK.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Animations/CityEnemyAnimations.tscn" type="PackedScene" id=15]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 2.53963, 2.93305, 5.49878 )
@@ -21,7 +22,7 @@ extents = Vector3( 2.53963, 2.93305, 5.49878 )
 [sub_resource type="BoxShape" id=2]
 extents = Vector3( 2.5, 1, 6 )
 
-[sub_resource type="SpatialMaterial" id=6]
+[sub_resource type="SpatialMaterial" id=3]
 resource_name = "nISSIAN_body_RED"
 vertex_color_use_as_albedo = true
 params_cull_mode = 2
@@ -29,7 +30,7 @@ albedo_color = Color( 0.152941, 0.176471, 0.658824, 1 )
 metallic = 1.0
 roughness = 0.4
 
-[sub_resource type="ArrayMesh" id=7]
+[sub_resource type="ArrayMesh" id=4]
 resource_name = "WHEEL004"
 surfaces/0 = {
 "aabb": AABB( -3.58798, -4.57973, -10.4985, 3.65744, 4.46212, 13.9465 ),
@@ -38,7 +39,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 97559,
 "index_count": 4377,
-"material": SubResource( 6 ),
+"material": SubResource( 3 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 2663
@@ -152,64 +153,8 @@ surfaces/9 = {
 "vertex_count": 8204
 }
 
-[sub_resource type="BoxShape" id=3]
+[sub_resource type="BoxShape" id=5]
 extents = Vector3( 2.5, 1, 6 )
-
-[sub_resource type="Animation" id=4]
-length = 11.0
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Enemy:translation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1.5, 5.5, 6, 7, 7.8, 9.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector3( 0, 0, -11 ), Vector3( 0, 0, 51 ), Vector3( 0, 0, 51 ), Vector3( 0, 0, 51 ), Vector3( 0, 0, 51 ), Vector3( 0, 0, -11 ), Vector3( 0, 0, -11 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Enemy:translation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 1.5, 2.7, 5.5, 6, 7, 7.8, 9.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector3( 11, 0, -11 ), Vector3( 11, 0, -11 ), Vector3( 11, 0, 54 ), Vector3( 11, 0, 54 ), Vector3( 11, 0, 54 ), Vector3( 11, 0, 54 ), Vector3( 11, 0, 54 ), Vector3( 11, 0, -11 ) ]
-}
-
-[sub_resource type="Animation" id=5]
-length = 5.6
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Enemy:translation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 2.7, 4.6, 5.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector3( 0, 0, -91 ), Vector3( 0, 0, 100 ), Vector3( 0, 0, 100 ), Vector3( 0, 0, 100 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Enemy2:translation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 2.7, 4.6, 5.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector3( 11, 0, -91 ), Vector3( 11, 0, -91 ), Vector3( 11, 0, 100 ), Vector3( 11, 0, 100 ) ]
-}
 
 [node name="Enemy" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 47.6665, 1.1674, -21.702 )
@@ -248,7 +193,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -91 )
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0 )
 
 [node name="WHEEL004" parent="Enemy2/NISSAN NAVARA red-SOLID" index="0"]
-mesh = SubResource( 7 )
+mesh = SubResource( 4 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Enemy2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.857087, -3.17661 )
@@ -258,7 +203,7 @@ shape = ExtResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Enemy2/Honk_2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 80 )
-shape = SubResource( 3 )
+shape = SubResource( 5 )
 
 [node name="SpotLight2" type="SpotLight" parent="Enemy2"]
 transform = Transform( -1, 0, -5.96046e-08, 0, 1, 0, 5.96046e-08, 0, -1, 0, -0.274, 1.54856 )
@@ -267,8 +212,6 @@ light_color = Color( 0.929412, 0.807843, 0.447059, 1 )
 light_energy = 2.03
 spot_range = 6.5
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-"anims/New Anim" = SubResource( 4 )
-"anims/New Anim (copy)" = SubResource( 5 )
+[node name="AnimationPlayer" parent="." instance=ExtResource( 15 )]
 
 [editable path="Enemy2/NISSAN NAVARA red-SOLID"]

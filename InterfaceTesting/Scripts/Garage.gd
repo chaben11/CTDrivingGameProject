@@ -96,6 +96,10 @@ func _on_Previous_pressed(): #Will repeat what the next_button function did but 
 		Limo = false
 
 func _process(delta):
+	if $Loadscene.disabled == true:
+		$Loadscene/VEHICLELOCKED.show()
+	else:
+		$Loadscene/VEHICLELOCKED.hide()
 	if Sports == true: #Checks what car is active
 		if $SportsCar/SportsCar.entering == true:
 			$SportsCar/SportsCar/AnimationPlayer.play("Enter") #Drives fowards onto the podium

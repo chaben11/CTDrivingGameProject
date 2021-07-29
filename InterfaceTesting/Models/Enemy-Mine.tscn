@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Cars/AMBULANCE WHITE.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Models/Traffic Vehicles/ICE-CREAM TRUCK.tscn" type="PackedScene" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://Models/Traffic Vehicles/led.material" type="Material" id=14]
 [ext_resource path="res://Models/Construction site/cat 793f haul truck.glb" type="PackedScene" id=15]
 [ext_resource path="res://Models/Construction site/cat 966l wheel loader.glb" type="PackedScene" id=16]
+[ext_resource path="res://Animations/CityEnemyAnimations.tscn" type="PackedScene" id=17]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 2.53963, 2.93305, 5.49878 )
@@ -157,62 +158,6 @@ surfaces/9 = {
 [sub_resource type="BoxShape" id=5]
 extents = Vector3( 2.5, 1, 6 )
 
-[sub_resource type="Animation" id=6]
-length = 11.0
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Enemy:translation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1.5, 5.5, 6, 7, 7.8, 9.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector3( 0, 0, -11 ), Vector3( 0, 0, 51 ), Vector3( 0, 0, 51 ), Vector3( 0, 0, 51 ), Vector3( 0, 0, 51 ), Vector3( 0, 0, -11 ), Vector3( 0, 0, -11 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Enemy:translation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 1.5, 2.7, 5.5, 6, 7, 7.8, 9.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector3( 11, 0, -11 ), Vector3( 11, 0, -11 ), Vector3( 11, 0, 54 ), Vector3( 11, 0, 54 ), Vector3( 11, 0, 54 ), Vector3( 11, 0, 54 ), Vector3( 11, 0, 54 ), Vector3( 11, 0, -11 ) ]
-}
-
-[sub_resource type="Animation" id=7]
-length = 5.6
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Enemy:translation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 2.7, 4.6, 5.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector3( 0, 0, -91 ), Vector3( 0, 0, 100 ), Vector3( 0, 0, 100 ), Vector3( 0, 0, 100 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Enemy2:translation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 2.7, 4.6, 5.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector3( 11, 0, -91 ), Vector3( 11, 0, -91 ), Vector3( 11, 0, 100 ), Vector3( 11, 0, 100 ) ]
-}
-
 [node name="Enemy" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 47.6665, 1.1674, -21.702 )
 script = ExtResource( 4 )
@@ -277,8 +222,6 @@ spot_range = 6.5
 [node name="cat 793f haul truck" parent="Enemy2" instance=ExtResource( 15 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.75088, 1.31127, -6.91734 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-"anims/New Anim" = SubResource( 6 )
-"anims/New Anim (copy)" = SubResource( 7 )
+[node name="AnimationPlayer" parent="." instance=ExtResource( 17 )]
 
 [editable path="Enemy2/NISSAN NAVARA red-SOLID"]

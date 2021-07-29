@@ -5,6 +5,7 @@ extends Spatial
 # var a = 2
 # var b = "text"
 export var EnemySpeed = 1.0
+export var AnimationEnd = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$AnimationPlayer.playback_speed = EnemySpeed
@@ -13,6 +14,13 @@ func _ready():
 	$AnimationPlayer.play("Right First") #Need to rename the animation -
 
 func _process(delta):
-#	var anim_index = rand_range(1,3)
-# 
-	pass
+	randomize()
+	if AnimationEnd == true:
+		var anim_index = randi()%3+1
+		if anim_index == 1:
+			$AnimationPlayer.play("Right First")
+		elif anim_index == 2:
+			$AnimationPlayer.play("Left First")
+		elif anim_index == 3:
+			$AnimationPlayer.play("Both")
+		print(anim_index)

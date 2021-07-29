@@ -94,41 +94,41 @@ tracks/5/keys = {
 [node name="selection" type="Node2D"]
 
 [node name="Taxi" type="Sprite" parent="."]
-position = Vector2( 300, 0 )
 scale = Vector2( 0.12, 0.12 )
 texture = ExtResource( 4 )
 
 [node name="Suv" type="Sprite" parent="."]
+position = Vector2( -300, 0 )
 scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 3 )
 offset = Vector2( 0, -100 )
 
 [node name="Nissian" type="Sprite" parent="."]
-position = Vector2( -300, 0 )
+position = Vector2( 1200, 0 )
 scale = Vector2( 0.12, 0.12 )
 texture = ExtResource( 11 )
 offset = Vector2( 155, 0 )
 
 [node name="Bmw" type="Sprite" parent="."]
-position = Vector2( 1200, 0 )
+position = Vector2( 900, 0 )
 scale = Vector2( 0.12, 0.12 )
 texture = ExtResource( 14 )
 offset = Vector2( 150, -200 )
 
 [node name="6x6" type="Sprite" parent="."]
-position = Vector2( 900, 0 )
+position = Vector2( 600, 0 )
 scale = Vector2( 0.12, 0.12 )
 texture = ExtResource( 13 )
 offset = Vector2( 50, 0 )
 
 [node name="Limo" type="Sprite" parent="."]
-position = Vector2( 600, 0 )
+position = Vector2( 300, 0 )
 scale = Vector2( 0.12, 0.12 )
 texture = ExtResource( 12 )
 offset = Vector2( 50, 0 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-playback_speed = 1.5
+playback_speed = 2.5
 anims/Start = SubResource( 1 )
 "anims/index 1" = ExtResource( 6 )
 "anims/index 2" = ExtResource( 5 )

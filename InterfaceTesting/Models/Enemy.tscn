@@ -1,10 +1,11 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Models/SuvDriving.tres" type="ArrayMesh" id=1]
 [ext_resource path="res://Materials/chrome.material" type="Material" id=2]
 [ext_resource path="res://Materials/head lights.material" type="Material" id=3]
 [ext_resource path="res://Materials/reverce.material" type="Material" id=4]
 [ext_resource path="res://Materials/black.material" type="Material" id=5]
+[ext_resource path="res://Animations/CityEnemyAnimations.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Materials/brake light.material" type="Material" id=8]
 [ext_resource path="res://Materials/indicater.material" type="Material" id=9]
 [ext_resource path="res://Scripts/CityEnemies.gd" type="Script" id=10]
@@ -149,98 +150,12 @@ extents = Vector3( 1.344, 1, 3.438 )
 [sub_resource type="BoxShape" id=8]
 extents = Vector3( 2.5, 1, 6 )
 
-[sub_resource type="Animation" id=9]
-resource_name = "Both"
-length = 5.6
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Enemy:translation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 2.7, 4.6, 5.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector3( 0, 0, -91 ), Vector3( 0, 0, 100 ), Vector3( 0, 0, 100 ), Vector3( 0, 0, 100 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Enemy2:translation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 2.7, 5.6 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Vector3( 11, 0, -91 ), Vector3( 11, 0, 100 ), Vector3( 11, 0, 100 ) ]
-}
-
-[sub_resource type="Animation" id=10]
-resource_name = "Left First"
-length = 5.6
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Enemy:translation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 2.7, 4.6, 5.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector3( 0, 0, -91 ), Vector3( 0, 0, -91 ), Vector3( 0, 0, 100 ), Vector3( 0, 0, 100 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Enemy2:translation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 2.7, 4.6, 5.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector3( 11, 0, -91 ), Vector3( 11, 0, 100 ), Vector3( 11, 0, 100 ), Vector3( 11, 0, 100 ) ]
-}
-
-[sub_resource type="Animation" id=11]
-length = 5.6
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Enemy:translation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 2.7, 4.6, 5.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector3( 0, 0, -91 ), Vector3( 0, 0, 100 ), Vector3( 0, 0, 100 ), Vector3( 0, 0, 100 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Enemy2:translation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 2.7, 4.6, 5.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector3( 11, 0, -91 ), Vector3( 11, 0, -91 ), Vector3( 11, 0, 100 ), Vector3( 11, 0, 100 ) ]
-}
-
 [node name="Enemy" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 47.6665, 1.1674, -21.702 )
 script = ExtResource( 10 )
 
 [node name="Enemy" type="KinematicBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 100 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -91 )
 
 [node name="Car" type="MeshInstance" parent="Enemy"]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0 )
@@ -272,7 +187,7 @@ light_energy = 2.03
 spot_range = 6.5
 
 [node name="Enemy2" type="KinematicBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 100 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -91 )
 
 [node name="Car" type="MeshInstance" parent="Enemy2"]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0 )
@@ -303,7 +218,4 @@ light_color = Color( 0.929412, 0.807843, 0.447059, 1 )
 light_energy = 2.03
 spot_range = 6.5
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Both = SubResource( 9 )
-"anims/Left First" = SubResource( 10 )
-"anims/Right First" = SubResource( 11 )
+[node name="AnimationPlayer" parent="." instance=ExtResource( 6 )]

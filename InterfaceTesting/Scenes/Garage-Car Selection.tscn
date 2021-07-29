@@ -62,6 +62,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2, -32 )
 [node name="SUV" parent="SUV" index="0"]
 transform = Transform( 1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, 0, -20 )
 
+[node name="AnimationPlayer" parent="SUV/SUV" index="0"]
+playback_speed = 2.5
+
 [node name="ChangingVehicles" type="Timer" parent="."]
 wait_time = 2.0
 
@@ -81,8 +84,7 @@ __meta__ = {
 }
 
 [node name="VEHICLELOCKED" type="Sprite" parent="Loadscene"]
-visible = false
-position = Vector2( 328.49, 95.1489 )
+position = Vector2( 67.3627, 129.231 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
 
@@ -113,6 +115,12 @@ __meta__ = {
 [node name="SportsCar" parent="." instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1, -32 )
 
+[node name="SportsCar" parent="SportsCar" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20 )
+
+[node name="AnimationPlayer" parent="SportsCar/SportsCar" index="0"]
+playback_speed = 2.5
+
 [node name="SixbySix" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -32 )
 
@@ -120,11 +128,17 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -32 )
 transform = Transform( 0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, -20 )
 entering = true
 
+[node name="AnimationPlayer" parent="SixbySix/SixbySix" index="0"]
+playback_speed = 2.5
+
 [node name="Nissian" parent="." instance=ExtResource( 12 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1, -32 )
 
 [node name="Nissian" parent="Nissian" index="0"]
 transform = Transform( 0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, -20 )
+
+[node name="AnimationPlayer" parent="Nissian/Nissian" index="0"]
+playback_speed = 2.5
 
 [node name="BMW" parent="." instance=ExtResource( 13 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -32 )
@@ -133,6 +147,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -32 )
 transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, -20 )
 entering = true
 
+[node name="AnimationPlayer" parent="BMW/BMW" index="0"]
+playback_speed = 2.5
+
 [node name="Limo" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -32 )
 
@@ -140,6 +157,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -32 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20 )
 entering = true
 exiting = true
+
+[node name="AnimationPlayer" parent="Limo/Limo" index="0"]
+playback_speed = 2.5
 
 [node name="GarageBG" parent="." instance=ExtResource( 15 )]
 transform = Transform( -0.5, 0, -7.54979e-08, 0, 0.5, 0, 7.54979e-08, 0, -0.5, 16, 1.9018, 15 )
@@ -203,19 +223,15 @@ texture = ExtResource( 20 )
 [node name="Nissian_label_untick" type="Sprite" parent="Labels/nissianinfo"]
 visible = false
 texture = ExtResource( 23 )
+
 [connection signal="timeout" from="ChangingVehicles" to="." method="_on_ChangingVehicles_timeout"]
 [connection signal="pressed" from="Loadscene" to="Loadscene" method="_on_Loadscene_pressed"]
 [connection signal="pressed" from="next" to="." method="_on_next_pressed"]
 [connection signal="pressed" from="Previous" to="." method="_on_Previous_pressed"]
 
 [editable path="SUV"]
-
 [editable path="SportsCar"]
-
 [editable path="SixbySix"]
-
 [editable path="Nissian"]
-
 [editable path="BMW"]
-
 [editable path="Limo"]

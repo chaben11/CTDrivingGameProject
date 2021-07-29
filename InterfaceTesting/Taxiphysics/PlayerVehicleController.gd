@@ -5,7 +5,7 @@ const STEER_LIMIT = 0.4
 
 var steer_target = 0
 
-export var engine_force_value = 300
+export var engine_force_value = 250
 
 func _physics_process(delta):
 	var fwd_mps = transform.basis.xform_inv(linear_velocity).x
@@ -21,7 +21,6 @@ func _physics_process(delta):
 		else:
 			if engine_force < engine_force_value:
 				engine_force = engine_force + 10
-				print(engine_force)
 	else:
 		engine_force = 0
 
