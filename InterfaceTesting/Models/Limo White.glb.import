@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/modelfloortest.glb-8e85c5884280312795b10a7e5af46220.scn"
+path="res://.import/Limo White.glb-21893f6cd92ca76e45841fb601c092f0.scn"
 
 [deps]
 
-source_file="res://Models/modelfloortest.glb"
-dest_files=[ "res://.import/modelfloortest.glb-8e85c5884280312795b10a7e5af46220.scn" ]
+source_file="res://Models/Limo White.glb"
+dest_files=[ "res://.import/Limo White.glb-21893f6cd92ca76e45841fb601c092f0.scn" ]
 
 [params]
 
