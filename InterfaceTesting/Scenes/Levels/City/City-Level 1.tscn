@@ -273,7 +273,7 @@ mesh = ExtResource( 2 )
 material/1 = null
 
 [node name="Cube13" parent="Roads" instance=ExtResource( 21 )]
-transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 673.62, -0.167, -129 )
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 673.62, 0, -129 )
 mesh = ExtResource( 3 )
 
 [node name="Cube14" parent="Roads" instance=ExtResource( 21 )]
@@ -493,6 +493,10 @@ transform = Transform( 1000, 0, 0, 0, 1, 0, 0, 0, 10, 920.8, -0.5, 0 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 408.339, 2, -21.702 )
 EnemySpeed = 3.0
 
+[node name="Enemy12" parent="." instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 229.074, 2, -42.1252 )
+EnemySpeed = 3.0
+
 [node name="Enemy8" parent="." instance=ExtResource( 20 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 48.6092, 2, -44.0015 )
 EnemySpeed = 3.0
@@ -689,9 +693,18 @@ EnemySpeed = 3.0
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1028.17, 2, -52.902 )
 EnemySpeed = 3.0
 
+[node name="Enemy10" parent="." instance=ExtResource( 26 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 847.07, 2, -52.902 )
+EnemySpeed = 3.0
+
+[node name="Enemy11" parent="." instance=ExtResource( 26 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 667.17, 2, -52.902 )
+EnemySpeed = 3.0
+
 [node name="Enemy6" parent="." instance=ExtResource( 20 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1027.64, 2, -21.702 )
 EnemySpeed = 3.0
+
 [connection signal="pressed" from="Pause/MainMenu/MenuButton" to="Pause" method="_on_MenuButton_pressed"]
 [connection signal="pressed" from="Pause/MainMenu/SettingsButton" to="Pause" method="_on_SettingsButton_pressed"]
 [connection signal="pressed" from="Pause/MainMenu/ResumeButton" to="Pause" method="_on_ResumeButton_pressed"]
@@ -699,7 +712,5 @@ EnemySpeed = 3.0
 [connection signal="pressed" from="Failed/MainMenu/RetryButton" to="Failed" method="_on_RetryButton_pressed"]
 
 [editable path="Node2D/Viewport/Speedometer(3)"]
-
 [editable path="Buildings"]
-
 [editable path="Buildings2"]
