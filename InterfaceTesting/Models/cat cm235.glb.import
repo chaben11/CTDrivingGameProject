@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Limo White.glb-21893f6cd92ca76e45841fb601c092f0.scn"
+path="res://.import/cat cm235.glb-ef3a76db51b41794605ab59f55d5c488.scn"
 
 [deps]
 
-source_file="res://Models/Limo White.glb"
-dest_files=[ "res://.import/Limo White.glb-21893f6cd92ca76e45841fb601c092f0.scn" ]
+source_file="res://Models/cat cm235.glb"
+dest_files=[ "res://.import/cat cm235.glb-ef3a76db51b41794605ab59f55d5c488.scn" ]
 
 [params]
 
@@ -16,7 +16,7 @@ nodes/root_name="Scene Root"
 nodes/root_scale=1.0
 nodes/custom_script=""
 nodes/storage=0
-nodes/use_legacy_names=true
+nodes/use_legacy_names=false
 materials/location=1
 materials/storage=1
 materials/keep_on_reimport=true
