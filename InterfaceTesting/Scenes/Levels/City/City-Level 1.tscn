@@ -505,7 +505,7 @@ EnemySpeed = 3.0
 transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 78.1835 )
 
 [node name="7" parent="Buildings" index="0"]
-transform = Transform( 1.11994, 0, 0, 0, -1.33507e-07, -1.11994, 0, 1.11994, -1.33507e-07, -6.47774, 9.12768, -29.0548 )
+transform = Transform( 1.11994, 0, 0, 0, -1.33507e-07, -1.11994, 0, 1.11994, -1.33507e-07, -6.47774, 7.72868, -29.0548 )
 
 [node name="9" parent="Buildings" index="1"]
 visible = false
@@ -514,13 +514,13 @@ visible = false
 visible = false
 
 [node name="5" parent="Buildings" index="3"]
-transform = Transform( 1.41018, 0, 0, 0, -1.68106e-07, -1.41018, 0, 1.41018, -1.68106e-07, 24.2255, 6.92805, -28.1199 )
+transform = Transform( 1.41018, 0, 0, 0, -1.68106e-07, -1.41018, 0, 1.41018, -1.68106e-07, 24.2255, 5.52905, -28.1199 )
 
 [node name="6" parent="Buildings" index="4"]
-transform = Transform( 1.11994, 0, 0, 0, -1.33507e-07, -1.11994, 0, 1.11994, -1.33507e-07, 49.5811, 9.92107, -28.2545 )
+transform = Transform( 1.11994, 0, 0, 0, -1.33507e-07, -1.11994, 0, 1.11994, -1.33507e-07, 49.5811, 8.52207, -28.2545 )
 
 [node name="4" parent="Buildings" index="5"]
-transform = Transform( 1.11994, 0, 0, 0, -1.33507e-07, -1.11994, 0, 1.11994, -1.33507e-07, 3.8099, 6.40143, -27.8973 )
+transform = Transform( 1.11994, 0, 0, 0, -1.33507e-07, -1.11994, 0, 1.11994, -1.33507e-07, 3.8099, 5.00243, -27.8973 )
 
 [node name="Cylinder" parent="Buildings" index="6"]
 visible = false
@@ -533,22 +533,22 @@ transform = Transform( 1.11994, 0, 0, 0, -1.33507e-07, -1.11994, 0, 1.11994, -1.
 visible = false
 
 [node name="4001" parent="Buildings" index="9"]
-transform = Transform( 1.11994, 0, 0, 0, -1.33507e-07, -1.11994, 0, 1.11994, -1.33507e-07, 68.2713, 6.40143, -28.205 )
+transform = Transform( 1.11994, 0, 0, 0, -1.33507e-07, -1.11994, 0, 1.11994, -1.33507e-07, 68.2713, 5.00243, -28.205 )
 
 [node name="7002" parent="Buildings" index="10"]
-transform = Transform( 1.11994, 0, 0, 0, -1.33507e-07, -1.11994, 0, 1.11994, -1.33507e-07, 78.4775, 9.12768, -27.9231 )
+transform = Transform( 1.11994, 0, 0, 0, -1.33507e-07, -1.11994, 0, 1.11994, -1.33507e-07, 78.4775, 7.72868, -27.9231 )
 
 [node name="7003" parent="Buildings" index="11"]
 visible = false
 
 [node name="Cylinder001" parent="Buildings" index="12"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 122.864, 17.48, -27.3264 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 122.864, 16.081, -27.3264 )
 
 [node name="4002" parent="Buildings" index="13"]
 visible = false
 
 [node name="11001" parent="Buildings" index="14"]
-transform = Transform( -1.11994, 0, 0, 0, -1.33507e-07, -1.11994, 0, 1.11994, -1.33507e-07, 115.176, 6.3553, -26.2353 )
+transform = Transform( -1.11994, 0, 0, 0, -1.33507e-07, -1.11994, 0, 1.11994, -1.33507e-07, 115.176, 4.9563, -26.2353 )
 
 [node name="5001" parent="Buildings" index="15"]
 transform = Transform( 0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, 21.142, 2.69276, -51.2187 )
@@ -558,7 +558,7 @@ visible = false
 visible = false
 
 [node name="Cube001" parent="Buildings" index="17"]
-transform = Transform( 6.86948, 0, 0, 0, 0.874792, 0, 0, 0, 0.874792, 90.817, 0.874792, -26.1806 )
+transform = Transform( 6.86948, 0, 0, 0, 0.874792, 0, 0, 0, 0.874792, 90.817, -0.52421, -26.1806 )
 
 [node name="Cube002" parent="Buildings" index="18"]
 visible = false
@@ -585,13 +585,13 @@ visible = false
 visible = false
 
 [node name="Prison" parent="Buildings" index="26"]
-transform = Transform( 4.96567, 0, 0, 0, 0.733712, 0, 0, 0, 4, 37.9917, 6.33542, -30.9864 )
+transform = Transform( 4.96567, 0, 0, 0, 0.733712, 0, 0, 0, 4, 37.9917, 4.93642, -30.9864 )
 
 [node name="Buildings2" parent="." instance=ExtResource( 22 )]
 transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 557.297, 0, 78.1835 )
 
 [node name="7" parent="Buildings2" index="0"]
-transform = Transform( 1.11994, 0, 0, 0, -1.33507e-07, -1.11994, 0, 1.11994, -1.33507e-07, -6.47774, 9.12768, -29.0548 )
+transform = Transform( 1.11994, 0, 0, 0, -1.33507e-07, -1.11994, 0, 1.11994, -1.33507e-07, -6.47774, 7.72868, -29.0548 )
 
 [node name="9" parent="Buildings2" index="1"]
 visible = false
@@ -600,13 +600,13 @@ visible = false
 visible = false
 
 [node name="5" parent="Buildings2" index="3"]
-transform = Transform( 1.41018, 0, 0, 0, -1.68106e-07, -1.41018, 0, 1.41018, -1.68106e-07, 16.536, 6.92805, -28.1199 )
+transform = Transform( 1.41018, 0, 0, 0, -1.68106e-07, -1.41018, 0, 1.41018, -1.68106e-07, 16.536, 5.52905, -28.1199 )
 
 [node name="6" parent="Buildings2" index="4"]
-transform = Transform( 1.11994, 0, 0, 0, -1.33507e-07, -1.11994, 0, 1.11994, -1.33507e-07, 53.0566, 9.92107, -28.2545 )
+transform = Transform( 1.11994, 0, 0, 0, -1.33507e-07, -1.11994, 0, 1.11994, -1.33507e-07, 53.0566, 8.52207, -28.2545 )
 
 [node name="4" parent="Buildings2" index="5"]
-transform = Transform( 1.11994, 0, 0, 0, -1.33507e-07, -1.11994, 0, 1.11994, -1.33507e-07, 3.8099, 6.40143, -27.8973 )
+transform = Transform( 1.11994, 0, 0, 0, -1.33507e-07, -1.11994, 0, 1.11994, -1.33507e-07, 3.80991, 5.00243, -27.8973 )
 
 [node name="Cylinder" parent="Buildings2" index="6"]
 visible = false
@@ -619,22 +619,22 @@ transform = Transform( 1.11994, 0, 0, 0, -1.33507e-07, -1.11994, 0, 1.11994, -1.
 visible = false
 
 [node name="4001" parent="Buildings2" index="9"]
-transform = Transform( 1.11994, 0, 0, 0, -1.33507e-07, -1.11994, 0, 1.11994, -1.33507e-07, 63.4497, 6.40143, -28.205 )
+transform = Transform( 1.11994, 0, 0, 0, -1.33507e-07, -1.11994, 0, 1.11994, -1.33507e-07, 63.4497, 5.00243, -28.205 )
 
 [node name="7002" parent="Buildings2" index="10"]
-transform = Transform( 1.11994, 0, 0, 0, -1.33507e-07, -1.11994, 0, 1.11994, -1.33507e-07, 82.5299, 9.12768, -27.9231 )
+transform = Transform( 1.11994, 0, 0, 0, -1.33507e-07, -1.11994, 0, 1.11994, -1.33507e-07, 82.5299, 7.72868, -27.9231 )
 
 [node name="7003" parent="Buildings2" index="11"]
 visible = false
 
 [node name="Cylinder001" parent="Buildings2" index="12"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 122.864, 17.48, -27.3264 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 122.864, 16.081, -27.3264 )
 
 [node name="4002" parent="Buildings2" index="13"]
 visible = false
 
 [node name="11001" parent="Buildings2" index="14"]
-transform = Transform( -1.11994, 0, 0, 0, -1.33507e-07, -1.11994, 0, 1.11994, -1.33507e-07, 110.18, 6.3553, -26.2353 )
+transform = Transform( -1.11994, 0, 0, 0, -1.33507e-07, -1.11994, 0, 1.11994, -1.33507e-07, 110.18, 4.9563, -26.2353 )
 
 [node name="5001" parent="Buildings2" index="15"]
 transform = Transform( 0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, 21.142, 2.69276, -51.2187 )
@@ -644,7 +644,7 @@ visible = false
 visible = false
 
 [node name="Cube001" parent="Buildings2" index="17"]
-transform = Transform( 6.86948, 0, 0, 0, 0.874792, 0, 0, 0, 0.874792, 95.6048, 0.874792, -26.1806 )
+transform = Transform( 6.86948, 0, 0, 0, 0.874792, 0, 0, 0, 0.874792, 95.6048, -0.52421, -26.1806 )
 
 [node name="Cube002" parent="Buildings2" index="18"]
 visible = false
@@ -671,12 +671,13 @@ visible = false
 visible = false
 
 [node name="Prison" parent="Buildings2" index="26"]
-transform = Transform( 4.96567, 0, 0, 0, 0.733712, 0, 0, 0, 4, 41.4672, 6.33542, -30.9864 )
+transform = Transform( 4.96567, 0, 0, 0, 0.733712, 0, 0, 0, 4, 41.4672, 4.93642, -30.9864 )
 
 [node name="Finsihed" parent="." instance=ExtResource( 31 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1167.1, 0, 0 )
 
 [node name="ReverseLimit" parent="." instance=ExtResource( 32 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 20, -19.2216, 1.02248, 0 )
 
 [node name="DirectionalLight2" type="DirectionalLight" parent="."]
 transform = Transform( -0.917359, 6.83486e-08, -0.398061, -0.258652, 0.760122, 0.596082, 0.302575, 0.64978, -0.697305, 619.3, 52.8354, -57.4725 )

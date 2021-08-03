@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Models/CM235 yellow.material" type="Material" id=1]
 [ext_resource path="res://Models/CM325 black.material" type="Material" id=2]
+[ext_resource path="res://Scripts/cat cm235.gd" type="Script" id=3]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "CM325001"
@@ -63,6 +64,7 @@ tracks/0/keys = {
 }
 
 [node name="cat cm235" type="Spatial"]
+script = ExtResource( 3 )
 
 [node name="CM325001" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.07897, 1.0368 )
@@ -71,7 +73,7 @@ material/0 = null
 material/1 = null
 
 [node name="CM325002" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 0.250064, -0.968229, 0, 0.968229, 0.250064, -0.0236555, 0.926442, -7.63892 )
+transform = Transform( 1, 0, 0, 0, 1, -1.74845e-07, 0, 1.74845e-07, 1, -0.0236555, 0.926442, -7.63892 )
 mesh = SubResource( 2 )
 material/0 = null
 

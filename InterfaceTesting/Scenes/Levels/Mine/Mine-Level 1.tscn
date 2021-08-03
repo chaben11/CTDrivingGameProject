@@ -25,7 +25,7 @@
 [ext_resource path="res://Models/Enemy-Mine.tscn" type="PackedScene" id=23]
 [ext_resource path="res://Audio/MineAmbientSounds.tscn" type="PackedScene" id=24]
 [ext_resource path="res://DigitalTechMenu/SettingsButton.tscn" type="PackedScene" id=25]
-[ext_resource path="res://Models/cat cm235.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Models/Enemy-Mine2.tscn" type="PackedScene" id=26]
 [ext_resource path="res://Models/Speedometer(3).tscn" type="PackedScene" id=28]
 [ext_resource path="res://Textures/AllSkyFree_Sky_EpicBlueSunset_Equirect.png" type="Texture" id=31]
 
@@ -266,11 +266,13 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.63525, 1.83264, -0.0831604 )
 
 [node name="Constructionambientsounds" parent="." instance=ExtResource( 24 )]
 
-[node name="cat cm236" parent="." instance=ExtResource( 26 )]
-transform = Transform( 1.52926, 0, 1.28894, 0, 2, 0, -1.28894, 0, 1.52926, 266.446, 0.948066, 23.7719 )
+[node name="Enemy2" parent="." instance=ExtResource( 26 )]
+transform = Transform( -0.150726, 0, -0.988575, 0, 1, 0, 0.988575, 0, -0.150726, 253.159, 2.28343, -1.21814 )
+EnemySpeed = 0.75
 
-[node name="cat cm235" parent="." instance=ExtResource( 26 )]
-transform = Transform( 1.48575, 0, 1.33886, 0, 2, 0, -1.33886, 0, 1.48575, 158.134, 0.379226, 24.6807 )
+[node name="Enemy3" parent="." instance=ExtResource( 26 )]
+transform = Transform( -0.150726, 0, -0.988575, 0, 1, 0, 0.988575, 0, -0.150726, 381.179, 2.28343, -0.956049 )
+EnemySpeed = 0.5
 
 [connection signal="pressed" from="Pause/MainMenu/MenuButton" to="Pause" method="_on_MenuButton_pressed"]
 [connection signal="pressed" from="Pause/MainMenu/SettingsButton" to="Pause" method="_on_SettingsButton_pressed"]
