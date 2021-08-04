@@ -16,15 +16,13 @@ func _ready():
 #	pass
 
 
-func _on_MenuButton_pressed():
-	get_tree().change_scene("res://Scenes/MainMenu.tscn") 
+func _on_ResumeButton_pressed():
+	$MainMenu.hide()
 	get_tree().paused = false
-	gameover = false
 
-
-
-func _on_RetryButton_pressed(): #will reset the scene if the player clicks retry
-	get_tree().reload_current_scene()
-	get_tree().paused = false #The scene will unfreeze
-	gameover = false
+func _on_SettingsButton_pressed():
 	pass # Replace with function body.
+
+
+func _on_MenuButton_pressed():
+	get_tree().change_scene("res://Scenes/MainMenu.tscn")

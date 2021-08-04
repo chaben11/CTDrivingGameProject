@@ -547,7 +547,6 @@ script = ExtResource( 35 )
 [node name="CollisionShape" type="CollisionShape" parent="BonusStage"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.32565 )
 shape = SubResource( 15 )
-
 [connection signal="pressed" from="Pause/MainMenu/MenuButton" to="Pause" method="_on_MenuButton_pressed"]
 [connection signal="pressed" from="Pause/MainMenu/SettingsButton" to="Pause" method="_on_SettingsButton_pressed"]
 [connection signal="pressed" from="Pause/MainMenu/ResumeButton" to="Pause" method="_on_ResumeButton_pressed"]
@@ -556,8 +555,13 @@ shape = SubResource( 15 )
 [connection signal="body_entered" from="BonusStage" to="BonusStage" method="_on_BonusStage_body_entered"]
 
 [editable path="Node2D/Viewport/Speedometer(3)"]
+
 [editable path="Enemy"]
+
 [editable path="Enemy4"]
+
 [editable path="Enemy4/Enemy2/NISSAN NAVARA red-SOLID"]
+
 [editable path="Buildings_A"]
+
 [editable path="Buildings"]

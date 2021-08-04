@@ -1,17 +1,11 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Textures/sidewalkgrasstogether.tres" type="ArrayMesh" id=1]
 [ext_resource path="res://Models/intersection X (2).tres" type="ArrayMesh" id=2]
 [ext_resource path="res://Textures/straight road _ (2).tres" type="ArrayMesh" id=3]
-[ext_resource path="res://FailMenu/GameOverScreen.png" type="Texture" id=4]
-[ext_resource path="res://PauseMenuNewIcons/1x/Asset 25.png" type="Texture" id=6]
-[ext_resource path="res://PauseMenuNewIcons/1x/Asset 26.png" type="Texture" id=8]
+[ext_resource path="res://Paused.tscn" type="PackedScene" id=5]
 [ext_resource path="res://2x/Sidewalkgrass_type4@2x.png" type="Texture" id=9]
-[ext_resource path="res://PauseMenuNewIcons/1x/Asset 24.png" type="Texture" id=11]
 [ext_resource path="res://2x/sudewalkgrass_type3@2x.png" type="Texture" id=12]
-[ext_resource path="res://FailMenu/Retry_Hover.png" type="Texture" id=14]
-[ext_resource path="res://FailMenu/Retry_Normal.png" type="Texture" id=15]
-[ext_resource path="res://FailMenu/Retry_Select.png" type="Texture" id=16]
 [ext_resource path="res://Textures/rightsidewalk.tres" type="Material" id=17]
 [ext_resource path="res://Scenes/Floortest.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Models/Enemy3.tscn" type="PackedScene" id=20]
@@ -22,7 +16,6 @@
 [ext_resource path="res://Models/Enemy2.tscn" type="PackedScene" id=26]
 [ext_resource path="res://Textures/AllSkyFree_Sky_EpicBlueSunset_Equirect.png" type="Texture" id=27]
 [ext_resource path="res://Scripts/LoadingData.gd" type="Script" id=28]
-[ext_resource path="res://Taxiphysics/Failed.gd" type="Script" id=29]
 [ext_resource path="res://Scenes/LevelCompleted.tscn" type="PackedScene" id=30]
 [ext_resource path="res://Scenes/Finished.tscn" type="PackedScene" id=31]
 [ext_resource path="res://Animations/LevelReverseLimit.tscn" type="PackedScene" id=32]
@@ -369,83 +362,7 @@ transform = Transform( 10, 0, 0, 0, 25, 0, 0, 0, 10, 84, -6.898, -29.777 )
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 13 )
 
-[node name="Failed" type="Control" parent="."]
-pause_mode = 2
-margin_right = 1024.0
-margin_bottom = 600.0
-script = ExtResource( 29 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="MainMenu" type="Sprite" parent="Failed"]
-modulate = Color( 1, 1, 1, 0.721569 )
-position = Vector2( 512, 300 )
-texture = ExtResource( 4 )
-
-[node name="MenuButton" type="TextureButton" parent="Failed/MainMenu"]
-margin_left = 122.928
-margin_top = -50.0
-margin_right = 338.928
-margin_bottom = 156.0
-shortcut_in_tooltip = false
-texture_normal = ExtResource( 6 )
-texture_pressed = ExtResource( 8 )
-texture_hover = ExtResource( 11 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="RetryButton" type="TextureButton" parent="Failed/MainMenu"]
-margin_left = -340.0
-margin_top = -50.0
-margin_right = -145.0
-margin_bottom = 145.0
-texture_normal = ExtResource( 15 )
-texture_pressed = ExtResource( 16 )
-texture_hover = ExtResource( 14 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Paused" type="Control" parent="."]
-pause_mode = 2
-margin_right = 1024.0
-margin_bottom = 600.0
-script = ExtResource( 29 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="MainMenu" type="Sprite" parent="Paused"]
-modulate = Color( 1, 1, 1, 0.721569 )
-position = Vector2( 512, 300 )
-texture = ExtResource( 4 )
-
-[node name="MenuButton" type="TextureButton" parent="Paused/MainMenu"]
-margin_left = 122.928
-margin_top = -50.0
-margin_right = 338.928
-margin_bottom = 156.0
-shortcut_in_tooltip = false
-texture_normal = ExtResource( 6 )
-texture_pressed = ExtResource( 8 )
-texture_hover = ExtResource( 11 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="RetryButton" type="TextureButton" parent="Paused/MainMenu"]
-margin_left = -340.0
-margin_top = -50.0
-margin_right = -145.0
-margin_bottom = 145.0
-texture_normal = ExtResource( 15 )
-texture_pressed = ExtResource( 16 )
-texture_hover = ExtResource( 14 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Paused" parent="." instance=ExtResource( 5 )]
 
 [node name="Node2D" type="Node2D" parent="."]
 
@@ -697,11 +614,8 @@ EnemySpeed = 3.0
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1027.64, 2, -21.702 )
 EnemySpeed = 3.0
 
-[connection signal="pressed" from="Failed/MainMenu/MenuButton" to="Failed" method="_on_MenuButton_pressed"]
-[connection signal="pressed" from="Failed/MainMenu/RetryButton" to="Failed" method="_on_RetryButton_pressed"]
-[connection signal="pressed" from="Paused/MainMenu/MenuButton" to="Paused" method="_on_MenuButton_pressed"]
-[connection signal="pressed" from="Paused/MainMenu/RetryButton" to="Paused" method="_on_RetryButton_pressed"]
-
 [editable path="Node2D/Viewport/Speedometer(3)"]
+
 [editable path="Buildings"]
+
 [editable path="Buildings2"]

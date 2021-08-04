@@ -34,10 +34,10 @@ func _process(delta):
 
 func _input(event):
 	if Input.is_action_just_pressed("pause"):
-		if get_node("Failed").gameover == false:
-			if get_tree().paused == false: #the button will freeze the scene except this menu which is part of an exception group
-				get_tree().paused = true
-				$Pause/MainMenu.show()
-			elif get_tree().paused == true:
-				get_tree().paused = false
-				$Pause/MainMenu.hide()
+#		if get_node("Failed").gameover == false:
+		if get_tree().paused == false: #the button will freeze the scene except this menu which is part of an exception group
+			get_tree().paused = true
+			$Paused/MainMenu.show()
+		elif get_tree().paused == true:
+			get_tree().paused = false
+			$Paused/MainMenu.hide()
