@@ -29,6 +29,7 @@ func _on_ResumeButton_pressed():
 	if get_tree().paused == true:
 		get_tree().paused = false
 		$MainMenu.hide()
+		print("a")
 
 
 func _on_SettingsButton_pressed():
