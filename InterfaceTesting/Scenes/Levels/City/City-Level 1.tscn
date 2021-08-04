@@ -385,11 +385,13 @@ __meta__ = {
 }
 
 [node name="MainMenu" type="Sprite" parent="Pause"]
+pause_mode = 2
 modulate = Color( 1, 1, 1, 0.721569 )
 position = Vector2( 512, 300 )
 texture = ExtResource( 10 )
 
 [node name="MenuButton" type="TextureButton" parent="Pause/MainMenu"]
+pause_mode = 2
 margin_left = 155.0
 margin_top = -50.0
 margin_right = 350.0
@@ -403,8 +405,10 @@ __meta__ = {
 }
 
 [node name="SettingsButton" parent="Pause/MainMenu" instance=ExtResource( 23 )]
+pause_mode = 2
 
 [node name="ResumeButton" type="TextureButton" parent="Pause/MainMenu"]
+pause_mode = 2
 margin_left = -340.0
 margin_top = -50.0
 margin_right = -145.0
@@ -705,7 +709,6 @@ EnemySpeed = 3.0
 [node name="Enemy6" parent="." instance=ExtResource( 20 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1027.64, 2, -21.702 )
 EnemySpeed = 3.0
-
 [connection signal="pressed" from="Pause/MainMenu/MenuButton" to="Pause" method="_on_MenuButton_pressed"]
 [connection signal="pressed" from="Pause/MainMenu/SettingsButton" to="Pause" method="_on_SettingsButton_pressed"]
 [connection signal="pressed" from="Pause/MainMenu/ResumeButton" to="Pause" method="_on_ResumeButton_pressed"]
@@ -713,5 +716,7 @@ EnemySpeed = 3.0
 [connection signal="pressed" from="Failed/MainMenu/RetryButton" to="Failed" method="_on_RetryButton_pressed"]
 
 [editable path="Node2D/Viewport/Speedometer(3)"]
+
 [editable path="Buildings"]
+
 [editable path="Buildings2"]

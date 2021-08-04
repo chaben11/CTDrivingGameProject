@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Textures/icon.png" type="Texture" id=1]
+
+[node name="Node2D" type="Control"]
+margin_right = 1024.0
+margin_bottom = 600.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="icon" type="Sprite" parent="."]
+position = Vector2( 541.7, 315.879 )
+scale = Vector2( 16.2629, 10.0385 )
+texture = ExtResource( 1 )

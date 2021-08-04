@@ -10,12 +10,13 @@ config_version=4
 
 _global_script_classes=[  ]
 _global_script_class_icons={
+
 }
 
 [application]
 
 config/name="CT Driving"
-run/main_scene="res://LoadingScene.tscn"
+run/main_scene="res://Startup.tscn"
 
 [autoload]
 
@@ -23,6 +24,7 @@ garage="*res://Cars/CarIndex.gd"
 PlayerData="*res://Scripts/PlayerData.gd"
 background_load="*res://Scenes/background_load.tscn"
 Player="*res://Taxiphysics/PlayerVehicleController.gd"
+LoadingScreen="res://LoadingScreen.gd"
 
 [display]
 
