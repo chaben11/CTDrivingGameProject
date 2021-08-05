@@ -614,8 +614,7 @@ EnemySpeed = 3.0
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1027.64, 2, -21.702 )
 EnemySpeed = 3.0
 
+[editable path="Paused"]
 [editable path="Node2D/Viewport/Speedometer(3)"]
-
 [editable path="Buildings"]
-
 [editable path="Buildings2"]

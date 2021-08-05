@@ -37,7 +37,10 @@ func _input(event):
 		if gameover == false:
 			if get_tree().paused == false: #the button will freeze the scene except this menu which is part of an exception group
 				get_tree().paused = true
-				$Paused/MainMenu.show()
+				$Paused/Pause.show()
 			elif get_tree().paused == true:
 				get_tree().paused = false
-				$Paused/MainMenu.hide()
+				$Paused/Pause.hide()
+
+
+

@@ -17,7 +17,7 @@ func _ready():
 
 
 func _on_ResumeButton_pressed():
-	$MainMenu.hide()
+	$Pause.hide()
 	get_tree().paused = false
 
 func _on_SettingsButton_pressed():
@@ -26,3 +26,9 @@ func _on_SettingsButton_pressed():
 
 func _on_MenuButton_pressed():
 	get_tree().change_scene("res://Scenes/MainMenu.tscn")
+	get_tree().paused = false
+
+
+func _on_RetryButton_pressed():
+	get_tree().reload_current_scene()
+	get_tree().paused = false
