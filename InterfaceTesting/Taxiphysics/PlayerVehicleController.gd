@@ -109,6 +109,7 @@ func _on_EnemyChecker_body_entered(body): #if the enemy collides with the player
 #		get_tree().paused = true
 #		get_parent().get_parent().get_node("Failed/MainMenu").show()
 #		get_parent().get_parent().get_node("Failed").gameover = true
+		
 	else:
 		print(body.name)
 #func _on_EnemyChecker_area_entered(area):

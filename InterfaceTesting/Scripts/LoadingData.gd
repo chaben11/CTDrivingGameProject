@@ -4,7 +4,7 @@ extends Spatial
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-
+var gameover = false
 onready var taxi = preload("res://Cars/PlayerCars/PlayerScene/Taxi.tscn")
 onready var sixbysix = preload("res://Cars/PlayerCars/PlayerScene/SixbySix.tscn")
 onready var bmw = preload("res://Cars/PlayerCars/PlayerScene/Bmw.tscn")
@@ -34,10 +34,10 @@ func _process(delta):
 
 func _input(event):
 	if Input.is_action_just_pressed("pause"):
-#		if get_node("Failed").gameover == false:
-		if get_tree().paused == false: #the button will freeze the scene except this menu which is part of an exception group
-			get_tree().paused = true
-			$Paused/MainMenu.show()
-		elif get_tree().paused == true:
-			get_tree().paused = false
-			$Paused/MainMenu.hide()
+		if gameover == false:
+			if get_tree().paused == false: #the button will freeze the scene except this menu which is part of an exception group
+				get_tree().paused = true
+				$Paused/MainMenu.show()
+			elif get_tree().paused == true:
+				get_tree().paused = false
+				$Paused/MainMenu.hide()
