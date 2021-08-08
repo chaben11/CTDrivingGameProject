@@ -5,7 +5,7 @@ const STEER_LIMIT = 0.4
 onready var gamefailed = false
 var steer_target = 0
 export var engine_force_value = 250
-
+signal Gameover
 func _physics_process(delta):
 	var fwd_mps = transform.basis.xform_inv(linear_velocity).x
 
@@ -106,7 +106,7 @@ func _on_EnemyChecker_body_entered(body): #if the enemy collides with the player
 		print("check")
 		$PlayerCrashSound.play()
 		get_tree().paused = true
-		
+		get_parent().get_parent().get_node("Paused/Failed").show()		
 	else:
 		print(body.name)
 #func _on_EnemyChecker_area_entered(area):

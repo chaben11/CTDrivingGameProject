@@ -25,7 +25,7 @@ func _ready():
 		add_child(nissan.instance())
 	else:
 		add_child(taxi.instance())
-
+	
 func _process(delta):
 	pass
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -44,3 +44,7 @@ func _input(event):
 
 
 
+
+
+func _on_Player_Gameover():
+	print("12345Working")

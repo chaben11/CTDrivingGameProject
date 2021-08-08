@@ -30,13 +30,13 @@ func _on_Finsihed_body_entered(body):
 			#Unlocks next level in the list
 		elif PlayerData.player.currentLevel == "Citylevel2":
 			print("l2")
-			if garage.car_index != 6:
+			if garage.car_index != 6: #Car is not limp
 				get_tree().change_scene("res://Scenes/City-LevelSelect.tscn")
 			#Checks the current level to unlock the right one
 				PlayerData.player.Citylevel2 = "complete"
 				PlayerData.player.Citylevel3 = "unlocked"
 				PlayerData.save()
-			elif garage.car_index == 6:
+			elif garage.car_index == 6: #Car is limo
 				PlayerData.player.Citylevel2 = "complete"
 				PlayerData.player.CityBonus = "unlocked"
 		elif PlayerData.player.currentLevel == "CityBonus":
@@ -63,5 +63,5 @@ func _on_Finsihed_body_entered(body):
 			elif garage.car_index == 3:
 				PlayerData.player.Minelevel3 = "complete"
 				PlayerData.player.MineBonus = "unlocked"
-		elif PlayerData.player.currentLevel == "CityBonus":
+		elif PlayerData.player.currentLevel == "MineBonus":
 			PlayerData.player.MineBonus = "complete"
