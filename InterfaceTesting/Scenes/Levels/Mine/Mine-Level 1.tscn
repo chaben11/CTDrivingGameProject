@@ -183,8 +183,13 @@ EnemySpeed = 0.5
 [node name="Paused" parent="." instance=ExtResource( 2 )]
 
 [editable path="Node2D/Viewport/Speedometer(3)"]
+
 [editable path="Finsihed"]
+
 [editable path="catr 325c digger"]
+
 [editable path="catr 325c digger2"]
+
 [editable path="Enemy"]
+
 [editable path="Enemy/Enemy2/NISSAN NAVARA red-SOLID"]
