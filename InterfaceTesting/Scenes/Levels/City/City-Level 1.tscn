@@ -1,8 +1,9 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://Textures/sidewalkgrasstogether.tres" type="ArrayMesh" id=1]
 [ext_resource path="res://Models/intersection X (2).tres" type="ArrayMesh" id=2]
 [ext_resource path="res://Textures/straight road _ (2).tres" type="ArrayMesh" id=3]
+[ext_resource path="res://Models/bridge.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Paused.tscn" type="PackedScene" id=5]
 [ext_resource path="res://2x/Sidewalkgrass_type4@2x.png" type="Texture" id=9]
 [ext_resource path="res://2x/sudewalkgrass_type3@2x.png" type="Texture" id=12]
@@ -128,19 +129,25 @@ surfaces/0 = {
 "vertex_count": 24
 }
 
-[sub_resource type="PanoramaSky" id=12]
+[sub_resource type="SpatialMaterial" id=12]
+albedo_color = Color( 0, 0.505882, 1, 1 )
+
+[sub_resource type="CubeMesh" id=13]
+material = SubResource( 12 )
+
+[sub_resource type="PanoramaSky" id=14]
 panorama = ExtResource( 27 )
 
-[sub_resource type="Environment" id=13]
+[sub_resource type="Environment" id=15]
 background_mode = 2
-background_sky = SubResource( 12 )
+background_sky = SubResource( 14 )
 background_sky_custom_fov = 65.7
 background_sky_orientation = Basis( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08 )
 fog_height_min = 0.0
 fog_height_max = 100.0
 ssao_quality = 0
 
-[sub_resource type="ViewportTexture" id=14]
+[sub_resource type="ViewportTexture" id=16]
 viewport_path = NodePath("Node2D/Viewport")
 
 [node name="Main" type="Spatial"]
@@ -204,23 +211,13 @@ transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 284.122, -0.167, -29.6014 )
 mesh = SubResource( 7 )
 material/0 = null
 
-[node name="MeshInstance12" type="MeshInstance" parent="Roads"]
-transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 464.122, -0.167, -29.601 )
-mesh = SubResource( 7 )
-material/0 = null
-
 [node name="MeshInstance5" type="MeshInstance" parent="Roads"]
-transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 184, -0.167, 29.912 )
+transform = Transform( 2.68158, 0, 0, 0, 1, 0, 0, 0, 2, 184, -0.167, 29.912 )
 mesh = SubResource( 8 )
 material/0 = null
 
 [node name="MeshInstance7" type="MeshInstance" parent="Roads"]
 transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 284.269, -0.167, 29.912 )
-mesh = SubResource( 8 )
-material/0 = null
-
-[node name="MeshInstance14" type="MeshInstance" parent="Roads"]
-transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 464.269, -0.167, 29.912 )
 mesh = SubResource( 8 )
 material/0 = null
 
@@ -271,16 +268,6 @@ mesh = ExtResource( 3 )
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 1033.62, -0.167, -129 )
 mesh = ExtResource( 3 )
 
-[node name="MeshInstance13" type="MeshInstance" parent="Roads"]
-transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 623.552, -0.167, 29.912 )
-mesh = SubResource( 2 )
-material/0 = null
-
-[node name="MeshInstance27" type="MeshInstance" parent="Roads"]
-transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 544.152, -0.167, 29.912 )
-mesh = SubResource( 2 )
-material/0 = null
-
 [node name="MeshInstance15" type="MeshInstance" parent="Roads"]
 transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 723.3, -0.167, 29.912 )
 mesh = SubResource( 3 )
@@ -288,11 +275,6 @@ material/0 = null
 
 [node name="MeshInstance16" type="MeshInstance" parent="Roads"]
 transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 723.599, -0.167, -29.8516 )
-mesh = SubResource( 5 )
-material/0 = null
-
-[node name="MeshInstance17" type="MeshInstance" parent="Roads"]
-transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 543.524, -0.167, -29.852 )
 mesh = SubResource( 5 )
 material/0 = null
 
@@ -351,16 +333,16 @@ transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 803.506, -0.351364, -29.6263 )
 mesh = SubResource( 11 )
 material/0 = null
 
-[node name="MeshInstance26" type="MeshInstance" parent="Roads"]
-transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 623.524, -0.167, -29.8438 )
-mesh = ExtResource( 1 )
+[node name="MeshInstance12" type="MeshInstance" parent="Roads"]
+transform = Transform( 2001.21, 0, 0, 0, 20, 0, 0, 0, 51.6721, 527.156, -25.9039, 0 )
+mesh = SubResource( 13 )
 material/0 = null
 
 [node name="Spatial" type="Spatial" parent="."]
 transform = Transform( 10, 0, 0, 0, 25, 0, 0, 0, 10, 84, -6.898, -29.777 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 13 )
+environment = SubResource( 15 )
 
 [node name="Paused" parent="." instance=ExtResource( 5 )]
 
@@ -370,7 +352,7 @@ environment = SubResource( 13 )
 position = Vector2( 934.14, 570.667 )
 rotation = 3.14159
 scale = Vector2( -0.5, 0.5 )
-texture = SubResource( 14 )
+texture = SubResource( 16 )
 
 [node name="Viewport" type="Viewport" parent="Node2D"]
 size = Vector2( 400, 400 )
@@ -450,13 +432,15 @@ transform = Transform( 1.11994, 0, 0, 0, -1.33507e-07, -1.11994, 0, 1.11994, -1.
 visible = false
 
 [node name="Cylinder001" parent="Buildings" index="12"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 122.864, 16.081, -27.3264 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 122.864, 16.081, -60.0132 )
+visible = false
 
 [node name="4002" parent="Buildings" index="13"]
 visible = false
 
 [node name="11001" parent="Buildings" index="14"]
-transform = Transform( -1.11994, 0, 0, 0, -1.33507e-07, -1.11994, 0, 1.11994, -1.33507e-07, 115.176, 4.9563, -26.2353 )
+transform = Transform( -1.11994, 0, 0, 0, -1.33507e-07, -1.11994, 0, 1.11994, -1.33507e-07, 115.176, 4.9563, -58.9221 )
+visible = false
 
 [node name="5001" parent="Buildings" index="15"]
 transform = Transform( 0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, 21.142, 2.69276, -51.2187 )
@@ -499,7 +483,8 @@ transform = Transform( 4.96567, 0, 0, 0, 0.733712, 0, 0, 0, 4, 37.9917, 4.93642,
 transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 557.297, 0, 78.1835 )
 
 [node name="7" parent="Buildings2" index="0"]
-transform = Transform( 1.11994, 0, 0, 0, -1.33507e-07, -1.11994, 0, 1.11994, -1.33507e-07, -6.47774, 7.72868, -29.0548 )
+transform = Transform( 1.11994, 0, 0, 0, -1.33507e-07, -1.11994, 0, 1.11994, -1.33507e-07, -6.47774, 7.72868, -61.7416 )
+visible = false
 
 [node name="9" parent="Buildings2" index="1"]
 visible = false
@@ -508,13 +493,15 @@ visible = false
 visible = false
 
 [node name="5" parent="Buildings2" index="3"]
-transform = Transform( 1.41018, 0, 0, 0, -1.68106e-07, -1.41018, 0, 1.41018, -1.68106e-07, 16.536, 5.52905, -28.1199 )
+transform = Transform( 1.41018, 0, 0, 0, -1.68106e-07, -1.41018, 0, 1.41018, -1.68106e-07, 16.536, 5.52905, -60.8067 )
+visible = false
 
 [node name="6" parent="Buildings2" index="4"]
 transform = Transform( 1.11994, 0, 0, 0, -1.33507e-07, -1.11994, 0, 1.11994, -1.33507e-07, 53.0566, 8.52207, -28.2545 )
 
 [node name="4" parent="Buildings2" index="5"]
-transform = Transform( 1.11994, 0, 0, 0, -1.33507e-07, -1.11994, 0, 1.11994, -1.33507e-07, 3.80991, 5.00243, -27.8973 )
+transform = Transform( 1.11994, 0, 0, 0, -1.33507e-07, -1.11994, 0, 1.11994, -1.33507e-07, 3.80991, 5.00243, -60.5841 )
+visible = false
 
 [node name="Cylinder" parent="Buildings2" index="6"]
 visible = false
@@ -613,6 +600,9 @@ EnemySpeed = 3.0
 [node name="Enemy6" parent="." instance=ExtResource( 20 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1027.64, 2, -21.702 )
 EnemySpeed = 3.0
+
+[node name="bridge" parent="." instance=ExtResource( 4 )]
+transform = Transform( -2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 542.331, 1.59733, -0.364067 )
 
 [editable path="Paused"]
 [editable path="Node2D/Viewport/Speedometer(3)"]

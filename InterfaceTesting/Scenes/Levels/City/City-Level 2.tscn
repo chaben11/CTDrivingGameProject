@@ -325,22 +325,18 @@ transform = Transform( -0.917359, -1.36697e-08, -0.39806, -0.258652, 0.760122, 0
 
 [node name="Enemy" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 48.9929, 1.76404, -21.702 )
-EnemySpeed = 2.0
 
 [node name="Enemy2" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 227.848, 2, -21.702 )
-EnemySpeed = 2.25
 
 [node name="Floortest" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1000, 0, 0, 0, 1, 0, 0, 0, 10, 920.8, -0.5, 0 )
 
 [node name="Enemy3" parent="." instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 408.339, 2, -21.702 )
-EnemySpeed = 2.25
 
 [node name="Enemy4" parent="." instance=ExtResource( 33 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 587.667, 1.89318, -21.702 )
-EnemySpeed = 2.25
 
 [node name="Buildings_A" parent="." instance=ExtResource( 32 )]
 transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, -82.8418, 0, 198.013 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://Models/Street light.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Textures/rightsidewalk.tres" type="Material" id=2]
@@ -32,6 +32,7 @@
 [ext_resource path="res://FailMenu/Retry_Hover.png" type="Texture" id=30]
 [ext_resource path="res://PauseMenuNewIcons/1x/ResumeNormal.png" type="Texture" id=31]
 [ext_resource path="res://Textures/AllSky_Night_MoonBurst Equirect.png" type="Texture" id=32]
+[ext_resource path="res://Models/bridge.tscn" type="PackedScene" id=33]
 
 [sub_resource type="SpatialMaterial" id=1]
 params_cull_mode = 2
@@ -432,7 +433,7 @@ visible = false
 transform = Transform( 4.96567, 0, 0, 0, 0.733712, 0, 0, 0, 4, 37.9917, 6.33542, -30.9864 )
 
 [node name="Finsihed" type="Area" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 572.1, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 939.6, 0, 0 )
 script = ExtResource( 4 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Finsihed"]
@@ -500,6 +501,250 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 493.297, 5.331, -10.5491 )
 
 [node name="SpotLight" parent="Street light10" index="1"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.93113, 8.23941 )
+
+[node name="bridge" parent="." instance=ExtResource( 33 )]
+transform = Transform( -2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 676.076, 1.75385, 0.876314 )
+
+[node name="OmniLight" type="OmniLight" parent="bridge"]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 15, 2.427, -227.53 )
+light_color = Color( 0.992188, 0.0232544, 0.0232544, 1 )
+light_energy = 16.0
+
+[node name="OmniLight2" type="OmniLight" parent="bridge"]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 15, 2.427, -207.53 )
+light_color = Color( 1, 0.72549, 0, 1 )
+light_energy = 16.0
+
+[node name="OmniLight3" type="OmniLight" parent="bridge"]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 15, 2.427, -187.53 )
+light_color = Color( 0.964706, 0.94902, 0, 1 )
+light_energy = 16.0
+
+[node name="OmniLight4" type="OmniLight" parent="bridge"]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 15, 2.427, -167.53 )
+light_color = Color( 0.14902, 0.772549, 0.0784314, 1 )
+light_energy = 16.0
+
+[node name="OmniLight5" type="OmniLight" parent="bridge"]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 15, 2.427, -147.53 )
+light_color = Color( 0.0509804, 0.439216, 0.811765, 1 )
+light_energy = 16.0
+
+[node name="OmniLight6" type="OmniLight" parent="bridge"]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 15, 2.427, -127.53 )
+light_color = Color( 0.85098, 0, 1, 1 )
+light_energy = 16.0
+
+[node name="OmniLight7" type="OmniLight" parent="bridge"]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 15, 2.427, -107.53 )
+light_color = Color( 0.992188, 0.0232544, 0.0232544, 1 )
+light_energy = 16.0
+
+[node name="OmniLight8" type="OmniLight" parent="bridge"]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 15, 2.427, -87.5297 )
+light_color = Color( 1, 0.72549, 0, 1 )
+light_energy = 16.0
+
+[node name="OmniLight9" type="OmniLight" parent="bridge"]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 15, 2.427, -67.5297 )
+light_color = Color( 0.964706, 0.94902, 0, 1 )
+light_energy = 16.0
+
+[node name="OmniLight10" type="OmniLight" parent="bridge"]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 15, 2.427, -47.5297 )
+light_color = Color( 0.14902, 0.772549, 0.0784314, 1 )
+light_energy = 16.0
+
+[node name="OmniLight11" type="OmniLight" parent="bridge"]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 15, 2.427, -27.5297 )
+light_color = Color( 0.0509804, 0.439216, 0.811765, 1 )
+light_energy = 16.0
+
+[node name="OmniLight12" type="OmniLight" parent="bridge"]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 15, 2.427, -7.52966 )
+light_color = Color( 0.85098, 0, 1, 1 )
+light_energy = 16.0
+
+[node name="OmniLight13" type="OmniLight" parent="bridge"]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 15, 2.427, 12.4703 )
+light_color = Color( 0.992188, 0.0232544, 0.0232544, 1 )
+light_energy = 16.0
+
+[node name="OmniLight14" type="OmniLight" parent="bridge"]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 15, 2.427, 32.4703 )
+light_color = Color( 1, 0.72549, 0, 1 )
+light_energy = 16.0
+
+[node name="OmniLight15" type="OmniLight" parent="bridge"]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 15, 2.427, 52.4703 )
+light_color = Color( 0.964706, 0.94902, 0, 1 )
+light_energy = 16.0
+
+[node name="OmniLight16" type="OmniLight" parent="bridge"]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 15, 2.427, 72.4703 )
+light_color = Color( 0.14902, 0.772549, 0.0784314, 1 )
+light_energy = 16.0
+
+[node name="OmniLight17" type="OmniLight" parent="bridge"]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 15, 2.427, 92.4703 )
+light_color = Color( 0.0509804, 0.439216, 0.811765, 1 )
+light_energy = 16.0
+
+[node name="OmniLight18" type="OmniLight" parent="bridge"]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 15, 2.427, 112.47 )
+light_color = Color( 0.85098, 0, 1, 1 )
+light_energy = 16.0
+
+[node name="OmniLight19" type="OmniLight" parent="bridge"]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 15, 2.427, 132.47 )
+light_color = Color( 0.992188, 0.0232544, 0.0232544, 1 )
+light_energy = 16.0
+
+[node name="OmniLight20" type="OmniLight" parent="bridge"]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 15, 2.427, 152.47 )
+light_color = Color( 1, 0.72549, 0, 1 )
+light_energy = 16.0
+
+[node name="OmniLight21" type="OmniLight" parent="bridge"]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 15, 2.427, 172.47 )
+light_color = Color( 0.964706, 0.94902, 0, 1 )
+light_energy = 16.0
+
+[node name="OmniLight22" type="OmniLight" parent="bridge"]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 15, 2.427, 192.47 )
+light_color = Color( 0.14902, 0.772549, 0.0784314, 1 )
+light_energy = 16.0
+
+[node name="OmniLight23" type="OmniLight" parent="bridge"]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 15, 2.427, 212.47 )
+light_color = Color( 0.0509804, 0.439216, 0.811765, 1 )
+light_energy = 16.0
+
+[node name="OmniLight24" type="OmniLight" parent="bridge"]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 15, 2.427, 232.47 )
+light_color = Color( 0.85098, 0, 1, 1 )
+light_energy = 16.0
+
+[node name="OmniLight25" type="OmniLight" parent="bridge"]
+transform = Transform( -2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, -14.8, 2.427, 232.47 )
+light_color = Color( 0.992188, 0.0232544, 0.0232544, 1 )
+light_energy = 16.0
+
+[node name="OmniLight26" type="OmniLight" parent="bridge"]
+transform = Transform( -2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, -14.8, 2.427, 212.47 )
+light_color = Color( 1, 0.72549, 0, 1 )
+light_energy = 16.0
+
+[node name="OmniLight27" type="OmniLight" parent="bridge"]
+transform = Transform( -2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, -14.8, 2.427, 192.47 )
+light_color = Color( 0.964706, 0.94902, 0, 1 )
+light_energy = 16.0
+
+[node name="OmniLight28" type="OmniLight" parent="bridge"]
+transform = Transform( -2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, -14.8, 2.427, 172.47 )
+light_color = Color( 0.14902, 0.772549, 0.0784314, 1 )
+light_energy = 16.0
+
+[node name="OmniLight29" type="OmniLight" parent="bridge"]
+transform = Transform( -2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, -14.8, 2.427, 152.47 )
+light_color = Color( 0.0509804, 0.439216, 0.811765, 1 )
+light_energy = 16.0
+
+[node name="OmniLight30" type="OmniLight" parent="bridge"]
+transform = Transform( -2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, -14.8, 2.427, 132.47 )
+light_color = Color( 0.85098, 0, 1, 1 )
+light_energy = 16.0
+
+[node name="OmniLight31" type="OmniLight" parent="bridge"]
+transform = Transform( -2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, -14.8, 2.427, 112.47 )
+light_color = Color( 0.992188, 0.0232544, 0.0232544, 1 )
+light_energy = 16.0
+
+[node name="OmniLight32" type="OmniLight" parent="bridge"]
+transform = Transform( -2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, -14.8, 2.427, 92.4703 )
+light_color = Color( 1, 0.72549, 0, 1 )
+light_energy = 16.0
+
+[node name="OmniLight33" type="OmniLight" parent="bridge"]
+transform = Transform( -2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, -14.8, 2.427, 72.4703 )
+light_color = Color( 0.964706, 0.94902, 0, 1 )
+light_energy = 16.0
+
+[node name="OmniLight34" type="OmniLight" parent="bridge"]
+transform = Transform( -2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, -14.8, 2.427, 52.4703 )
+light_color = Color( 0.14902, 0.772549, 0.0784314, 1 )
+light_energy = 16.0
+
+[node name="OmniLight35" type="OmniLight" parent="bridge"]
+transform = Transform( -2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, -14.8, 2.427, 32.4703 )
+light_color = Color( 0.0509804, 0.439216, 0.811765, 1 )
+light_energy = 16.0
+
+[node name="OmniLight36" type="OmniLight" parent="bridge"]
+transform = Transform( -2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, -14.8, 2.427, 12.4703 )
+light_color = Color( 0.85098, 0, 1, 1 )
+light_energy = 16.0
+
+[node name="OmniLight37" type="OmniLight" parent="bridge"]
+transform = Transform( -2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, -14.8, 2.427, -7.52966 )
+light_color = Color( 0.992188, 0.0232544, 0.0232544, 1 )
+light_energy = 16.0
+
+[node name="OmniLight38" type="OmniLight" parent="bridge"]
+transform = Transform( -2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, -14.8, 2.427, -27.5297 )
+light_color = Color( 1, 0.72549, 0, 1 )
+light_energy = 16.0
+
+[node name="OmniLight39" type="OmniLight" parent="bridge"]
+transform = Transform( -2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, -14.8, 2.427, -47.5297 )
+light_color = Color( 0.964706, 0.94902, 0, 1 )
+light_energy = 16.0
+
+[node name="OmniLight40" type="OmniLight" parent="bridge"]
+transform = Transform( -2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, -14.8, 2.427, -67.5297 )
+light_color = Color( 0.14902, 0.772549, 0.0784314, 1 )
+light_energy = 16.0
+
+[node name="OmniLight41" type="OmniLight" parent="bridge"]
+transform = Transform( -2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, -14.8, 2.427, -87.5297 )
+light_color = Color( 0.0509804, 0.439216, 0.811765, 1 )
+light_energy = 16.0
+
+[node name="OmniLight42" type="OmniLight" parent="bridge"]
+transform = Transform( -2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, -14.8, 2.427, -107.53 )
+light_color = Color( 0.85098, 0, 1, 1 )
+light_energy = 16.0
+
+[node name="OmniLight43" type="OmniLight" parent="bridge"]
+transform = Transform( -2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, -14.8, 2.427, -127.53 )
+light_color = Color( 0.992188, 0.0232544, 0.0232544, 1 )
+light_energy = 16.0
+
+[node name="OmniLight44" type="OmniLight" parent="bridge"]
+transform = Transform( -2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, -14.8, 2.427, -147.53 )
+light_color = Color( 1, 0.72549, 0, 1 )
+light_energy = 16.0
+
+[node name="OmniLight45" type="OmniLight" parent="bridge"]
+transform = Transform( -2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, -14.8, 2.427, -167.53 )
+light_color = Color( 0.964706, 0.94902, 0, 1 )
+light_energy = 16.0
+
+[node name="OmniLight46" type="OmniLight" parent="bridge"]
+transform = Transform( -2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, -14.8, 2.427, -187.53 )
+light_color = Color( 0.14902, 0.772549, 0.0784314, 1 )
+light_energy = 16.0
+
+[node name="OmniLight47" type="OmniLight" parent="bridge"]
+transform = Transform( -2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, -14.8, 2.427, -207.53 )
+light_color = Color( 0.0509804, 0.439216, 0.811765, 1 )
+light_energy = 16.0
+
+[node name="OmniLight48" type="OmniLight" parent="bridge"]
+transform = Transform( -2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, -14.8, 2.427, -227.53 )
+light_color = Color( 0.85098, 0, 1, 1 )
+light_energy = 16.0
+
 [connection signal="pressed" from="Pause/MainMenu/MenuButton" to="Pause" method="_on_MenuButton_pressed"]
 [connection signal="pressed" from="Pause/MainMenu/SettingsButton" to="Pause" method="_on_SettingsButton_pressed"]
 [connection signal="pressed" from="Pause/MainMenu/ResumeButton" to="Pause" method="_on_ResumeButton_pressed"]
@@ -508,25 +753,14 @@ transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.93
 [connection signal="body_entered" from="Finsihed" to="Finsihed" method="_on_Finsihed_body_entered"]
 
 [editable path="Node2D/Viewport/Speedometer(3)"]
-
 [editable path="Buildings"]
-
 [editable path="Street light"]
-
 [editable path="Street light2"]
-
 [editable path="Street light3"]
-
 [editable path="Street light4"]
-
 [editable path="Street light5"]
-
 [editable path="Street light6"]
-
 [editable path="Street light7"]
-
 [editable path="Street light8"]
-
 [editable path="Street light9"]
-
 [editable path="Street light10"]
