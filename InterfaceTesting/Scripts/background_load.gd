@@ -43,7 +43,7 @@ func _thread_done(resource):
 	thread.wait_to_finish()
 	
 	# Hide the progress bar.
-	progress.hide()
+#	progress.hide()
 	
 	# Instantiate new scene.
 	var new_scene = resource.instance()
@@ -61,11 +61,11 @@ func load_scene(path):
 	thread = Thread.new()
 	thread.start( self, "_thread_load", path)
 	raise() # Show on top.
-	show()
-	print("loading")
-	if "Mine" in PlayerData.player.currentLevel:
-		$Progress/background.hide()
-		$Progress/backgroundMine.show()
-	elif "City" in PlayerData.player.currentLevel:
-		$Progress/background.show()
-		$Progress/backgroundMine.hide()
+#	show()
+#	print("loading")
+#	if "Mine" in PlayerData.player.currentLevel:
+#		$Progress/background.hide()
+#		$Progress/backgroundMine.show()
+#	elif "City" in PlayerData.player.currentLevel:
+#		$Progress/background.show()
+#		$Progress/backgroundMine.hide()

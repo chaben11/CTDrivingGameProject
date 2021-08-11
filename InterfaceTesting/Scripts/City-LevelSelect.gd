@@ -9,6 +9,7 @@ extends Control
 func _ready():
 	$"Level 2".disabled = true
 	$"Level 3".disabled = true
+	$LoadingIcon.hide()
 
 func _process(delta):
 
@@ -36,17 +37,20 @@ func _process(delta):
 func _on_Level_1_pressed():
 	PlayerData.player.currentLevel = "Citylevel1"
 	background_load.load_scene("res://Scenes/Levels/City/City-Level 1.tscn")
-
+	$LoadingIcon.show()
+	$LoadingIcon.play()
 func _on_Level_2_pressed():
 	PlayerData.player.currentLevel = "Citylevel2"
 	background_load.load_scene("res://Scenes/Levels/City/City-Level 2.tscn")
-
+	$LoadingIcon.show()
+	$LoadingIcon.play()
 
 
 func _on_Level_3_pressed():
 	PlayerData.player.currentLevel = "Citylevel3"
 	background_load.load_scene("res://Scenes/Levels/City/City-Level 2.tscn")
-
+	$LoadingIcon.show()
+	$LoadingIcon.play()
 
 func _on_Level_4_pressed():
 	pass # Replace with function body.
