@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://Textures/sidewalkgrasstogether.tres" type="ArrayMesh" id=1]
 [ext_resource path="res://Models/intersection X (2).tres" type="ArrayMesh" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://Models/bridge.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Paused.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Models/traffic light1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Truck.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Truck.gd" type="Script" id=8]
 [ext_resource path="res://2x/Sidewalkgrass_type4@2x.png" type="Texture" id=9]
 [ext_resource path="res://2x/sudewalkgrass_type3@2x.png" type="Texture" id=12]
 [ext_resource path="res://Textures/rightsidewalk.tres" type="Material" id=17]
@@ -620,10 +622,15 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 837.126, 4, -13.9332 )
 [node name="traffic light5" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1015.13, 4, -13.9332 )
 
+[node name="EnemyTruck" parent="." instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 93.8, 0, -19.3907 )
+script = ExtResource( 8 )
+
+[node name="AnimationPlayer" parent="EnemyTruck/EnemyTruck" index="2"]
+playback_speed = 1.5
+
 [editable path="Paused"]
-
 [editable path="Node2D/Viewport/Speedometer(3)"]
-
 [editable path="Buildings"]
-
 [editable path="Buildings2"]
+[editable path="EnemyTruck"]

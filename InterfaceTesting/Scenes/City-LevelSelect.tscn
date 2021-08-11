@@ -215,6 +215,7 @@ scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 1 )
 animation = "New Anim"
 speed_scale = 4.0
+
 [connection signal="pressed" from="Level 1" to="." method="_on_Level_1_pressed"]
 [connection signal="pressed" from="Level 2" to="." method="_on_Level_2_pressed"]
 [connection signal="pressed" from="Level 3" to="." method="_on_Level_3_pressed"]
