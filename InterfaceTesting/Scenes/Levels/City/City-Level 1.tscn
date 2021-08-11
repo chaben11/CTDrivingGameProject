@@ -623,14 +623,27 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 837.126, 4, -13.9332 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1015.13, 4, -13.9332 )
 
 [node name="EnemyTruck" parent="." instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 93.8, 0, -19.3907 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 165.8, 0, -19.3907 )
 script = ExtResource( 8 )
 
-[node name="AnimationPlayer" parent="EnemyTruck/EnemyTruck" index="2"]
+[node name="EnemyTruck" parent="EnemyTruck" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 18.5319 )
+
+[node name="ArmyTruck" parent="EnemyTruck/EnemyTruck" index="0"]
+transform = Transform( 2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, -1.29633, -1.49453, -4 )
+
+[node name="TruckMesh" parent="EnemyTruck/EnemyTruck" index="1"]
+transform = Transform( 2.5, 0, 0, 0, 2.5, 0, 0, 0, 10, -0.114624, 3, -0.0874844 )
+
+[node name="AnimationPlayer" parent="EnemyTruck/EnemyTruck" index="3"]
 playback_speed = 1.5
 
 [editable path="Paused"]
+
 [editable path="Node2D/Viewport/Speedometer(3)"]
+
 [editable path="Buildings"]
+
 [editable path="Buildings2"]
+
 [editable path="EnemyTruck"]
