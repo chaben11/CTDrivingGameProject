@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/ArmyTruck.glb-d2970a329f42be6e4d238b4f33ce8a28.scn"
+path="res://.import/SignCity.glb-137f65c7cb53c69c492e30a5b18f98e7.scn"
 
 [deps]
 
-source_file="res://Models/ArmyTruck.glb"
-dest_files=[ "res://.import/ArmyTruck.glb-d2970a329f42be6e4d238b4f33ce8a28.scn" ]
+source_file="res://Models/SignCity.glb"
+dest_files=[ "res://.import/SignCity.glb-137f65c7cb53c69c492e30a5b18f98e7.scn" ]
 
 [params]
 
@@ -16,7 +16,7 @@ nodes/root_name="Scene Root"
 nodes/root_scale=1.0
 nodes/custom_script=""
 nodes/storage=0
-nodes/use_legacy_names=true
+nodes/use_legacy_names=false
 materials/location=1
 materials/storage=1
 materials/keep_on_reimport=true
