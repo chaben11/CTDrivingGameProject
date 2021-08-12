@@ -1,8 +1,8 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Models/Selection/Limo Selection.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Animations/Garage/UI/VEHICLELOCKED.png" type="Texture" id=2]
-[ext_resource path="res://Textures/greater-than-sign-icon-36393.png" type="Texture" id=3]
+[ext_resource path="res://DigitalTechMenu/GarageLabels/Asset 77.png" type="Texture" id=3]
 [ext_resource path="res://Models/Podium.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scripts/Garage.gd" type="Script" id=5]
 [ext_resource path="res://Models/Selection/6x6-Selection.tscn" type="PackedScene" id=6]
@@ -24,6 +24,14 @@
 [ext_resource path="res://DigitalTechMenu/GarageLabels/6x6_label_tick.png" type="Texture" id=22]
 [ext_resource path="res://DigitalTechMenu/GarageLabels/Nissian_label_untick.png" type="Texture" id=23]
 [ext_resource path="res://DigitalTechMenu/GarageLabels/Suv_label_tick.png" type="Texture" id=24]
+[ext_resource path="res://DigitalTechMenu/GarageLabels/Asset 72.png" type="Texture" id=25]
+[ext_resource path="res://DigitalTechMenu/GarageLabels/Asset 87.png" type="Texture" id=26]
+[ext_resource path="res://DigitalTechMenu/GarageLabels/Asset 75.png" type="Texture" id=27]
+[ext_resource path="res://DigitalTechMenu/GarageLabels/Asset 89.png" type="Texture" id=28]
+[ext_resource path="res://DigitalTechMenu/GarageLabels/Asset 73.png" type="Texture" id=29]
+[ext_resource path="res://DigitalTechMenu/GarageLabels/Asset 74.png" type="Texture" id=30]
+[ext_resource path="res://DigitalTechMenu/GarageLabels/Asset 88.png" type="Texture" id=31]
+[ext_resource path="res://DigitalTechMenu/GarageLabels/Asset 90.png" type="Texture" id=32]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -69,45 +77,46 @@ playback_speed = 2.5
 wait_time = 2.0
 
 [node name="Selection" parent="." instance=ExtResource( 7 )]
-position = Vector2( 522.067, 534.539 )
+position = Vector2( 518.844, 100.691 )
 script = ExtResource( 10 )
 
-[node name="Loadscene" type="Button" parent="."]
-margin_left = 379.523
-margin_top = 16.0362
-margin_right = 471.523
-margin_bottom = 36.0362
-text = "LOAD SCENE"
+[node name="Loadscene" type="TextureButton" parent="."]
+margin_left = 464.287
+margin_top = 471.943
+margin_right = 680.287
+margin_bottom = 677.943
+rect_scale = Vector2( 0.5, 0.5 )
+texture_normal = ExtResource( 25 )
+texture_pressed = ExtResource( 26 )
+texture_hover = ExtResource( 27 )
+texture_disabled = ExtResource( 32 )
 script = ExtResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="VEHICLELOCKED" type="Sprite" parent="Loadscene"]
-position = Vector2( 67.3627, 129.231 )
-scale = Vector2( 0.5, 0.5 )
+position = Vector2( 146.191, -723.308 )
 texture = ExtResource( 2 )
 
-[node name="next" type="Button" parent="."]
-margin_left = 893.023
-margin_top = 486.652
-margin_right = 1248.02
-margin_bottom = 844.652
-rect_scale = Vector2( 0.25, 0.25 )
-icon = ExtResource( 3 )
-flat = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="next" type="TextureButton" parent="."]
+margin_left = 863.922
+margin_top = 471.943
+margin_right = 1079.92
+margin_bottom = 677.943
+rect_scale = Vector2( 0.5, 0.5 )
+texture_normal = ExtResource( 30 )
+texture_pressed = ExtResource( 28 )
+texture_hover = ExtResource( 3 )
 
-[node name="Previous" type="Button" parent="."]
-margin_left = 116.52
-margin_top = 486.652
-margin_right = 471.52
-margin_bottom = 844.652
-rect_scale = Vector2( -0.25, 0.25 )
-icon = ExtResource( 3 )
-flat = true
+[node name="Previous" type="TextureButton" parent="."]
+margin_left = 52.3844
+margin_top = 471.943
+margin_right = 268.384
+margin_bottom = 677.943
+rect_scale = Vector2( 0.5, 0.5 )
+texture_normal = ExtResource( 29 )
+texture_pressed = ExtResource( 31 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -223,15 +232,19 @@ texture = ExtResource( 20 )
 [node name="Nissian_label_untick" type="Sprite" parent="Labels/nissianinfo"]
 visible = false
 texture = ExtResource( 23 )
-
 [connection signal="timeout" from="ChangingVehicles" to="." method="_on_ChangingVehicles_timeout"]
 [connection signal="pressed" from="Loadscene" to="Loadscene" method="_on_Loadscene_pressed"]
 [connection signal="pressed" from="next" to="." method="_on_next_pressed"]
 [connection signal="pressed" from="Previous" to="." method="_on_Previous_pressed"]
 
 [editable path="SUV"]
+
 [editable path="SportsCar"]
+
 [editable path="SixbySix"]
+
 [editable path="Nissian"]
+
 [editable path="BMW"]
+
 [editable path="Limo"]
