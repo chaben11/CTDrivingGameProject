@@ -232,19 +232,15 @@ texture = ExtResource( 20 )
 [node name="Nissian_label_untick" type="Sprite" parent="Labels/nissianinfo"]
 visible = false
 texture = ExtResource( 23 )
+
 [connection signal="timeout" from="ChangingVehicles" to="." method="_on_ChangingVehicles_timeout"]
 [connection signal="pressed" from="Loadscene" to="Loadscene" method="_on_Loadscene_pressed"]
 [connection signal="pressed" from="next" to="." method="_on_next_pressed"]
 [connection signal="pressed" from="Previous" to="." method="_on_Previous_pressed"]
 
 [editable path="SUV"]
-
 [editable path="SportsCar"]
-
 [editable path="SixbySix"]
-
 [editable path="Nissian"]
-
 [editable path="BMW"]
-
 [editable path="Limo"]

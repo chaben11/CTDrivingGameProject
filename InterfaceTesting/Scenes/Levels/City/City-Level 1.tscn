@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://Textures/sidewalkgrasstogether.tres" type="ArrayMesh" id=1]
 [ext_resource path="res://Models/intersection X (2).tres" type="ArrayMesh" id=2]
@@ -10,7 +10,6 @@
 [ext_resource path="res://Truck.gd" type="Script" id=8]
 [ext_resource path="res://2x/Sidewalkgrass_type4@2x.png" type="Texture" id=9]
 [ext_resource path="res://Models/SignCity.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Models/SignCityEnter.tscn" type="PackedScene" id=11]
 [ext_resource path="res://2x/sudewalkgrass_type3@2x.png" type="Texture" id=12]
 [ext_resource path="res://Textures/rightsidewalk.tres" type="Material" id=17]
 [ext_resource path="res://Scenes/Floortest.tscn" type="PackedScene" id=19]
@@ -433,7 +432,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 408.748, 2, -47.202 )
 EnemySpeed = 3.35
 
 [node name="Floortest" parent="." instance=ExtResource( 19 )]
-transform = Transform( 1000, 0, 0, 0, 1, 0, 0, 0, 10, 920.8, -0.5, 0 )
+transform = Transform( 1000, 0, 0, 0, 1, 0, 0, 0, 10, 919.031, -0.5, -0.136108 )
 
 [node name="Enemy3" parent="." instance=ExtResource( 20 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 408.339, 2, -21.702 )
@@ -627,9 +626,6 @@ transform = Transform( 4.96567, 0, 0, 0, 0.733712, 0, 0, 0, 4, 41.4672, 4.93642,
 [node name="Finsihed" parent="." instance=ExtResource( 31 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1238.8, 0, 0 )
 
-[node name="ReverseLimit" parent="." instance=ExtResource( 32 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 20, -19.2216, 1.02248, 0 )
-
 [node name="DirectionalLight2" type="DirectionalLight" parent="."]
 transform = Transform( -0.917359, 6.83486e-08, -0.398061, -0.258652, 0.760122, 0.596082, 0.302575, 0.64978, -0.697305, 619.3, 52.8354, -57.4725 )
 
@@ -742,11 +738,11 @@ transform = Transform( 2.5, 0, 0, 0, 2.5, 0, 0, 0, 10, -0.114624, 3, -0.0874844 
 playback_speed = 1.5
 anims/TruckMovement = SubResource( 19 )
 
-[node name="SignCityEnter" parent="." instance=ExtResource( 11 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14.6086 )
-
 [node name="SignCity" parent="." instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1182.17, 0.082983, -14.3608 )
+
+[node name="ReverseLimit" parent="." instance=ExtResource( 32 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 20, -36.9216, 1.02248, 0 )
 
 [editable path="Paused"]
 [editable path="Node2D/Viewport/Speedometer(3)"]
