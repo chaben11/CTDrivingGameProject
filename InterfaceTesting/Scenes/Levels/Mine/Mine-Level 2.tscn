@@ -155,7 +155,7 @@ mesh = ExtResource( 25 )
 material/0 = null
 
 [node name="MeshInstance12" type="MeshInstance" parent="Roads"]
-transform = Transform( 50.7004, 0, 0, 0, 1, 0, 0, 0, 2, 464.122, -0.167, -29.601 )
+transform = Transform( 57, 0, 0, 0, 1, 0, 0, 0, 2, 464.122, -0.167, -29.601 )
 mesh = ExtResource( 25 )
 material/0 = null
 
@@ -204,6 +204,16 @@ transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 4.22419, -0.167, -29.8438 )
 mesh = ExtResource( 25 )
 material/0 = null
 
+[node name="MeshInstance16" type="MeshInstance" parent="Roads"]
+transform = Transform( 5.86471, 0, -1.61994, 0, 1, 0, 8.0997, 0, 1.17294, 963.926, -0.167, -44.2167 )
+mesh = ExtResource( 25 )
+material/0 = null
+
+[node name="MeshInstance17" type="MeshInstance" parent="Roads"]
+transform = Transform( 5.86471, 0, -1.61994, 0, 1, 0, 8.0997, 0, 1.17294, 1205.03, -0.167, -44.2167 )
+mesh = ExtResource( 25 )
+material/0 = null
+
 [node name="Spatial" type="Spatial" parent="."]
 transform = Transform( 10, 0, 0, 0, 25, 0, 0, 0, 10, 84, -6.898, -29.777 )
 
@@ -232,7 +242,7 @@ transform = Transform( -0.917359, -1.36697e-08, -0.39806, -0.258652, 0.760122, 0
 transform = Transform( 1000, 0, 0, 0, 1, 0, 0, 0, 10, 920.8, -0.5, 0 )
 
 [node name="Finsihed" parent="." instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 879.5, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1575.3, 0, 0 )
 
 [node name="catr 325c digger" parent="." instance=ExtResource( 6 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 0.8, 0, -1, 0, -4.37114e-08, 31.7601, 0.784, -19.525 )
@@ -319,13 +329,42 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.63525, 1.83264, -0.0831604 )
 
 [node name="Paused" parent="." instance=ExtResource( 9 )]
 
+[node name="Sand dunes Joined9" parent="." instance=ExtResource( 3 )]
+transform = Transform( -0.809048, 0, -0.587743, 0, 1, 0, 0.587743, 0, -0.809048, 789.579, 0.117393, -206.481 )
+
+[node name="Sand dunes Joined10" parent="." instance=ExtResource( 3 )]
+transform = Transform( -0.809048, 0, -0.587743, 0, 1, 0, 0.587743, 0, -0.809048, 884.522, 0.117393, -193.37 )
+
+[node name="Sand dunes Joined11" parent="." instance=ExtResource( 3 )]
+transform = Transform( -0.809048, 0, -0.587743, 0, 1, 0, 0.587743, 0, -0.809048, 1020.98, 0.117393, -206.481 )
+
+[node name="Sand dunes Joined12" parent="." instance=ExtResource( 3 )]
+transform = Transform( -0.809048, 0, -0.587743, 0, 1, 0, 0.587743, 0, -0.809048, 1115.92, 0.117393, -193.37 )
+
+[node name="Enemy3" parent="." instance=ExtResource( 11 )]
+transform = Transform( 0.797057, 0, 0.603904, 0, 1, 0, -0.603904, 0, 0.797057, 968.262, 2.72409, -24.1007 )
+EnemySpeed = 0.5
+
+[node name="Enemy4" parent="." instance=ExtResource( 11 )]
+transform = Transform( 0.797057, 0, 0.603904, 0, 1, 0, -0.603904, 0, 0.797057, 1213.56, 2.72409, -24.1007 )
+EnemySpeed = 0.5
+
 [editable path="Node2D/Viewport/Speedometer(3)"]
+
 [editable path="Finsihed"]
+
 [editable path="catr 325c digger"]
+
 [editable path="catr 325c digger3"]
+
 [editable path="catr 325c digger4"]
+
 [editable path="catr 325c digger2"]
+
 [editable path="Enemy"]
+
 [editable path="Enemy/Enemy2/NISSAN NAVARA red-SOLID"]
+
 [editable path="Enemy2"]
+
 [editable path="Enemy2/Enemy2/NISSAN NAVARA red-SOLID"]

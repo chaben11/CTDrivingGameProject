@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://DigitalTechMenu/Buttons/1x/Mine-Level1-Select.png" type="Texture" id=1]
 [ext_resource path="res://DigitalTechMenu/Buttons/1x/Mine-Level3-Normal.png" type="Texture" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://DigitalTechMenu/Buttons/1x/Mine-Level2-Disabled.png" type="Texture" id=14]
 [ext_resource path="res://DigitalTechMenu/Buttons/1x/Mine-Level2-Hover.png" type="Texture" id=15]
 [ext_resource path="res://Scripts/Mine-LevelSelect.gd" type="Script" id=16]
+[ext_resource path="res://LoadingIcon.tscn" type="PackedScene" id=17]
 
 [node name="Mine-LevelSelect" type="Control"]
 anchor_right = 1.0
@@ -79,6 +80,8 @@ texture_hover = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="LoadingIcon" parent="." instance=ExtResource( 17 )]
 
 [connection signal="pressed" from="Level 1" to="." method="_on_Level_1_pressed"]
 [connection signal="pressed" from="Level 2" to="." method="_on_Level_2_pressed"]

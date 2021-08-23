@@ -1,8 +1,8 @@
-[gd_scene load_steps=49 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Models/Street light.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Textures/rightsidewalk.tres" type="Material" id=2]
-[ext_resource path="res://Taxiphysics/Failed.gd" type="Script" id=3]
+[ext_resource path="res://Paused.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scripts/LevelFinsihed.gd" type="Script" id=4]
 [ext_resource path="res://Scripts/LoadingData.gd" type="Script" id=5]
 [ext_resource path="res://Models/intersection X (2).tres" type="ArrayMesh" id=6]
@@ -13,24 +13,11 @@
 [ext_resource path="res://Scenes/Floortest.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/LevelCompleted.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Textures/roadmesh.tscn" type="PackedScene" id=13]
-[ext_resource path="res://DigitalTechMenu/SettingsButton.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Models/Speedometer(3).tscn" type="PackedScene" id=15]
 [ext_resource path="res://Models/Enemy2.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Models/Buildings.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Taxiphysics/Pause.gd" type="Script" id=18]
-[ext_resource path="res://FailMenu/Retry_Select.png" type="Texture" id=19]
-[ext_resource path="res://PauseMenuNewIcons/1x/Asset 24.png" type="Texture" id=20]
 [ext_resource path="res://2x/Sidewalkgrass_type4@2x.png" type="Texture" id=21]
-[ext_resource path="res://PauseMenu/1x/Asset 12.png" type="Texture" id=22]
-[ext_resource path="res://PauseMenuNewIcons/1x/ResumePressed.png" type="Texture" id=23]
-[ext_resource path="res://PauseMenuNewIcons/1x/Asset 26.png" type="Texture" id=24]
-[ext_resource path="res://PauseMenuNewIcons/1x/ResumeHover.png" type="Texture" id=25]
-[ext_resource path="res://FailMenu/GameOverScreen.png" type="Texture" id=26]
-[ext_resource path="res://PauseMenuNewIcons/1x/Asset 25.png" type="Texture" id=27]
 [ext_resource path="res://2x/sudewalkgrass_type3@2x.png" type="Texture" id=28]
-[ext_resource path="res://FailMenu/Retry_Normal.png" type="Texture" id=29]
-[ext_resource path="res://FailMenu/Retry_Hover.png" type="Texture" id=30]
-[ext_resource path="res://PauseMenuNewIcons/1x/ResumeNormal.png" type="Texture" id=31]
 [ext_resource path="res://Textures/AllSky_Night_MoonBurst Equirect.png" type="Texture" id=32]
 [ext_resource path="res://Models/bridge.tscn" type="PackedScene" id=33]
 
@@ -267,86 +254,7 @@ transform = Transform( 10, 0, 0, 0, 25, 0, 0, 0, 10, 84, -6.898, -29.777 )
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 13 )
 
-[node name="Pause" type="Control" parent="."]
-pause_mode = 2
-margin_right = 1024.0
-margin_bottom = 600.0
-script = ExtResource( 18 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="MainMenu" type="Sprite" parent="Pause"]
-modulate = Color( 1, 1, 1, 0.721569 )
-position = Vector2( 512, 300 )
-texture = ExtResource( 22 )
-
-[node name="MenuButton" type="TextureButton" parent="Pause/MainMenu"]
-margin_left = 155.0
-margin_top = -50.0
-margin_right = 350.0
-margin_bottom = 145.0
-shortcut_in_tooltip = false
-texture_normal = ExtResource( 27 )
-texture_pressed = ExtResource( 24 )
-texture_hover = ExtResource( 20 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="SettingsButton" parent="Pause/MainMenu" instance=ExtResource( 14 )]
-
-[node name="ResumeButton" type="TextureButton" parent="Pause/MainMenu"]
-margin_left = -340.0
-margin_top = -50.0
-margin_right = -145.0
-margin_bottom = 145.0
-texture_normal = ExtResource( 31 )
-texture_pressed = ExtResource( 23 )
-texture_hover = ExtResource( 25 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Failed" type="Control" parent="."]
-pause_mode = 2
-margin_right = 1024.0
-margin_bottom = 600.0
-script = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="MainMenu" type="Sprite" parent="Failed"]
-visible = false
-modulate = Color( 1, 1, 1, 0.721569 )
-position = Vector2( 512, 300 )
-texture = ExtResource( 26 )
-
-[node name="MenuButton" type="TextureButton" parent="Failed/MainMenu"]
-margin_left = 122.928
-margin_top = -50.0
-margin_right = 338.928
-margin_bottom = 156.0
-shortcut_in_tooltip = false
-texture_normal = ExtResource( 27 )
-texture_pressed = ExtResource( 24 )
-texture_hover = ExtResource( 20 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="RetryButton" type="TextureButton" parent="Failed/MainMenu"]
-margin_left = -340.0
-margin_top = -50.0
-margin_right = -145.0
-margin_bottom = 145.0
-texture_normal = ExtResource( 29 )
-texture_pressed = ExtResource( 19 )
-texture_hover = ExtResource( 30 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Paused" parent="." instance=ExtResource( 3 )]
 
 [node name="Node2D" type="Node2D" parent="."]
 
@@ -744,23 +652,28 @@ light_energy = 16.0
 transform = Transform( -2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, -14.8, 2.427, -227.53 )
 light_color = Color( 0.85098, 0, 1, 1 )
 light_energy = 16.0
-
-[connection signal="pressed" from="Pause/MainMenu/MenuButton" to="Pause" method="_on_MenuButton_pressed"]
-[connection signal="pressed" from="Pause/MainMenu/SettingsButton" to="Pause" method="_on_SettingsButton_pressed"]
-[connection signal="pressed" from="Pause/MainMenu/ResumeButton" to="Pause" method="_on_ResumeButton_pressed"]
-[connection signal="pressed" from="Failed/MainMenu/MenuButton" to="Failed" method="_on_MenuButton_pressed"]
-[connection signal="pressed" from="Failed/MainMenu/RetryButton" to="Failed" method="_on_RetryButton_pressed"]
 [connection signal="body_entered" from="Finsihed" to="Finsihed" method="_on_Finsihed_body_entered"]
 
 [editable path="Node2D/Viewport/Speedometer(3)"]
+
 [editable path="Buildings"]
+
 [editable path="Street light"]
+
 [editable path="Street light2"]
+
 [editable path="Street light3"]
+
 [editable path="Street light4"]
+
 [editable path="Street light5"]
+
 [editable path="Street light6"]
+
 [editable path="Street light7"]
+
 [editable path="Street light8"]
+
 [editable path="Street light9"]
+
 [editable path="Street light10"]

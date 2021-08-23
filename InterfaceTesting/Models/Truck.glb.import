@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/SignCity.glb-137f65c7cb53c69c492e30a5b18f98e7.scn"
+path="res://.import/Truck.glb-bf3ac23ece29d8e0dc992de615b9082e.scn"
 
 [deps]
 
-source_file="res://Models/SignCity.glb"
-dest_files=[ "res://.import/SignCity.glb-137f65c7cb53c69c492e30a5b18f98e7.scn" ]
+source_file="res://Models/Truck.glb"
+dest_files=[ "res://.import/Truck.glb-bf3ac23ece29d8e0dc992de615b9082e.scn" ]
 
 [params]
 

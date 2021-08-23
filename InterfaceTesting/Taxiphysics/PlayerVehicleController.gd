@@ -6,6 +6,11 @@ onready var gamefailed = false
 var steer_target = 0
 export var engine_force_value = 250
 signal Gameover
+
+
+func _ready():
+	if garage.car_index == 7:
+		engine_force_value = 10
 func _physics_process(delta):
 	var fwd_mps = transform.basis.xform_inv(linear_velocity).x
 

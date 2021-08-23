@@ -1025,9 +1025,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1568.16, 1.89318, -21.702 )
 [node name="CollisionShape" parent="Enemy8/Enemy" index="2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.30957, 1.46455, 0 )
 
-[node name="CollisionShape" parent="Enemy8/Enemy2" index="1"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.857087, -3.17661 )
-
 [node name="AnimationPlayer" parent="Enemy8" index="2"]
 anims/Both = SubResource( 18 )
 "anims/Left First" = SubResource( 19 )
@@ -1238,7 +1235,7 @@ transform = Transform( 4.96567, 0, 0, 0, 0.733712, 0, 0, 0, 4, -236.386, 6.33542
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1723.02, -0.19281, -9.07081 )
 
 [node name="Finsihed" parent="." instance=ExtResource( 34 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1683.7, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1640.7, 0, 0 )
 
 [node name="BonusStage" type="Area" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1796.52, 0, 0 )
@@ -1252,20 +1249,34 @@ shape = SubResource( 30 )
 
 [node name="bridge" parent="." instance=ExtResource( 2 )]
 transform = Transform( -2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 1053.83, 1.8913, 1.02452 )
-
 [connection signal="body_entered" from="BonusStage" to="BonusStage" method="_on_BonusStage_body_entered"]
 
 [editable path="Node2D/Viewport/Speedometer(3)"]
+
 [editable path="Enemy"]
+
 [editable path="Enemy4"]
+
 [editable path="Enemy4/Enemy2/NISSAN NAVARA red-SOLID"]
+
 [editable path="Enemy5"]
+
+[editable path="Enemy7"]
+
 [editable path="Enemy8"]
+
 [editable path="Enemy8/Enemy2/NISSAN NAVARA red-SOLID"]
+
 [editable path="Enemy9"]
+
 [editable path="Enemy12"]
+
 [editable path="Enemy12/Enemy2/NISSAN NAVARA red-SOLID"]
+
 [editable path="Enemy13"]
+
 [editable path="Buildings_A"]
+
 [editable path="Buildings"]
+
 [editable path="Paused"]

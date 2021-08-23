@@ -37,19 +37,22 @@ func _process(delta):
 func _on_Level_1_pressed():
 	PlayerData.player.currentLevel = "Minelevel1"
 	background_load.load_scene("res://Scenes/Levels/Mine/Mine-Level 1.tscn")
-
+	$LoadingIcon.show()
+	$LoadingIcon.play()
 
 func _on_Level_2_pressed():
 	PlayerData.player.currentLevel = "Minelevel2"
 	background_load.load_scene("res://Scenes/Levels/Mine/Mine-Level 2.tscn")
-
+	$LoadingIcon.show()
+	$LoadingIcon.play()
 	
 
 
 func _on_Level_3_pressed():
 	PlayerData.player.currentLevel = "Minelevel3"
 	background_load.load_scene("res://Scenes/Levels/Mine/Mine-Level 2.tscn")
-
+	$LoadingIcon.show()
+	$LoadingIcon.play()
 
 
 func _on_Level_4_pressed():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Textures/AllSkyFree_Sky_EpicBlueSunset_Equirect.png" type="Texture" id=1]
 [ext_resource path="res://Paused.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Models/Construction site/cat 966l wheel loader.glb" type="PackedScene" id=10]
 [ext_resource path="res://Models/Enemy-Mine.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Models/Construction site/Elevator.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Models/Enemy-Mine2.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Models/Construction site/SideSand.tres" type="ArrayMesh" id=25]
 [ext_resource path="res://Scripts/LoadingData.gd" type="Script" id=27]
 
@@ -81,6 +82,23 @@ tracks/0/keys = {
 "values": [ Vector3( 0, -50, 0 ), Vector3( 0, 180, 0 ) ]
 }
 
+[sub_resource type="Animation" id=15]
+resource_name = "DiggerRotation"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, -50, 0 ), Vector3( 0, 180, 0 ) ]
+}
+
 [sub_resource type="Animation" id=7]
 resource_name = "DiggerRotation"
 length = 2.0
@@ -99,23 +117,6 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=8]
-resource_name = "DiggerRotation"
-length = 2.0
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:rotation_degrees")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector3( 0, -50, 0 ), Vector3( 0, 180, 0 ) ]
-}
-
-[sub_resource type="Animation" id=9]
 resource_name = "DiggerRotation"
 length = 2.0
 loop = true
@@ -188,8 +189,130 @@ tracks/1/keys = {
 "values": [ Vector3( 11, 0, -91 ), Vector3( 11, 0, -91 ), Vector3( 11, 0, 100 ), Vector3( 11, 0, 100 ) ]
 }
 
+[sub_resource type="Animation" id=12]
+resource_name = "Both"
+length = 5.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("Enemy:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.7, 4.6, 5.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, -91 ), Vector3( 0, 0, 200 ), Vector3( 0, 0, 200 ), Vector3( 0, 0, 200 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Enemy2:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2.7, 5.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 11, 0, -91 ), Vector3( 0, 0, 200 ), Vector3( 0, 0, 200 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:AnimationEnd")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 5.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "Left First"
+length = 5.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("Enemy:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.7, 4.6, 5.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, -91 ), Vector3( 0, 0, -91 ), Vector3( 0, 0, 200 ), Vector3( 0, 0, 200 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Enemy2:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2.7, 4.6, 5.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 11, 0, -91 ), Vector3( 0, 0, 200 ), Vector3( 0, 0, 200 ), Vector3( 0, 0, 200 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:AnimationEnd")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 5.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[sub_resource type="Animation" id=14]
+length = 5.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("Enemy:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.7, 4.6, 5.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, -91 ), Vector3( 0, 0, 200 ), Vector3( 0, 0, 200 ), Vector3( 0, 0, 200 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Enemy2:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2.7, 4.6, 5.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 11, 0, -91 ), Vector3( 11, 0, -91 ), Vector3( 0, 0, 200 ), Vector3( 0, 0, 200 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:AnimationEnd")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 5.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
 [node name="Main" type="Spatial"]
 script = ExtResource( 27 )
+
+[node name="Enemy2" parent="." instance=ExtResource( 13 )]
+transform = Transform( 0.644684, 0, -0.764449, 0, 1, 0, 0.764449, 0, 0.644684, 1251.74, 1.1674, -21.702 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 0.716789, 0, -0.69729, 0, 1, 0, 0.69729, 0, 0.716789, -1.515, 9.827, 10.258 )
@@ -259,7 +382,7 @@ mesh = ExtResource( 25 )
 material/0 = null
 
 [node name="MeshInstance13" type="MeshInstance" parent="Roads"]
-transform = Transform( 5.86471, 0, -1.61994, 0, 1, 0, 8.0997, 0, 1.17294, 375.126, -0.167, -44.2167 )
+transform = Transform( 5.86471, 0, -1.61994, 0, 1, 0, 8.0997, 0, 1.17294, 673.084, -0.167, -44.2167 )
 mesh = ExtResource( 25 )
 material/0 = null
 
@@ -274,7 +397,12 @@ mesh = ExtResource( 25 )
 material/0 = null
 
 [node name="MeshInstance16" type="MeshInstance" parent="Roads"]
-transform = Transform( 5.86471, 0, -1.61994, 0, 1, 0, 8.0997, 0, 1.17294, 216.326, -0.167, -44.2167 )
+transform = Transform( 5.86471, 0, -1.61994, 0, 1, 0, 8.0997, 0, 1.17294, 384.657, -0.167, -44.2167 )
+mesh = ExtResource( 25 )
+material/0 = null
+
+[node name="MeshInstance15" type="MeshInstance" parent="Roads"]
+transform = Transform( 5.86471, 0, -1.61994, 0, 1, 0, 8.0997, 0, 1.17294, 1023.74, -0.167, -44.2167 )
 mesh = ExtResource( 25 )
 material/0 = null
 
@@ -300,13 +428,13 @@ transparent_bg = true
 [node name="Speedometer(3)" parent="Node2D/Viewport" instance=ExtResource( 4 )]
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
-transform = Transform( -0.917359, -1.36697e-08, -0.39806, -0.258652, 0.760122, 0.596082, 0.302575, 0.64978, -0.697305, 0, 52.8354, -57.4725 )
+transform = Transform( -0.917359, 6.83486e-08, -0.398061, -0.258652, 0.760122, 0.596082, 0.302575, 0.64978, -0.697305, 0, 52.8354, -57.4725 )
 
 [node name="Floortest" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1000, 0, 0, 0, 1, 0, 0, 0, 10, 920.8, -0.5, 0 )
 
 [node name="Finsihed" parent="." instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 525.183, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1440.43, 0, 0 )
 
 [node name="catr 325c digger" parent="." instance=ExtResource( 7 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 0.8, 0, -1, 0, -4.37114e-08, 31.7601, 0.784, -19.525 )
@@ -342,13 +470,22 @@ transform = Transform( -4.37114e-08, 1, 2.98023e-08, -1, -4.37114e-08, 0, -8.881
 anims/DiggerRotation = SubResource( 5 )
 
 [node name="catr 325c digger8" parent="." instance=ExtResource( 7 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 0.8, 0, -1, 0, -4.37114e-08, 291.463, 0.784, -20.7434 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 0.8, 0, -1, 0, -4.37114e-08, 339.776, 0.784, -20.7434 )
 
 [node name="Digger" parent="catr 325c digger8/Enemy" index="1"]
-transform = Transform( -4.37114e-08, 1, 2.98023e-08, -1, -4.37114e-08, 0, -8.88178e-16, -2.98023e-08, 1, 0, 0, 0 )
+transform = Transform( -4.37114e-08, 1, 2.98023e-08, -1, -4.37114e-08, 0, -4.44089e-15, -2.98023e-08, 1, 0, 0, 0 )
 
 [node name="AnimationPlayer" parent="catr 325c digger8/Enemy" index="2"]
 anims/DiggerRotation = SubResource( 6 )
+
+[node name="catr 325c digger9" parent="." instance=ExtResource( 7 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 0.8, 0, -1, 0, -4.37114e-08, 532.059, 0.784, -20.7434 )
+
+[node name="Digger" parent="catr 325c digger9/Enemy" index="1"]
+transform = Transform( -4.37114e-08, 1, 2.98023e-08, -1, -4.37114e-08, 0, -4.44089e-15, -2.98023e-08, 1, 0, 0, 0 )
+
+[node name="AnimationPlayer" parent="catr 325c digger9/Enemy" index="2"]
+anims/DiggerRotation = SubResource( 15 )
 
 [node name="catr 325c digger10" parent="." instance=ExtResource( 7 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 0.8, 0, -1, 0, -4.37114e-08, 461.98, 0.784, -20.7434 )
@@ -374,18 +511,6 @@ transform = Transform( -4.37114e-08, 1, 2.98023e-08, -1, -4.37114e-08, 0, 8.8817
 [node name="AnimationPlayer" parent="catr 325c digger6/Enemy" index="2"]
 anims/DiggerRotation = SubResource( 8 )
 
-[node name="catr 325c digger7" parent="." instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 0.8, 0, 0, 0, 1, 334.55, 0.784, 14.8194 )
-
-[node name="Enemy" parent="catr 325c digger7" index="0"]
-transform = Transform( 0.642787, 0, -0.766044, 0, 1, 0, 0.766044, 0, 0.642787, 0, 0, 0 )
-
-[node name="Digger" parent="catr 325c digger7/Enemy" index="1"]
-transform = Transform( -4.37114e-08, 1, 2.98023e-08, -1, -4.37114e-08, 0, 1.77636e-15, -2.98023e-08, 1, 0, 0, 0 )
-
-[node name="AnimationPlayer" parent="catr 325c digger7/Enemy" index="2"]
-anims/DiggerRotation = SubResource( 9 )
-
 [node name="Sand dunes Joined" parent="." instance=ExtResource( 9 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -186.468, -0.717361, -20.4165 )
 
@@ -399,32 +524,32 @@ transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 699.933
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 800.333, -0.717361, -13.4837 )
 
 [node name="Sand dunes Joined5" parent="." instance=ExtResource( 9 )]
-transform = Transform( -0.812552, 0, -0.582889, 0, 1, 0, 0.582889, 0, -0.812552, 263.985, -0.717361, -221.615 )
+transform = Transform( -0.812552, 0, -0.582889, 0, 1, 0, 0.582889, 0, -0.812552, 561.943, -0.717361, -221.615 )
 
 [node name="Sand dunes Joined6" parent="." instance=ExtResource( 9 )]
-transform = Transform( -0.812552, 0, -0.582889, 0, 1, 0, 0.582889, 0, -0.812552, 206.801, -0.717361, -206.162 )
+transform = Transform( -0.812552, 0, -0.582889, 0, 1, 0, 0.582889, 0, -0.812552, 504.759, -0.717361, -206.162 )
 
 [node name="Sand dunes Joined7" parent="." instance=ExtResource( 9 )]
-transform = Transform( -0.812552, 0, -0.582889, 0, 1, 0, 0.582889, 0, -0.812552, 105.485, -0.717361, -221.615 )
+transform = Transform( -0.812552, 0, -0.582889, 0, 1, 0, 0.582889, 0, -0.812552, 273.816, -0.717361, -221.615 )
 
 [node name="Sand dunes Joined8" parent="." instance=ExtResource( 9 )]
-transform = Transform( -0.812552, 0, -0.582889, 0, 1, 0, 0.582889, 0, -0.812552, 48.3006, -0.717361, -206.162 )
+transform = Transform( -0.812552, 0, -0.582889, 0, 1, 0, 0.582889, 0, -0.812552, 216.631, -0.717361, -206.162 )
 
 [node name="cat 966l wheel loader2" parent="." instance=ExtResource( 10 )]
 transform = Transform( 0.753804, 0, 0.657099, 0, 1, 0, -0.657099, 0, 0.753804, 70.0223, 1.32106, -17.7231 )
 
 [node name="Enemy" parent="." instance=ExtResource( 11 )]
-transform = Transform( 0.797057, 0, 0.603904, 0, 1, 0, -0.603904, 0, 0.797057, 379.462, 2.72409, -24.1007 )
+transform = Transform( 0.797057, 0, 0.603904, 0, 1, 0, -0.603904, 0, 0.797057, 677.42, 2.72409, -24.1007 )
 EnemySpeed = 0.5
 
 [node name="CollisionShape" parent="Enemy/Enemy" index="2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.63525, 1.83264, -0.0831604 )
 
 [node name="Elevator" parent="." instance=ExtResource( 12 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 652.16, 0.75399, 0 )
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1567.4, 0.75399, 0 )
 
 [node name="Enemy3" parent="." instance=ExtResource( 11 )]
-transform = Transform( 0.797057, 0, 0.603904, 0, 1, 0, -0.603904, 0, 0.797057, 220.662, 2.72409, -24.1007 )
+transform = Transform( 0.797057, 0, 0.603904, 0, 1, 0, -0.603904, 0, 0.797057, 388.993, 2.72409, -24.1007 )
 EnemySpeed = 0.5
 
 [node name="CollisionShape" parent="Enemy3/Enemy" index="2"]
@@ -438,17 +563,52 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.63525, 1.83264, -0.0831604 )
 
 [node name="Paused" parent="." instance=ExtResource( 2 )]
 
+[node name="Sand dunes Joined10" parent="." instance=ExtResource( 9 )]
+transform = Transform( -0.812552, 0, -0.582889, 0, 1, 0, 0.582889, 0, -0.812552, 912.602, -0.717361, -221.615 )
+
+[node name="Sand dunes Joined11" parent="." instance=ExtResource( 9 )]
+transform = Transform( -0.812552, 0, -0.582889, 0, 1, 0, 0.582889, 0, -0.812552, 855.418, -0.717361, -206.162 )
+
+[node name="Enemy4" parent="." instance=ExtResource( 11 )]
+transform = Transform( 0.797057, 0, 0.603904, 0, 1, 0, -0.603904, 0, 0.797057, 1028.08, 2.72409, -24.1007 )
+EnemySpeed = 0.5
+
+[node name="CollisionShape" parent="Enemy4/Enemy" index="2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.63525, 1.83264, -0.0831604 )
+
+[node name="AnimationPlayer" parent="Enemy4" index="2"]
+anims/Both = SubResource( 12 )
+"anims/Left First" = SubResource( 13 )
+"anims/Right First" = SubResource( 14 )
+
+[editable path="Enemy2"]
+
 [editable path="Node2D/Viewport/Speedometer(3)"]
+
 [editable path="Finsihed"]
+
 [editable path="catr 325c digger"]
+
 [editable path="catr 325c digger2"]
+
 [editable path="catr 325c digger3"]
+
 [editable path="catr 325c digger5"]
+
 [editable path="catr 325c digger8"]
+
+[editable path="catr 325c digger9"]
+
 [editable path="catr 325c digger10"]
+
 [editable path="catr 325c digger6"]
-[editable path="catr 325c digger7"]
+
 [editable path="Enemy"]
+
 [editable path="Enemy/Enemy2/NISSAN NAVARA red-SOLID"]
+
 [editable path="Enemy3"]
+
 [editable path="Enemy3/Enemy2/NISSAN NAVARA red-SOLID"]
+
+[editable path="Enemy4"]
