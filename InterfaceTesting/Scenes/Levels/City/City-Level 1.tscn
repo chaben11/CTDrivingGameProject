@@ -421,30 +421,28 @@ transform = Transform( -0.917359, 6.83486e-08, -0.398061, -0.258652, 0.760122, 0
 
 [node name="Enemy" parent="." instance=ExtResource( 25 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 48.9929, 1.76404, -21.702 )
-EnemySpeed = 3.0
 
 [node name="Enemy2" parent="." instance=ExtResource( 26 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 227.848, 2, -21.702 )
-EnemySpeed = 3.2
 
 [node name="Enemy9" parent="." instance=ExtResource( 26 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 408.748, 2, -47.202 )
-EnemySpeed = 3.35
+EnemySpeed = 1.0
 
 [node name="Floortest" parent="." instance=ExtResource( 19 )]
 transform = Transform( 1000, 0, 0, 0, 1, 0, 0, 0, 10, 919.031, -0.5, -0.136108 )
 
 [node name="Enemy3" parent="." instance=ExtResource( 20 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 408.339, 2, -21.702 )
-EnemySpeed = 3.35
+EnemySpeed = 1.0
 
 [node name="Enemy12" parent="." instance=ExtResource( 20 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 229.074, 2, -42.1252 )
-EnemySpeed = 3.2
+EnemySpeed = 1.0
 
 [node name="Enemy8" parent="." instance=ExtResource( 20 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 48.6092, 2, -44.0015 )
-EnemySpeed = 3.0
+EnemySpeed = 1.0
 
 [node name="Buildings" parent="." instance=ExtResource( 22 )]
 transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 78.1835 )
@@ -631,27 +629,24 @@ transform = Transform( -0.917359, 6.83486e-08, -0.398061, -0.258652, 0.760122, 0
 
 [node name="Enemy4" parent="." instance=ExtResource( 25 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 668.293, 1.76404, -21.702 )
-EnemySpeed = 3.35
+EnemySpeed = 1.0
 
 [node name="Enemy5" parent="." instance=ExtResource( 26 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 847.148, 2, -21.702 )
-EnemySpeed = 3.4
+EnemySpeed = 1.0
 
 [node name="Enemy7" parent="." instance=ExtResource( 26 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1028.17, 2, -52.902 )
-EnemySpeed = 3.42
 
 [node name="Enemy10" parent="." instance=ExtResource( 26 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 847.07, 2, -52.902 )
-EnemySpeed = 3.4
+EnemySpeed = 1.0
 
 [node name="Enemy11" parent="." instance=ExtResource( 26 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 667.17, 2, -52.902 )
-EnemySpeed = 3.35
 
 [node name="Enemy6" parent="." instance=ExtResource( 20 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1027.64, 2, -21.702 )
-EnemySpeed = 3.42
 
 [node name="bridge" parent="." instance=ExtResource( 4 )]
 transform = Transform( -2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 542.331, 1.59733, -0.364067 )
@@ -704,9 +699,6 @@ script = ExtResource( 8 )
 
 [node name="EnemyTruck" parent="EnemyTruck3" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 18.5319 )
-
-[node name="Truck" parent="EnemyTruck3/EnemyTruck" index="0"]
-transform = Transform( 1.125, 0, 0, 0, 1.125, 0, 0, 0, 1.125, 1.15479, 0.841036, 3.28606 )
 
 [node name="ArmyTruck" parent="EnemyTruck3/EnemyTruck" index="1"]
 transform = Transform( 2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, -1.29633, -1.49453, -4 )

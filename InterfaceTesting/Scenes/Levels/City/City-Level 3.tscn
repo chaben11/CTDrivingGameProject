@@ -446,12 +446,16 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.32565 )
 shape = SubResource( 15 )
 
 [node name="Paused" parent="." instance=ExtResource( 1 )]
-
 [connection signal="body_entered" from="BonusStage" to="BonusStage" method="_on_BonusStage_body_entered"]
 
 [editable path="Node2D/Viewport/Speedometer(3)"]
+
 [editable path="Enemy"]
+
 [editable path="Enemy4"]
+
 [editable path="Enemy4/Enemy2/NISSAN NAVARA red-SOLID"]
+
 [editable path="Buildings_A"]
+
 [editable path="Buildings"]
