@@ -31,6 +31,7 @@ func _on_Finsihed_body_entered(body):
 		elif PlayerData.player.currentLevel == "Citylevel2":
 			print("l2")
 			if garage.car_index != 6: #Car is not limp
+				print("Here")
 				get_tree().change_scene("res://Scenes/City-LevelSelect.tscn")
 			#Checks the current level to unlock the right one
 				PlayerData.player.Citylevel2 = "complete"

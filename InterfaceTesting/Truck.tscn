@@ -38,5 +38,5 @@ transform = Transform( 2.5, 0, 0, 0, 2.5, 0, 0, 0, 10, 0, 0, 0 )
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="EnemyTruck"]
-playback_speed = 2.0
+playback_speed = 0.75
 anims/TruckMovement = SubResource( 2 )
