@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Models/Construction site/cat 966l wheel loader.glb" type="PackedScene" id=1]
 [ext_resource path="res://Cars/NISSAN NAVARA .tscn" type="PackedScene" id=2]
-[ext_resource path="res://Cars/AMBULANCE WHITE.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Cars/AMBULANCEWHITE.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Animations/CityEnemyAnimations.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Models/Construction site/cat 793f haul truck.glb" type="PackedScene" id=5]
 [ext_resource path="res://Models/Traffic Vehicles/ICE-CREAM TRUCK.tscn" type="PackedScene" id=6]

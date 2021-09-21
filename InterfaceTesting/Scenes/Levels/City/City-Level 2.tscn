@@ -1267,4 +1267,6 @@ transform = Transform( -2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 1
 [editable path="Enemy13"]
 [editable path="Buildings_A"]
 [editable path="Buildings"]
+[editable path="VIP tunnel"]
+[editable path="Finsihed"]
 [editable path="Paused"]

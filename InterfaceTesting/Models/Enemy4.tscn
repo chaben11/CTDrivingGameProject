@@ -3,7 +3,7 @@
 [ext_resource path="res://Scripts/CityEnemies.gd" type="Script" id=1]
 [ext_resource path="res://Models/new_boxshape.tres" type="Shape" id=2]
 [ext_resource path="res://Cars/NISSAN NAVARA .tscn" type="PackedScene" id=3]
-[ext_resource path="res://Cars/AMBULANCE WHITE.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Cars/AMBULANCEWHITE.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Models/Traffic Vehicles/reverce.material" type="Material" id=5]
 [ext_resource path="res://Models/Traffic Vehicles/indicater.material" type="Material" id=6]
 [ext_resource path="res://Models/Traffic Vehicles/led.material" type="Material" id=7]

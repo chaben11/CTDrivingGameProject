@@ -16,6 +16,7 @@ _global_script_class_icons={
 
 config/name="CT Driving"
 run/main_scene="res://Startup.tscn"
+config/windows_native_icon="res://icon.ico"
 
 [autoload]
 

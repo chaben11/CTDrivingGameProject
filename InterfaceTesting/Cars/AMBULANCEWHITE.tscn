@@ -1,12 +1,12 @@
 [gd_scene load_steps=17 format=2]
 
-[ext_resource path="res://Materials/body_white.material" type="Material" id=1]
-[ext_resource path="res://Materials/lights.material" type="Material" id=2]
-[ext_resource path="res://Materials/RED LIGHT.material" type="Material" id=3]
+[ext_resource path="res://Materials/lights.material" type="Material" id=1]
+[ext_resource path="res://Materials/WHITE LIGHT.material" type="Material" id=2]
+[ext_resource path="res://Materials/break.material" type="Material" id=3]
 [ext_resource path="res://Materials/symbole.material" type="Material" id=4]
-[ext_resource path="res://Materials/break.material" type="Material" id=5]
-[ext_resource path="res://Materials/WHITE LIGHT.material" type="Material" id=6]
-[ext_resource path="res://Materials/white.material" type="Material" id=7]
+[ext_resource path="res://Materials/RED LIGHT.material" type="Material" id=5]
+[ext_resource path="res://Materials/body_white.material" type="Material" id=6]
+[ext_resource path="res://Materials/White.material" type="Material" id=7]
 [ext_resource path="res://Materials/indicator.material" type="Material" id=8]
 
 [sub_resource type="SpatialMaterial" id=1]
@@ -146,7 +146,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 97559,
 "index_count": 366,
-"material": ExtResource( 1 ),
+"material": ExtResource( 6 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 210
@@ -170,7 +170,7 @@ surfaces/2 = {
 "blend_shape_data": [  ],
 "format": 97559,
 "index_count": 36,
-"material": ExtResource( 2 ),
+"material": ExtResource( 1 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 16
@@ -182,7 +182,7 @@ surfaces/3 = {
 "blend_shape_data": [  ],
 "format": 97559,
 "index_count": 12,
-"material": ExtResource( 5 ),
+"material": ExtResource( 3 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 8
@@ -230,7 +230,7 @@ surfaces/7 = {
 "blend_shape_data": [  ],
 "format": 97559,
 "index_count": 276,
-"material": ExtResource( 6 ),
+"material": ExtResource( 2 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 184
@@ -242,7 +242,7 @@ surfaces/8 = {
 "blend_shape_data": [  ],
 "format": 97559,
 "index_count": 276,
-"material": ExtResource( 3 ),
+"material": ExtResource( 5 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 184
@@ -281,13 +281,13 @@ material/0 = null
 material/1 = null
 
 [node name="Wheel002" type="MeshInstance" parent="."]
-transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, 1, -0.908386, -0.979849, 2.68098 )
+transform = Transform( -1, 0, 0, 0, 1, -8.74228e-08, 0, 8.74228e-08, 1, -0.908386, -0.979849, 2.68098 )
 mesh = SubResource( 5 )
 material/0 = null
 material/1 = null
 
 [node name="Body" type="MeshInstance" parent="."]
-transform = Transform( 5.96046e-08, 1, 0, -1, 5.96046e-08, 0, 0, 0, 1, -1.11078, 2.3353, -1.85002 )
+transform = Transform( 7.54979e-08, 1, 0, -1, 7.54979e-08, 0, 0, 0, 1, -1.11078, 2.3353, -1.85002 )
 mesh = SubResource( 8 )
 material/0 = null
 material/1 = null

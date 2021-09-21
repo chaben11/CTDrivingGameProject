@@ -126,7 +126,7 @@ surfaces/6 = {
 }
 
 [sub_resource type="BoxShape" id=3]
-extents = Vector3( 0.687322, 1.43167, 4.5062 )
+extents = Vector3( 0.687322, 1.43167, 1.44514 )
 
 [node name="Suv" type="VehicleBody"]
 axis_lock_linear_y = true
