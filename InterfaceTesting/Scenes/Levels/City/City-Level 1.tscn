@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://Textures/sidewalkgrasstogether.tres" type="ArrayMesh" id=1]
 [ext_resource path="res://Models/intersection X (2).tres" type="ArrayMesh" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://Paused.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Models/traffic light1.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Truck.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Truck.gd" type="Script" id=8]
 [ext_resource path="res://2x/Sidewalkgrass_type4@2x.png" type="Texture" id=9]
 [ext_resource path="res://Models/SignCity.tscn" type="PackedScene" id=10]
 [ext_resource path="res://2x/sudewalkgrass_type3@2x.png" type="Texture" id=12]
@@ -134,7 +133,7 @@ surfaces/0 = {
 }
 
 [sub_resource type="SpatialMaterial" id=12]
-albedo_color = Color( 0, 0.505882, 1, 1 )
+albedo_color = Color( 0.121569, 0.768627, 0.686275, 1 )
 
 [sub_resource type="CubeMesh" id=13]
 material = SubResource( 12 )
@@ -661,14 +660,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1015.13, 4, -13.9332 )
 
 [node name="EnemyTruck" parent="." instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 165.8, 3.75, -19.3907 )
-script = ExtResource( 8 )
 
 [node name="ArmyTruck" parent="EnemyTruck/EnemyTruck" index="1"]
 transform = Transform( 2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, -1.29633, -1.49453, -4 )
 
 [node name="EnemyTruck2" parent="." instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 342.7, 3.75, -19.3907 )
-script = ExtResource( 8 )
 
 [node name="ArmyTruck" parent="EnemyTruck2/EnemyTruck" index="1"]
 transform = Transform( 2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, -1.29633, -1.49453, -4 )
@@ -678,7 +675,6 @@ anims/TruckMovement = SubResource( 17 )
 
 [node name="EnemyTruck3" parent="." instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 789.6, 3.75, -19.3907 )
-script = ExtResource( 8 )
 
 [node name="ArmyTruck" parent="EnemyTruck3/EnemyTruck" index="1"]
 transform = Transform( 2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, -1.29633, -1.49453, -4 )
@@ -688,7 +684,6 @@ anims/TruckMovement = SubResource( 18 )
 
 [node name="EnemyTruck4" parent="." instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1137.6, 3.75, -19.3907 )
-script = ExtResource( 8 )
 
 [node name="ArmyTruck" parent="EnemyTruck4/EnemyTruck" index="1"]
 transform = Transform( 2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, -1.29633, -1.49453, -4 )
