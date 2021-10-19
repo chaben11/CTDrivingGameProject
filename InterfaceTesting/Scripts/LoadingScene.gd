@@ -7,7 +7,7 @@ extends Control
 
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
+func _ready(): #A loading screen when the game is launched game waits until the animation is fully completed before loading
 	$AnimatedSprite.play()
 
 func _process(delta):

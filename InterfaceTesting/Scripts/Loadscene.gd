@@ -25,5 +25,5 @@ func _process(delta):
 
 
 func _on_Loadscene_pressed():
-	get_tree().change_scene("res://Scenes/MainMenu.tscn") 
+	get_tree().change_scene("res://Scenes/MainMenu.tscn")  #Button that selects the car and loads the menu
 	print(garage.car_index)

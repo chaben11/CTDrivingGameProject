@@ -17,5 +17,5 @@ func _ready():
 
 
 func _on_Area_body_entered(body):
-	if body.name == "Player":
+	if body.name == "Player": #Only loads the next scene if the player moves within its boundary and not any other object
 		background_load.load_scene("res://Scenes/LoadingMineBonus.tscn")

@@ -16,7 +16,7 @@ func _ready():
 #	pass
 
 
-func _on_Finsihed_body_entered(body):
+func _on_Finsihed_body_entered(body): #Object that will manage the unlocking of levels and bonus stages
 	if body.name == "Player":
 		# Returns to level select but will end up as a menu
 #		get_tree().change_scene("res://Scenes/City-LevelSelect.tscn")
@@ -37,7 +37,7 @@ func _on_Finsihed_body_entered(body):
 				PlayerData.player.Citylevel2 = "complete"
 				PlayerData.player.Citylevel3 = "unlocked"
 				PlayerData.save()
-			elif garage.car_index == 6: #Car is limo
+			elif garage.car_index == 6: #Car is limo - If the car is a limo The vehicle can drive fowards into the bonus stage
 				PlayerData.player.Citylevel2 = "complete"
 				PlayerData.player.CityBonus = "unlocked"
 		elif PlayerData.player.currentLevel == "CityBonus":

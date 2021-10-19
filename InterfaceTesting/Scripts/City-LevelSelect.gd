@@ -7,13 +7,13 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$"Level 2".disabled = true
+	$"Level 2".disabled = true #When a new game is created Level 2 and 3 will be locked
 	$"Level 3".disabled = true
 	$LoadingIcon.hide()
 
 func _process(delta):
 
-	if PlayerData.player.Citylevel2 == "unlocked":
+	if PlayerData.player.Citylevel2 == "unlocked": #When the player completes a level the following level will be unlocked and the button will be enabled again
 		$"Level 2".disabled = false
 		PlayerData.save()
 	elif PlayerData.player.Citylevel2 == "complete":
@@ -35,7 +35,7 @@ func _process(delta):
 
 
 func _on_Level_1_pressed():
-	PlayerData.player.currentLevel = "Citylevel1"
+	PlayerData.player.currentLevel = "Citylevel1" #Sets the current level (So the game can determine which level to unlock once completed) , Loads the level and shows the loading icon while the game is being loaded
 	background_load.load_scene("res://Scenes/Levels/City/City-Level 1.tscn")
 	$LoadingIcon.show()
 	$LoadingIcon.play()
@@ -52,9 +52,9 @@ func _on_Level_3_pressed():
 	$LoadingIcon.show()
 	$LoadingIcon.play()
 
-func _on_Level_4_pressed():
-	pass # Replace with function body.
+#func _on_Level_4_pressed(): 
+#	pass # Replace with function body.
 
 
 func _on_back_pressed():
-	get_tree().change_scene("res://Scenes/MainMenu.tscn")
+	get_tree().change_scene("res://Scenes/MainMenu.tscn") #Returns to the menu

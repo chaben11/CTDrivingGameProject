@@ -1,8 +1,8 @@
 extends Node
 
-const FILE_NAME = "user://CTDriverData.json"
+const FILE_NAME = "user://CTDriverData.json" #A new game will change all levels to be locked excpet the level 1 for both stages
 var player = {
-"score": 0,
+"score": 0, 
 "currentLevel": "Citylevel1",
 "Citylevel1": "unlocked",
 "Citylevel2": "locked",

@@ -13,7 +13,7 @@ onready var limo = preload("res://Cars/PlayerCars/PlayerScene/Limo.tscn")
 onready var nissan = preload("res://Cars/PlayerCars/PlayerScene/Nissian.tscn")
 onready var granny = preload("res://Cars/PlayerCars/PlayerScene/granny.tscn")
 # Called when the node enters the scene tree for the first time.
-func _ready():
+func _ready(): #Level will load the selected vehicle into the scene
 	if garage.car_index == 5:
 		add_child(sixbysix.instance())
 	elif garage.car_index == 4:

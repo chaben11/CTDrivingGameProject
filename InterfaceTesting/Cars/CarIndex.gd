@@ -4,7 +4,7 @@ extends Node
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-var car_index = 1
+var car_index = 1 #This Determines which Vehicle will be loaded from the car selection
 #1 Taxi
 #2 Suv
 #3 Nissan 

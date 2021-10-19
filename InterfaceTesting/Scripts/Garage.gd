@@ -27,10 +27,10 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-func _input(event):
+func _input(event): #Controls the garage menu can use the on screen buttons or the left and right arrows
 	if Input.is_action_just_pressed("ui_right"):
 		next_car()
-		$ChangingVehicles.start()	
+		$ChangingVehicles.start()	#Starts a timer and when it runs out the next car will drive onto the screen
 		if Sports == true: 
 			Sports = false
 		elif Suv == true:
@@ -97,11 +97,11 @@ func _on_Previous_pressed(): #Will repeat what the next_button function did but 
 
 func _process(delta):
 	if $Loadscene.disabled == true: #The button that selects the current car and loads the main menu will be disabled if the current car is locked
-		$Loadscene/VEHICLELOCKED.show()
+		$Loadscene/VEHICLELOCKED.show() #Image that indicates that the car is locked is shown
 	else:
-		$Loadscene/VEHICLELOCKED.hide()
+		$Loadscene/VEHICLELOCKED.hide() #The image is hidden if the car is not locked
 	if Sports == true: #Checks what car is active
-		if $SportsCar/SportsCar.entering == true:
+		if $SportsCar/SportsCar.entering == true: 
 			$SportsCar/SportsCar/AnimationPlayer.play("Enter") #Drives fowards onto the podium
 		if $SportsCar/SportsCar.rotating == true:
 			$SportsCar/SportsCar/AnimationPlayer.play("Rotate") #Rotates until next or previous button is selected
@@ -114,7 +114,7 @@ func _process(delta):
 			$SportsCar/SportsCar.rotating = false
 			$SportsCar/SportsCar.exiting = true
 			$SportsCar/SportsCar/AnimationPlayer.play("Exit") #Moves the car off the podium
-			$SportsCar/SportsCar.look_at(exitobject2.translation,Vector3.UP)
+			$SportsCar/SportsCar.look_at(exitobject2.translation,Vector3.UP) #Aims the car at the offscreen object so it drives in the correct direction
 #			$SportsCar/SportsCar.turn_face(exitobject,delta)
 			$SportsCar/SportsCar.exiting = false
 			$SportsCar/SportsCar.rotating = false
@@ -227,9 +227,9 @@ func _on_ChangingVehicles_timeout(): #CHANGING NEXT
  #Starts the function to find the new index
 	print(garage.car_index)
 	if garage.car_index == 1: #Porshe/Taxi
-		$Loadscene.disabled = false
+		$Loadscene.disabled = false #Button is available to click because the car is not locked
 		Sports = true
-		$SportsCar/SportsCar.entering = true
+		$SportsCar/SportsCar.entering = true #Starts the enter animation
 		Suv = false
 		nissian = false
 		Hatchback = false
@@ -241,7 +241,7 @@ func _on_ChangingVehicles_timeout(): #CHANGING NEXT
 		$Labels/limoinfo.show()
 		$Labels/"6x6info".hide()
 		$Labels/limoinfo/Limo_label_tick.hide()
-		$Selection/AnimationPlayer.play("index 1") #User interface animation. Will Play the animation depending on the current selection
+		$Selection/AnimationPlayer.play("index 1") #User interface animation. Will Play the animation depending on the current selection 
 	if garage.car_index == 2: #SUV
 		Suv = true
 		$SUV/SUV.entering = true
@@ -256,7 +256,7 @@ func _on_ChangingVehicles_timeout(): #CHANGING NEXT
 		$Labels/limoinfo.hide()
 		$Labels/"6x6info".hide()
 		$Selection/AnimationPlayer.play("index 2")
-		if PlayerData.player.MineBonus == "locked":
+		if PlayerData.player.MineBonus == "locked": #The Current Vehicle is only available when the bonus stage has been completed
 			$Loadscene.disabled = true
 			$Labels/suvinfo/Suv_label_untick.show()
 			$Labels/suvinfo/Suv_label_tick.hide()
@@ -300,7 +300,7 @@ func _on_ChangingVehicles_timeout(): #CHANGING NEXT
 			$Labels/bmwinfo/bmw_label_untick.show()
 		elif PlayerData.player.CityBonus == "completed":
 			$Loadscene.disabled = false
-			$Labels/bmwinfo/bmw_label_tick.show()
+			$Labels/bmwinfo/bmw_label_tick.show() #Image that indicates wether the requirements to unlock this vehicle has been met
 			$Labels/bmwinfo/bmw_label_untick.hide()
 	if garage.car_index == 5: #6x6
 		$Loadscene.disabled = false
@@ -335,5 +335,5 @@ func _on_ChangingVehicles_timeout(): #CHANGING NEXT
 		$Limo/Limo.entering = true
 		$Selection/AnimationPlayer.play("index 6")
 #		$Selection/AnimationPlayer.play("index 4")
-	$ChangingVehicles.wait_time = 2 # a 5 second wait for the car to fully spin around before the next car will drive over
+	$ChangingVehicles.wait_time = 2 # a wait for the car to fully spin around before the next car will drive over
 	$ChangingVehicles.stop()
