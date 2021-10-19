@@ -11,7 +11,7 @@ export var Hatchback = false
 export var SixbySix = false
 export var Limo = false
 onready var exitobject = get_node("Exitarget")
-onready var exitobject2 = get_node("Exitarget2")
+onready var exitobject2 = get_node("Exitarget2") #This is an object that the Selected Car will point towards when it drives off the screen
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Sports = true
@@ -96,7 +96,7 @@ func _on_Previous_pressed(): #Will repeat what the next_button function did but 
 		Limo = false
 
 func _process(delta):
-	if $Loadscene.disabled == true:
+	if $Loadscene.disabled == true: #The button that selects the current car and loads the main menu will be disabled if the current car is locked
 		$Loadscene/VEHICLELOCKED.show()
 	else:
 		$Loadscene/VEHICLELOCKED.hide()
