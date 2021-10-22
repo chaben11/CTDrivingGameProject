@@ -278,8 +278,16 @@ func _on_ChangingVehicles_timeout(): #CHANGING NEXT
 		$Labels/limoinfo.hide()
 		$Labels/"6x6info".hide()
 		$Nissian/Nissian.entering = true
-		$Labels/nissianinfo/Nissian_label_tick.show()
+#		$Labels/nissianinfo/Nissian_label_tick.show()
 		$Selection/AnimationPlayer.play("index 3")
+		if PlayerData.player.Minelevel3 == "locked": #The Current Vehicle is only available when the all the mine levels are completed
+			$Loadscene.disabled = true
+			$Labels/nissianinfo/Nissian_label_untick.show()
+			$Labels/nissianinfo/Nissian_label_tick.hide()
+		elif PlayerData.player.Minelevel1 == "completed" and PlayerData.player.Minelevel2 == "completed" and PlayerData.player.Minelevel3 == "completed" :
+			$Loadscene.disabled = false
+			$Labels/nissianinfo/Nissian_label_tick.show()
+			$Labels/nissianinfo/Nissian_label_untick.hide()
 	if garage.car_index == 4: #BMW Hatchback
 		nissian = false
 		Sports = false
@@ -315,9 +323,19 @@ func _on_ChangingVehicles_timeout(): #CHANGING NEXT
 		$Labels/bmwinfo.hide()
 		$Labels/limoinfo.hide()
 		$Labels/"6x6info".show()
-		$Labels/"6x6info/6x6_label_tick".show()
+#		$Labels/"6x6info/6x6_label_tick".show()
 		$SixbySix/SixbySix.entering = true
 		$Selection/AnimationPlayer.play("index 5")
+		if PlayerData.player.Minelevel3 == "locked" or PlayerData.player.Citylevel3 == "locked" : #The Current Vehicle is only available when the all the levels in the game are completed
+			$Loadscene.disabled = true
+			$Labels/"6x6info/6x6_label_tick".hide()
+			$Labels/"6x6info/6x6_label_untick".show()
+	
+		elif PlayerData.player.Minelevel1 == "completed" and PlayerData.player.Minelevel2 == "completed" and PlayerData.player.Minelevel3 == "completed" and PlayerData.player.Citylevel1 == "completed" and PlayerData.player.Citylevel2 == "completed" and PlayerData.player.Citylevel3 == "completed"  :
+			$Loadscene.disabled = false
+			$Labels/.show()
+			$Labels/"6x6info/6x6_label_tick".show()
+			$Labels/"6x6info/6x6_label_untick".hide()
 	if garage.car_index == 6: #Limo
 		$Loadscene.disabled = false
 		nissian = false
@@ -334,6 +352,14 @@ func _on_ChangingVehicles_timeout(): #CHANGING NEXT
 		$Labels/limoinfo/Limo_label_tick.show()
 		$Limo/Limo.entering = true
 		$Selection/AnimationPlayer.play("index 6")
+		if PlayerData.player.Citylevel3 == "locked": #The Current Vehicle is only available when the all the city levels are completed
+			$Loadscene.disabled = true
+			$Labels/limoinfo/Limo_label_untick.show()
+			$Labels/limoinfo/Limo_label_tick.hide()
+		elif PlayerData.player.Citylevel1 == "completed" and PlayerData.player.Citylevel2 == "completed" and PlayerData.player.Citylevel3 == "completed" :
+			$Loadscene.disabled = false
+			$Labels/limoinfo/Limo_label_tick.show()
+			$Labels/limoinfo/Limo_label_untick.hide()
 #		$Selection/AnimationPlayer.play("index 4")
 	$ChangingVehicles.wait_time = 2 # a wait for the car to fully spin around before the next car will drive over
 	$ChangingVehicles.stop()

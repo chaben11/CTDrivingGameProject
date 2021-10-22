@@ -18,14 +18,14 @@ var player = {
 func _ready():
 	load_data()
 	print(player)
-func save():
+func save(): #Whenever the game is saved the new data is stored in the data file
 	var file = File.new()
 	file.open(FILE_NAME, File.WRITE)
 	file.store_string(to_json(player))
 	file.close()
 
 
-func load_data():
+func load_data(): #The game finds the existing data file and reads the data 
 	var file = File.new()
 	if file.file_exists(FILE_NAME):
 		file.open(FILE_NAME,File.READ)

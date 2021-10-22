@@ -11,7 +11,7 @@ signal Gameover
 func _ready():
 	if garage.car_index == 7:
 		engine_force_value = 10
-func _physics_process(delta):
+func _physics_process(delta): #Character controller fowards (Up,W, and Left click) and backwards 
 	var fwd_mps = transform.basis.xform_inv(linear_velocity).x
 
 #	steer_target = Input.get_action_strength("turn_left") - Input.get_action_strength("turn_right")
@@ -28,12 +28,12 @@ func _physics_process(delta):
 	else:
 		engine_force = 0
 
-	if Input.is_action_pressed("Decellerate"):
+	if Input.is_action_pressed("Decellerate"): 
 		# Increase engine force at low speeds to make the initial acceleration faster.
 		if fwd_mps >= -1:
 			var speed = linear_velocity.length()
 			if speed < 5 and speed != 0:
-				engine_force = -clamp(engine_force_value * 5 / speed, 0, 100)
+				engine_force = -clamp(engine_force_value * 5 / speed, 0, 100) #Negative value means backwards
 			else:
 				engine_force = -engine_force_value
 
