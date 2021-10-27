@@ -6,24 +6,31 @@ onready var gamefailed = false
 var steer_target = 0
 export var engine_force_value = 250
 signal Gameover
-var supergranny
+var supergranny = false 
 
 func _ready():
 	if garage.car_index == 7:
-		if supergranny == false:
-			engine_force_value = 10
-		elif supergranny == true:
-			engine_force_value = 1000
+#		if supergranny == false:
+		engine_force_value = 10
+#		elif supergranny == true:
+#			engine_force_value = 1000
 func _physics_process(delta): #Character controller fowards (Up,W, and Left click) and backwards 
 	var fwd_mps = transform.basis.xform_inv(linear_velocity).x
 
 #	steer_target = Input.get_action_strength("turn_left") - Input.get_action_strength("turn_right")
 #	steer_target *= STEER_LIMIT
 	if Input.is_action_just_pressed("space"):
+	
 		if supergranny == false:
 			supergranny = true
+			engine_force_value = 99999999999
+			print(supergranny)
+			print(engine_force_value)
 		elif supergranny == true:
 			supergranny = false
+			engine_force_value = 10
+			print(supergranny)
+			print(engine_force_value)
 	if Input.is_action_pressed("Acclerate"): 
 		# Increase engine force at low speeds to make the initial acceleration faster.
 		var speed = linear_velocity.length()

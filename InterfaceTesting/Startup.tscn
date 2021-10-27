@@ -90,5 +90,4 @@ __meta__ = {
 position = Vector2( 502.67, 298.665 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
-frame = 70
 speed_scale = 4.0
